@@ -7,11 +7,3 @@ document.addEventListener('DOMContentLoaded', function () {
          light.classList.toggle('dark-mode', darkModeToggle.checked);
     });
 });
-
-function toggleColor() {
-  var div1 = document.getElementsByClassName("light");
-  
-
-  div1.classList.toggle("red");
-  
-}
