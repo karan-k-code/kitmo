@@ -1,7 +1,7 @@
 * {
     margin: 0;
     font-family: Arial;
-    border: border-box;
+    
     padding: 0;
 }
 /*navbar*/
@@ -95,6 +95,8 @@
     justify-content: center;
     align-items: center;
     height: 50px;
+    margin: 0%
+    padding: 0%;
 }
 .colam{
     height: 13px;

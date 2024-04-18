@@ -34,17 +34,6 @@
     transform: translateX(15px);
 }
 .dark-mode {
-  background-color: black;
-  color: #fff;
-}
-.mode_line{
-    margin-left: 6px;
-    display: flex;
-    justify-content: center;
-}
-.dark_a{
+    background-color: black;
     color: #fff;
-}
-.dark_l{
-    background-color: #000;
-}
+  }  
