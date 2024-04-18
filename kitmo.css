@@ -1,7 +1,7 @@
 * {
     margin: 0;
     font-family: Arial;
-    
+    border: border-box;
     padding: 0;
 }
 /*navbar*/
@@ -94,9 +94,7 @@
     background-color:#BBCBCB;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    margin: 0%
-    padding: 0%;
+    height: 50px;  
 }
 .colam{
     height: 13px;
