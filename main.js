@@ -11,19 +11,19 @@ let shopItamsData = [{
     name:"goggles",
     price: 9,
     desc:"stylish goggles new year",
-    img:"/storage/emulated/0/Download/images (8).jpeg"
+    img:"goggles.jpeg"
 },{
     id:"short",
     name:"short",
     price:25,
     desc:"stylish short for man",
-    img:"/storage/emulated/0/Download/images (9).jpeg"
+    img:"short.jpeg"
 },{
     id:"jeans",
     name:"jeans",
     price: 30,
     desc:"boy jeans so prime",
-    img:"/storage/emulated/0/Download/shopping.jpeg"
+    img:"jeans.jpeg"
 },{
     
     id:"cup",
