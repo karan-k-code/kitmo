@@ -2,26 +2,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login_row{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
 }
-
 .login-container {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+    background-color: #f4f4f4;
+    width: 300px;
+    height: 300px;
 }
 .kitmo-logo{
     display: flex;
-    height: 60Px;
+    height: 90Px;
     justify-content: center;
 }
 .kitmo_img{
     justify-content: center;
+    width: 200px;
+    height: 100px;
 }
 h2{
     margin-top: 0;
