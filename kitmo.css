@@ -232,7 +232,36 @@
 .white_color:hover{
     box-shadow: 0 0 10px red;
 }
-/* different screen size */
+/*pad screen */
+@media (max-width: 700px){
+    .cantenr{
+        grid-template-columns: repeat(3, 185px);
+    }
+    .hero_box{
+        height: 200px;
+    }
+    .navbar{
+        height: 50px;
+    }
+    .search-secation{
+        display: none;
+    }
+    .search_secation_panl{
+        display: flex
+    }
+    .search-select{
+        height: 35px;
+    }
+    .search-input{
+        width: 200px;
+        height: 35px;
+    }
+    .search-icon{
+        height: 35px;
+    }
+    
+}
+/* mobile screen size */
 @media (max-width: 500px){
     .cantenr{
         grid-template-columns: repeat(2, 185px);
@@ -261,6 +290,8 @@
     }
     
 }
+
+
 /* developer contact and website details */
 .contacts_line{
     height: 14px;
