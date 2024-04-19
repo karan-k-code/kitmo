@@ -139,7 +139,7 @@
     display: grid;
     grid-template-columns: repeat(4, 185px);
     gap: 10px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .box{
     height: 380px;
@@ -268,8 +268,8 @@
     border-bottom-left-radius: 13px;
     display: flex;
     position: relative;
-    background-color: white;
-    bottom: -13;
+    background-color: #fff;
+    bottom: -13px;
     z-index: 1;
 }
 .contacts_second_line{
@@ -291,8 +291,8 @@
     border-top-left-radius: 13px;
     display: flex;
     position: relative;
-    background-color: white;
-    top: -13;
+    background-color: #fff;
+    top: -13px;
     z-index: 1;
 }
 .contacts_box{
