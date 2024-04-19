@@ -36,7 +36,7 @@ let shopItamsData = [{
     name:"mobile",
     price: 999,
     desc:"iPhone 15 pro max",
-    img:"/storage/emulated/0/Download/iPhone 15 Pro Max 256GB Blue Titanium2.jpg"
+    img:"iphone.jpg"
 }]
 /* show data to display */
 let generateShop =()=>{
