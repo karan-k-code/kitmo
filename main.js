@@ -5,7 +5,7 @@ let shopItamsData = [{
     name:"headphones",
     price: 22,
     desc:"this is boat headphones",
-    img:"/storage/emulated/0/Download/images (2).jpeg"
+    img:"headphone.jpeg"
 },{
     id:"goggles",
     name:"goggles",
@@ -30,7 +30,7 @@ let shopItamsData = [{
     name:"cup",
     price: 9,
     desc:"this is stylish cup",
-    img:"/storage/emulated/0/Download/images (10).jpeg"
+    img:"cup.jpeg"
 },{
     id:"iPhone",
     name:"mobile",
