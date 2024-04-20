@@ -1,3 +1,6 @@
+.back_button{
+    font-size: 25px;
+}
 .cart_image{
     display: flex;
     justify-content: center;

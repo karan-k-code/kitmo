@@ -5,10 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="dark.css">
+    <link rel="stylesheet" href="kitmo.css">
+    <link rel="stylesheet" href="hello_ji.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
+    <header>
+        <!-- nevbar section and -->
+        <div class="navbar">
+            <div class="menu-container dark-mode" >
+                <ul id="menu-list">
+        <li><div class="dark-mode-toggle">
+    <input type="checkbox" id="dark-mode-toggle-checkbox">
+    <label for="dark-mode-toggle-checkbox"></label>
+</div>
+<div class="mode_line">dark mode</div>
+
+</li>
+        <li><i class="fa-solid fa-location-dot"></i><a href="www.google.com">location</a></li>
+        <li><a href="#">delivery_locations</a></li>
+        </ul>
+    </div>
+    <!-- nav first option -->
+            <div class="nav-option "id="menu-button"><i class="fa-solid fa-bars"></i>
+            
+            </div>
+        </ul>
+        <!-- kitmo-logo nav second option-->
+        <div class="kitmo-logo">
+            <img class="kitmo_img" src="kitmo_logo.png" alt="" />
+        </div>
+        <!-- search-secation nav third option-->
+        <div class="search-secation">
+            <select class="search-select border">
+                <option>ALL</option>
+                <option>electronics</option>
+                <option>genral</option>
+                <option>medical</option>
+                <option>beautti</option>
+            </select>
+            <!-- search-input -->
+            <input placeholder="search kitmo" class="search-input">
+            <!-- search_icon -->
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <!-- usar nav four options -->
+        <div class="usar">
+            <a href="login_kitmo.html" class="hii">
+            <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+        <!-- shoping cart nav five options-->
+        <div class="back_button">
+            <i class="fa-solid fa-circle-left"></i>
+        </div>
+    </div>
+    <!-- small display search_secation_panl -->
+    <div class="search_secation_panl">
+        <select class="search-select border">
+            <option>ALL</option>
+            <option>electronick</option>
+            <option>genral</option>
+            <option>medical</option>
+            <option>beautti</option>
+        </select>
+        <!-- search-input -->
+        <input placeholder="search kitmo" class="search-input">
+        <!-- search_icon -->
+        <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <div class="colam"></div>
+</header>
     <div class="cart_image">
         <img src="cart_image.png" alt="">
     </div>
 </body>
+<!--java script file link-->
+<script src="dark.js"></script>
+<script src="hello_ji.js"></script>
 </html>
