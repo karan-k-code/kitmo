@@ -1,6 +1,14 @@
 .back_button{
     font-size: 25px;
 }
+.add_cart1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
 .cart_image{
     display: flex;
     justify-content: center;
