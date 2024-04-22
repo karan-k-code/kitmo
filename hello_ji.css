@@ -20,7 +20,7 @@
     left: 0;
     display: none;
     box-shadow: 4px 5px 6px rgb(3, 3, 3);
-    background-color: #fff;
+    background-color: white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
