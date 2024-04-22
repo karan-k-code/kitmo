@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.getElementById('menu-button');
-    const menuList = document.getElementById('menu-list');
+    const menuButton = document.getElementById('user_button');
+    const menuList = document.getElementById('user_list');
 
     menuButton.addEventListener('click', function () {
         menuList.style.display = (menuList.style.display === 'none') ? 'block' : 'none';
