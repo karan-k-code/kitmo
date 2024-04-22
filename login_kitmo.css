@@ -16,7 +16,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: transparent;
     width: 350px;
     height: 200px;
 }
@@ -35,7 +35,7 @@ h2{
 }
 .mobile_number{
     display: flex;
-    gap: 10px;
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
