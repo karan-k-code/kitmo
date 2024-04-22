@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuList = document.getElementById('menu-list');
 
     menuButton.addEventListener('click', function () {
-        menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
+        menuList.style.display = (menuList.style.display === 'none') ? 'block' : 'none';
     });
 
     document.addEventListener('click', function (event) {
         if (!menuButton.contains(event.target) && !menuList.contains(event.target)) {
-            menuList.style.display = 'none';
+            menuList.style.display = 'block';
         }
     });
 });

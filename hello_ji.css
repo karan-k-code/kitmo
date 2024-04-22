@@ -12,14 +12,14 @@
 }
 
 #menu-list {
-    list-style-type: none;
+    list-style-type: block;
     margin: 0;
     padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
-    display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    box-shadow: 4px 5px 6px rgb(3, 3, 3);
     background-color: #fff;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -32,7 +32,6 @@
 
 #menu-list li a {
     text-decoration: none;
-    display: block;
 }
 .mode_line{
     margin-left: 6px;
