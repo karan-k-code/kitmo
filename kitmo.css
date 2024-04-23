@@ -72,14 +72,15 @@
     font-size: 25px;
     padding-top: 12px;
     border-radius: 4px;
-    
 }
+.cart a {
+    color: inherit; /* Isse anchor tag apne parent element ka color inherit karega */
+  }  
 .amuntcart{
-    background-color: red;
+    
     font-size: 16px;
-    color: white;
     position: absolute;
-    top: -10px;
+    top: -6px;
     right: 6px;
     padding: 1px 3px 2px 3px;
     border-radius: 3px;
