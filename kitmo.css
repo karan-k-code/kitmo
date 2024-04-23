@@ -15,12 +15,15 @@
 .nav-option{
     font-size: 25px;
     display: flex;
+    &:hover {
+        font-size: 30px;
+    }
 }
 .kitmo-logo{
     display: flex;
     height: 100Px;
     width: 150px;
-    justify-content: center;
+    justify-content: center;   
 }
 .kitmo_img{
     justify-content: center;
@@ -33,11 +36,14 @@
 }
 .search-select{
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 40px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    align-items: center;
-    justify-content: center;
+    &:hover {
+        box-shadow: 0 2px 2px;
+    }
 }
 .search-input{
     background-color: #E7E7E7;

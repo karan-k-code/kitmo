@@ -28,6 +28,12 @@
 #menu-list li {
     padding: 10px;
     display: flex;
+    border: 2px solid transparent;
+    
+    &:hover {
+        box-shadow: 0 0 4px rgb(3, 3, 3);
+        border-radius: 7px;
+    }
 }
 .mode_line{
     margin-left: 6px;
