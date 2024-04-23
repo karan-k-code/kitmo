@@ -127,6 +127,8 @@
     justify-content: center;
     font-size: 0.85rem;
     margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 5px;
 }
 .hero-msg a{
     color: #007185;
@@ -143,7 +145,7 @@
 /* product item box cantenr*/
 .cantenr{
     display: grid;
-    grid-template-columns: repeat(5, 185px);
+    grid-template-columns: repeat(5, 220px);
     gap: 10px;
     justify-content: space-evenly;
 }
@@ -418,64 +420,49 @@
     margin-top: 5px;
     height: 70px;
     width: 70px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px black;
 }
 .Instagram{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-top: 5px;
     height: 70px;
     width: 70px;
-    box-shadow: 0 0 5px black;
 }
 .LinkedIn{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-top: 5px;
     height: 70px;
     width: 70px;
-    box-shadow: 0 0 5px black;
 }
 .fecebook_m{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-top: 5px;
     height: 50px;
     width: 50px;
-    box-shadow: 0 0 5px black;
 }
 .Instagram_m{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-top: 5px;
     height: 50px;
     width: 50px;
-    box-shadow: 0 0 5px black;
-    
 }
 .LinkedIn_m{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     margin-top: 5px;
     height: 50px;
     width: 50px;
-    color: #fff;
-    box-shadow: 0 0 5px black;
 }
 a{
     text-decoration: none;
-    list-style-type: none;
 }
 @media (max-width: 500px){
     .contacts_box{
