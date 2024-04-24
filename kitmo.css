@@ -348,6 +348,9 @@
     .search-icon{
         height: 35px;
     }
+    #user_list{
+        right: 3px;
+    }
     
 }
 
