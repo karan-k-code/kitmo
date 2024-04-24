@@ -42,7 +42,7 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     &:hover {
-        box-shadow: 0 2px 2px;
+        box-shadow: 1px 2px 2px black;
     }
 }
 .search-input{
@@ -53,6 +53,9 @@
     align-items: center;
     justify-content: center;
     border: none;
+    &:hover {
+        box-shadow: 1px 2px 3px 0px black;
+    }
     
 }
 .search-icon{
@@ -66,12 +69,18 @@
     border-bottom-right-radius: 8px;
     padding-left: 10px;
     padding-right: 10px;
+    &:hover {
+        box-shadow: 1px 2px 2px  black;
+    }
 }
 .cart{
     position: relative;
     font-size: 25px;
     padding-top: 12px;
     border-radius: 4px;
+    &:hover {
+        font-size: 30px;
+    }
 }
 .cart a {
     color: inherit; /* Isse anchor tag apne parent element ka color inherit karega */
@@ -83,10 +92,13 @@
     top: -6px;
     right: 6px;
     padding: 1px 3px 2px 3px;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 .usar{
     font-size: 25px;
+    &:hover {
+        font-size: 30px;
+    }
 }
     /* border style */
 .border{
@@ -199,7 +211,7 @@
 }
 .shop_box{
     background-color: #BBCBCB;
-    height: 45Px;
+    height: 40Px;
     display: flex;
     justify-content: space-evenly;
     border-bottom-left-radius: 10px;
@@ -210,10 +222,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 8px;
     margin: 5px;
-    width: 35%;
-    margin-left: 10px;
+    width: 37%;
     font-size: 13px;
 }
 .buy{
@@ -231,7 +242,6 @@
 .tuch:hover{
     background-color: #FF0070;
 }
-
 .light_color:hover{
     box-shadow: 0 0 5px black;
     transform: 29s;
@@ -412,54 +422,72 @@
     justify-content: space-evenly;
     font-size: 37px;
     margin-bottom: 10px;
+
 }
 .fecebook{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 70px;
-    width: 70px;
+    font-size: 25px;
+    &:hover{
+        text-shadow: 0 0 2px rgb(255, 240, 240);
+        font-size: 30px;
+        transition: 0.15s;
+    }
 }
 .Instagram{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 70px;
-    width: 70px;
+    font-size: 25px;
+    &:hover{
+        text-shadow: 0 0 2px rgb(255, 240, 240);
+        font-size: 30px;
+        
+    }
 }
 .LinkedIn{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 70px;
-    width: 70px;
+    font-size: 25px;
+    &:hover{
+        text-shadow: 0 0 2px rgb(255, 240, 240);
+        font-size: 30px;   
+    }
+}
+.github{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 25px;
+    &:hover{
+        text-shadow: 0 0 2px rgb(255, 240, 240);
+        font-size: 30px;   
+    }
 }
 .fecebook_m{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 50px;
-    width: 50px;
+   
 }
 .Instagram_m{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 50px;
-    width: 50px;
 }
 .LinkedIn_m{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    height: 50px;
-    width: 50px;
 }
 a{
     text-decoration: none;
