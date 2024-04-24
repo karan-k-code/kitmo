@@ -2,14 +2,11 @@
     z-index: 2;
     margin: 0;
     width: 200px;
-    display: flex;
-    background-color: #e42b2b
-    
+    display: flex;  
 }
 #user_button{
     cursor: pointer;
 }
-
 #user_list{
     z-index: 2;
     position: absolute;
@@ -20,6 +17,7 @@
     width: 150px;
     height: 30px;
     top: 50px;
+    right: 3px;
     display: none;
     box-shadow: 4px 5px 6px rgb(3, 3, 3);
     background-color: #fbfbfb;

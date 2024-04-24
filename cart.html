@@ -9,28 +9,27 @@
     <link rel="stylesheet" href="kitmo.css">
     <link rel="stylesheet" href="hello_ji.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
     <header>
         <!-- nevbar section and -->
         <div class="navbar">
-            <div class="menu-container dark-mode" >
+            <!-- nav-list -->
+            <div class="menu-container" >
                 <ul id="menu-list">
-        <li><div class="dark-mode-toggle">
-    <input type="checkbox" id="dark-mode-toggle-checkbox">
-    <label for="dark-mode-toggle-checkbox"></label>
-</div>
-<div class="mode_line">dark mode</div>
-
-</li>
-        <li><i class="fa-solid fa-location-dot"></i><a href="www.google.com">location</a></li>
-        <li><a href="#">delivery_locations</a></li>
-        </ul>
-    </div>
+                    <li><div class="dark-mode-toggle">
+                        <input type="checkbox" id="dark-mode-toggle-checkbox">
+                        <label for="dark-mode-toggle-checkbox"></label>
+                        </div>
+                        <div class="mode_line">dark mode</div>
+                    </li>
+                    <li><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/">location</a></li>
+                    <li><a href="#">deliver location</a></li>
+                </ul>
+            </div>
     <!-- nav first option -->
-            <div class="nav-option "id="menu-button"><i class="fa-solid fa-bars"></i>
-            
+            <div class="nav-option "id="menu-button">
+                <i class="fa-solid fa-bars"></i>
             </div>
         </ul>
         <!-- kitmo-logo nav second option-->
@@ -53,16 +52,23 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
-        <!-- usar nav four options -->
-        <div class="usar">
-            <a href="login_kitmo.html" class="hii">
-            <i class="fa-regular fa-user"></i>
-            </a>
+        <!-- login sign up -->
+        <div class="user_Container" >
+            <div id="user_list">
+                <div class="button">
+                    <a href="login_kitmo.html" class="login">login</a>               
+                    <a href="#" class="sign_up">sign up</a>
+                </div> 
+            </div>
         </div>
-        <!-- shoping cart nav five options-->
+        <!-- usar nav four options -->
+        <div class="usar" id="user_button">
+            <i class="fa-regular fa-user"></i>
+        </div>
+        <!-- shoping back nav five options-->
         <div class="back_button">
             <a href="index.html">
-            <i class="fa-solid fa-circle-left"></i>
+                <i class="fa-solid fa-circle-left"></i>
             </a>
         </div>
     </div>
