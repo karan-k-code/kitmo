@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+    padding: 0;
+}
+.big_container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.image_container{
+    width: 35%;
+    height: 100%;
+    border: 2px solid black;
+}
+.product_container{
+    width: 40%;
+    height: 100%;
+    border: 2px solid black;
+}
+.delever_detels_container{
+    width: 25%;
+    height: 100%;
+    border: 2px solid black;
+}
