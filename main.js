@@ -25,7 +25,6 @@ let shopItamsData = [{
     desc:"boy jeans so prime",
     img:"jeans.jpeg"
 },{
-    
     id:"cup",
     name:"cup",
     price: 9,
