@@ -432,9 +432,11 @@
     margin-top: 5px;
     font-size: 25px;
     &:hover{
-        text-shadow: 0 0 2px rgb(255, 240, 240);
-        font-size: 30px;
-        transition: 0.15s;
+        &:hover{
+            text-shadow: 0 0 2px rgb(8, 8, 255);
+            font-size: 30px;
+            transition: 0.15s;
+        }
     }
 }
 .Instagram{
@@ -444,9 +446,9 @@
     margin-top: 5px;
     font-size: 25px;
     &:hover{
-        text-shadow: 0 0 2px rgb(255, 240, 240);
+        text-shadow: 0 0 2px rgb(8, 8, 255);
         font-size: 30px;
-        
+        transition: 0.15s;
     }
 }
 .LinkedIn{
@@ -456,8 +458,9 @@
     margin-top: 5px;
     font-size: 25px;
     &:hover{
-        text-shadow: 0 0 2px rgb(255, 240, 240);
-        font-size: 30px;   
+        text-shadow: 0 0 2px rgb(8, 8, 255);
+        font-size: 30px;
+        transition: 0.15s;
     }
 }
 .github{
@@ -467,8 +470,9 @@
     margin-top: 5px;
     font-size: 25px;
     &:hover{
-        text-shadow: 0 0 2px rgb(255, 240, 240);
-        font-size: 30px;   
+        text-shadow: 0 0 2px rgb(8, 8, 255);
+        font-size: 30px;
+        transition: 0.15s;
     }
 }
 .fecebook_m{
