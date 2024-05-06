@@ -11,6 +11,11 @@ body {
     width: 200px;
     height: 100px;
 }
+.l_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 h2{
     margin-top: 0;
 }
