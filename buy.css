@@ -12,11 +12,22 @@
     width: 25%;
     height: 100%;
     display: flex;
-    border: 2px solid black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px black;
 }
 .image_container img{
     width: 80%;
     height: 50%;
+    
+}
+.radio_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+    gap: 5px;
 }
 .product_container{
     width: 40%;
