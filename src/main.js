@@ -5,37 +5,37 @@ let shopItamsData = [{
     name:"headphones",
     price: 22,
     desc:"this is boat headphones",
-    img:"headphone.jpeg"
+    img:"image/headphone.jpeg"
 },{
     id:"goggles",
     name:"goggles",
     price: 9,
     desc:"stylish goggles new year",
-    img:"goggles.jpeg"
+    img:"image/goggles.jpeg"
 },{
     id:"short",
     name:"short",
     price:25,
     desc:"stylish short for man",
-    img:"short.jpeg"
+    img:"image/short.jpeg"
 },{
     id:"jeans",
     name:"jeans",
     price: 30,
     desc:"boy jeans so prime",
-    img:"jeans.jpeg"
+    img:"image/jeans.jpeg"
 },{
     id:"cup",
     name:"cup",
     price: 9,
     desc:"this is stylish cup",
-    img:"cup.jpeg"
+    img:"image/cup.jpeg"
 },{
     id:"iPhone",
     name:"mobile",
     price: 999,
     desc:"iPhone 15 pro max",
-    img:"iphone.jpg"
+    img:"image/iphone.jpg"
 }]
 /* show data to display */
 let generateShop =()=>{
@@ -66,3 +66,8 @@ let generateShop =()=>{
 };
 
 generateShop();
+
+// click 
+
+console.log(shop);
+
