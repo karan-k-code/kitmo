@@ -34,6 +34,7 @@
     justify-content: center;
     height: 40px;
     cursor: pointer;
+    border: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     &:hover {
@@ -80,7 +81,7 @@
     }
 }
 .cart a {
-    color: inherit; /* Isse anchor tag apne parent element ka color inherit karega */
+    color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
   }  
 .amuntcart{
     
