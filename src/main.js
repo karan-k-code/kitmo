@@ -67,7 +67,4 @@ let generateShop =()=>{
 
 generateShop();
 
-// click 
-
-console.log(shop);
 
