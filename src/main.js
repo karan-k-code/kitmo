@@ -66,5 +66,3 @@ let generateShop =()=>{
 };
 
 generateShop();
-
-
