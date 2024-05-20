@@ -1,5 +1,7 @@
+
 let shop =document.getElementById('shop')
 /* product data and image */
+
 let shopItamsData = [{
     id:"headphones",
     name:"headphones",
