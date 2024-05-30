@@ -1,9 +1,17 @@
+const btn = document.querySelectorAll(".light");
+
+
+console.log(btn);
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const darkModeToggle = document.getElementById('dark-mode-toggle-checkbox');
     darkModeToggle.addEventListener('change', function () {
-        const lightb = document.getElementsByClassName("light");
+        // const lightb = document.getElementsByClassName("light");
         document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+        // btn.classList.replace("no_dark", "dark-mode");
+        btn.classList.toggle('dark-mode', darkModeToggle.checked);
+
         
     });
 });
@@ -18,8 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //  darkbtn.addEventListener('onclick' ,console.log("hello"));
 
-let lightbtn = document.querySelector(".menu-container");
+// let btn = document.querySelector(".light")
 
-console.dir(lightbtn);
+// let lightbtn = document.querySelector("#darkbtn");
 
-lightbtn.classList.add('hii');
+// lightbtn.onclick = (e)=>{
+//     console.log(e);
+//     btn.classList.add('dark-mode');
+//     btn.classList.remove('light');
+// }
