@@ -13,11 +13,7 @@
     border:2px solid white;
 }
 
-.colam{
-    height: 13px;
-    background-color: #BBCBCB;
-    position: relative;
-}
+
 /* website postar dile and offer*/
 .hero_box{
     top: -13px;
@@ -60,11 +56,11 @@
 }
 .box{
     height: 380px;
-    background-color:#BBCBCB;
+    
     border-radius: 10px;
 }
 .itam_name{
-    background-color: #BBCBCB;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +103,7 @@
     
 }
 .shop_box{
-    background-color: #BBCBCB;
+    
     height: 40Px;
     display: flex;
     justify-content: space-evenly;
@@ -225,12 +221,12 @@
 .contacts_second_line{
     height: 13px;
     display: flex;
-    background-color: #BBCBCB;
+    
     z-index: 0;
 }
 .cantacts{
     display: flex;
-    background-color: #BBCBCB;
+    
     justify-content: center;
     align-items: center;
     height: 40px;

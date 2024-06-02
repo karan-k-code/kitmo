@@ -1,10 +1,12 @@
 /*navbar*/
 .navbar{
     height: 60px;
-    background-color:#BBCBCB;
     justify-content: space-around;
     align-items: center;
     display: flex;
+}
+.nav_light{
+    background-color:#BBCBCB;
 }
 .nav-option{
     font-size: 25px;
@@ -100,10 +102,14 @@
 }
 .search_secation_panl{
     display: none;
-    background-color:#BBCBCB;
+    
     justify-content: center;
     align-items: center;
     height: 50px;  
+}
+.colam{
+    height: 13px;
+    position: relative;
 }
 @media (max-width: 700px){
     .navbar{

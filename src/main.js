@@ -44,8 +44,8 @@ let generateShop =()=>{
     return (shop.innerHTML= shopItamsData.map((x)=>{
         let { id, name, price, desc, img } =x;
         return  `
-        <div class="box light_color" id="${id}">
-            <div class="itam_name">
+        <div class="box light_color dark_box nav_light" id="${id}">
+            <div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
             </div>
             <div class="itam_img" style="background-image:url('${img}')">
@@ -58,7 +58,7 @@ let generateShop =()=>{
                     ${desc}
                 </div>
             </div>
-            <div class="shop_box" >
+            <div class="shop_box dark_box nav_light" >
                 <div class="add_cart light_color" >
                 <b>ADD CART</b></div>
                 <div class="buy light_color" ><b>BUY</b></div>
