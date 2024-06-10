@@ -8,14 +8,14 @@
     justify-content: center;
     margin: 7px 0px 0 10px;
 }
+/* image container */
 .image_container{
     width: 25%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 4px black;
+    align-items: center;   
 }
 .image_container img{
     width: 80%;
@@ -29,11 +29,13 @@
     margin: 10px 0px 10px 0px;
     gap: 5px;
 }
+/* product detels container */
 .product_container{
     width: 40%;
     height: 100%;
     border: 2px solid black;
 }
+/* deleve detels and time detels  */
 .delever_detels_container{
     width: 25%;
     height: 100%;

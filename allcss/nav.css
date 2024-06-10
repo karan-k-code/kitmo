@@ -188,3 +188,13 @@
         }
     }
 }
+
+.colam_top{
+    height: 13px;
+    width: 100%;
+    
+    top: -13px;
+    position: relative;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
+}

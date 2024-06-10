@@ -11,21 +11,23 @@
         <link rel="stylesheet" href="allcss/user.css">
         <link rel="stylesheet" href="allcss/nav.css">
     </head>
-    <body>
+    <body class="light">
         <header>
             <!-- nevbar section and -->
-            <div class="navbar">
+            <div class="navbar dark_box nav_light">
                 <!-- nav-list -->
                 <div class="menu-container" >
-                    <ul id="menu-list">
-                        <li><div class="dark-mode-toggle">
-                            <input type="checkbox" id="dark-mode-toggle-checkbox">
-                            <label for="dark-mode-toggle-checkbox"></label>
+                    <ul id="menu-list" class="light no_dark ">
+                        <li class="option_h">
+                            <div class="dark-mode-toggle">
+                                <input type="checkbox" id="dark-mode-toggle-checkbox">
+                                <label for="dark-mode-toggle-checkbox"></label>
                             </div>
                             <div class="mode_line">dark mode</div>
                         </li>
-                        <li><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/">location</a></li>
-                        <li><a href="#">deliver location</a></li>
+                        <li class="option_h"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/"> location</a></li>
+                        <li class="option_h"><a href="#">deliver location</a></li>
+                        <li class="option_h"><a href="#">About</a></li>
                     </ul>
                 </div>
                 <!-- nav first option -->
@@ -53,11 +55,11 @@
                     </div>
                 </div>
                 <!-- login sign up -->
-                <div class="user_Container" >
-                    <div id="user_list">
+                <div class="user_Containe" >
+                    <div id="user_list" class="light no_dark">
                         <div class="button">
                             <a href="login_kitmo.html" class="login">login</a>               
-                            <a href="#" class="sign_up">sign up</a>
+                            <a href="signup.html" class="sign_up">sign up</a>
                         </div> 
                     </div>
                 </div>
@@ -74,7 +76,7 @@
                 </div>
             </div>
             <!-- small display search_secation_panl -->
-            <div class="search_secation_panl">
+            <div class="search_secation_panl dark_box nav_light">
                 <select class="search-select border">
                     <option>ALL</option>
                     <option>electronick</option>
@@ -89,7 +91,10 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
+            <div class="colam dark_box nav_light"></div>
+            <div class="colam_top light no_dark"></div>
         </header>
+        
         <div class="big_container" id="big_container">
             <div class="image_container">
                 <img src="image/iphone.jpg" alt="">
