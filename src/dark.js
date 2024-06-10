@@ -5,6 +5,7 @@ darkModeToggle.addEventListener("change", function() {
     let buttons = document.querySelectorAll(".light");
     let nav_bar = document.querySelectorAll(".dark_box");
     let opt_dark = document.querySelectorAll(".option_b");
+    let box_shadow = document.querySelectorAll(".box_shadow");
     // Iterate over each button and add the 'dark-mode' class
     buttons.forEach(function(btn) {
         if (darkModeToggle.checked) {
@@ -33,5 +34,14 @@ darkModeToggle.addEventListener("change", function() {
             btn.classList.add("option_h");
         }
     });
+    box_shadow.forEach(function(btn){
+        if (darkModeToggle.checked){
+            // btn.classList.remove("box_no_dark_shadow");
+            btn.classList.add("box_dark_shadow");
+        }else{
+            btn.classList.add("box_no_dark_shadow");
+            btn.classList.remove("box_dark_shadow");
+        }
+    })
 
 });

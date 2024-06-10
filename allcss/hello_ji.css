@@ -21,12 +21,17 @@ a{
     position: absolute;
     top: 100%;
     left: 0;
-    display: none;
-    box-shadow: 4px 5px 6px rgb(3, 3, 3);
+    display: none;    
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
+/* box shadow dark mode and no dark mode */
+.box_no_dark_shadow{
+    box-shadow: 4px 5px 6px rgb(3, 3, 3);
+}
+.box_dark_shadow{
+    box-shadow: 4px 5px 6px rgb(255, 255, 255);
+}
 #menu-list li {
     padding: 10px;
     display: flex;

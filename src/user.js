@@ -12,5 +12,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-let hii ="hello";
