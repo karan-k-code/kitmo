@@ -12,37 +12,77 @@
         <link rel="stylesheet" href="allcss/hello_ji.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
-    <body>
+    <body class="light">
         <header>
             <!-- nevbar section and -->
-            <div class="navbar">
+            <div class="navbar dark_box nav_light">
                 <!-- nav-list -->
                 <div class="menu-container" >
-                    <ul id="menu-list">
-                        <li><div class="dark-mode-toggle">
-                            <input type="checkbox" id="dark-mode-toggle-checkbox">
-                            <label for="dark-mode-toggle-checkbox"></label>
+                    <ul id="menu-list" class="light no_dark ">
+                        <!-- dark mode button -->
+                        <li class="option_h">
+                            <div class="dark-mode-toggle">
+                                <input type="checkbox" id="dark-mode-toggle-checkbox">
+                                <label for="dark-mode-toggle-checkbox"></label>
                             </div>
                             <div class="mode_line">dark mode</div>
                         </li>
-                        <li><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/">location</a></li>
-                        <li><a href="#">deliver location</a></li>
+                        <!-- location -->
+                        <li class="option_h"><i class="fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/"> location</a></li>
+                        <li class="option_h"><a href="#">deliver location</a></li>
+                        <!-- about button -->
+                        <li class="option_h"><a href="#">About</a></li>
                     </ul>
                 </div>
                 <!-- nav first option -->
                 <div class="nav-option "id="menu-button">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-            </ul>
-            <!-- kitmo-logo nav second option-->
-            <div class="kitmo-logo">
-                <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
+                <!-- kitmo-logo nav second option-->
+                <div class="kitmo-logo">
+                    <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
+                </div>
+                <!-- search-secation nav third option-->
+                <div class="search-secation">
+                    <select class="search-select border">
+                        <option>ALL</option>
+                        <option>electronics</option>
+                        <option>genral</option>
+                        <option>medical</option>
+                        <option>beautti</option>
+                    </select>
+                    <!-- search-input -->
+                    <input placeholder="search kitmo" class="search-input">
+                    <!-- search_icon -->
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <!-- login sign up -->
+                <div class="user_Containe" >
+                    <div id="user_list" class="light">
+                        <div class="button">
+                            <a href="login_kitmo.html" class="login">login</a>               
+                            <a href="signup.html" class="sign_up">sign up</a>
+                        </div> 
+                    </div>
+                </div>
+                <!-- usar nav four options -->
+                <div class="usar" id="user_button">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <!-- back button-->
+                <div class="cart">
+                    <a href="index.html">
+                        <i class="fa-solid fa-circle-left"></i>
+                    </a>
+                </div>
             </div>
-            <!-- search-secation nav third option-->
-            <div class="search-secation">
+            <!-- small display search_secation_panl -->
+            <div class="search_secation_panl dark_box nav_light">
                 <select class="search-select border">
                     <option>ALL</option>
-                    <option>electronics</option>
+                    <option>electronick</option>
                     <option>genral</option>
                     <option>medical</option>
                     <option>beautti</option>
@@ -54,59 +94,26 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <!-- login sign up -->
-            <div class="user_Container" >
-                <div id="user_list">
-                    <div class="button">
-                        <a href="login_kitmo.html" class="login">login</a>               
-                        <a href="#" class="sign_up">sign up</a>
-                    </div> 
-                </div>
+            <div class="colam dark_box nav_light"></div>
+        </header>
+        <main>
+            <div class="add_cart1"><H1>Add cart</H1></div>
+            <div class="cart_image">
+                <img src="image/cart_image.png" alt="">
             </div>
-            <!-- usar nav four options -->
-            <div class="usar" id="user_button">
-                <i class="fa-regular fa-user"></i>
+            <div class="todaydeals">
+                <h2>Today's Deals</h2>
+                <h2>shop now</h2>
             </div>
-            <!-- shoping back nav five options-->
-            <div class="cart">
-                <a href="index.html">
-                    <i class="fa-solid fa-circle-left"></i>
-                </a>
-            </div>
-        </div>
-        <!-- small display search_secation_panl -->
-        <div class="search_secation_panl">
-            <select class="search-select border">
-                <option>ALL</option>
-                <option>electronick</option>
-                <option>genral</option>
-                <option>medical</option>
-                <option>beautti</option>
-            </select>
-            <!-- search-input -->
-            <input placeholder="search kitmo" class="search-input">
-            <!-- search_icon -->
-            <div class="search-icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>
-        <div class="colam"></div>
-    </header>
-    <div class="add_cart1"><H1>Add cart</H1></div>
-        <div class="cart_image">
-            <img src="image/cart_image.png" alt="">
-        </div>
-        <div class="todaydeals">
-            <h2>Today's Deals</h2>
-            <h2>shop now</h2>
-        </div>
-        <!-- THIS IS ITAM box -->
-        <div class="cantenr" id="shop">
+            <!-- THIS IS ITAM box -->
+            <div class="cantenr" id="shop">
+        </main>
         <!--java script file link-->
         <script src="src/dark.js"></script>
+        <script src="src/main.js"></script>
         <script src="src/hello_ji.js"></script>
-        
         <script type="module" src="src/cart.js"></script>
         <script src="src/user.js"></script>
+        
     </body>
 </html>
