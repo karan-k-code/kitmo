@@ -27,22 +27,20 @@ a{
 }
 /* box shadow dark mode and no dark mode */
 .box_no_dark_shadow{
-    box-shadow: 4px 5px 6px rgb(3, 3, 3);
+    box-shadow: 4px 5px 6px rgb(0, 0, 0);
 }
 .box_dark_shadow{
-    box-shadow: 4px 5px 6px rgb(255, 255, 255);
+    box-shadow: 3px 2px 4px rgb(255, 255, 255);
 }
 #menu-list li {
     padding: 10px;
-    display: flex;
-    
-    
+    display: flex;   
 }
 .option{
     border: 2px solid transparent;
 }
 .option_b:hover{
-    box-shadow: 0 0 4px rgb(3, 3, 3);
+    box-shadow: 0 0 4px rgb(0, 0, 0);
     border-radius: 7px;
 }
 .dark_option{
