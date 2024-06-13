@@ -126,10 +126,10 @@
 .tuch:hover{
     background-color: #FF0070;
 }
-.light_color:hover{
+/* .light_color:hover{
     box-shadow: 0 0 5px black;
     transform: 29s;
-}
+} */
 .white_color:hover{
     box-shadow: 0 0 10px red;
 }
@@ -208,13 +208,11 @@
 }
 .contacts_second_line{
     height: 13px;
-    display: flex;
-    
+    display: flex;    
     z-index: 0;
 }
 .cantacts{
-    display: flex;
-    
+    display: flex;    
     justify-content: center;
     align-items: center;
     height: 40px;
