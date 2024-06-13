@@ -24,7 +24,6 @@ h2{
     display: flex;    
 }
 .login-container {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.888);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,4 +63,25 @@ button {
     align-items: center;
     justify-content: space-evenly;
 
+}
+.option_b::marker{
+    content: "";
+}
+.option_b{
+    display: flex;
+}
+.mode_line{
+    padding-left: 4px;
+}
+/* dark mode box shadow */
+.box_shadow_light{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.888);
+}
+.darkmode_box_shadow{
+    box-shadow: 0 0 10px rgba(255, 255, 255 );
+}
+.btn_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
 }

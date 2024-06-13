@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign_up</title>
     <link rel="stylesheet" href="allcss/singup.css">
+    <link rel="stylesheet" href="allcss/dark.css">
 </head>
-<body>
+<body class="light">
+    <li class="option_b">
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle-checkbox">
+            <label for="dark-mode-toggle-checkbox"></label>
+        </div>
+        <div class="mode_line">dark mode</div>
+    </li>
     <div class="kitmo-logo">
         <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
     </div>
     <div class="l_row">
-        <div class="login-container">
+        <div class="login-container shadow_darkmode box_shadow_light">
             <h2>sign up</h2>
             <form id="login-form" action="index.html">
                 <div class="input_container">
@@ -30,9 +38,14 @@
                     <label for="password" class="password"><b>password</b>
                     <input type="password" id="password" name="password" placeholder="Enter your password"></label>
                 </div>
-                <button type="submit">NEXT</button>
+                <div class="btn_container">
+                    <button type="submit">LOGIN IN</button>
+                    <button type="submit">NEXT</button>
+                </div>
             </form>
         </div>
     </div>
+    <!-- src file -->
+     <script src="src/dark.js"></script>
 </body>
 </html>
