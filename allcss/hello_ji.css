@@ -36,6 +36,9 @@ a{
     padding: 10px;
     display: flex;   
 }
+#location_p{
+    padding-left: 4px;
+}
 .option{
     border: 2px solid transparent;
 }
