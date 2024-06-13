@@ -80,3 +80,8 @@ button {
     justify-content: space-between;
     padding: 0 20px 0 20px;
 }
+.h_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
