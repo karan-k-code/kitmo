@@ -1,4 +1,3 @@
-
 const darkModeToggle = document.getElementById('dark-mode-toggle-checkbox');
 
 darkModeToggle.addEventListener("change", function() {
