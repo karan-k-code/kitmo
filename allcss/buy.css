@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     font-family: Arial;   
 }
@@ -18,8 +18,7 @@
 }
 .image_container img{
     width: 80%;
-    height: 50%;
-    
+    height: 50%;   
 }
 .radio_img{
     display: flex;
@@ -32,14 +31,84 @@
 .product_container{
     width: 40%;
     height: 100%;
-    border: 2px solid black;
+    font-size: 24px;
+    font-weight: bold;
 }
 /* deleve detels and time detels  */
 .delever_detels_container{
     width: 25%;
     height: 100%;
-    border: 2px solid black;
+    font-size: 20px;
 }
 a{
     text-decoration: none;
+}
+
+/* 1140px */
+@media (max-width: 1140px){
+    
+}
+
+/* 1000px */
+@media (max-width: 1000px){
+    
+}
+/*pad screen */
+@media (max-width: 781px){
+    
+}
+/* mobile screen size */
+@media (max-width: 590px){
+    .big_container{
+        flex-direction: column;
+        margin: 0px 0px 0px 0px;
+    }
+    /* image container */
+    .image_container{
+        width: 100%;   
+    }
+    /* producat image */
+    .image_container img{
+        width: 60%;
+        height: 50%;   
+    }
+    /* product detels container */
+    .product_container{
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    /* deleve detels and time detels  */
+    .delever_detels_container{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+
+}
+
+/* mobile screen size 382 */
+@media (max-width: 382px){
+    /* image container */
+    .image_container{
+        width: 100%;   
+    }
+    /* producat image */
+    .image_container img{
+        width: 60%;
+        height: 50%;   
+    }
+    /* product detels container */
+    .product_container{
+        width: 100%;
+    }
+    /* deleve detels and time detels  */
+    .delever_detels_container{
+        width: 100%;
+    }
 }
