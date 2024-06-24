@@ -4,8 +4,7 @@
 }
 .big_container{
     display: flex;
-    justify-content: center;
-    margin: 7px 0px 0 10px;
+    justify-content: space-between;
 }
 /* image container */
 .image_container{
@@ -34,7 +33,7 @@
     font-size: 24px;
     font-weight: bold;
 }
-/* deleve detels and time detels  */
+/* delever detels and time detels  */
 .delever_detels_container{
     width: 25%;
     height: 100%;
@@ -61,7 +60,6 @@ a{
 @media (max-width: 590px){
     .big_container{
         flex-direction: column;
-        margin: 0px 0px 0px 0px;
     }
     /* image container */
     .image_container{
@@ -88,7 +86,6 @@ a{
         margin-left: 10px;
         margin-top: 10px;
     }
-
 
 }
 
