@@ -5,17 +5,17 @@
 // console.log(shopItamsData);
 
 import{shopItamsData} from './main.js';
-console.log(shopItamsData);
+// console.log(shopItamsData);
 
 let buy = document.querySelectorAll(".buy");
 let add_cart = document.querySelectorAll(".add_cart");
 
-// add_cart.forEach(function(id){
-//     id.addEventListener("click", function(){
-//         console.log("add cart");
-//         console.log(id);
-//     });
-// })
+add_cart.forEach(function(id){
+    id.addEventListener("click", function(){
+        console.log("add cart");
+        console.log(id);
+    });
+})
 
 // console.log(buy);
 // click cantenr
@@ -89,13 +89,12 @@ add_cart.onclick = () =>{
                 {
                     let cart = JSON.parse(localStorage.getItem("cart"));
                     if(cart){
-                        cart_no.innerHTML = cart.length;
-                        }else{
-                            cart_no.innerHTML = 0;
-                        }
+                    cart_no.innerHTML = cart.length;
+                    }else{
+                        cart_no.innerHTML = 0;
+                    }
                 }
-                console.log("helo");
-                
+                console.log("helo"); 
             }
         })
     }
