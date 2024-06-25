@@ -40,7 +40,7 @@ let shopItamsData = [{
     img:"image/iphone.jpg"
 }]
 /* show data to display */
-let generateShop =()=>{
+    let generateShop =()=>{
     return (shop.innerHTML= shopItamsData.map((x)=>{
         let { id, name, price, desc, img } =x;
         return  `
@@ -59,12 +59,14 @@ let generateShop =()=>{
                 </div>
             </div>
             <div class="shop_box dark_box nav_light" >
-                <div class="add_cart option_b" >
+                <div class="add_cart option_b" id="${id}">
                 <b>ADD CART</b></div>
-                <div class="buy option_b" ><b>BUY</b></div>
+                <div class="buy option_b" id="${id}" ><b>BUY</b></div>
             </div>
         </div>`
     }).join(""));
 };
 
 generateShop();
+
+export{shopItamsData};
