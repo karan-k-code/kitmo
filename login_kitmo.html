@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Login kitmo</title>
-    <link rel="stylesheet" href="allcss/login_kitmo.css">
-    <link rel="stylesheet" href="allcss/dark.css">
-</head>
-<body class="light">
+    <link rel="stylesheet" href="allcss/login_kitmo.css" />
+    <link rel="stylesheet" href="allcss/dark.css" />
+  </head>
+  <body class="light">
     <div class="h_container">
-        <li class="option_b">
-            <div class="dark-mode-toggle">
-                <input type="checkbox" id="dark-mode-toggle-checkbox">
-                <label for="dark-mode-toggle-checkbox"></label>
-            </div>
-            <div class="mode_line">dark mode</div>
-        </li>
-        <div class="help">help</div>
+      <li class="option_b">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-toggle-checkbox" />
+          <label for="dark-mode-toggle-checkbox"></label>
+        </div>
+        <div class="mode_line">dark mode</div>
+      </li>
+      <div class="help">help</div>
     </div>
-<div class="kitmo-logo">
-    <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
-</div>
-<div class="l_row">   
-    <div class="login-container shadow_darkmode box_shadow_light ">
+    <div class="kitmo-logo">
+      <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
+    </div>
+    <div class="l_row">
+      <div class="login-container shadow_darkmode box_shadow_light">
         <h2>Login</h2>
         <form id="login-form" action="index.html">
-            <div class="input_container">
-                <label for="mobile"><b>Mobile Number</b>
-                <input type="mobile" id="mobile" name="mobile" placeholder="Enter your mobile number" required></label>
-                <label for="password" class="password"><b>password</b>
-                <input type="password" id="password" name="password" placeholder="Enter your password"></label>
-            </div>
-            <div class="btn_container">
-                <button type="submit">LOGIN UP</button>
-                <button type="submit">NEXT</button>
-            </div>
+          <div class="input_container">
+            <label for="mobile"
+              ><b>Mobile Number</b>
+              <input
+                type="mobile"
+                id="mobile"
+                name="mobile"
+                placeholder="Enter your mobile number"
+                required
+            /></label>
+            <label for="password" class="password"
+              ><b>password</b>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+            /></label>
+          </div>
+          <div class="btn_container">
+            <button type="submit">LOGIN UP</button>
+            <button type="submit">NEXT</button>
+          </div>
         </form>
+      </div>
     </div>
-</div>
-<!-- src file -->
-<script src="src/dark.js"></script>
-</body>
+    <!-- src file -->
+    <script src="src/dark.js"></script>
+  </body>
 </html>

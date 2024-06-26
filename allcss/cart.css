@@ -1,31 +1,135 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
+  font-family: Arial;
 }
-.back_button{
-    font-size: 25px;
+.back_button {
+  font-size: 25px;
 }
-.add_cart1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 10px;
+.add_cart1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
 }
-.cart_image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img{
-        width: 50%;
-        height: 50%;
-    }
+.cart_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 50%;
+    height: 50%;
+  }
 }
-.todaydeals{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;   
+.todaydeals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.big_cart_cantenr {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+/* cart cantenr */
+.cart_cantenr {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 10px;
+}
+/* !cart box */
+.cart_box {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* cart itam image */
+.image_cart {
+  border: 1px solid black;
+  width: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  justify-content: center;
+}
+
+/* title itam */
+
+.title_itam {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 6px;
+  padding: 10px;
+}
+.itam_dec {
+  margin-top: 10px;
+  padding: 4px;
+}
+/* price itam */
+.price_itam {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 20%;
+}
+
+.quantity_box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.decremet {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.increment {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+/* !total price */
+.total_price {
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  margin-top: 6px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 6px;
+}
+
+/* !chekout */
+.chekout {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 20%;
+  height: 400px;
+  background-color: #f5fd1f;
+  border-radius: 10px;
 }

@@ -1,49 +1,56 @@
-
-let shop =document.getElementById('shop')
+let shop = document.getElementById("shop");
 /* product data and image */
 
-let shopItamsData = [{
-    id:"headphones",
-    name:"headphones",
+let shopItamsData = [
+  {
+    id: "headphones",
+    name: "headphones",
     price: 22,
-    desc:"this is boat headphones",
-    img:"image/headphone.jpeg"
-},{
-    id:"goggles",
-    name:"goggles",
+    desc: "this is boat headphones",
+    img: "image/headphone.jpeg",
+  },
+  {
+    id: "goggles",
+    name: "goggles",
     price: 9,
-    desc:"stylish goggles new year",
-    img:"image/goggles.jpeg"
-},{
-    id:"short",
-    name:"short",
-    price:25,
-    desc:"stylish short for man",
-    img:"image/short.jpeg"
-},{
-    id:"jeans",
-    name:"jeans",
+    desc: "stylish goggles new year",
+    img: "image/goggles.jpeg",
+  },
+  {
+    id: "short",
+    name: "short",
+    price: 25,
+    desc: "stylish short for man",
+    img: "image/short.jpeg",
+  },
+  {
+    id: "jeans",
+    name: "jeans",
     price: 30,
-    desc:"boy jeans so prime",
-    img:"image/jeans.jpeg"
-},{
-    id:"cup",
-    name:"cup",
+    desc: "boy jeans so prime",
+    img: "image/jeans.jpeg",
+  },
+  {
+    id: "cup",
+    name: "cup",
     price: 9,
-    desc:"this is stylish cup",
-    img:"image/cup.jpeg"
-},{
-    id:"iPhone",
-    name:"mobile",
+    desc: "this is stylish cup",
+    img: "image/cup.jpeg",
+  },
+  {
+    id: "iPhone",
+    name: "mobile",
     price: 999,
-    desc:"iPhone 15 pro max",
-    img:"image/iphone.jpg"
-}]
+    desc: "iPhone 15 pro max",
+    img: "image/iphone.jpg",
+  },
+];
 /* show data to display */
-    let generateShop =()=>{
-    return (shop.innerHTML= shopItamsData.map((x)=>{
-        let { id, name, price, desc, img } =x;
-        return  `
+let generateShop = () => {
+  return (shop.innerHTML = shopItamsData
+    .map((x) => {
+      let { id, name, price, desc, img } = x;
+      return `
         <div class="box option_b dark_box nav_light" id="${id}">
             <div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
@@ -63,10 +70,11 @@ let shopItamsData = [{
                 <b>ADD CART</b></div>
                 <div class="buy option_b" id="${id}" ><b>BUY</b></div>
             </div>
-        </div>`
-    }).join(""));
+        </div>`;
+    })
+    .join(""));
 };
 
 generateShop();
 
-export{shopItamsData};
+export { shopItamsData };

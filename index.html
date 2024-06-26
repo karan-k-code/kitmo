@@ -1,197 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>kitmo shop</title>
-        <!--css file link-->
-        <link rel="stylesheet" href="allcss/hello_ji.css" title="" type="" />
-        <link rel="stylesheet" href="allcss/kitmo.css" title="" type="" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="allcss/dark.css">
-        <link rel="stylesheet" href="allcss/user.css">
-        <link rel="stylesheet" href="allcss/nav.css">
-        <link rel="stylesheet" href="allcss/feedback.css">
-    </head>
-    <body class="light">
-        <header>
-            <!-- nevbar section and -->
-            <div class="navbar dark_box nav_light">
-                <!-- nav-list -->
-                <div class="menu-container" >
-                    <ul id="menu-list" class="box_shadow box_no_dark_shadow light no_dark ">
-                        <li class="option_b">
-                            <div class="dark-mode-toggle">
-                                <input type="checkbox" id="dark-mode-toggle-checkbox">
-                                <label for="dark-mode-toggle-checkbox"></label>
-                            </div>
-                            <div class="mode_line">dark mode</div>
-                        </li>
-                        <li class="option_b"><i class="fa-solid fa-location-dot"></i><a id="location_p" href="https://www.google.com/maps/"> location</a></li>
-                        <li class="option_b"><a href="#">deliver location</a></li>
-                        <li class="option_b"><a href="#">About</a></li>
-                        <li class="option_b"><a href="help.html">Help</a></li>
-                    </ul>
-                </div>
-                <!-- nav first option -->
-                <div class="nav-option "id="menu-button">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <!-- kitmo-logo nav second option-->
-                <div class="kitmo-logo">
-                    <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
-                </div>
-                <!-- search-secation nav third option-->
-                <div class="search-secation">
-                    <select class="search-select border">
-                        <option>ALL</option>
-                        <option>electronics</option>
-                        <option>genral</option>
-                        <option>medical</option>
-                        <option>beautti</option>
-                    </select>
-                    <!-- search-input -->
-                    <input placeholder="search kitmo" class="search-input">
-                    <!-- search_icon -->
-                    <div class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div>
-                <!-- login sign up -->
-                <div class="user_Containe" >
-                    <div id="user_list" class="box_shadow box_no_dark_shadow light no_dark">
-                        <div class="button">
-                            <a href="login_kitmo.html" class="login">login</a>               
-                            <a href="signup.html" class="sign_up">sign up</a>
-                        </div> 
-                    </div>
-                </div>
-                <!-- usar nav four options -->
-                <div class="usar" id="user_button">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <!-- shoping cart nav five options-->
-                <div class="cart">
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <div class="amuntcart" id="cart_no">
-                        
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kitmo shop</title>
+    <!--css file link-->
+    <link rel="stylesheet" href="allcss/hello_ji.css" title="" type="" />
+    <link rel="stylesheet" href="allcss/kitmo.css" title="" type="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="allcss/dark.css" />
+    <link rel="stylesheet" href="allcss/user.css" />
+    <link rel="stylesheet" href="allcss/nav.css" />
+    <link rel="stylesheet" href="allcss/feedback.css" />
+  </head>
+  <body class="light">
+    <header>
+      <!-- nevbar section and -->
+      <div class="navbar dark_box nav_light">
+        <!-- nav-list -->
+        <div class="menu-container">
+          <ul
+            id="menu-list"
+            class="box_shadow box_no_dark_shadow light no_dark"
+          >
+            <li class="option_b">
+              <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle-checkbox" />
+                <label for="dark-mode-toggle-checkbox"></label>
+              </div>
+              <div class="mode_line">dark mode</div>
+            </li>
+            <li class="option_b">
+              <i class="fa-solid fa-location-dot"></i
+              ><a id="location_p" href="https://www.google.com/maps/">
+                location</a
+              >
+            </li>
+            <li class="option_b"><a href="#">deliver location</a></li>
+            <li class="option_b"><a href="#">About</a></li>
+            <li class="option_b"><a href="help.html">Help</a></li>
+          </ul>
+        </div>
+        <!-- nav first option -->
+        <div class="nav-option" id="menu-button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <!-- kitmo-logo nav second option-->
+        <div class="kitmo-logo">
+          <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
+        </div>
+        <!-- search-secation nav third option-->
+        <div class="search-secation">
+          <select class="search-select border">
+            <option>ALL</option>
+            <option>electronics</option>
+            <option>genral</option>
+            <option>medical</option>
+            <option>beautti</option>
+          </select>
+          <!-- search-input -->
+          <input placeholder="search kitmo" class="search-input" />
+          <!-- search_icon -->
+          <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <!-- login sign up -->
+        <div class="user_Containe">
+          <div
+            id="user_list"
+            class="box_shadow box_no_dark_shadow light no_dark"
+          >
+            <div class="button">
+              <a href="login_kitmo.html" class="login">login</a>
+              <a href="signup.html" class="sign_up">sign up</a>
             </div>
-            <!-- small display search_secation_panl -->
-            <div class="search_secation_panl dark_box nav_light">
-                <select class="search-select border">
-                    <option>ALL</option>
-                    <option>electronick</option>
-                    <option>genral</option>
-                    <option>medical</option>
-                    <option>beautti</option>
-                </select>
-                <!-- search-input -->
-                <input placeholder="search kitmo" class="search-input">
-                <!-- search_icon -->
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-            <div class="colam dark_box nav_light"></div>
-        </header>
-        <!-- main -->
-        <main>
-            <!-- hero section website postar dile and offer -->
-            <div class="hero_box" style="background-image:url('image/hero_image.jpg');"></div>
-            <div class="colam_cantenr light"></div>
-            <!-- THIS IS ITAM box -->
-            <div class="cantenr" id="shop"></div>
-        </main>
-        <footer>
-            <!-- this is a website footer -->
-             <div class="contacts_line light"></div>
-             <div class="contacts_second_line dark_box nav_light" ></div>
-            <div class="cantacts dark_box nav_light">
-                <h3> contcts </h3>
-            </div>
-            <div class="contacts_second_line dark_box nav_light" ></div>
-            <div class="contacts_bottom_line light"></div>
-            <!--profile box-->
-            <div class="contacts_box">
-                <div class="profile_img" style="background-image:url('image/owner_image.png')"></div>
-                <div class="midea">
-                    <div class="twitter fecebook">
-                        <a href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </div>
-                    <div class="fecebook">
-                        <a href="https://www.facebook.com/share/g6CULxzUt6DLVopG/?mibextid=qi2Omg">
-                        <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
-                    <div class="Instagram">
-                        <a href="https://www.instagram.com/karan_kgr/">
-                        <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="LinkedIn">
-                        <a href="https://www.linkedin.com/in/karan-kumar-306a27273">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </div>
-                    <div class="github">
-                        <a href="https://github.com/india-software-karan">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>    
-            </div>
-            <!-- contacts_box midea_mobile -->
-            <div class="contacts_box_mobile">
-                <div class="profile">
-                    <div class="profile_img" style="background-image:url('image/owner_image.png')"></div>
-                </div>
-            </div>
-            <div class="midea_mobile">
-                <div class="fecebook_m">
-                    <a href="https://www.facebook.com/share/g6CULxzUt6DLVopG/?mibextid=qi2Omg">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    </div>
-                <div class="Instagram_m">
-                    <a href="https://www.instagram.com/karan_kgr/">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    </div>
-                <div class="LinkedIn_m round">
-                    <a href="https://www.linkedin.com/in/karan-kumar-306a27273">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    </div>
-                <div class="twitter github_m">
-                    <a href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                    </div>
-                <div class="github_m">
-                    <a href="https://github.com/india-software-karan">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                   </div>
-            </div>
-            <!-- feedback -->
-             <div class="feedback">
-                <a href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0">
-                    <button class="option_b">feedback</button>
-                </a>
-             </div>
-
-        </footer>
-        <!--java script file link-->
-        <script src="src/dark.js"></script>
-        <script type="module" src="src/main.js"></script>
-        <script src="src/hello_ji.js"></script>
-        <script src="src/user.js"></script>   
-        <script src="src/buy.js"></script>           
-        <script type="module" src="src/cart.js"></script>           
-    </body>
+          </div>
+        </div>
+        <!-- usar nav four options -->
+        <div class="usar" id="user_button">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <!-- shoping cart nav five options-->
+        <div class="cart">
+          <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <div class="amuntcart" id="cart_no">0</div>
+        </div>
+      </div>
+      <!-- small display search_secation_panl -->
+      <div class="search_secation_panl dark_box nav_light">
+        <select class="search-select border">
+          <option>ALL</option>
+          <option>electronick</option>
+          <option>genral</option>
+          <option>medical</option>
+          <option>beautti</option>
+        </select>
+        <!-- search-input -->
+        <input placeholder="search kitmo" class="search-input" />
+        <!-- search_icon -->
+        <div class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="colam dark_box nav_light"></div>
+    </header>
+    <!-- main -->
+    <main>
+      <!-- hero section website postar dile and offer -->
+      <div
+        class="hero_box"
+        style="background-image: url('image/hero_image.jpg')"
+      ></div>
+      <div class="colam_cantenr light"></div>
+      <!-- THIS IS ITAM box -->
+      <div class="cantenr" id="shop"></div>
+    </main>
+    <footer>
+      <!-- this is a website footer -->
+      <div class="contacts_line light"></div>
+      <div class="contacts_second_line dark_box nav_light"></div>
+      <div class="cantacts dark_box nav_light">
+        <h3>contcts</h3>
+      </div>
+      <div class="contacts_second_line dark_box nav_light"></div>
+      <div class="contacts_bottom_line light"></div>
+      <!--profile box-->
+      <div class="contacts_box">
+        <div
+          class="profile_img"
+          style="background-image: url('image/owner_image.png')"
+        ></div>
+        <div class="midea">
+          <div class="twitter fecebook">
+            <a href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+          <div class="fecebook">
+            <a
+              href="https://www.facebook.com/share/g6CULxzUt6DLVopG/?mibextid=qi2Omg"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+          <div class="Instagram">
+            <a href="https://www.instagram.com/karan_kgr/">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+          <div class="LinkedIn">
+            <a href="https://www.linkedin.com/in/karan-kumar-306a27273">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+          <div class="github">
+            <a href="https://github.com/india-software-karan">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- contacts_box midea_mobile -->
+      <div class="contacts_box_mobile">
+        <div class="profile">
+          <div
+            class="profile_img"
+            style="background-image: url('image/owner_image.png')"
+          ></div>
+        </div>
+      </div>
+      <div class="midea_mobile">
+        <div class="fecebook_m">
+          <a
+            href="https://www.facebook.com/share/g6CULxzUt6DLVopG/?mibextid=qi2Omg"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+        <div class="Instagram_m">
+          <a href="https://www.instagram.com/karan_kgr/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <div class="LinkedIn_m round">
+          <a href="https://www.linkedin.com/in/karan-kumar-306a27273">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <div class="twitter github_m">
+          <a href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </div>
+        <div class="github_m">
+          <a href="https://github.com/india-software-karan">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <!-- feedback -->
+      <div class="feedback">
+        <a
+          href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0"
+        >
+          <button class="option_b">feedback</button>
+        </a>
+      </div>
+    </footer>
+    <!--java script file link-->
+    <script src="src/dark.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <script src="src/hello_ji.js"></script>
+    <script src="src/user.js"></script>
+    <script src="src/buy.js"></script>
+    <script type="module" src="src/cart.js"></script>
+  </body>
 </html>

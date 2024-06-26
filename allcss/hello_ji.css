@@ -1,65 +1,65 @@
 .menu-container {
-    position: absolute;
-    z-index: 1;
-    margin: 0;
-    left: 0px;
-    top: 50px;
-    width: 200px;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  left: 0px;
+  top: 50px;
+  width: 200px;
 }
-a{
-    color: inherit;
+a {
+  color: inherit;
 }
 
 #menu-button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #menu-list {
-    list-style-type: block;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;    
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  list-style-type: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 /* box shadow dark mode and no dark mode */
-.box_no_dark_shadow{
-    box-shadow: 4px 5px 6px rgb(0, 0, 0);
+.box_no_dark_shadow {
+  box-shadow: 4px 5px 6px rgb(0, 0, 0);
 }
-.box_dark_shadow{
-    box-shadow: 3px 2px 4px rgb(255, 255, 255);
+.box_dark_shadow {
+  box-shadow: 3px 2px 4px rgb(255, 255, 255);
 }
 #menu-list li {
-    padding: 10px;
-    display: flex;   
+  padding: 10px;
+  display: flex;
 }
-#location_p{
-    padding-left: 4px;
+#location_p {
+  padding-left: 4px;
 }
-.option{
-    border: 2px solid transparent;
+.option {
+  border: 2px solid transparent;
 }
-.option_b:hover{
-    box-shadow: 0 0 4px rgb(0, 0, 0);
-    border-radius: 7px;
+.option_b:hover {
+  box-shadow: 0 0 4px rgb(0, 0, 0);
+  border-radius: 7px;
 }
-.dark_option{
-    border: 2px solid transparent;
+.dark_option {
+  border: 2px solid transparent;
 }
-.dark_option_h:hover{
-    box-shadow: 0 0 4px rgb(255, 255, 255);
-    border-radius: 7px;
+.dark_option_h:hover {
+  box-shadow: 0 0 4px rgb(255, 255, 255);
+  border-radius: 7px;
 }
-.mode_line{
-    margin-left: 6px;
-    display: flex;
-    justify-content: center;
-    gap: 2px;
+.mode_line {
+  margin-left: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
 }
 
-.no_dark{
-    background-color: white;
+.no_dark {
+  background-color: white;
 }
