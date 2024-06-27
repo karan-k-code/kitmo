@@ -44,16 +44,7 @@
     color: aqua;
   }
 }
-.search-select {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  border: none;
-  background-color: #fff;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
+
 .search-input {
   /* background-color: hsl(0, 0%, 100%); */
   width: 80%;

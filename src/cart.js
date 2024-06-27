@@ -1,31 +1,41 @@
 import { shopItamsData } from "./main.js";
 // console.log(shopItamsData);
-
+// ! buy and cart
 let buy = document.querySelectorAll(".buy");
 let add_cart = document.querySelectorAll(".add_cart");
+let decrement_btn = document.querySelectorAll(".decremet");
 
+// ? add click tast
 add_cart.forEach(function (id) {
   id.addEventListener("click", function () {
     increment(id);
   });
 });
 
+// ! increment click
 buy.forEach(function (id) {
   id.addEventListener("click", function () {
-    let id = event.target.parentNode.id;
-    if (id) {
-      shopItamsData.forEach((x) => {
-        if (x.id === id) {
-          // console.log(x.name);
-          // console.log(x.id);
-          // console.log(x.price);
-          // console.log(x.desc);
-          decrement(id);
-        }
-      });
-    }
+    decrement(id);
   });
 });
+
+//? buy click tast
+// buy.forEach(function (id) {
+//   id.addEventListener("click", function () {
+//     let id = event.target.parentNode.id;
+//     if (id) {
+//       shopItamsData.forEach((x) => {
+//         if (x.id === id) {
+//           // console.log(x.name);
+//           // console.log(x.id);
+//           // console.log(x.price);
+//           // console.log(x.desc);
+//           decrement(id);
+//         }
+//       });
+//     }
+//   });
+// });
 
 let basket = [{}];
 
@@ -114,38 +124,39 @@ let basket = [{}];
 //     }
 // }
 
+// !increment function
 let increment = (id) => {
-  let selecteItem = id;
-  let search = basket.find((x) => x.id === selecteItem.id);
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
   if (search === undefined) {
     basket.push({
-      id: selecteItem.id,
+      id: selecteItam.id,
       itam: 1,
     });
   } else {
     search.itam += 1;
   }
-  update(selecteItem.id);
-  console.log(basket);
+  update(selecteItam.id);
 };
+
+// !decrement function
 let decrement = (id) => {
-  let selecteItem = id;
-  let search = basket.find((x) => x.id === selecteItem.id);
-  if (search === undefined) {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search.itam === 0) {
     basket.push({
-      id: selecteItem.id,
-      itam: 1,
+      id: selecteItam.id,
+      itam: 0,
     });
   } else {
     search.itam -= 1;
   }
   console.log(basket);
-};
-let update = (id) => {
-  let search = basket.find((x) => x.id === id);
   console.log(search.itam);
 };
 
-let hello = () => {
-  console.log("hello");
+// !update function
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  console.log(search.itam);
 };

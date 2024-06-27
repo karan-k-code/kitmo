@@ -40,11 +40,23 @@
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   &:hover {
-    box-shadow: 1px 2px 2px black;
+    color: aqua;
+  }
+}
+/* microphone */
+.microphone {
+  height: 40px;
+  border: none;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    color: aqua;
   }
 }
 .search-input {
-  background-color: #e7e7e7;
   width: 80%;
   height: 40px;
   display: flex;
@@ -53,11 +65,10 @@
   cursor: text;
   border: none;
   &:hover {
-    box-shadow: 1px 2px 3px 0px black;
+    color: aqua;
   }
 }
 .search-icon {
-  background-color: #b59391;
   height: 40px;
   display: flex;
   align-items: center;
@@ -69,7 +80,7 @@
   padding-right: 10px;
   cursor: pointer;
   &:hover {
-    box-shadow: 1px 2px 2px black;
+    color: aqua;
   }
 }
 .cart {
@@ -122,6 +133,10 @@
   .search-select {
     height: 35px;
   }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
+  }
   .search-input {
     width: 200px;
     height: 35px;
@@ -142,6 +157,10 @@
   }
   .search-select {
     height: 35px;
+  }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
   }
   .search-input {
     width: 200px;
@@ -164,6 +183,10 @@
   }
   .search-select {
     height: 35px;
+  }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
   }
   .search-input {
     width: 200px;
