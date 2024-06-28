@@ -42,5 +42,3 @@ let shopItamsData = [
     img: "image/iphone.jpg",
   },
 ];
-
-export { shopItamsData };

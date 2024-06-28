@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>cart shop</title>
         <link rel="stylesheet" href="allcss/user.css">
         <link rel="stylesheet" href="allcss/kitmo.css">
         <link rel="stylesheet" href="allcss/cart.css">
@@ -45,17 +45,21 @@
                 </div>
                 <!-- search-secation nav third option-->
                 <div class="search-secation">
-                    <select class="search-select border">
+                    <select class="search-select border light no_dark">
                         <option>ALL</option>
                         <option>electronics</option>
                         <option>genral</option>
                         <option>medical</option>
                         <option>beautti</option>
                     </select>
+                    <!-- microphone -->
+                    <div class="microphone light no_dark">
+                       <i class="fa-solid fa-microphone"></i>
+                    </div>
                     <!-- search-input -->
-                    <input placeholder="search kitmo" class="search-input">
+                    <input placeholder="search kitmo" class="search-input light no_dark">
                     <!-- search_icon -->
-                    <div class="search-icon">
+                    <div class="search-icon light no_dark">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
@@ -81,17 +85,14 @@
             </div>
             <!-- small display search_secation_panl -->
             <div class="search_secation_panl dark_box nav_light">
-                <select class="search-select border">
-                    <option>ALL</option>
-                    <option>electronick</option>
-                    <option>genral</option>
-                    <option>medical</option>
-                    <option>beautti</option>
-                </select>
+                <!-- microphone -->
+                 <div class="microphone light no_dark">
+                   <i class="fa-solid fa-microphone"></i>
+                 </div>
                 <!-- search-input -->
-                <input placeholder="search kitmo" class="search-input">
+                <input placeholder="search kitmo" class="search-input light no_dark">
                 <!-- search_icon -->
-                <div class="search-icon">
+                <div class="search-icon light no_dark">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
@@ -101,8 +102,8 @@
         <main>
             <div class="big_cart_cantenr">
                 <!-- !cart cantenr -->
-            <div class="cart_cantenr">
-                <div class="cart_box" id="cup">
+            <div class="cart_cantenr" id="cart_cantenr">
+                <div class="cart_box" id="cantenr_cart_item">
                     <div class="image_cart" style="background-image:url('image/cup.jpeg')">
                         
                     </div>
@@ -130,8 +131,11 @@
 
                 </div>
                 <!-- total price -->
+                 
                 <div class="total_price">
-                 all itam price 56
+                    total item  
+                    <div class="total_item" id="total_item"> </div>
+                  price 56
                 </div>
 
             </div>
@@ -145,16 +149,17 @@
             <div class="cart_image">
                 <img src="image/cartimage.jpeg" alt="">
             </div> -->
+            <!-- !todaydeals -->
             <div class="todaydeals">
                 <h2>Today's Deals</h2>
                 <h2>shop now</h2>
             </div>
-            <!-- THIS IS ITAM box -->
+            <!-- ! THIS IS ITAM box -->
             <div class="cantenr" id="shop">
         </main>
         <!--java script file link-->
         <script src="src/dark.js"></script>
-        <script src="src/main.js"></script>
+        <!-- <script src="src/main.js"></script> -->
         <script src="src/hello_ji.js"></script>
         <script src="src/cart.js"></script>
         <script src="src/user.js"></script>

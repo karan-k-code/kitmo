@@ -1,56 +1,14 @@
 let shop = document.getElementById("shop");
 /* product data and image */
+// ! basket
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-let shopItamsData = [
-  {
-    id: "headphones",
-    name: "headphones",
-    price: 22,
-    desc: "this is boat headphones",
-    img: "image/headphone.jpeg",
-  },
-  {
-    id: "goggles",
-    name: "goggles",
-    price: 9,
-    desc: "stylish goggles new year",
-    img: "image/goggles.jpeg",
-  },
-  {
-    id: "short",
-    name: "short",
-    price: 25,
-    desc: "stylish short for man",
-    img: "image/short.jpeg",
-  },
-  {
-    id: "jeans",
-    name: "jeans",
-    price: 30,
-    desc: "boy jeans so prime",
-    img: "image/jeans.jpeg",
-  },
-  {
-    id: "cup",
-    name: "cup",
-    price: 9,
-    desc: "this is stylish cup",
-    img: "image/cup.jpeg",
-  },
-  {
-    id: "iPhone",
-    name: "mobile",
-    price: 999,
-    desc: "iPhone 15 pro max",
-    img: "image/iphone.jpg",
-  },
-];
 /* show data to display */
 let generateShop = () => {
   return (shop.innerHTML = shopItamsData
     .map((x) => {
       let { id, name, price, desc, img } = x;
-
+      let search = basket.find((x) => x.id === id) || [];
       return `
         <div class="box option_b dark_box nav_light" id="producat_id_${id}">
             <div class="itam_name dark_box nav_light">
@@ -69,7 +27,9 @@ let generateShop = () => {
             <div class="shop_box dark_box nav_light" >
                 <div class="add_cart option_b" onclick="increment(${id})">
                 <b>ADD CART</b></div>
-                <div id="${id}">0</div>
+                <div id="${id}">
+                ${search.item === undefined ? 0 : search.item}
+                </div>
                 <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
             </div>
         </div>`;
@@ -78,8 +38,7 @@ let generateShop = () => {
 };
 
 generateShop();
-// ! basket
-let basket = JSON.parse(localStorage.getItem("data")) || [];
+
 // !increment
 let increment = (id) => {
   let selecteItam = id;
@@ -92,8 +51,8 @@ let increment = (id) => {
   } else {
     search.item += 1;
   }
-  localStorage.setItem("data", JSON.stringify(basket));
   update(selecteItam.id);
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! decrement
@@ -105,8 +64,9 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
-  localStorage.setItem("data", JSON.stringify(basket));
   update(selecteItam.id);
+  basket = basket.filter((x) => x.item !== 0);
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! update
