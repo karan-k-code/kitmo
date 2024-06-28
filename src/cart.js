@@ -1,23 +1,23 @@
-import { shopItamsData } from "./main.js";
+// import { shopItamsData } from "./main.js";
 // console.log(shopItamsData);
 // ! buy and cart
-let buy = document.querySelectorAll(".buy");
-let add_cart = document.querySelectorAll(".add_cart");
-let decrement_btn = document.querySelectorAll(".decremet");
+// let buy = document.querySelectorAll(".buy");
+// let add_cart = document.querySelectorAll(".add_cart");
+// let decrement_btn = document.querySelectorAll(".decremet");
 
-// ? add click tast
-add_cart.forEach(function (id) {
-  id.addEventListener("click", function () {
-    increment(id);
-  });
-});
+// // ? add click tast
+// add_cart.forEach(function (id) {
+//   id.addEventListener("click", function () {
+//     increment(id);
+//   });
+// });
 
-// ! increment click
-buy.forEach(function (id) {
-  id.addEventListener("click", function () {
-    decrement(id);
-  });
-});
+// // ! increment click
+// buy.forEach(function (id) {
+//   id.addEventListener("click", function () {
+//     decrement(id);
+//   });
+// });
 
 //? buy click tast
 // buy.forEach(function (id) {
@@ -37,7 +37,7 @@ buy.forEach(function (id) {
 //   });
 // });
 
-let basket = [{}];
+// let basket = [{}];
 
 // console.log(buy);
 
@@ -124,39 +124,40 @@ let basket = [{}];
 //     }
 // }
 
-// !increment function
-let increment = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search === undefined) {
-    basket.push({
-      id: selecteItam.id,
-      itam: 1,
-    });
-  } else {
-    search.itam += 1;
-  }
-  update(selecteItam.id);
-};
+// // !increment function
+// let increment = (id) => {
+//   console.log(id);
+// let selecteItam = id;
+// let search = basket.find((x) => x.id === selecteItam.id);
+// if (search === undefined) {
+//   basket.push({
+//     id: selecteItam.id,
+//     itam: 1,
+//   });
+// } else {
+//   search.itam += 1;
+// }
+// update(selecteItam.id);
+// };
 
-// !decrement function
-let decrement = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search.itam === 0) {
-    basket.push({
-      id: selecteItam.id,
-      itam: 0,
-    });
-  } else {
-    search.itam -= 1;
-  }
-  console.log(basket);
-  console.log(search.itam);
-};
+// // !decrement function
+// let decrement = (id) => {
+//   let selecteItam = id;
+//   let search = basket.find((x) => x.id === selecteItam.id);
+//   if (search.itam === 0) {
+//     basket.push({
+//       id: selecteItam.id,
+//       itam: 0,
+//     });
+//   } else {
+//     search.itam -= 1;
+//   }
+//   update(selecteItam.id);
+// };
 
-// !update function
-let update = (id) => {
-  let search = basket.find((x) => x.id === id);
-  console.log(search.itam);
-};
+// // !update function
+// let update = (id) => {
+//   let search = basket.find((x) => x.id === id);
+//   console.log(search.itam);
+//   document.getElementById(id).innerHTML = search.item;
+// };

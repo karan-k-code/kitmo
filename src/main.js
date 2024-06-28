@@ -50,8 +50,9 @@ let generateShop = () => {
   return (shop.innerHTML = shopItamsData
     .map((x) => {
       let { id, name, price, desc, img } = x;
+
       return `
-        <div class="box option_b dark_box nav_light" id="${id}">
+        <div class="box option_b dark_box nav_light" id="producat_id_${id}">
             <div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
             </div>
@@ -66,9 +67,10 @@ let generateShop = () => {
                 </div>
             </div>
             <div class="shop_box dark_box nav_light" >
-                <div class="add_cart option_b" id="${id}">
+                <div class="add_cart option_b" onclick="increment(${id})">
                 <b>ADD CART</b></div>
-                <div class="buy option_b" id="${id}" ><b>BUY</b></div>
+                <div id="${id}">0</div>
+                <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
             </div>
         </div>`;
     })
@@ -76,5 +78,51 @@ let generateShop = () => {
 };
 
 generateShop();
+// ! basket
+let basket = JSON.parse(localStorage.getItem("data")) || [];
+// !increment
+let increment = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) {
+    basket.push({
+      id: selecteItam.id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+  localStorage.setItem("data", JSON.stringify(basket));
+  update(selecteItam.id);
+};
 
-export { shopItamsData };
+// ! decrement
+let decrement = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  localStorage.setItem("data", JSON.stringify(basket));
+  update(selecteItam.id);
+};
+
+// ! update
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+// ! calculat
+let calculation = () => {
+  // let total = basket.reduce((a, b) => a + b.item, 0);
+  // let cart_no = document.getElementById("cart_no");
+  // cart_no.innerHTML = total;
+  let cartIcon = document.getElementById("cart_no");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+};
+
+calculation();
