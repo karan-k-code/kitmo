@@ -18,8 +18,8 @@
   justify-content: center;
   align-items: center;
   img {
-    width: 50%;
-    height: 50%;
+    width: 400px;
+    height: 400px;
   }
 }
 .todaydeals {
@@ -32,18 +32,27 @@
 }
 .big_cart_cantenr {
   display: flex;
-  gap: 4px;
+  gap: 10px;
   width: 100%;
+  justify-content: center;
 }
 
 /* cart cantenr */
 .cart_cantenr {
   display: flex;
   align-items: center;
-  width: 80%;
   height: 100%;
   flex-direction: column;
   margin-left: 10px;
+}
+
+/* !cart y */
+.cart_y {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 /* !cart box */
 .cart_box {
@@ -63,7 +72,7 @@
   width: 30%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 200px;
+  height: 180px;
   justify-content: center;
 }
 
@@ -113,7 +122,7 @@
 .total_price {
   border: 1px solid black;
   display: flex;
-  width: 100%;
+  width: 70%;
   justify-content: flex-end;
   align-items: center;
   height: 70px;
