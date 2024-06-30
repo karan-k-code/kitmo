@@ -3,33 +3,32 @@ let cantenr_price = document.getElementById("big_cart_cantenr");
 let cart_y = document.getElementById("cart_y");
 let not_cart = document.getElementById("not_cart");
 
+console.log(shopItamsData);
+
 let generateCartItem = () => {
   if (basket.length !== 0) {
     return (cart_y.innerHTML = basket.map((x) => {
+      let { id, item } = x;
+      let search = shopItamsData.find((y) => y.id === id) || [];
       return `
     <div class="cart_box" id="cantenr_cart_item">
               <div
                 class="image_cart"
-                style="background-image: url('image/cup.jpeg')"
+                style="background-image: url('${search.img}')"
               ></div>
               <div class="title_itam">
-                <h1>cup hkjdf</h1>
+                <h1>${search.name}</h1>
                 <div class="itam_dec">
-                  jahkjhfak fdfhkhkakshuhsiahhd dffhhafuukadhdhafu iusahfihausdh
-                  jhdajhjfa <br />
-                  jfdjkjdf fjkasjkljld ddkjdf jf <br />
-                  jkdjkaskhjashjfhfjka karakjj jasjj ssdfjj
+                  ${search.desc}
                 </div>
               </div>
               <div class="price_itam">
-                itam price 28
+                $ ${search.price}
                 <div class="quantity_box">
-                  quantity
-                  <div class="decremet">-</div>
-                  <div class="quantity">0</div>
-                  <div class="increment">+</div>
+                  <div class="decremet" onclick="decrement('${id}')">-</div>
+                  <div class="quantity">${item}</div>
+                  <div class="increment" onclick="increment('${id}')">+</div>
                 </div>
-                total quantity price 500
               </div>
             </div>
       `;
@@ -51,6 +50,43 @@ let generateCartItem = () => {
 };
 
 generateCartItem();
+
+// !increment
+let increment = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) {
+    basket.push({
+      id: selecteItam.id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+  update(selecteItam.id);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+// ! decrement
+let decrement = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  update(selecteItam.id);
+  basket = basket.filter((x) => x.item !== 0);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+// ! update
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
 
 // ! calculat
 let calculation = () => {
