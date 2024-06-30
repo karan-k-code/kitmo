@@ -167,6 +167,8 @@
   .image_cart {
     height: 100px;
     width: 100px;
+    border: none;
+    border-radius: 9px 0 0 9px;
   }
   .total_price {
     width: 95%;
