@@ -4,10 +4,11 @@ let not_cart = document.getElementById("not_cart");
 
 let generateCartItem = () => {
   if (basket.length !== 0) {
-    return (cart_y.innerHTML = basket.map((x) => {
-      let { id, item } = x;
-      let search = shopItamsData.find((y) => y.id === id) || [];
-      return `
+    return (cart_y.innerHTML = basket
+      .map((x) => {
+        let { id, item } = x;
+        let search = shopItamsData.find((y) => y.id === id) || [];
+        return `
     <div class="cart_box" id="cantenr_cart_item">
               <div
                 class="image_cart"
@@ -29,7 +30,8 @@ let generateCartItem = () => {
               </div>
             </div>
       `;
-    }));
+      })
+      .join(""));
   } else {
     not_cart.innerHTML = `
             <div class="add_cart1"><H1>Add cart</H1></div>
