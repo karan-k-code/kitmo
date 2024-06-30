@@ -132,6 +132,13 @@
   border-radius: 6px;
 }
 
+.total_price_text {
+  margin: 2px 6px 2px 6px;
+}
+.total_item_text {
+  margin: 2px 6px 2px 6px;
+}
+
 /* !chekout */
 .chekout {
   display: flex;
@@ -141,4 +148,35 @@
   height: 400px;
   background-color: #f5fd1f;
   border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+}
+/* 1140px */
+@media (max-width: 1140px) {
+}
+
+/* 1000px */
+@media (max-width: 1000px) {
+}
+/*pad screen */
+@media (max-width: 781px) {
+}
+/* mobile screen size */
+@media (max-width: 590px) {
+  .image_cart {
+    height: 100px;
+    width: 100px;
+  }
+  .total_price {
+    width: 95%;
+    height: 50px;
+  }
+  .chekout {
+    display: none;
+  }
+}
+
+/* mobile screen size 382 */
+@media (max-width: 382px) {
 }

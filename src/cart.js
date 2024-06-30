@@ -1,9 +1,6 @@
 let basket = JSON.parse(localStorage.getItem("data")) || [];
-let cantenr_price = document.getElementById("big_cart_cantenr");
 let cart_y = document.getElementById("cart_y");
 let not_cart = document.getElementById("not_cart");
-
-console.log(shopItamsData);
 
 let generateCartItem = () => {
   if (basket.length !== 0) {
@@ -26,7 +23,7 @@ let generateCartItem = () => {
                 $ ${search.price}
                 <div class="quantity_box">
                   <div class="decremet" onclick="decrement('${id}')">-</div>
-                  <div class="quantity">${item}</div>
+                  <div class="quantity" id="${id}">${item}</div>
                   <div class="increment" onclick="increment('${id}')">+</div>
                 </div>
               </div>
