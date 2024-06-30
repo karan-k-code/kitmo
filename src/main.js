@@ -78,9 +78,6 @@ let update = (id) => {
 
 // ! calculat
 let calculation = () => {
-  // let total = basket.reduce((a, b) => a + b.item, 0);
-  // let cart_no = document.getElementById("cart_no");
-  // cart_no.innerHTML = total;
   let cartIcon = document.getElementById("cart_no");
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
