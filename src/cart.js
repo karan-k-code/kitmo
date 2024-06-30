@@ -21,13 +21,17 @@ let generateCartItem = () => {
                   ${search.desc}
                 </div>
               </div>
-              <div class="price_itam">
-                $ ${search.price}
+              <div class="price_deleat">
+              <div class="delete_itam" onclick="deleteItem('${id}')">Delete</div>
+              <div class="price_itam" >
+                $ ${search.price} 
                 <div class="quantity_box">
                   <div class="decremet" onclick="decrement('${id}')">-</div>
                   <div class="quantity" id="${id}">${item}</div>
                   <div class="increment" onclick="increment('${id}')">+</div>
                 </div>
+                <div class="delete_itam" id="price-${id}"></div>
+              </div>
               </div>
             </div>
       `;
@@ -46,6 +50,7 @@ let generateCartItem = () => {
             </div>
             <!-- ! THIS IS ITAM box -->
             <div class="cantenr" id="shop">`;
+    generateShop();
   }
 };
 
@@ -64,6 +69,7 @@ let increment = (id) => {
     search.item += 1;
   }
   update(id);
+  item_price_calculation(id);
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -77,9 +83,10 @@ let decrement = (id) => {
     search.item -= 1;
   }
   update(id);
+  item_price_calculation(id);
   basket = basket.filter((x) => x.item !== 0);
-  localStorage.setItem("data", JSON.stringify(basket));
   generateCartItem();
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! update
@@ -96,3 +103,48 @@ let calculation = () => {
 };
 
 calculation();
+
+// ! item price calulation
+let item_price_calculation = (id) => {
+  basket.map((x) => {
+    let { id, item } = x;
+    let search = shopItamsData.find((y) => y.id === id) || [];
+    let item_price_1 = search.price * item;
+    let price = "price-";
+    let ide = price + id;
+    document.getElementById(ide).innerHTML = item_price_1;
+  });
+};
+
+// ! shop item gennerateshop funcation
+let generateShop = () => {
+  return (shop.innerHTML = shopItamsData
+    .map((x) => {
+      let { id, name, price, desc, img } = x;
+      let search = basket.find((x) => x.id === id) || [];
+      return `
+        <div class="box option_b dark_box nav_light" id="producat_id_${id}">
+            <div class="itam_name dark_box nav_light">
+                <h3>${name}</h3>
+            </div>
+            <div class="itam_img" style="background-image:url('${img}')">
+            </div>
+            <div class="itam_detelas">
+                <div class="itam_price">
+                    $ ${price}
+                </div>
+                <div class="desc">
+                    ${desc}
+                </div>
+            </div>
+            <div class="shop_box dark_box nav_light" >
+                <div class="add_cart option_b" onclick="increment(${id})">
+                <b>ADD CART</b></div>
+                <div id="${id}">
+                </div>
+                <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
+            </div>
+        </div>`;
+    })
+    .join(""));
+};

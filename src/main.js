@@ -3,7 +3,7 @@ let shop = document.getElementById("shop");
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-/* show data to display */
+// ! shop item gennerateshop funcation
 let generateShop = () => {
   return (shop.innerHTML = shopItamsData
     .map((x) => {

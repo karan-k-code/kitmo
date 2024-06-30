@@ -91,6 +91,13 @@
   margin-top: 10px;
   padding: 4px;
 }
+/* ! price_deleat */
+.price_deleat {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
 /* price itam */
 .price_itam {
   display: flex;
@@ -98,7 +105,6 @@
   flex-direction: column;
   border: 1px solid black;
   border-radius: 4px;
-  width: 20%;
 }
 
 .quantity_box {
