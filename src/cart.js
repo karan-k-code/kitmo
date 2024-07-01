@@ -30,7 +30,7 @@ let generateCartItem = () => {
                   <div class="quantity" id="${id}">${item}</div>
                   <div class="increment" onclick="increment('${id}')">+</div>
                 </div>
-                <div class="delete_itam" id="price-${id}"></div>
+                <div class="delete_itam">$ ${item * search.price}</div>
               </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ let increment = (id) => {
     search.item += 1;
   }
   update(id);
-  item_price_calculation(id);
+  generateCartItem();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -83,7 +83,6 @@ let decrement = (id) => {
     search.item -= 1;
   }
   update(id);
-  item_price_calculation(id);
   basket = basket.filter((x) => x.item !== 0);
   generateCartItem();
   localStorage.setItem("data", JSON.stringify(basket));
@@ -103,18 +102,6 @@ let calculation = () => {
 };
 
 calculation();
-
-// ! item price calulation
-let item_price_calculation = (id) => {
-  basket.map((x) => {
-    let { id, item } = x;
-    let search = shopItamsData.find((y) => y.id === id) || [];
-    let item_price_1 = search.price * item;
-    let price = "price-";
-    let ide = price + id;
-    document.getElementById(ide).innerHTML = item_price_1;
-  });
-};
 
 // ! shop item gennerateshop funcation
 let generateShop = () => {

@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="allcss/dark.css">
         <link rel="stylesheet" href="allcss/user.css">
-        <link rel="stylesheet" href="allcss/nav_buy.css">
+        <link rel="stylesheet" href="allcss/nav.css">
     </head>
     <body class="light">
         <header>
@@ -41,6 +41,13 @@
                 </div>
                 <!-- search-secation nav third option -->
                 <div class="search-secation">
+                    <select class="search-select border light no_dark">
+                        <option>ALL</option>
+                        <option>electronics</option>
+                        <option>genral</option>
+                        <option>medical</option>
+                        <option>beautti</option>
+                      </select>
                     <!-- microphone -->
                     <div class="microphone light no_dark">
                         <i class="fa-solid fa-microphone"></i>
@@ -67,10 +74,11 @@
                 </div>
                 <!-- shoping cart nav five options -->
                 <div class="cart">
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>
                     <div class="amuntcart">
                         0
                     </div>
+                </a>
                 </div>
             </div>
             <!-- small display search_secation_panl -->
@@ -90,6 +98,7 @@
             <div class="colam_top light no_dark"></div>
         </header>
         <div class="big_container" id="big_container">
+            <div class="buy_item_image">
             <div class="image_container">
                 <img src="image/iphone.jpg" alt="">
                 <div class="radio_img">
@@ -99,12 +108,31 @@
                     <input type="radio" id="loue" name="drone" value="loue" ></input>
                 </div>
             </div>
-            <div class="product_container"> hello this section is by thoa</div>
+            <!-- !prioduct_container -->
+            <div class="product_container">
+                <div class="title_itam">
+                    <h1>heihfhkhsdh</h1>
+                    <div class="itam_dec">
+                     jdjieaijakk
+                    </div>
+                </div>
+                <div class="price_quantity">
+                    <div class="price">$ 884</div>
+                    <div class="quantity_box">
+                        <div class="decremet" onclick="console.log('decremet')">-</div>
+                        <div class="quantity" id="">0</div>
+                        <div class="increment" onclick="console.log('increment')">+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
             <div class="delever_detels_container"> deliver tomorry</div>
         </div>
-        <script src="src/buy.js"></script>
-        <script src="src/dark.js"></script>
-        <script src="src/hello_ji.js"></script>
-        <script src="src/user.js"></script>
+
     </body>
+    <script src="src/shopdata.js"></script>
+    <script src="src/buy.js"></script>
+    <script src="src/dark.js"></script>
+    <script src="src/hello_ji.js"></script>
+    <script src="src/user.js"></script>
 </html>
