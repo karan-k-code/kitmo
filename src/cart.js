@@ -1,5 +1,6 @@
 let cart_y = document.getElementById("cart_y");
 let not_cart = document.getElementById("not_cart");
+let label1 = document.getElementById("chekout");
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -16,21 +17,21 @@ let generateCartItem = () => {
                 style="background-image: url('${search.img}')"
               ></div>
               <div class="title_itam">
-                <h1>${search.name}</h1>
+                <h2>${search.name}</h2>
                 <div class="itam_dec">
                   ${search.desc}
                 </div>
               </div>
               <div class="price_deleat">
-              <div class="delete_itam" onclick="deleteItem('${id}')">Delete</div>
-              <div class="price_itam" >
-                $ ${search.price} 
+              <div class="delete_itam" onclick="removeItem(${id})"><i class="fa-solid fa-xmark"></i></div>
+              <div class="price_itam" ><b>
+                $ ${search.price} </b>
                 <div class="quantity_box">
                   <div class="decremet" onclick="decrement('${id}')">-</div>
                   <div class="quantity" id="${id}">${item}</div>
                   <div class="increment" onclick="increment('${id}')">+</div>
                 </div>
-                <div class="delete_itam">$ ${item * search.price}</div>
+                <div class="delete_itam"> <b>$ ${item * search.price} </b></div>
               </div>
               </div>
             </div>
@@ -50,7 +51,6 @@ let generateCartItem = () => {
             </div>
             <!-- ! THIS IS ITAM box -->
             <div class="cantenr" id="shop">`;
-    generateShop();
   }
 };
 
@@ -84,14 +84,16 @@ let decrement = (id) => {
   }
   update(id);
   basket = basket.filter((x) => x.item !== 0);
-  generateCartItem();
   localStorage.setItem("data", JSON.stringify(basket));
+  generateCartItem();
+  totalAmount();
 };
 
 // ! update
 let update = (id) => {
   let search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
+  totalAmount();
   calculation();
 };
 
@@ -100,8 +102,6 @@ let calculation = () => {
   let total_item = document.getElementById("total_item");
   total_item.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
-
-calculation();
 
 // ! shop item gennerateshop funcation
 let generateShop = () => {
@@ -135,3 +135,38 @@ let generateShop = () => {
     })
     .join(""));
 };
+
+// ! remove item
+
+let removeItem = (id) => {
+  let selecteItam = id;
+  // console.log(selecteItam.id);
+  basket = basket.filter((x) => x.id !== selecteItam.id);
+  generateCartItem();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+// ! total amount
+
+let totalAmount = () => {
+  if (basket.length !== 0) {
+    let amount = basket
+      .map((x) => {
+        let { id, item } = x;
+        let search = shopItamsData.find((y) => y.id === id) || [];
+        return item * search.price;
+      })
+      .reduce((x, y) => x + y, 0);
+
+    label1.innerHTML = `
+            <div class="total_item_text">total item :</div>
+            <div class="total_item" id="total_item"></div>
+            <div class="total_price_text">total amount :  <b>$ ${amount} </b></div>
+      `;
+  } else {
+    generateShop();
+  }
+};
+
+totalAmount();
+calculation();

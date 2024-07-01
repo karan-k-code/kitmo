@@ -28,9 +28,8 @@ let generateShop = () => {
                 <div class="add_cart option_b" onclick="increment(${id})">
                 <b>ADD CART</b></div>
                 <div id="${id}">
-                ${search.item === undefined ? 0 : search.item}
                 </div>
-                <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
+                <div class="buy option_b" onclick="" ><b>BUY</b></div>
             </div>
         </div>`;
     })
@@ -72,7 +71,7 @@ let decrement = (id) => {
 // ! update
 let update = (id) => {
   let search = basket.find((x) => x.id === id);
-  document.getElementById(id).innerHTML = search.item;
+  // document.getElementById(id).innerHTML = search.item;
   calculation();
 };
 

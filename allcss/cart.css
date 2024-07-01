@@ -95,9 +95,13 @@
 .price_deleat {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   width: 20%;
 }
-
+.fa-xmark {
+  color: #f31e1e;
+  font-size: 30px;
+}
 /* price itam */
 .price_itam {
   display: flex;
@@ -143,6 +147,9 @@
 }
 .total_item_text {
   margin: 2px 6px 2px 6px;
+}
+.total_item {
+  font-weight: bold;
 }
 
 /* !chekout */
