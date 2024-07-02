@@ -82,11 +82,12 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
-  update(id);
+
   basket = basket.filter((x) => x.item !== 0);
   localStorage.setItem("data", JSON.stringify(basket));
   generateCartItem();
   totalAmount();
+  update(id);
 };
 
 // ! update
@@ -141,8 +142,11 @@ let generateShop = () => {
 let removeItem = (id) => {
   let selecteItam = id;
   // console.log(selecteItam.id);
+
   basket = basket.filter((x) => x.id !== selecteItam.id);
   generateCartItem();
+  totalAmount();
+  calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 

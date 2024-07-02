@@ -258,77 +258,51 @@
   font-size: 37px;
   margin-bottom: 10px;
 }
+.Instagram,
+.Instagram,
+.LinkedIn,
+.github,
 .fecebook {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
   font-size: 25px;
+  transition: all 0.1s ease;
   &:hover {
-    &:hover {
-      text-shadow: 0 0 2px rgb(8, 8, 255);
-      font-size: 30px;
-      transition: 0.15s;
-    }
-  }
-}
-.Instagram {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  font-size: 25px;
-  &:hover {
-    text-shadow: 0 0 2px rgb(8, 8, 255);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
     font-size: 30px;
-    transition: 0.15s;
   }
 }
-.LinkedIn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  font-size: 25px;
-  &:hover {
-    text-shadow: 0 0 2px rgb(8, 8, 255);
-    font-size: 30px;
-    transition: 0.15s;
-  }
-}
-.github {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  font-size: 25px;
-  &:hover {
-    text-shadow: 0 0 2px rgb(8, 8, 255);
-    font-size: 30px;
-    transition: 0.15s;
-  }
-}
-.fecebook_m {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-}
-.Instagram_m {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-}
+
+.fecebook_m,
+.Instagram_m,
 .LinkedIn_m {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
 }
+
 a {
   text-decoration: none;
 }
+
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feedback button {
+  margin: 10px;
+  padding: 7px;
+  border: none;
+  border-radius: 7px;
+  color: rgb(255, 255, 255);
+  background-color: #8816f3;
+  cursor: pointer;
+}
+
 @media (max-width: 500px) {
   .contacts_box {
     display: none;
