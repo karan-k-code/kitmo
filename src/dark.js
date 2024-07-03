@@ -1,11 +1,14 @@
 const darkModeToggle = document.getElementById("dark-mode-toggle-checkbox");
-
+// ! all class selecat function
+let classal = (classas) => {
+  return document.querySelectorAll(classas);
+};
 darkModeToggle.addEventListener("change", function () {
-  let buttons = document.querySelectorAll(".light");
-  let nav_bar = document.querySelectorAll(".dark_box");
-  let opt_dark = document.querySelectorAll(".option_b");
-  let box_shadow = document.querySelectorAll(".box_shadow");
-  let shadow_darkmode = document.querySelectorAll(".shadow_darkmode");
+  let buttons = classal(".light"),
+    nav_bar = classal(".dark_box"),
+    opt_dark = classal(".option_b"),
+    box_shadow = classal(".box_shadow"),
+    shadow_darkmode = classal(".shadow_darkmode");
   // Iterate over each button and add the 'dark-mode' class
   buttons.forEach(function (btn) {
     if (darkModeToggle.checked) {

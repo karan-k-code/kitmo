@@ -1,6 +1,9 @@
 body {
   font-family: Arial, sans-serif;
 }
+.help {
+  cursor: pointer;
+}
 .kitmo-logo {
   display: flex;
   width: 100%;

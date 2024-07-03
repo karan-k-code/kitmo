@@ -11,8 +11,10 @@
 .nav-option {
   font-size: 25px;
   display: flex;
+  transition: all 0.1s ease;
   &:hover {
     font-size: 30px;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
   }
 }
 .kitmo-logo {
@@ -89,8 +91,10 @@
   font-size: 25px;
   padding-top: 12px;
   border-radius: 4px;
+  transition: all 0.1s ease;
   &:hover {
     font-size: 30px;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
   }
 }
 .cart a {
@@ -106,8 +110,10 @@
 }
 .usar {
   font-size: 25px;
+  transition: all 0.1s ease;
   &:hover {
     font-size: 30px;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
   }
 }
 .search_secation_panl {

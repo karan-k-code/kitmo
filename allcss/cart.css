@@ -101,6 +101,7 @@
 .fa-xmark {
   color: #f31e1e;
   font-size: 30px;
+  cursor: pointer;
 }
 /* price itam */
 .price_itam {
