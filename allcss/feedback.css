@@ -7,6 +7,31 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* !feedback cantenr is here */
+
+.feedback_cantenr {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+.feedback_button {
+  padding: 6px 6px 6px 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #ec1ce9;
+  transition: all 0.1s ease;
+  &:hover {
+    font-size: 1.8rem;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
+  }
+}
+
 form {
   width: 40%;
   height: 400px;
