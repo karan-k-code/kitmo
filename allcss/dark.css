@@ -33,6 +33,8 @@
 .dark-mode-toggle input:checked + label:after {
   transform: translateX(15px);
 }
+
+/* ! dark mode color */
 .dark-mode {
   background-color: black;
   color: #fff;
