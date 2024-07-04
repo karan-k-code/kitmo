@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>feedback</title>
     <link rel="stylesheet" href="allcss/feedback.css" />
+    <link rel="stylesheet" href="allcss/dark.css" />
   </head>
-  <body>
+  <body class="light">
+    <div class="h_container">
+      <li class="option_b">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-toggle-checkbox" />
+          <label for="dark-mode-toggle-checkbox"></label>
+        </div>
+        <div class="mode_line">dark mode</div>
+      </li>
+      <div class="help"><a href="help.html">help</a></div>
+    </div>
     <div class="feedback_cantenr">
       <a
         href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0"
@@ -46,4 +57,5 @@
       </div> -->
     <!-- </form> -->
   </body>
+  <script src="src/dark.js"></script>
 </html>
