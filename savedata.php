@@ -1,5 +1,5 @@
 <?php
-$sever   = "india-software-karan.github.io";
+$sever   = "localhost";
 $username = "root";
 $password = "";
 $dbname = "logindeta";
