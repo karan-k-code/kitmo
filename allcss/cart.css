@@ -56,7 +56,7 @@
 }
 /* !cart box */
 .cart_box {
-  border: 1px solid black;
+  border: 1px solid rgb(122, 114, 114);
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -68,12 +68,12 @@
 }
 /* cart itam image */
 .image_cart {
-  border: 1px solid black;
   width: 180px;
   background-size: contain;
   background-repeat: no-repeat;
   height: 180px;
   justify-content: center;
+  border-radius: 10px 0 0 10px;
 }
 
 /* title itam */
@@ -157,10 +157,9 @@
 .chekout {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid rgb(94, 88, 88);
   width: 20%;
   height: 400px;
-  background-color: #f5fd1f;
   border-radius: 10px;
 }
 
@@ -182,7 +181,7 @@
     height: 100px;
     width: 100px;
     border: none;
-    border-radius: 9px 0 0 9px;
+    border-radius: 10px 0 0 10px;
   }
   .total_price {
     width: 95%;

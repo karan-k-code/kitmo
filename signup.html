@@ -24,7 +24,7 @@
     <div class="l_row">
       <div class="login-container shadow_darkmode box_shadow_light">
         <h2>sign up</h2>
-        <form id="login-form" action="index.html">
+        <form id="login-form" action="savedata.php" method="post">
           <div class="input_container">
             <div class="div">
               <label for="mobile"
@@ -38,22 +38,22 @@
               /></label>
             </div>
             <div class="div">
-              <label for="mobile"
+              <label for="phone"
                 ><b>Mobile Number</b>
                 <input
                   type="mobile"
                   id="mobile"
-                  name="mobile"
+                  name="phone"
                   placeholder="Enter your mobile number"
                   required
               /></label>
             </div>
             <div class="div">
-              <label for="mobile"
+              <label for="email"
                 ><b>Email</b>
                 <input
-                  type="mobile"
-                  id="mobile"
+                  type="email"
+                  id="email"
                   name="email"
                   placeholder="Enter your email"
                   required
@@ -64,12 +64,12 @@
               <input
                 type="password"
                 id="password"
-                name="password"
+                name="pass"
                 placeholder="Enter your password"
             /></label>
           </div>
           <div class="btn_container">
-            <button type="submit">LOGIN IN</button>
+            <!-- <button type="submit">LOGIN IN</button> -->
             <button type="submit">NEXT</button>
           </div>
         </form>
