@@ -24,7 +24,7 @@
     <div class="l_row">
       <div class="login-container shadow_darkmode box_shadow_light">
         <h2>sign up</h2>
-        <form id="login-form" action="savedata.php" method="post">
+        <form method="post" action="" name="product" id="product">
           <div class="input_container">
             <div class="div">
               <label for="mobile"
@@ -76,6 +76,24 @@
       </div>
     </div>
     <!-- src file -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbx4STphxpNuF5h7uzBR_S6gwL8JEwSrXBsutC5uk2FSYuJ-ZP9----wGSQ3NYdUQUE0/exec";
+      const form = document.forms["product"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) =>
+            alert("Thank you! your form is submitted successfully.")
+          )
+          .then(() => {
+            window.location.reload();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
     <script src="src/dark.js"></script>
   </body>
 </html>
