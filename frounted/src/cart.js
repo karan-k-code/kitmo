@@ -171,6 +171,5 @@ let totalAmount = () => {
     generateShop();
   }
 };
-
 totalAmount();
 calculation();
