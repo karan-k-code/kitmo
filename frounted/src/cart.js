@@ -141,8 +141,6 @@ let generateShop = () => {
 
 let removeItem = (id) => {
   let selecteItam = id;
-  // console.log(selecteItam.id);
-
   basket = basket.filter((x) => x.id !== selecteItam.id);
   generateCartItem();
   totalAmount();

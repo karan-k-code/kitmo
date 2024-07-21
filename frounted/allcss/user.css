@@ -1,12 +1,16 @@
+
+/* ! user container */
 .user_container {
   z-index: 2;
   margin: 0;
-  width: 200px;
   display: flex;
 }
+
 #user_button {
   cursor: pointer;
 }
+
+
 #user_list {
   z-index: 2;
   position: absolute;
@@ -14,18 +18,20 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  width: 150px;
-  height: 30px;
   top: 50px;
   display: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 5px;
+  
 }
+
+/* ! sing up and login */
 .button {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 7px;
+  padding: 0px 10px 0 10px;
+  gap: 15px;
 }
 button {
   font-style: none;
@@ -36,4 +42,37 @@ button {
     color: #0922fe;
     text-shadow: 1px 2px 5px #000000;
   }
+}
+
+/* ! user profile */
+
+.profile{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 7px;
+  padding: 10px 10px 0 10px;
+  flex-direction: column;
+}
+
+.profile img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profile_info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.longout{
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid rgba(216, 215, 215, 0.877);
+  border-radius: 5px;
+  padding: 4px;
+  cursor: pointer;
 }
