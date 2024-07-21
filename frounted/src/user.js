@@ -13,9 +13,12 @@ let user = ()=>{
       let { username, password } = x;
 
     menuList.innerHTML=` <div class="profile">
-            <img src="image/owner_image.png" alt="" />
+            <img src="image/kitmo_logo.png" alt="" />
             <div class="profile_info">
              <h3>hii ${username}</h3>
+            </div>
+            <div class="menge_account">
+            menge account
             </div>
             <div class="longout" onclick="longoutBtn()">
             longout
