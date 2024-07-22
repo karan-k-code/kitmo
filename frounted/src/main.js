@@ -27,9 +27,8 @@ let generateShop = () => {
             <div class="shop_box dark_box nav_light" >
                 <div class="add_cart option_b" onclick="increment(${id})">
                 <b>ADD CART</b></div>
-                <div id="${id}">
-                </div>
-                <div class="buy option_b" onclick="buy(${id})" ><b>BUY</b></div>
+                
+                <div class="buy option_b" onclick="buy()" ><b>BUY</b></div>
             </div>
         </div>`;
     })
