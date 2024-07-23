@@ -1,5 +1,7 @@
 let shop = document.getElementById("shop");
 /* product data and image */
+let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -27,8 +29,9 @@ let generateShop = () => {
             <div class="shop_box dark_box nav_light" >
                 <div class="add_cart option_b" onclick="increment(${id})">
                 <b>ADD CART</b></div>
-                
-                <div class="buy option_b" onclick="buy()" ><b>BUY</b></div>
+                <div id="${id}">
+                </div>
+                <div class="buy option_b" onclick="goo(${id})" ><b>BUY</b></div>
             </div>
         </div>`;
     })
@@ -81,3 +84,22 @@ let calculation = () => {
 };
 
 calculation();
+
+let goo =(id)=>{
+  let selecteItam = id;
+  let search = buyItam.find((x) => x.id === selecteItam.id);
+  if (search === undefined) {
+    buyItam.push({
+      id: selecteItam.id,
+      item: 1,
+    });
+  }
+  console.log(selecteItam.id);
+  console.log(buyItam);
+  localStorage.setItem("databuy", JSON.stringify(buyItam));
+  window.location.href ="buy.html"
+}
+localStorage.removeItem("databuy");
+
+
+

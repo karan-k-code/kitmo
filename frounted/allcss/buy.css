@@ -59,6 +59,11 @@ a {
   gap: 15px;
 }
 
+.decremet , .increment{
+  font-size: 22px;
+  cursor: pointer;
+}
+
 /* ! checkout_addcart */
 
 .checkout_addcart{
