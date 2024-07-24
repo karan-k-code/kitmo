@@ -27,7 +27,7 @@ let generateShop = () => {
                 </div>
             </div>
             <div class="shop_box dark_box nav_light" >
-                <div class="add_cart option_b" onclick="increment(${id})">
+                <div class="add_cart option_b" onclick="addcart(${id})">
                 <b>ADD CART</b></div>
                 <div id="${id}">
                 </div>
@@ -39,6 +39,26 @@ let generateShop = () => {
 };
 
 generateShop();
+
+// ! add cart
+let addcart = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) {
+    basket.push({
+      id: selecteItam.id,
+      item: 1,
+    });
+    alert("add cart Successfull");
+  }
+  else {
+    alert("Already added cart");
+  }
+  update(selecteItam.id);
+  calculation();
+  
+  localStorage.setItem("data", JSON.stringify(basket));
+};
 
 // !increment
 let increment = (id) => {
@@ -100,8 +120,4 @@ let goo =(id)=>{
   window.location.href ="buy.html"
 }
 localStorage.removeItem("databuy");
-
-
-
-
 

@@ -42,7 +42,7 @@ let buyshop = () => {
                 </div>
                 <div class="checkout_addcart">
                     <div class="checkout" onclick="console.log('checkout')">checkout</div>
-                    <div class="addcart" onclick="console.log('add cart')">add cart</div>
+                    <div class="addcart" onclick="addcart(${id})">add cart</div>
                 </div>
             </div>
         </div>
@@ -52,6 +52,26 @@ let buyshop = () => {
       .join(""));
   }
 };
+
+// ! add cart
+let addcart = (id) => {
+  let selecteItam = id;
+  let search = basket.find((x) => x.id === selecteItam.id);
+  if (search === undefined) {
+    basket.push({
+      id: selecteItam.id,
+      item: 1,
+    });
+    alert("add cart Successfull");
+  } else {
+    alert("Already added cart");
+  }
+  update(selecteItam.id);
+  calculation();
+  alert("add cart Successfull");
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
 
 // !increment
 let increment = (id) => {
@@ -93,7 +113,11 @@ let update = (id) => {
   document.getElementById(id).innerHTML = search.item;
 };
 
-
+// ! calculat
+let calculation = () => {
+  let cartIcon = document.getElementById("cart_no");
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+};
 // update();
-
+calculation();
 buyshop();
