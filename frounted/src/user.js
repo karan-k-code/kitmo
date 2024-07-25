@@ -17,8 +17,8 @@ let user = ()=>{
             <div class="profile_info">
              <h3>hii ${username}</h3>
             </div>
-            <div class="menge_account">
-            menge account
+            <div class="manage_account">
+            manage account
             </div>
             <div class="longout" onclick="longoutBtn()">
             longout

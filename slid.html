@@ -1,69 +1,35 @@
-frounted/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="frounted/slid.css" />
-  </head>
-  <body>
-    <!-- image slider start -->
-    <div class="slider">
-      <div class="slides">
-        <!-- redio button start -->
-        <input type="radio" name="radio-btn" id="radio1" />
-        <input type="radio" name="radio-btn" id="radio2" />
-        <input type="radio" name="radio-btn" id="radio3" />
-        <input type="radio" name="radio-btn" id="radio4" />
-        <!-- redio button end -->
-        <!-- slide images start -->
-        <div class="slide first">
-          <img src="img1.jpeg" alt="" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="frounted/allcss/slid.css">
+</head>
+<body>
+    <div class="slider-wrapper">
+      <button class="slide-button" id="prev">Prev</button>
+        <div class="image-list">
+            <img src="image/img1.jpeg" alt="Image 1">
+            <img src="image/img2.jpeg" alt="Image 2">
+            <img src="image/img3.jpeg" alt="Image 3">
+            <!-- Add more images here -->
         </div>
-        <div class="slide">
-          <img src="img2.jpeg" alt="" />
+      <button class="slide-button" id="next">Next</button>
+        <div class="slider-scrollbar">
+            <div class="scrollbar-thumb"></div>
         </div>
-        <div class="slide">
-          <img src="img3.jpeg" alt="" />
-        </div>
-        <div class="slide">
-          <img src="img4.jpeg" alt="" />
-        </div>
-        <!-- slide images end -->
-        <!-- automatic navigation start -->
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-          <div class="auto-btn4"></div>
-        </div>
-        <!-- auto navigation end -->
+        <div class="radio-buttons">
+          <input type="radio" name="slide" id="slide-1" checked>
+          <label for="slide-1">1</label>
+          <input type="radio" name="slide" id="slide-2">
+          <label for="slide-2">2</label>
+          <input type="radio" name="slide" id="slide-3">
+          <label for="slide-3">3</label>
+          <!-- Add more radio buttons here -->
       </div>
-      <!-- manual navigation start -->
-      <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-        <label for="radio4" class="manual-btn"></label>
-      </div>
-      <!-- manual navigation end -->
     </div>
-    <!-- image slider ind -->
-    <!-- slides start -->
-    <div class="slidercentenr">
-      <div
-        class="hero_box"
-        style="background-image: url('hero_image.jpg')"
-      ></div>
-      <div
-        class="hero_box"
-        style="background-image: url('hero_image.jpg')"
-      ></div>
-      <div
-        class="hero_box"
-        style="background-image: url('hero_image.jpg')"
-      ></div>
-    </div>
-  </body>
-  <script src="frounted/slid.js"></script>
+
+    <script src="frounted/src/slid.js"></script>
+</body>
 </html>

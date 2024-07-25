@@ -134,13 +134,18 @@
   border: 1px solid black;
   display: flex;
   width: 70%;
-  justify-content: flex-end;
   align-items: center;
   height: 70px;
   margin-top: 6px;
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 6px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.total_price div{
+  display: flex;
 }
 
 .total_price_text {

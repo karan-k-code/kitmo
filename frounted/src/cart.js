@@ -161,13 +161,27 @@ let totalAmount = () => {
       .reduce((x, y) => x + y, 0);
 
     label1.innerHTML = `
+          <div>
             <div class="total_item_text">total item :</div>
             <div class="total_item" id="total_item"></div>
             <div class="total_price_text">total amount :  <b>$ ${amount} </b></div>
+          </div>
+          <div class="chackoutbtn">
+          <button onclick="checkout()">chackout</button>
+          </div>
       `;
   } else {
     generateShop();
   }
 };
+
+let checkout = ()=>{
+  if(basket.length !== 0){
+    alert("place wait for update")
+  }else{
+    alert("please add item to chackout")
+  }
+}
+
 totalAmount();
 calculation();

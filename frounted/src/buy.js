@@ -17,12 +17,13 @@ let buyshop = () => {
         <div class="buy_item_image">
             <div class="image_container">
                 <img src="${search.img}" alt="">
-                <div class="radio_img">
+              <!--  <div class="radio_img">
                     <input type="radio" id="huey" name="drone" value="huey" checked ></input>
                     <input type="radio" id="dewey" name="drone" value="dewey" ></input>
                     <input type="radio" id="louie" name="drone" value="louie" ></input>
                     <input type="radio" id="loue" name="drone" value="loue" ></input>
                 </div>
+                -->
             </div>
             <!-- !prioduct_container -->
             <div class="product_container">
@@ -41,7 +42,7 @@ let buyshop = () => {
                     </div>
                 </div>
                 <div class="checkout_addcart">
-                    <div class="checkout" onclick="console.log('checkout')">checkout</div>
+                    <div class="checkout" onclick="checkout()">checkout</div>
                     <div class="addcart" onclick="addcart(${id})">add cart</div>
                 </div>
             </div>
@@ -118,6 +119,15 @@ let calculation = () => {
   let cartIcon = document.getElementById("cart_no");
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
+
+let checkout = ()=>{
+  if(basket.length !== 0){
+    alert("place wait for update")
+  }else{
+    alert("please add item to chackout")
+  }
+}
+
 // update();
 calculation();
 buyshop();
