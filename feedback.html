@@ -19,6 +19,18 @@
       <div class="help"><a href="help.html">help</a></div>
     </div>
     <div class="feedback_cantenr">
+      <h1>Feedback Form</h1>
+    <form id="feedback-form" method="post" action="" name="product" id="product">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+    </form method="post" action="" name="product" id="product">
       <a
         href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0"
       >
@@ -35,27 +47,8 @@
       </a>
     </div>
 
-    <!-- <form>
-      <h1>Feedback</h1>
-      <div class="form-group">
-        ! name -->
-    <!-- <label for="name">Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          placeholder="Enter name"
-        />
-        <!-- ! mobile number & email -->
-    <!-- <label for="mobile">Mobile Number</label>
-        <input
-          type="text"
-          class="form-control"
-          id="mobile"
-          placeholder="Enter mobile"
-        />
-      </div> -->
-    <!-- </form> -->
+    
   </body>
   <script src="frounted/src/dark.js"></script>
+  <script src="frounted/src/feedback.js"></script>
 </html>
