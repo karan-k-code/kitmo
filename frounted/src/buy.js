@@ -69,7 +69,6 @@ let addcart = (id) => {
   }
   update(selecteItam.id);
   calculation();
-  alert("add cart Successfull");
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
