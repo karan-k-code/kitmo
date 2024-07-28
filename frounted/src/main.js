@@ -121,7 +121,9 @@ let goo =(id)=>{
 }
 localStorage.removeItem("databuy");
 
-let ownerImg = document.querySelector(".profile_img");
-  ownerImg.addEventListener("click", () => {
+let ownerImg = document.querySelectorAll(".profile_img");
+ownerImg.forEach((img) => {
+  img.addEventListener("click", () => {
     window.location.href = "profile.html";
     });
+  })
