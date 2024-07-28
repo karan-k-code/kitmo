@@ -20,7 +20,6 @@ document.getElementById('product').addEventListener('submit', function(event) {
  
 });
 
-console.log(userData);
 
 
 
@@ -29,8 +28,12 @@ console.log(userData);
 const scriptURL ="https://script.google.com/macros/s/AKfycbyRjxVVBxXu9oxnWhHzW8cQE0erOYMC1qpSGvF_uC6QAEd7b8JTLPcYhHusOd2xVXs_1g/exec";
 const form = document.forms["product"];
 
+const loader =document.querySelector(".loader")
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  loader.style.display= 'block';
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) =>
       alert("welcome to kitmo ")
