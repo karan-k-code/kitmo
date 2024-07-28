@@ -146,6 +146,7 @@ let removeItem = (id) => {
   totalAmount();
   calculation();
   localStorage.setItem("data", JSON.stringify(basket));
+  reload();
 };
 
 // ! total amount
@@ -181,6 +182,14 @@ let checkout = ()=>{
   }else{
     alert("please add item to chackout")
   }
+}
+
+
+
+let reload=() =>{
+if(basket.length === 0){
+  window.location.reload();
+}
 }
 
 totalAmount();
