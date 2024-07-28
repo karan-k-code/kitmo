@@ -233,6 +233,7 @@
   width: 150px;
   border-radius: 50%;
   background-size: cover;
+  cursor: pointer;
 }
 .no_dark .profile_img{
   filter: drop-shadow(0px -2px 8px rgba(0, 0, 0, 0.327));

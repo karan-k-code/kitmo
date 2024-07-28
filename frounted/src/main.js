@@ -121,3 +121,10 @@ let goo =(id)=>{
 }
 localStorage.removeItem("databuy");
 
+let ownerImg = document.querySelectorAll(".profile_img");
+ownerImg.forEach((img) => {
+  img.addEventListener("click", () => {
+    localStorage.setItem("owner", JSON.stringify(img.dataset.id));
+    window.location.href = "profile.html";
+    });
+})
