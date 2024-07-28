@@ -11,3 +11,19 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Invalid username or password.');
     }
 });
+
+async function getData() {
+    const url = 'Http://localhost:3000/user';
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  
