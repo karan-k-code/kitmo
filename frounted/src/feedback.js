@@ -15,8 +15,12 @@
 const scriptURL ="https://script.google.com/macros/s/AKfycbwX-pf2Gt8hWIJMzxbjbDnRGAex9FCbSnO6W-BUAC9Bz-8x2vLSOZfGItFr84HilEkWFw/exec";
 const form = document.forms["product"];
 
+const loader =document.querySelector(".loader")
+
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  loader.style.display= 'block';
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) =>
       alert("Thank you for giving feedback.")
