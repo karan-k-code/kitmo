@@ -16,17 +16,25 @@ const scriptURL ="https://script.google.com/macros/s/AKfycbwX-pf2Gt8hWIJMzxbjbDn
 const form = document.forms["product"];
 
 const loader =document.querySelector(".loader")
+const success =document.querySelector(".success_box")
 
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   loader.style.display= 'block';
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) =>
-      alert("Thank you for giving feedback.")
+    .then((response) =>{
+      loader.style.display= 'none';
+      success.style.display= 'flex';
+    }
     )
     .then(() => {
-      window.location.href = "feedback.html";
+      setTimeout(reload,3000)
+      // window.location.href = "feedback.html";
     })
     .catch((error) => console.error("Error!", error.message));
 });
+
+let reload=() =>{ 
+    window.location.reload();
+  }

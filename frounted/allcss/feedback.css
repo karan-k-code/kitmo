@@ -97,6 +97,21 @@ a {
 }
 
 
+/*  !  success_box */
+
+.success_box {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #24d2ac;
+  position: absolute;
+  height: 100px;
+  padding: 10px;
+  border-radius: 6px;
+  /* width: 100%; */
+  font-size: 24px;
+}
+
 
 @media (max-width: 700px) {
 }

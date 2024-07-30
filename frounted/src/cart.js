@@ -181,8 +181,7 @@ let totalAmount = () => {
       `;
   } else {
     generateShop();
-  checkout_box.style.display = "none";
-
+  checkout_box.style.display = "none";  
   }
 };
 
