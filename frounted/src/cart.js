@@ -1,6 +1,9 @@
 let cart_y = document.getElementById("cart_y");
 let not_cart = document.getElementById("not_cart");
 let label1 = document.getElementById("chekout");
+
+let checkout_box = document.querySelector("#big_cart_cantenr");
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -42,7 +45,7 @@ let generateCartItem = () => {
     not_cart.innerHTML = `
             <div class="add_cart1"><H1>Add cart</H1></div>
             <div class="cart_image">
-              <img src="image/cartimage.jpeg" alt="">
+              <img src="image/cartimg1.png" alt="">
             </div>
             <!-- !todaydeals -->
             <div class="todaydeals">
@@ -55,6 +58,7 @@ let generateCartItem = () => {
 };
 
 generateCartItem();
+
 
 // !increment
 let increment = (id) => {
@@ -100,8 +104,11 @@ let update = (id) => {
 
 // ! calculat
 let calculation = () => {
-  let total_item = document.getElementById("total_item");
+  if(basket.length !== 0){
+    let total_item = document.getElementById("total_item");
   total_item.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+  }
+  
 };
 
 // ! shop item gennerateshop funcation
@@ -149,6 +156,7 @@ let removeItem = (id) => {
   reload();
 };
 
+
 // ! total amount
 
 let totalAmount = () => {
@@ -173,8 +181,11 @@ let totalAmount = () => {
       `;
   } else {
     generateShop();
+  checkout_box.style.display = "none";
+
   }
 };
+
 
 let checkout = ()=>{
   if(basket.length !== 0){
@@ -184,7 +195,10 @@ let checkout = ()=>{
   }
 }
 
+// reload funcation
 
+
+console.log(checkout_box);
 
 let reload=() =>{
 if(basket.length === 0){
