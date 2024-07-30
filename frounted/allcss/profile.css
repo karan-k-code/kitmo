@@ -71,6 +71,20 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* more-info */
+
+#more-info{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+a{
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+}
 /* box shadow dark mode and no dark mode */
 .box_no_dark_shadow {
     /* box-shadow: 4px 5px 6px rgb(0, 0, 0); */

@@ -82,7 +82,7 @@ let decrement = (id) => {
   let selecteItam = id;
   let search = basket.find((x) => x.id === id);
   if (search === undefined) return;
-  else if (search.item === 0) return;
+  else if (search.item === 1) return;
   else {
     search.item -= 1;
   }
@@ -196,9 +196,6 @@ let checkout = ()=>{
 }
 
 // reload funcation
-
-
-console.log(checkout_box);
 
 let reload=() =>{
 if(basket.length === 0){
