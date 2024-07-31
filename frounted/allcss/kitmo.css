@@ -184,10 +184,10 @@
 /* mobile screen size 382 */
 @media (max-width: 382px) {
   .cantenr {
-    grid-template-columns: repeat(1, 185px);
+    grid-template-columns: repeat(2, 175px);
   }
   .hero_box {
-    height: 150px;
+    height: 175px;
   }
 }
 
