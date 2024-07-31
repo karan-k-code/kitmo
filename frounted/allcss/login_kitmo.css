@@ -87,3 +87,36 @@ button {
   justify-content: space-between;
   padding: 0 20px 0 20px;
 }
+
+/*  !  success_box */
+
+.success_box {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #24d2ac;
+  position: absolute;
+  height: 100px;
+  padding: 10px;
+  border-radius: 6px;
+  /* width: 100%; */
+  font-size: 24px;
+}
+
+
+
+.loader {
+  display: none;
+  position: absolute;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #2596e6; /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
