@@ -21,6 +21,18 @@
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 }
+
+.image1{
+  display: flex;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+
+  z-index: -1;
+  position: absolute;
+}
+
+
 .hero-msg {
   background-color: white;
   color: black;
@@ -40,15 +52,18 @@
   border-top-right-radius: 13px;
   border-top-left-radius: 13px;
   top: -26px;
-  display: flex;
+  display: none;
   position: relative;
-  background-color: #fff;
+  background-color: #d05a5a;
 }
 /* product item box cantenr*/
 .cantenr {
   display: grid;
   grid-template-columns: repeat(5, 220px);
-  gap: 10px;
+  gap:10px;
+  border-top-right-radius: 13px;
+  border-top-left-radius: 13px;
+  padding: 25px 0 0 0px;
   justify-content: space-evenly;
 }
 .box {
@@ -142,6 +157,9 @@
   .hero_box {
     height: 200px;
   }
+  .image1{
+    height: 200px;
+  }
 }
 /* 1140px */
 @media (max-width: 1140px) {
@@ -149,6 +167,9 @@
     grid-template-columns: repeat(4, 185px);
   }
   .hero_box {
+    height: 400px;
+  }
+  .image1{
     height: 400px;
   }
 }
@@ -161,6 +182,9 @@
   .hero_box {
     height: 350px;
   }
+  .image1{
+    height: 350px;
+  }
 }
 /*pad screen */
 @media (max-width: 781px) {
@@ -168,6 +192,9 @@
     grid-template-columns: repeat(3, 185px);
   }
   .hero_box {
+    height: 300px;
+  }
+  .image1{
     height: 300px;
   }
 }
@@ -179,6 +206,9 @@
   .hero_box {
     height: 200px;
   }
+  .image1{
+    height: 200px;
+  }
 }
 
 /* mobile screen size 382 */
@@ -187,6 +217,9 @@
     grid-template-columns: repeat(2, 175px);
   }
   .hero_box {
+    height: 175px;
+  }
+  .image1{
     height: 175px;
   }
 }
@@ -324,3 +357,4 @@ a {
     display: flex;
   }
 }
+

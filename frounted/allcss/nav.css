@@ -1,9 +1,22 @@
 /*navbar*/
+.navbar2 {
+  height: 0px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  top: 0px; 
+  z-index: -1;
+  width: 100%;
+}
 .navbar {
   height: 60px;
   justify-content: space-around;
   align-items: center;
   display: flex;
+  position: fixed;
+  top: 0px; 
+  width: 100%;
+  z-index: 1;
 }
 .nav_light {
   background-color: #bbcbcb;
@@ -16,6 +29,7 @@
     font-size: 30px;
     text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
   }
+  overflow: auto;
 }
 .kitmo-logo {
   display: flex;
@@ -118,14 +132,27 @@
 }
 .search_secation_panl {
   display: none;
-
+  position: relative;
+  top: 50px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   height: 50px;
+  z-index: 0;
+}
+.search_secation_panl2 {
+  display: none;
+  top: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: -2;
 }
 .colam {
   height: 13px;
-  position: relative;
+  display: flex;
+  position: fixed;
 }
 @media (max-width: 700px) {
   .navbar {
@@ -135,6 +162,9 @@
     display: none;
   }
   .search_secation_panl {
+    display: flex;
+  }
+  .search_secation_panl2{
     display: flex;
   }
   .search-select {
@@ -162,6 +192,9 @@
   .search_secation_panl {
     display: flex;
   }
+  .search_secation_panl2{
+    display: flex;
+  }
   .search-select {
     height: 35px;
   }
@@ -186,6 +219,9 @@
     display: none;
   }
   .search_secation_panl {
+    display: flex;
+  }
+  .search_secation_panl2{
     display: flex;
   }
   .search-select {
