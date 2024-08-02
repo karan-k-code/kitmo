@@ -17,21 +17,29 @@
   height: 450px;
   position: relative;
   display: flex;
-  background-size: cover;
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
 }
 
 .image1{
-  display: flex;
+  /* display: flex; */
   height: 600px;
   width: 100%;
   background-size: cover;
 
   z-index: -1;
+
   position: absolute;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
+.image1.active {
+  opacity: 1;
+}
 
 .hero-msg {
   background-color: white;

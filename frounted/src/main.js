@@ -127,3 +127,31 @@ ownerImg.forEach((img) => {
     window.location.href = "profile.html";
     });
   })
+
+  // ! image slide code 
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.image1');
+    let currentIndex = 0;
+  
+    function showNextImage() {
+      // Hide all images
+      images.forEach((img, index) => {
+        if (index === currentIndex) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+  
+      // Move to the next image
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+  
+    // Initially show the first image
+    showNextImage();
+  
+    // Change image every 4 seconds
+    setInterval(showNextImage, 4000);
+  });
+  
