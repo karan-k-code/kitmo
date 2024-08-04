@@ -20,6 +20,16 @@ body{
   position: sticky;
   top: 0;
 }
+.opation , .opationcut{
+  display: none;
+  position: absolute;
+  top: 10px;
+  padding: 4px 4px 4px 6px;
+  font-size: 30px;
+  /* color: #fff; */
+  /* background-color: #000000; */
+  cursor: pointer;
+}
 
 /* ! big box  */
 
@@ -29,10 +39,10 @@ body{
 
 .boxa{
   width: 30%;
-  height: 1000px;
+  /* height: 1000px; */
   display: flex;
-  background-color: #0a4c3c66;
-  border: 1px solid black;
+  background-color: #bbe0d7;
+  border: 1px solid rgba(0, 0, 0, 0.337);
   border-radius: 8px;
   color: #fff;
   padding: 4px 4px 4px 4px ;
@@ -91,4 +101,18 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* mobile screen size */
+@media (max-width: 590px) {
+
+  .boxa{
+    display: none;
+  }
+  .boxb{
+    width: 100%;
+  }
+  .opation{
+    display: flex;
+  }
 }
