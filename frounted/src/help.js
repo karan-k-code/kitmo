@@ -7,9 +7,6 @@ let boxa = document.querySelector(".boxa");
 function answ() {
     if (boxa.style.display === 'none') {
         boxa.style.display = 'flex';
-        boxa.style.position = 'absolute';
-        boxa.style.height = '100%';
-        boxa.style.width = '90%';
         opation.style.display = 'none'
         opationcut.style.display = 'flex'
         
