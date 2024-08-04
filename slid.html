@@ -4,32 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
-    <link rel="stylesheet" href="frounted/allcss/slid.css">
 </head>
 <body>
-    <div class="slider-wrapper">
-      <button class="slide-button" id="prev">Prev</button>
-        <div class="image-list">
-            <img src="image/img1.jpeg" alt="Image 1">
-            <img src="image/img2.jpeg" alt="Image 2">
-            <img src="image/img3.jpeg" alt="Image 3">
-            <!-- Add more images here -->
-        </div>
-      <button class="slide-button" id="next">Next</button>
-        <div class="slider-scrollbar">
-            <div class="scrollbar-thumb"></div>
-        </div>
-        <div class="radio-buttons">
-          <input type="radio" name="slide" id="slide-1" checked>
-          <label for="slide-1">1</label>
-          <input type="radio" name="slide" id="slide-2">
-          <label for="slide-2">2</label>
-          <input type="radio" name="slide" id="slide-3">
-          <label for="slide-3">3</label>
-          <!-- Add more radio buttons here -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Scrollable List</title>
+      <style>
+          .boxa {
+              width: 200px; /* Set your desired width */
+          }
+          ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              max-height: 100px; /* Set the max height for scrolling */
+              overflow-y: auto; /* Enable vertical scrolling */
+          }
+          .option_b {
+              padding: 10px;
+              border: 1px solid #ccc; /* Optional: Add borders for better visibility */
+          }
+          .mode_line {
+              font-weight: bold;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="boxa"> 
+          <ul>
+              <li class="option_b"><div class="mode_line">how to on dark mode ?</div></li>
+              <li class="option_b"><a>location</a></li>
+              <li class="option_b"><a href="#">deliver location</a></li>
+              <li class="option_b"><a href="#">About</a></li>
+              <li class="option_b"><a href="#">Help</a></li>
+              <!-- Add more list items if needed -->
+          </ul>
       </div>
-    </div>
-
-    <script src="frounted/src/slid.js"></script>
+  </body>
+  </html>
+  
 </body>
 </html>
