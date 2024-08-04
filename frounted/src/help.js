@@ -26,3 +26,94 @@ function answcut() {
         boxa.style.display = 'flex';
     }
 }
+
+let arryq=[
+    {
+        id: "a",
+        q:"What is the capital of France?",
+        video:"image/darkmode.mp4",
+        a:"Paris"
+    },
+    {
+        id: "b",
+        q:"What is the capital of Germany?",
+        video:"",
+        a:"lkjsdflj"
+    }
+]
+
+let question = document.querySelector(".question");
+// let basket = JSON.parse(localStorage.getItem("data")) || [];
+
+// ! generatequestion funcation
+
+let generatequestion =()=>{
+    return (question.innerHTML = arryq
+.map((x) => {
+          let { id, q, a} = x;
+        //   let search = basket.find((x) => x.id === id) || [];
+          return `
+            <li class="option_b" onclick="generateans(${id})" id="${id}" >${q} </li>
+          `;
+        })
+        .join(""));
+}
+
+generatequestion();
+
+let answe = document.querySelector(".answe");
+
+// ! generateansans funcation
+let generateans = (id)=>{
+    let selecteItam = id;
+    console.log(selecteItam.id);
+    let selecteItam2 = arryq.find((x) => x.id === selecteItam.id);
+    console.log(selecteItam2);
+    if(selecteItam2.id === selecteItam.id){
+
+        answe.innerHTML = arryq.map((x) => {
+            let { id, q, video, a} = x;
+            let search = arryq.find((y) => y.id === id);
+            return  `
+            <div class="q">${search.q}</div>
+            <video src="${video}"  width="640" height="360" controls></video>
+            <div class="ans">
+              <ul>
+                <li>1. go to kitmo home page</li>
+                <img src="image/clicktop.png" alt="">
+                <li>2. Click on the three line</li>
+                <img src="image/turnon.png" alt="">
+                <li>3. turn on dark mode toggle</li>
+                <img src="image/dark.png" alt="">
+                <li>4. now Success </li>
+              </ul>
+            `
+        })
+    }else{
+        answ.innerHTML = `
+        <div>nodata</div>
+        `
+    }
+    // return (answerbox.innerHTML = arryq.map((x)=>{
+    //     let { id, q, a} = x;
+    //     if(selecteItam ===x.id){
+    //         return `
+    //         <div class="q">${q}</div>
+    //     <video src="image/darkmode.mp4"  width="640" height="360" controls></video>
+    //     <div class="ans">
+    //       <ul>
+    //         <li>1. go to kitmo home page</li>
+    //         <img src="image/clicktop.png" alt="">
+    //         <li>2. Click on the three line</li>
+    //         <img src="image/turnon.png" alt="">
+    //         <li>3. turn on dark mode toggle</li>
+    //         <img src="image/dark.png" alt="">
+    //         <li>4. now Success </li>
+    //       </ul>
+    //         `;
+    //     }  
+    // }));
+    
+}
+
+// generateans();
