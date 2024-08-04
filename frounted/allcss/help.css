@@ -112,7 +112,9 @@ a {
 
 /* mobile screen size */
 @media (max-width: 590px) {
-
+  .welcome_box {
+    font-size: 25px;
+  }
   .boxa{
     display: none;
   }
