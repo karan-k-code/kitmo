@@ -54,13 +54,13 @@ body{
   padding: 4px 4px 4px 4px ;
   z-index: 1;
 }
-ul{
+.boxa ul{
   list-style: none;
   width: 100%;
   max-height: 800px; /* Set the max height for scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
 }
-li{
+.boxa li{
   list-style: none;
   display: flex;
   justify-content: space-evenly;
@@ -109,13 +109,47 @@ a {
 
   font-weight: bold;
 }
+
+.video{
+  width: 400; 
+  height: 200;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
 .ans{
   width: 90%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
+.ans li{
+  font-size: 1.2rem;
+}
+
+.thank{
+  display: flex;
+  font-size: 2rem;
+}
+
+.option_b{
+  background-color: #cf69e9c5;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  &:hover{
+    background-color: #dfa6eec5;
+  }
+}
 /* mobile screen size */
 @media (max-width: 590px) {
   .welcome_box {
@@ -134,5 +168,11 @@ a {
   }
   .opation{
     display: flex;
+  }
+  video{
+    width: 95%; 
+    height: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
   }
 }
