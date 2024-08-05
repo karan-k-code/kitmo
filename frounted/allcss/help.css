@@ -33,6 +33,20 @@ body{
   z-index: 2;
 }
 
+.home{
+  display: flex;
+  position: fixed;
+  top: 10px;
+  right: 2px;
+  padding: 4px 4px 4px 6px;
+  font-size: 30px;
+  text-shadow: 3px 4px 3px rgb(153, 109, 224);
+  /* color: #fff; */
+  /* background-color: #000000; */
+  cursor: pointer;
+  z-index: 2;
+}
+
 /* ! big box  */
 
 .bigbox{

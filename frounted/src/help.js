@@ -117,3 +117,7 @@ let generateans = (id)=>{
 }
 
 // generateans();
+
+let home =()=>{
+    window.location.href ="index.html"
+}
