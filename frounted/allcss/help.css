@@ -67,7 +67,34 @@ body{
   color: #fff;
   padding: 4px 4px 4px 4px ;
   z-index: 1;
+  animation: fadeIn 0.2s ease-in-out; /* Animation properties */
 }
+
+/* Define the keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Define the keyframes for the fade-out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Additional class to trigger fade-out animation */
+.fade-out {
+  animation: fadeOut 2s ease-in-out;
+}
+
 .boxa ul{
   list-style: none;
   width: 100%;

@@ -17,26 +17,71 @@ function answ() {
 
 // ! opation cut  answcut funcation
 
+opation.addEventListener('click', function (){
+    answ();
+})
+
+opationcut.addEventListener('click', function (){
+    // fadeOutBox()
+    answcut();
+    
+})
+
 function answcut() {
+    
     if (boxa.style.display === 'flex') {
         boxa.style.display = 'none';
         opation.style.display = 'flex'
         opationcut.style.display = 'none'
+        if(opationcut.style.display === 'none'){
+            
+        }
     } else {
         boxa.style.display = 'flex';
+        
     }
 }
+
+// animation 
+
+function fadeOutBox() {
+    let box = document.getElementById('boxa');
+    box.classList.add('fade-out');
+    // Optionally, you can remove the element from the DOM after the animation completes
+    box.addEventListener('animationend', function() {
+      box.style.display = 'none'; // Or any other action you want to perform
+    });
+  }
+  
 
 let arryq=[
     {
         id: "a",
-        q:"What is the capital of France?",
+        q:"how to on dark mode",
         video:"image/darkmode.mp4",
         a:"Paris"
     },
     {
         id: "b",
-        q:"What is the capital of Germany?",
+        q:"how to sign up kitmo",
+        video:"",
+        a:"lkjsdflj"
+    },
+    {
+        id: "c",
+        q:"how to login kitmo",
+        video:"",
+        a:"lkjsdflj"
+    },
+    {
+        id: "d",
+        q:"how to add cart",
+        video:"",
+        a:"lkjsdflj"
+    },
+    {
+        id: "e",
+        q:"how to give feedback",
         video:"",
         a:"lkjsdflj"
     }
