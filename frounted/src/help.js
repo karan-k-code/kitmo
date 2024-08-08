@@ -54,7 +54,7 @@ function fadeOutBox() {
   }
   
 
-let arryq=[
+let quationData=[
     {
         id: "a",
         q:"how to on dark mode",
@@ -64,28 +64,31 @@ let arryq=[
     {
         id: "b",
         q:"how to sign up kitmo",
-        video:"",
+        video: "",
         a:"lkjsdflj"
     },
     {
         id: "c",
         q:"how to login kitmo",
-        video:"",
+    
         a:"lkjsdflj"
     },
     {
         id: "d",
         q:"how to add cart",
-        video:"",
+        video: "",
         a:"lkjsdflj"
     },
     {
         id: "e",
         q:"how to give feedback",
-        video:"",
         a:"lkjsdflj"
     }
 ]
+
+let ansData =JSON.parse(localStorage.getItem("andata")) || [];
+
+
 
 let question = document.querySelector(".question");
 // let basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -93,12 +96,12 @@ let question = document.querySelector(".question");
 // ! generatequestion funcation
 
 let generatequestion =()=>{
-    return (question.innerHTML = arryq
+    return (question.innerHTML = quationData
 .map((x) => {
           let { id, q, a} = x;
         //   let search = basket.find((x) => x.id === id) || [];
           return `
-            <li class="option_b" onclick="generateans(${id})" id="${id}" >${q} </li>
+            <li class="option_b" onclick="dog(${id})" id="${id}" >${q} </li>
           `;
         })
         .join(""));
@@ -108,20 +111,31 @@ generatequestion();
 
 let answe = document.querySelector(".answe");
 
-// ! generateansans funcation
-let generateans = (id)=>{
-    let selecteItam = id;
-    console.log(selecteItam.id);
-    let selecteItam2 = arryq.find((x) => x.id === selecteItam.id);
-    console.log(selecteItam2);
-    if(selecteItam2.id === selecteItam.id){
+console.log(ansData);
 
-        answe.innerHTML = arryq.map((x) => {
-            let { id, q, video, a} = x;
-            let search = arryq.find((y) => y.id === id);
-            return  `
-            <div class="q">${search.q}</div>
-            <video src="${video}"  width="640" height="360" controls></video>
+let dog =(id)=>{
+    let selecteItam = id;
+    let search = ansData.find((x) => x.id === selecteItam.id);
+    if (search === undefined) {
+      ansData.push({
+        id: selecteItam.id,
+      });
+    }
+    localStorage.setItem("andata", JSON.stringify(ansData));
+    generateans();
+}
+
+// ! generateansans funcation
+let generateans = ()=>{
+    if (ansData.length !== 0) {
+        return (answe.innerHTML = ansData
+          .map((x) => {
+            let { id, item } = x;
+            let search = quationData.find((y) => y.id === id) || [];
+            return `
+        <div class="q">${search.q}</div>
+        ${ hello(x.id)}
+            
             <div class="ans">
               <ul>
                 <li>1. go to kitmo home page</li>
@@ -132,37 +146,34 @@ let generateans = (id)=>{
                 <img src="image/dark.png" alt="">
                 <li>4. now Success </li>
               </ul>
-            `
-        })
+          `;
+          })
+          .join(""));
     }else{
-        answ.innerHTML = `
+        answe.innerHTML = `
         <div>nodata</div>
         `
     }
-    // return (answerbox.innerHTML = arryq.map((x)=>{
-    //     let { id, q, a} = x;
-    //     if(selecteItam ===x.id){
-    //         return `
-    //         <div class="q">${q}</div>
-    //     <video src="image/darkmode.mp4"  width="640" height="360" controls></video>
-    //     <div class="ans">
-    //       <ul>
-    //         <li>1. go to kitmo home page</li>
-    //         <img src="image/clicktop.png" alt="">
-    //         <li>2. Click on the three line</li>
-    //         <img src="image/turnon.png" alt="">
-    //         <li>3. turn on dark mode toggle</li>
-    //         <img src="image/dark.png" alt="">
-    //         <li>4. now Success </li>
-    //       </ul>
-    //         `;
-    //     }  
-    // }));
-    
 }
 
+let hello = (id)=>{
+    let selecteItam = id;
+    quationData.map((x)=>{
+        let { id , video} = x;
+        let search = quationData.find((y) => y.id === id) || [];
+
+        if(search.video !== undefined){
+            return `<video src="${search.video}"  width="640" height="360" controls></video>`
+        }else{
+            return `<div>hello</div>`
+        }
+    })
+}
 // generateans();
 
 let home =()=>{
     window.location.href ="index.html"
 }
+
+generateans();
+hello();
