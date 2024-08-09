@@ -136,7 +136,6 @@ let generateans = ()=>{
             return `
         <div class="q">${search.q}</div>
         ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
-            
             <div class="ans">
               <ul>
                 <li>1. go to kitmo home page</li>
@@ -147,13 +146,12 @@ let generateans = ()=>{
                 <img src="image/dark.png" alt="">
                 <li>4. now Success </li>
               </ul>
+            </div>
           `;
           })
           .join(""));
     }else{
-        answe.innerHTML = `
-        <div>nodata</div>
-        `
+        answe.innerHTML = ``
     }
 }
 
@@ -164,3 +162,5 @@ let home =()=>{
 }
  
 generateans();
+
+localStorage.removeItem("andata");
