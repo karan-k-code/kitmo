@@ -64,24 +64,25 @@ let quationData=[
     {
         id: "b",
         q:"how to sign up kitmo",
-        video: "",
+        video: undefined,
         a:"lkjsdflj"
     },
     {
         id: "c",
         q:"how to login kitmo",
-    
+        video: undefined,
         a:"lkjsdflj"
     },
     {
         id: "d",
         q:"how to add cart",
-        video: "",
+        video: undefined,
         a:"lkjsdflj"
     },
     {
         id: "e",
         q:"how to give feedback",
+        video: undefined,
         a:"lkjsdflj"
     }
 ]
@@ -134,7 +135,7 @@ let generateans = ()=>{
             let search = quationData.find((y) => y.id === id) || [];
             return `
         <div class="q">${search.q}</div>
-        ${ hello(x.id)}
+        ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
             
             <div class="ans">
               <ul>
@@ -156,24 +157,10 @@ let generateans = ()=>{
     }
 }
 
-let hello = (id)=>{
-    let selecteItam = id;
-    quationData.map((x)=>{
-        let { id , video} = x;
-        let search = quationData.find((y) => y.id === id) || [];
-
-        if(search.video !== undefined){
-            return `<video src="${search.video}"  width="640" height="360" controls></video>`
-        }else{
-            return `<div>hello</div>`
-        }
-    })
-}
 // generateans();
 
 let home =()=>{
     window.location.href ="index.html"
 }
-
+ 
 generateans();
-hello();
