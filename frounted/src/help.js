@@ -9,7 +9,6 @@ function answ() {
         boxa.style.display = 'flex';
         opation.style.display = 'none'
         opationcut.style.display = 'flex'
-        
     } else {
         boxa.style.display = 'none';
     }
@@ -59,40 +58,44 @@ let quationData=[
         id: "a",
         q:"how to on dark mode",
         video:"image/darkmode.mp4",
-        a:"Paris"
+        li1:"go to kitmo home page",
+        img1:"image/clicktop.png",
+        li2:"Click on the three line",
+        img2:"image/turnon.png",
+        li3:"turn on dark mode toggle",
+        img3:"image/dark.png",
+        li4:"now Success",
+
     },
     {
         id: "b",
         q:"how to sign up kitmo",
-        video: undefined,
-        a:"lkjsdflj"
+        li1:"go to home page",
+        li2:"click on profile button",
+        li3:"click on sign up button",
+        li4:"fill up the form",
+
     },
     {
         id: "c",
         q:"how to login kitmo",
-        video: undefined,
         a:"lkjsdflj"
     },
     {
         id: "d",
         q:"how to add cart",
-        video: undefined,
         a:"lkjsdflj"
     },
     {
         id: "e",
         q:"how to give feedback",
-        video: undefined,
         a:"lkjsdflj"
     }
 ]
 
 let ansData =JSON.parse(localStorage.getItem("andata")) || [];
 
-
-
 let question = document.querySelector(".question");
-// let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 // ! generatequestion funcation
 
@@ -124,6 +127,7 @@ let dog =(id)=>{
     }
     localStorage.setItem("andata", JSON.stringify(ansData));
     generateans();
+    answcut()
 }
 
 // ! generateansans funcation
@@ -138,13 +142,19 @@ let generateans = ()=>{
         ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
             <div class="ans">
               <ul>
-                <li>1. go to kitmo home page</li>
-                <img src="image/clicktop.png" alt="">
-                <li>2. Click on the three line</li>
-                <img src="image/turnon.png" alt="">
-                <li>3. turn on dark mode toggle</li>
-                <img src="image/dark.png" alt="">
-                <li>4. now Success </li>
+                ${ search.li1 === undefined? ``: `<li>1.${search.li1} </li>` }
+                ${ search.img1 === undefined? ``: `<img src="${search.img1}" alt="">` }
+                ${ search.li2 === undefined? ``: `<li>2.${search.li2} </li>` }
+                ${ search.img2 === undefined? ``: `<img src="${search.img2}" alt="">` }
+                ${ search.li3 === undefined? ``: `<li>3.${search.li3} </li>` }
+                ${ search.img3 === undefined? ``: `<img src="${search.img3}" alt="">` }
+                ${ search.li4 === undefined? ``: `<li>4.${search.li4}  </li>` }
+                ${ search.img4 === undefined? ``: `<img src="${search.img4}" alt="">` }
+                ${ search.li5 === undefined? ``: `<li>2.${search.li5} </li>` }
+                ${ search.img5 === undefined? ``: `<img src="${search.img5}" alt="">` }
+                ${ search.li6 === undefined? ``: `<li>3.${search.li6} </li>` }
+                ${ search.img6 === undefined? ``: `<img src="${search.img6}" alt="">` }
+                ${ search.li7 === undefined? ``: `<li>4.${search.li7}  </li>` }
               </ul>
             </div>
           `;
@@ -155,7 +165,6 @@ let generateans = ()=>{
     }
 }
 
-// generateans();
 
 let home =()=>{
     window.location.href ="index.html"
