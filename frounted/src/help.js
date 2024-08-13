@@ -9,8 +9,8 @@ function answ() {
         boxa.style.display = 'flex';
         opation.style.display = 'none'
         opationcut.style.display = 'flex'
-    } else {
-        boxa.style.display = 'none';
+    }else {
+    boxa.style.display = 'none';
     }
 }
 
@@ -18,26 +18,22 @@ function answ() {
 
 opation.addEventListener('click', function (){
     answ();
+    
 })
 
 opationcut.addEventListener('click', function (){
-    // fadeOutBox()
     answcut();
     
 })
 
-function answcut() {
-    
+function answcut() {  
     if (boxa.style.display === 'flex') {
         boxa.style.display = 'none';
         opation.style.display = 'flex'
         opationcut.style.display = 'none'
-        if(opationcut.style.display === 'none'){
-            
-        }
     } else {
         boxa.style.display = 'flex';
-        
+        cat();
     }
 }
 
@@ -65,7 +61,6 @@ let quationData=[
         li3:"turn on dark mode toggle",
         img3:"image/dark.png",
         li4:"now Success",
-
     },
     {
         id: "b",
@@ -74,7 +69,11 @@ let quationData=[
         li2:"click on profile button",
         li3:"click on sign up button",
         li4:"fill up the form",
-
+        li5:"enter your name",
+        li6:"enter your phone number",
+        li7:"enter your email",
+        li8:"enter your password",
+        li9:"click next button",
 
     },
     {
@@ -116,8 +115,6 @@ generatequestion();
 
 let answe = document.querySelector(".answe");
 
-console.log(ansData);
-
 let dog =(id)=>{
     let selecteItam = id;
     let search = ansData.find((x) => x.id === selecteItam.id);
@@ -128,7 +125,12 @@ let dog =(id)=>{
     }
     localStorage.setItem("andata", JSON.stringify(ansData));
     generateans();
-    answcut()
+    localStorage.removeItem("andata");  
+}
+
+let cat =()=>{
+    console.log("cat is work");
+    
 }
 
 // ! generateansans funcation
@@ -139,8 +141,8 @@ let generateans = ()=>{
             let { id, item } = x;
             let search = quationData.find((y) => y.id === id) || [];
             return `
-        <div class="q">${search.q}</div>
-        ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
+            <div class="q">${search.q}</div>
+            ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
             <div class="ans">
               <ul>
                 ${ search.li1 === undefined? ``: `<li>1.${search.li1} </li>` }
@@ -156,6 +158,11 @@ let generateans = ()=>{
                 ${ search.li6 === undefined? ``: `<li>3.${search.li6} </li>` }
                 ${ search.img6 === undefined? ``: `<img src="${search.img6}" alt="">` }
                 ${ search.li7 === undefined? ``: `<li>4.${search.li7}  </li>` }
+                ${ search.img7 === undefined? ``: `<img src="${search.img7}" alt="">` }
+                ${ search.li8 === undefined? ``: `<li>4.${search.li8}  </li>` }
+                ${ search.img8 === undefined? ``: `<img src="${search.img8}" alt="">` }
+                ${ search.li9 === undefined? ``: `<li>4.${search.li9}  </li>` }
+                ${ search.img9 === undefined? ``: `<img src="${search.img9}" alt="">` }  
               </ul>
             </div>
           `;
@@ -166,11 +173,10 @@ let generateans = ()=>{
     }
 }
 
-
+//! home button
 let home =()=>{
     window.location.href ="index.html"
 }
  
-generateans();
-
-localStorage.removeItem("andata");
+// generateans();
+// localStorage.removeItem("andata");
