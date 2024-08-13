@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
   res.json(users)
   })
-
 app.get('/users/:id',(req,res) => {
   const id = req.params.id;
   const user = users.find((u)=>u.id ==id);
