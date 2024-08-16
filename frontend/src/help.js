@@ -52,44 +52,44 @@ function fadeOutBox() {
 let quationData=[
     {
         id: "a",
-        q:"how to on dark mode",
+        q:"How To On Dark Mode",
         video:"image/darkmode.mp4",
-        li1:"go to kitmo home page",
+        li1:"Go To Kitmo Home Page",
         img1:"image/clicktop.png",
-        li2:"Click on the three line",
+        li2:"Click On The Three Line",
         img2:"image/turnon.png",
-        li3:"turn on dark mode toggle",
+        li3:"Turn on dark mode toggle",
         img3:"image/dark.png",
-        li4:"now Success",
+        li4:"Now Success",
     },
     {
         id: "b",
-        q:"how to sign up kitmo",
-        li1:"go to home page",
-        li2:"click on profile button",
-        li3:"click on sign up button",
-        li4:"fill up the form",
-        li5:"enter your name",
-        li6:"enter your phone number",
-        li7:"enter your email",
-        li8:"enter your password",
-        li9:"click next button",
+        q:"How To Sign Up Kitmo",
+        li1:"Go To Home Page",
+        li2:"Click On Profile Button",
+        li3:"Click On Sign Up Button",
+        li4:"Fill Up The Form",
+        li5:"Enter Your Name",
+        li6:"Enter Your Phone Number",
+        li7:"Enter Your Email",
+        li8:"Enter Your Password",
+        li9:"Click Next Button",
 
     },
     {
         id: "c",
-        q:"how to login kitmo",
-        a:"lkjsdflj"
+        q:"How To Login Kitmo",
+        
     },
     {
         id: "d",
-        q:"how to add cart",
-        a:"lkjsdflj"
+        q:"How To Add Cart",
+        
     },
     {
         id: "e",
-        q:"how to give feedback",
-        a:"lkjsdflj"
+        q:"How To Give Feedback",
+        
     }
 ]
 
@@ -124,7 +124,7 @@ let dog =(id)=>{
       });
     }
     localStorage.setItem("andata", JSON.stringify(ansData));
-    generateans();
+    generateAns();
     localStorage.removeItem("andata");  
 }
 
@@ -133,8 +133,8 @@ let cat =()=>{
     
 }
 
-// ! generateansans funcation
-let generateans = ()=>{
+// ! generateAns funcation
+let generateAns = ()=>{
     if (ansData.length !== 0) {
         return (answe.innerHTML = ansData
           .map((x) => {

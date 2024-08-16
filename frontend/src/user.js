@@ -15,20 +15,20 @@ let user = ()=>{
     menuList.innerHTML=` <div class="profile">
             <img src="image/kitmo_logo.png" alt="" />
             <div class="profile_info">
-             <h3>hii ${username}</h3>
+             <h3>Hii, ${username}</h3>
             </div>
             <div class="manage_account">
-            manage account
+            Manage Account
             </div>
             <div class="longout" onclick="longoutBtn()">
-            longout
+            Longout
             </div>
             </div>  `;
           })
   }else{
   menuList.innerHTML=` <div class="button">
-  <a href="login_kitmo.html" class="login">login</a>
-  <a href="signup.html" class="sign_up">sign up</a>
+  <a href="login_kitmo.html" class="login">Login</a>
+  <a href="signup.html" class="sign_up">Sign Up</a>
 </div> `;
   }
 }

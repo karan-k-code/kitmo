@@ -43,17 +43,18 @@ let generateCartItem = () => {
       .join(""));
   } else {
     not_cart.innerHTML = `
-            <div class="add_cart1"><H1>Add cart</H1></div>
+            <div class="add_cart1"><H1>Cart Is Empty</H1></div>
             <div class="cart_image">
               <img src="image/cartimg1.png" alt="">
             </div>
-            <!-- !todaydeals -->
+            <!-- !todaydeals 
             <div class="todaydeals">
               <h2>Today's Deals</h2>
               <h2>shop now</h2>
             </div>
-            <!-- ! THIS IS ITAM box -->
-            <div class="cantenr" id="shop">`;
+            <!-- ! THIS IS ITAM box 
+            <div class="cantenr" id="shop">
+            -->`;
   }
 };
 
@@ -112,37 +113,37 @@ let calculation = () => {
 };
 
 // ! shop item gennerateshop funcation
-let generateShop = () => {
-  return (shop.innerHTML = shopItamsData
-    .map((x) => {
-      let { id, name, price, desc, img } = x;
-      let search = basket.find((x) => x.id === id) || [];
-      return `
-        <div class="box option_b dark_box nav_light" id="producat_id_${id}">
-            <div class="itam_name dark_box nav_light">
-                <h3>${name}</h3>
-            </div>
-            <div class="itam_img" style="background-image:url('${img}')">
-            </div>
-            <div class="itam_detelas">
-                <div class="itam_price">
-                    $ ${price}
-                </div>
-                <div class="desc">
-                    ${desc}
-                </div>
-            </div>
-            <div class="shop_box dark_box nav_light" >
-                <div class="add_cart option_b" onclick="increment(${id})">
-                <b>ADD CART</b></div>
-                <div id="${id}">
-                </div>
-                <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
-            </div>
-        </div>`;
-    })
-    .join(""));
-};
+// let generateShop = () => {
+//   return (shop.innerHTML = shopItamsData
+//     .map((x) => {
+//       let { id, name, price, desc, img } = x;
+//       let search = basket.find((x) => x.id === id) || [];
+//       return `
+//         <div class="box option_b dark_box nav_light" id="producat_id_${id}">
+//             <div class="itam_name dark_box nav_light">
+//                 <h3>${name}</h3>
+//             </div>
+//             <div class="itam_img" style="background-image:url('${img}')">
+//             </div>
+//             <div class="itam_detelas">
+//                 <div class="itam_price">
+//                     $ ${price}
+//                 </div>
+//                 <div class="desc">
+//                     ${desc}
+//                 </div>
+//             </div>
+//             <div class="shop_box dark_box nav_light" >
+//                 <div class="add_cart option_b" onclick="increment(${id})">
+//                 <b>ADD CART</b></div>
+//                 <div id="${id}">
+//                 </div>
+//                 <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
+//             </div>
+//         </div>`;
+//     })
+//     .join(""));
+// };
 
 // ! remove item
 
@@ -180,7 +181,7 @@ let totalAmount = () => {
           </div>
       `;
   } else {
-    generateShop();
+    // generateShop();
   checkout_box.style.display = "none";  
   }
 };

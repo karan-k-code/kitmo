@@ -49,10 +49,10 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    alert("add cart Successfull");
+    alert("Add Cart Successfull");
   }
   else {
-    alert("Already added cart");
+    alert("Already Added Cart");
   }
   update(selecteItam.id);
   calculation();

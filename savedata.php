@@ -27,4 +27,3 @@ if($result){
 else{
     echo "Data not inserted";
 }
-?>
