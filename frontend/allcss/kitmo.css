@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  /* font-family: Arial; */
+  font-family: Arial;
   border: border-box;
   padding: 0;
 }
@@ -321,7 +321,6 @@
   transition: all 0.1s ease;
   &:hover {
     text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
-    /* font-size: 30px; */
     translate: 0 -10px;
   }
 }

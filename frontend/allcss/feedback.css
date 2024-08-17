@@ -21,37 +21,46 @@ h1 {
 }
 
 form {
-  /* max-width: 400px; */
   margin: 0;
   padding: 20px;
-  /* background-color: #fff; */
   border-radius: 5px;
-  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #111111;
+  /* background-color: #f8f8f8ef; */
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.4);
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 input,
 textarea {
-  width: 100%;
-  padding: 10px;
+  width: 90%;
+  padding: 8px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: none;
+  /* border: 1px solid #ccc; */
   border-radius: 3px;
-  /* background-color: black;
-  color: white; */
+  &:focus{
+    outline: none;
+  }
+  background-color: black;
+  color: white; 
 }
 
 button {
   background-color: #007bff;
   color: #fff;
+  font-size: 1rem;
   border: none;
   padding: 10px 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
+  &:hover{
+    background-color: #67abf4;
+    color: #151515;
+  }
 }
 
 
@@ -78,7 +87,10 @@ button {
 .h_container {
   display: flex;
   justify-content: space-between;
-  margin: 10px 10px 0 10px;
+  /* background-color: #f8f8f8ef; */
+  background-color: #111111;
+
+  padding: 10px;
 }
 .option_b {
   display: flex;
@@ -90,6 +102,9 @@ button {
 }
 .help {
   cursor: pointer;
+  &:hover{
+    color: #ec1ce9;
+  }
 }
 a {
   color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
@@ -108,8 +123,7 @@ a {
   height: 100px;
   padding: 10px;
   border-radius: 6px;
-  /* width: 100%; */
-  font-size: 24px;
+  font-size: 2rem;
 }
 
 
@@ -132,6 +146,7 @@ a {
 @media (max-width: 382px) {
 }
 
+/* ! loader */
 .loader {
   display: none;
   position: absolute;
