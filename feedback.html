@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="frontend/allcss/feedback.css" />
     <link rel="stylesheet" href="frontend/allcss/dark.css" />
   <body class="light">
-    <div class="h_container">
+    <div class="h_container dark_box">
       <li class="option_b">
         <div class="dark-mode-toggle">
           <input type="checkbox" id="dark-mode-toggle-checkbox" />
@@ -25,15 +25,15 @@
       <div class="loader"></div>
       <div class="success_box">Thank You For Giving Feedback.</div>
 
-    <form id="feedback-form" method="post" action="" name="product" id="product">
+    <form class="dark_box" id="feedback-form" method="post" action="" name="product" id="product">
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name " name="name" required>
+        <input type="text" class="black" id="name" placeholder="Enter your name " name="name" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter your email" name="email" required>
+        <input type="email" class="black" id="email" placeholder="Enter your email" name="email" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+        <textarea id="message" class="black" name="message" placeholder="Enter your message" rows="4" required></textarea>
         <button type="submit">Send</button>
     </form>
     </div>

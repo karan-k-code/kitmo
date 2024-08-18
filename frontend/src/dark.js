@@ -14,6 +14,7 @@ darkModeToggle.addEventListener("change", function () {
   let buttons = classal(".light"),
     nav_bar = classal(".dark_box"),
     opt_dark = classal(".option_b"),
+    black = classal(".black"),
     box_shadow = classal(".box_shadow"),
     shadow_darkmode = classal(".shadow_darkmode");
   // Iterate over each button and add the 'dark-mode' class
@@ -62,6 +63,15 @@ darkModeToggle.addEventListener("change", function () {
       btn.classList.add("box_shadow_light");
     }
   });
+  black.forEach(function (btn) {
+    if (darkModeToggle.checked) {
+      btn.classList.add("darkbox");
+      btn.classList.remove("blackD")
+    } else {
+      btn.classList.remove("darkbox");
+      btn.classList.add("blackD");
+    }
+  });
   fanc();
 });
 
@@ -76,6 +86,7 @@ let fanc = () => {
   let buttons = classal(".light");
   let nav_bar = classal(".dark_box");
   let opt_dark = classal(".option_b");
+  let black = classal(".black")
   let box_shadow = classal(".box_shadow");
   let shadow_darkmode = classal(".shadow_darkmode");
 
@@ -121,6 +132,15 @@ let fanc = () => {
     } else {
       btn.classList.remove("darkmode_box_shadow");
       btn.classList.add("box_shadow_light");
+    }
+  });
+  black.forEach(function (btn) {
+    if (darkModeToggle.checked) {
+      btn.classList.add("darkbox");
+      btn.classList.remove("blackD")
+    } else {
+      btn.classList.remove("darkbox");
+      btn.classList.add("blackD");
     }
   });
 }
