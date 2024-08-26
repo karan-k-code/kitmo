@@ -47,7 +47,7 @@ function fadeOutBox() {
     });
   }
   
-
+// ! quationData 
 let quationData=[
     {
         id: "a",
@@ -119,7 +119,8 @@ let generateAns =(id)=>{
   let he = id;
   const search = quationData.find((y) => y.id == he)  || [];
 
-  return answe.innerHTML =`${ search.q === undefined? ``: `<div class="q">${search.q}</div>`}
+  return answe.innerHTML =`
+          ${ search.q === undefined? ``: `<div class="q">${search.q}</div>`}
           ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
           <div class="ans">
             <ul>
@@ -143,16 +144,11 @@ let generateAns =(id)=>{
               ${ search.img9 === undefined? ``: `<img src="${search.img9}" alt="">` }  
             </ul>
           </div>
-        `
-      
+         `     
 }
-
 
 
 //! home button
 let home =()=>{
     window.location.href ="index.html"
 }
- 
-// generateans();
-// localStorage.removeItem("andata");
