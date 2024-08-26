@@ -63,16 +63,18 @@ textarea {
 
 
 button {
-  background-color: #007bff;
+  background-color: #67abf4;
   color: #fff;
   font-size: 1rem;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
   &:hover{
-    background-color: #67abf4;
+    background-color:  #007bff;
     color: #151515;
+    transform: scale(1.1);
   }
 }
 

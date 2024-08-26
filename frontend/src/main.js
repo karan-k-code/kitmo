@@ -27,11 +27,11 @@ let generateShop = () => {
                 </div>
             </div>
             <div class="shop_box dark_box nav_light" >
-                <div class="add_cart option_b" onclick="addcart(${id})">
+                <div class="add_cart " onclick="addcart(${id})">
                 <b>ADD CART</b></div>
                 <div id="${id}">
                 </div>
-                <div class="buy option_b" onclick="goo(${id})" ><b>BUY</b></div>
+                <div class="buy" onclick="goo(${id})" ><b>BUY</b></div>
             </div>
         </div>`;
     })
@@ -154,4 +154,9 @@ ownerImg.forEach((img) => {
     // Change image every 4 seconds
     setInterval(showNextImage, 4000);
   });
+
+
+  // ignor this code
+
+  
   

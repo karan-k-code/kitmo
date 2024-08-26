@@ -72,7 +72,7 @@
   border-top-right-radius: 13px;
   border-top-left-radius: 13px;
   padding: 25px 0 0 0px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .box {
   height: 380px;
@@ -130,11 +130,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 5px;
   margin: 5px;
   width: 37%;
   cursor: pointer;
   font-size: 13px;
+  transition: all 0.3s ease;
+  &:hover{
+    background-color: #5f77ff;
+    transform: scale(1.1);
+  }
 }
 .buy {
   background-color: #9dacff;
@@ -143,9 +148,14 @@
   align-items: center;
   justify-content: center;
   width: 35%;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 5px;
   margin-right: 10px;
+  transition: all 0.3s ease;
+  &:hover{
+    background-color: #5f77ff;
+    transform: scale(1.1);
+  }
 }
 /* design touch */
 .tuch:hover {
@@ -273,8 +283,13 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
+  z-index: 1;
   background-size: cover;
   cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover{
+    transform: scale(1.35);
+  }
 }
 .no_dark .profile_img{
   filter: drop-shadow(0px -2px 8px rgba(0, 0, 0, 0.327));
