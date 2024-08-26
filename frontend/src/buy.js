@@ -5,7 +5,12 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 // ! checkout
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
-
+const baby =(id) =>{
+  let he = id;
+  const search = shopItamsData.find((y) => y.id == he)  || [];
+  console.log(search);
+}
+baby()
 // ! shop item gennerateshop funcation
 let buyshop = () => {
   if (buyItam.length !== 0) {

@@ -104,22 +104,27 @@ let calculation = () => {
 };
 
 calculation();
-
+// ! goo funcation
 let goo =(id)=>{
   let selecteItam = id;
-  let search = buyItam.find((x) => x.id === selecteItam.id);
-  if (search === undefined) {
+  
+  if (buyItam.length === 0) {
     buyItam.push({
       id: selecteItam.id,
-      item: 1,
+      item: 1
+    });
+  }else if(buyItam.length === 1){
+    buyItam = [];
+    buyItam.push({
+      id: selecteItam.id,
+      item: 1
     });
   }
-  console.log(selecteItam.id);
-  console.log(buyItam);
   localStorage.setItem("databuy", JSON.stringify(buyItam));
-  window.location.href ="buy.html"
+  window.location="buy.html"
 }
-localStorage.removeItem("databuy");
+
+// ! profile
 
 let ownerImg = document.querySelectorAll(".profile_img");
 ownerImg.forEach((img) => {
