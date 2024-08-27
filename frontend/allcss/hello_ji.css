@@ -39,6 +39,8 @@ a {
 }
 #location_p {
   padding-left: 4px;
+  gap: 4px;
+  cursor: pointer;
 }
 .option {
   border: 2px solid transparent;
