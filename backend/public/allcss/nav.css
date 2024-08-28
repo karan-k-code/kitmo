@@ -1,0 +1,251 @@
+/*navbar*/
+.navbar2 {
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  top: 0px; 
+  z-index: -1;
+  width: 100%;
+}
+.navbar {
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0px; 
+  width: 100%;
+  z-index: 1;
+}
+.nav_light {
+  background-color: #bbcbcb;
+}
+.nav-option {
+  font-size: 25px;
+  display: flex;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
+  }
+  overflow: auto;
+}
+.kitmo-logo {
+  display: flex;
+  height: 100px;
+  width: 150px;
+  justify-content: center;
+}
+.kitmo_img {
+  justify-content: center;
+}
+.search-secation {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  outline: none;
+  &:hover {
+    color: aqua;
+  }
+}
+/* microphone */
+.microphone {
+  height: 40px;
+  border: none;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    color: aqua;
+  }
+}
+.search-input {
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: text;
+  border: none;
+  &:hover {
+    color: aqua;
+  }
+}
+.search-icon {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  &:hover {
+    color: aqua;
+  }
+}
+.cart {
+  position: relative;
+  font-size: 25px;
+  padding-top: 12px;
+  border-radius: 4px;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
+  }
+}
+.cart a {
+  color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
+}
+.amuntcart {
+  font-size: 16px;
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  padding: 1px 3px 2px 3px;
+  /* border-radius: 3px; */
+}
+.usar {
+  font-size: 25px;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
+  }
+}
+.search_secation_panl {
+  display: none;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: 0;
+}
+.search_secation_panl2 {
+  display: none;
+  top: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: -2;
+}
+.colam {
+  height: 13px;
+  /* display: flex; */
+  /* position: fixed; */
+}
+@media (max-width: 700px) {
+  .navbar {
+    height: 50px;
+  }
+  .search-secation {
+    display: none;
+  }
+  /* .search_secation_panl2{
+    display: flex;
+  } */
+  .search-select {
+    height: 35px;
+  }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
+  }
+  .search-input {
+    width: 200px;
+    height: 35px;
+  }
+  .search-icon {
+    height: 35px;
+  }
+}
+/* 1000px */
+
+/*pad screen */
+@media (max-width: 781px) {
+  .search-secation {
+    display: none;
+  }
+  .search_secation_panl {
+    display: flex;
+  }
+  .search-select {
+    height: 35px;
+  }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
+  }
+  .search-input {
+    width: 200px;
+    height: 35px;
+  }
+  .search-icon {
+    height: 35px;
+  }
+}
+/* mobile screen size */
+@media (max-width: 590px) {
+  .navbar {
+    height: 50px;
+  }
+  .search-secation {
+    display: none;
+  }
+  .search_secation_panl {
+    display: flex;
+  }
+  .search-select {
+    height: 35px;
+  }
+  .microphone {
+    height: 35px;
+    border-radius: 8px 0 0 8px;
+  }
+  .search-input {
+    width: 200px;
+    height: 35px;
+  }
+  .search-icon {
+    height: 35px;
+    &:hover {
+      font-size: 25px;
+    }
+  }
+  #user_list {
+    right: 3px;
+  }
+  .nav-option {
+    &:hover {
+      font-size: 25px;
+    }
+  }
+}
+
+.colam_top {
+  height: 13px;
+  width: 100%;
+  top: -13px;
+  position: relative;
+  border-top-right-radius: 13px;
+  border-top-left-radius: 13px;
+}
