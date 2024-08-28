@@ -7,13 +7,13 @@
         <!-- k icon -->
         <link rel="icon" href="k.png" type="image/x-icon">
         <!-- ! Css files -->
-        <link rel="stylesheet" href="frontend/allcss/buy.css">
-        <link rel="stylesheet" href="frontend/allcss/hello_ji.css">
+        <link rel="stylesheet" href="allcss/buy.css">
+        <link rel="stylesheet" href="allcss/hello_ji.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="frontend/allcss/dark.css">
-        <link rel="stylesheet" href="frontend/allcss/user.css">
-        <link rel="stylesheet" href="frontend/allcss/nav.css">
-        <link rel="stylesheet" href="frontend/allcss/kitmo.css">
+        <link rel="stylesheet" href="allcss/dark.css">
+        <link rel="stylesheet" href="allcss/user.css">
+        <link rel="stylesheet" href="allcss/nav.css">
+        <link rel="stylesheet" href="allcss/kitmo.css">
     </head>
     <body class=light>
         <header>
@@ -29,10 +29,15 @@
                             </div>
                             <div class="mode_line">Dark Mode</div>
                         </li>
-                        <li class="option_b"><i class="fa-solid fa-location-dot"></i><a id="location_p" href="https://www.google.com/maps/"> Location</a></li>
+                        <li class="option_b" id="location_p">
+                            <i class="fa-solid fa-location-dot"></i
+                            ><a id="curent-location">
+                              get location</a
+                            >
+                          </li>
                         <li class="option_b"><a href="#">Deliver Location</a></li>
                         <li class="option_b"><a href="abaut.html">About</a></li>
-                        <li class="option_b"><a href="help.html">Help</a></li>
+                        <li class="option_b"><a href="help">Help</a></li>
                     </ul>
                 </div>
                 <!-- nav first option -->
@@ -60,7 +65,7 @@
                     <input placeholder="Search kitmo" class="search-input light no_dark">
                     <!-- search_icon -->
                     <div class="search-icon light no_dark">
-                        <i frontenda-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
                 <!-- login sign up -->
@@ -75,7 +80,7 @@
                 </div>
                 <!-- shoping cart nav five options -->
                 <div class="cart">
-                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>
+                    <a href="cart"><i class="fa-solid fa-cart-shopping"></i>
                     <div class="amuntcart" id="cart_no">0</div>
                 </a>
                 </div>
@@ -105,9 +110,10 @@
         </div>
 
     </body>
-    <script src="frontend/src/shopdata.js"></script>
-    <script src="frontend/src/buy.js"></script>
-    <script src="frontend/src/hello_ji.js"></script>
-    <script src="frontend/src/user.js"></script>
-    <script src="frontend/src/dark.js"></script>
+    <script src="src/shopdata.js"></script>
+    <script src="src/buy.js"></script>
+    <script src="src/hello_ji.js"></script>
+    <script src="src/user.js"></script>
+    <script src="src/dark.js"></script>
+    <script src="src/getlocation.js"></script>
 </html>

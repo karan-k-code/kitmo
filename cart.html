@@ -7,13 +7,13 @@
     <!-- k icon -->
     <link rel="icon" href="k.png" type="image/x-icon">
     <!-- ! Css file -->
-    <link rel="stylesheet" href="frontend/allcss/user.css" />
-    <link rel="stylesheet" href="frontend/allcss/kitmo.css" />
-    <link rel="stylesheet" href="frontend/allcss/cart.css" />
-    <link rel="stylesheet" href="frontend/allcss/dark.css" />
-    <link rel="stylesheet" href="frontend/allcss/nav.css" />
-    <link rel="stylesheet" href="frontend/allcss/kitmo.css" />
-    <link rel="stylesheet" href="frontend/allcss/hello_ji.css" />
+    <link rel="stylesheet" href="allcss/user.css" />
+    <link rel="stylesheet" href="allcss/kitmo.css" />
+    <link rel="stylesheet" href="allcss/cart.css" />
+    <link rel="stylesheet" href="allcss/dark.css" />
+    <link rel="stylesheet" href="allcss/nav.css" />
+    <link rel="stylesheet" href="allcss/kitmo.css" />
+    <link rel="stylesheet" href="allcss/hello_ji.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -39,17 +39,17 @@
               <div class="mode_line">Dark Mode</div>
             </li>
             <!--! location -->
-            <li class="option_b">
+            <li class="option_b" id="location_p">
               <i class="fa-solid fa-location-dot"></i
-              ><a id="location_p" href="https://www.google.com/maps/">
-                Location</a
+              ><a id="curent-location">
+                get location</a
               >
             </li>
             <li class="option_b"><a href="#">deliver Location</a></li>
             <!--! about button -->
             <li class="option_b"><a href="about.html">About</a></li>
             <!-- ! help button -->
-            <li class="option_b"><a href="help.html">Help</a></li>
+            <li class="option_b"><a href="help">Help</a></li>
           </ul>
         </div>
         <!--! Navbar menu butoon -->
@@ -90,8 +90,8 @@
             class="box_shadow box_no_dark_shadow light no_dark"
           >
             <div class="button">
-              <a href="login_kitmo.html" class="login">Login</a>
-              <a href="signup.html" class="sign_up">Sign Up</a>
+              <a href="login" class="login">Login</a>
+              <a href="signup" class="sign_up">Sign Up</a>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
         </div>
         <!--! back/home button-->
         <div class="cart">
-          <a href="index.html">
+          <a href="/">
             <i class="fa-solid fa-circle-left"></i>
           </a>
         </div>
@@ -140,7 +140,7 @@
         </div>
         <!-- !cart chekout -->
         <div class="chekout">
-          <div class="chekout_box">jfakhskhfaksh</div>
+          <div class="chekout_box">coming soon..</div>
         </div>
       </div>
       <div id="not_cart">
@@ -149,10 +149,11 @@
     </main>
   </body>
   <!--java script file link-->
-  <script src="frontend/src/shopdata.js"></script>
-  <script src="frontend/src/cart.js"></script>
+  <script src="src/shopdata.js"></script>
+  <script src="src/cart.js"></script>
   <!-- <script src="frontend/src/main.js"></script> -->
-  <script src="frontend/src/hello_ji.js"></script>
-  <script src="frontend/src/user.js"></script>
-  <script src="frontend/src/dark.js"></script>
+  <script src="src/hello_ji.js"></script>
+  <script src="src/user.js"></script>
+  <script src="src/dark.js"></script>
+  <script src="src/getlocation.js"></script>
 </html>
