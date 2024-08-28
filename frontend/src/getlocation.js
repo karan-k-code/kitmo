@@ -5,7 +5,7 @@ const getLocation = document.getElementById("location_p");
 // ! api call
 async function getp(let ,lot) {
     const promise= await fetch(
-         `http://api.weatherapi.com/v1/current.json?key=dd38262ae49246139d9172000242008&q=${let},${lot}&aqi=yes`
+         `https://api.weatherapi.com/v1/current.json?key=0ef92f8f99604c3095f23816242808&q=${let},${lot}&aqi=yes`
      )
      return await promise.json(); 
  }
