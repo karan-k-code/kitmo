@@ -1,0 +1,121 @@
+.pop{
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+  .btn-primary {
+    background: #696969;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: #4d4d4d;
+  }
+  
+  .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .notification {
+    width: 280px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    /* background: #f0f0f0; */
+    background: #000000;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    gap: 10px;
+    z-index: 3;
+  }
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .location {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgb(161, 159, 159);
+  }
+  
+  .notif-i {
+    font-size: 1.5rem;
+    background: rgb(113, 243, 113);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text {
+    width: 160px;
+    color: white;
+    font-size: 0.8rem;
+  }
+  
+  .price {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .animate {
+    animation: popup 0.5s forwards;
+  }
+  
+  @keyframes popup {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(15px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Hiding the pop-up */
+.hide {
+    animation: hidePop 0.5s forwards;
+  }
+    
+  /* Animation to hide the pop-up */
+@keyframes hidePop {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+  }
+  

@@ -14,11 +14,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="allcss/user.css" />
     <link rel="stylesheet" href="allcss/nav.css" />
     <link rel="stylesheet" href="allcss/dark.css" />
+    <link rel="stylesheet" href="allcss/notification.css">
   </head>
   <body class="light">
+    <div class="pop" id="pop">
+      <div class="notification animate" id="nothide">
+        
+      </div>
+    </div>
+    
     <header>
       <!-- ! Nevbar section and -->
       <div class="navbar dark_box nav_light">
@@ -44,7 +55,7 @@
             </li>
             <li class="option_b"><a href="#">Deliver Location</a></li>
             <!-- ! about button -->
-            <li class="option_b"><a href="about.html">About</a></li>
+            <li class="option_b"><a href="about">About</a></li>
             <!-- ! help button -->
             <li class="option_b"><a href="help">Help</a></li>
           </ul>
@@ -250,5 +261,6 @@
   <script src="src/user.js"></script>
   <script src="src/dark.js"></script>
   <script src="src/getlocation.js"></script>
+  <script src="src/notification.js"></script>
   <!-- <script src="frontend/src/buy.js"></script> -->
 </html>

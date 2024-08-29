@@ -41,6 +41,9 @@ let generateShop = () => {
 generateShop();
 
 // ! add cart
+let pop =document.getElementById("pop")
+let nothide =document.getElementById("nothide")
+
 let addcart = (id) => {
   let selecteItam = id;
   let search = basket.find((x) => x.id === selecteItam.id);
@@ -49,16 +52,28 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    alert("Add Cart Successfull");
+    pop.style.display= 'flex';
+    setTimeout(popnone,3000)
   }
   else {
-    alert("Already Added Cart");
+    darling(selecteItam.id);
+    pop.style.display= 'flex';
+    setTimeout(popnone,3000)
+
   }
   update(selecteItam.id);
   calculation();
   
   localStorage.setItem("data", JSON.stringify(basket));
 };
+
+const popnone =()=>{
+  nothide.classList.add('hide');
+  setTimeout(()=>{
+    nothide.classList.remove('hide');
+    pop.style.display = 'none';
+  }, 550); // 550ms corresponds to the animation duration
+}
 
 // !increment
 let increment = (id) => {

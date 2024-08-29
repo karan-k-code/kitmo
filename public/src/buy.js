@@ -60,6 +60,9 @@ let buyshop = () => {
 };
 
 // ! add cart
+let pop =document.getElementById("pop")
+let nothide =document.getElementById("nothide")
+
 let addcart = (id) => {
   let selecteItam = id;
   let search = basket.find((x) => x.id === selecteItam.id);
@@ -68,15 +71,27 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    alert("add cart Successfull");
+    darling(selecteItam.id);
+    pop.style.display= 'flex';
+    setTimeout(popnone,3000)
   } else {
-    alert("Already added cart");
+    darling(selecteItam.id);
+    pop.style.display= 'flex';
+    setTimeout(popnone,3000)
   }
   update(selecteItam.id);
+  
   calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
+const popnone =()=>{
+  nothide.classList.add('hide');
+  setTimeout(()=>{
+    pop.style.display = 'none';
+    nothide.classList.remove('hide');
+  }, 500); // 500ms corresponds to the animation duration
+}
 
 // !increment
 let increment = (id) => {
