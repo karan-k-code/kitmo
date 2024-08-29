@@ -3,7 +3,6 @@ const express = require('express')
 const path = require('path');
 const { MongoClient } = require('mongodb');
 
-const users = require("./shopdata.json");
 const app = express()
 const port = process.env.PORT;
 
