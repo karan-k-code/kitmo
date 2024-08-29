@@ -17,31 +17,31 @@ const port = process.env.PORT;
   
   // Route to serve HTML file
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, './index.html'));
   });
   app.get('/help', (req, res) => {
-    res.sendFile(path.join(__dirname, '../help.html'));
+    res.sendFile(path.join(__dirname, './help.html'));
   });
   app.get('/feedback', (req, res) => {
-    res.sendFile(path.join(__dirname, '../feedback.html'));
+    res.sendFile(path.join(__dirname, './feedback.html'));
   });
   app.get('/buy', (req, res) => {
-    res.sendFile(path.join(__dirname, '../buy.html'));
+    res.sendFile(path.join(__dirname, './buy.html'));
   });
   app.get('/cart', (req, res) => {
-    res.sendFile(path.join(__dirname, '../cart.html'));
+    res.sendFile(path.join(__dirname, './cart.html'));
   });
   app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, '../profile.html'));
+    res.sendFile(path.join(__dirname, './profile.html'));
   });
   app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../login_kitmo.html'));
+    res.sendFile(path.join(__dirname, './login_kitmo.html'));
   });
   app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '../signup.html'));
+    res.sendFile(path.join(__dirname, './signup.html'));
   });
   app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, '../about.html'));
+    res.sendFile(path.join(__dirname, './about.html'));
   });
 
   // ! mongoDB  
