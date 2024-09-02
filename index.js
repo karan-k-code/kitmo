@@ -42,6 +42,12 @@ const port = process.env.PORT;
   app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, './about.html'));
   });
+  app.get('/order', (req, res) => {
+    res.sendFile(path.join(__dirname, './order.html'));
+  });
+  app.get('/deliver', (req, res) => {
+    res.sendFile(path.join(__dirname, './deliver.html'));
+  });
 
   // ! mongoDB  
 async function main() {

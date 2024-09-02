@@ -20,6 +20,9 @@ let user = ()=>{
             <div class="manage_account">
             Manage Account
             </div>
+            <div class="manage_account">
+            My order
+            </div>
             <div class="longout" onclick="longoutBtn()">
             Longout
             </div>
@@ -54,6 +57,6 @@ let user = ()=>{
 
 let longoutBtn = () => {
   localStorage.removeItem("userdata");
-  window.location.href = "index.html";
+  window.location.href = "/";
 };
 

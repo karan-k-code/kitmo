@@ -39,7 +39,7 @@ form.addEventListener("submit", (e) => {
       alert("welcome to kitmo ")
     )
     .then(() => {
-      window.location.href = "index.html";
+      window.location.href = "/";
     })
     .catch((error) => console.error("Error!", error.message));
 });

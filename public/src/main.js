@@ -53,11 +53,12 @@ let addcart = (id) => {
       item: 1,
     });
     pop.style.display= 'flex';
+    notif(selecteItam.id);
     setTimeout(popnone,3000)
   }
   else {
-    darling(selecteItam.id);
     pop.style.display= 'flex';
+    notif(selecteItam.id);
     setTimeout(popnone,3000)
 
   }
@@ -177,6 +178,16 @@ ownerImg.forEach((img) => {
 
 
   // ignor this code
+// script.js
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
   
   

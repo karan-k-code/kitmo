@@ -2,16 +2,7 @@ const popBtn = ()=>{
 window.location="cart"
 }
 
-const darling =(id)=>{
-    // let popId = id 
-    // return pop.innerHTML = shopItamsData.map((x)=>{
-    //     let { id, pric } = x;
-    //     let search = shopItamsData.find((y)=> y.id === popId.id) || [];
-    //     console.log(search.id)
-    //     return `
-    //     <h1>${search.id}</h1>
-    //     `
-    // })
+const notif =(id)=>{
     const search = shopItamsData.find((x)=>x.id === id);
     return nothide.innerHTML =`
     <div class="header">

@@ -44,7 +44,8 @@ form.addEventListener("submit", (e) => {
     }
     )
     .then(() => {
-      setTimeout(reload,3000)
+      reload();
+      // setTimeout(reload,3000)
       // window.location.href = "index.html";
     })
     .catch((error) => console.error("Error!", error.message));

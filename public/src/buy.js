@@ -71,11 +71,11 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    darling(selecteItam.id);
+    notif(selecteItam.id);
     pop.style.display= 'flex';
     setTimeout(popnone,3000)
   } else {
-    darling(selecteItam.id);
+    notif(selecteItam.id);
     pop.style.display= 'flex';
     setTimeout(popnone,3000)
   }
