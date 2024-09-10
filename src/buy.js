@@ -5,12 +5,13 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 // ! checkout
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
-const baby =(id) =>{
-  let he = id;
-  const search = shopItamsData.find((y) => y.id == he)  || [];
-  console.log(search);
+// ! home page
+
+homePage=()=>{
+  window.location.href="index.html";
 }
-baby()
+
+
 // ! shop item gennerateshop funcation
 let buyshop = () => {
   if (buyItam.length !== 0) {
@@ -112,7 +113,7 @@ let increment = (id) => {
 
 // ! decrement
 let decrement = (id) => {
-  let selecteItam = id;
+  // let selecteItam = id;
   let search = buyItam.find((x) => x.id === id);
   if (search === undefined) return;
   else if (search.item === 1) return;

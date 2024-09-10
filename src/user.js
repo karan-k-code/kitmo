@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuList = document.getElementById("user_list");
 
 // !user data
+
 const userData = JSON.parse(localStorage.getItem("userdata")) || [];
-
-
 
 let user = ()=>{
   if(userData.length !== 0){
     let hii =userData.map((x) => {
-      let { username, password } = x;
+      let { username} = x;
 
     menuList.innerHTML=` <div class="profile">
             <img src="image/kitmo_logo.png" alt="" />
@@ -30,8 +29,8 @@ let user = ()=>{
           })
   }else{
   menuList.innerHTML=` <div class="button">
-  <a href="login" class="login">Login</a>
-  <a href="signup" class="sign_up">Sign Up</a>
+  <a href="login_kitmo.html" class="login">Login</a>
+  <a href="signup.html" class="sign_up">Sign Up</a>
 </div> `;
   }
 }
@@ -54,7 +53,6 @@ let user = ()=>{
 });
 
 // ! longout
-
 let longoutBtn = () => {
   localStorage.removeItem("userdata");
   window.location.href = "/";

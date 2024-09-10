@@ -137,7 +137,7 @@ let goo =(id)=>{
     });
   }
   localStorage.setItem("databuy", JSON.stringify(buyItam));
-  window.location="buy"
+  window.location="buy.html"
 }
 
 // ! profile
@@ -145,7 +145,7 @@ let goo =(id)=>{
 let ownerImg = document.querySelectorAll(".profile_img");
 ownerImg.forEach((img) => {
   img.addEventListener("click", () => {
-    window.location.href = "profile";
+    window.location.href = "profile.html";
     });
   })
 
