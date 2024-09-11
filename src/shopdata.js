@@ -59,5 +59,6 @@ let shopItamsData = [
 //   console.log(`Example app listening on port ${port}`)
 // })
 
+export default shopItamsData();
 
 

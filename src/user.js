@@ -8,7 +8,7 @@ const userData = JSON.parse(localStorage.getItem("userdata")) || [];
 
 let user = ()=>{
   if(userData.length !== 0){
-    let hii =userData.map((x) => {
+    userData.map((x) => {
       let { username} = x;
 
     menuList.innerHTML=` <div class="profile">
@@ -55,6 +55,6 @@ let user = ()=>{
 // ! longout
 let longoutBtn = () => {
   localStorage.removeItem("userdata");
-  window.location.href = "/";
+  window.location.href = "index.html";
 };
 

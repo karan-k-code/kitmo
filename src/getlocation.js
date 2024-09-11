@@ -19,24 +19,24 @@ async function get (position){
 
 // ! error
 function fails(error){
-    console.log("sorry babu")
+    alert("sorry babu")
     switch(error.code) {
-              case error.PERMISSION_DENIED:
-                console.log("User denied the request for Geolocation.");
-                break;
-              case error.POSITION_UNAVAILABLE:
-                console.log("Location information is unavailable.");
-                break;
-              case error.TIMEOUT:
-                console.log("The request to get user location timed out.");
-                break;
-              case error.UNKNOWN_ERROR:
-                console.log("An unknown error occurred.");
-                break;
-            }
+      case error.PERMISSION_DENIED:
+        console.log("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        console.log("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log("An unknown error occurred.");
+        break;
+    }
 }
 
 getLocation.addEventListener('click',async ()=>{
-    navigator.geolocation.getCurrentPosition(get,fails);
+  navigator.geolocation.getCurrentPosition(get,fails);
 })
 
