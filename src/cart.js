@@ -189,7 +189,7 @@ let totalAmount = () => {
 
 let checkout = ()=>{
   if(basket.length !== 0){
-    alert("place wait for update")
+    window.location.href ="deliver.html";
   }else{
     alert("please add item to chackout")
   }

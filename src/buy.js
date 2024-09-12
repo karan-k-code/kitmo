@@ -86,6 +86,7 @@ let addcart = (id) => {
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
+// ! notification funcation
 const popnone =()=>{
   nothide.classList.add('hide');
   setTimeout(()=>{
@@ -113,7 +114,6 @@ let increment = (id) => {
 
 // ! decrement
 let decrement = (id) => {
-  // let selecteItam = id;
   let search = buyItam.find((x) => x.id === id);
   if (search === undefined) return;
   else if (search.item === 1) return;
@@ -140,9 +140,10 @@ let calculation = () => {
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
 
+// ! checkout funcation
 let checkout = ()=>{
   if(basket.length !== 0){
-    alert("place wait for update")
+    window.location.href ="deliver.html";
   }else{
     alert("please add item to chackout")
   }

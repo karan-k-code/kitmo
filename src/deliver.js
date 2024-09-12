@@ -12,6 +12,8 @@ document.getElementById('addressForm').addEventListener('submit', function (even
     if (!fullName || !address || !city || !postalCode || !phoneNumber) {
         alert("Please fill out all fields.");
         return;
+    }else{
+        window.location.href ="payment.html";
     }
 
     // Display the entered information

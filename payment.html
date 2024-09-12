@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="allcss/payment.css">
+</head>
+<body>
+    <!-- !big cantenr -->
+    <div class="big_cart_cantenr" id="big_cart_cantenr">
+        <!-- !cart cantenr -->
+        <div class="cart_cantenr" id="cart_cantenr">
+          <!-- !cart y  -->
+          <div class="cart_y" id="cart_y">
+            <!-- ?code cart.js -->
+            <div class="cart_box" id="cantenr_cart_item">
+                <div
+                  class="image_cart"
+                  style="background-image: url('image/short.jpeg')"
+                ></div>
+                <div class="title_itam">
+                  <h2>short</h2>
+                  <div class="itam_dec">
+                    man short hight qaliyte
+                  </div>
+                </div>
+                <div class="price_deleat">
+                <div class="delete_itam"><i class="fa-solid fa-xmark"></i></div>
+                <div class="price_itam" ><b>
+                  34</b>
+                  <div class="quantity_box">
+                    <div class="decremet" onclick="decrement('${id}')">-</div>
+                    <div class="quantity" id="${id}">${item}</div>
+                    <div class="increment" onclick="increment('${id}')">+</div>
+                  </div>
+                  <div class="delete_itam"> <b>$ ${item * search.price} </b></div>
+                </div>
+                </div>
+              </div>
+          </div>
+          <!-- total price -->
+          <div class="total_price" id="chekout"></div>
+        </div>
+        
+      </div>
+
+    <script src="src/payment.js"></script>
+</body>
+</html>
