@@ -12,7 +12,7 @@ let generateShop = () => {
       let { id, name, price, desc, img } = x;
       let search = basket.find((x) => x.id === id) || [];
       return `
-        <div class="box option_b dark_box nav_light" id="producat_id_${id}">
+        <div class="box option_b dark_box nav_light" id="producat_id_${id}" onclick="goo(${id})" >
             <div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
             </div>

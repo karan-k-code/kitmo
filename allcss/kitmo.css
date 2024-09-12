@@ -78,6 +78,7 @@
 .box {
   height: 380px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .itam_name {
   display: flex;
