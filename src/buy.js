@@ -140,10 +140,10 @@ let calculation = () => {
   let cartIcon = document.getElementById("cart_no");
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
-
+const billItem =JSON.parse(localStorage.getItem("billdata")) || [];
 // ! checkout funcation
 let checkout = ()=>{
-  window.location.href ="deliver.html";
+    window.location.href ="deliver.html";
 }
 
 // update();

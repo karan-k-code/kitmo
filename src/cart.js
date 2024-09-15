@@ -186,12 +186,16 @@ let totalAmount = () => {
   }
 };
 
+let buyItam = JSON.parse(localStorage.getItem("databuy")) || []; 
 
 let checkout = ()=>{
-  if(basket.length !== 0){
+  if(buyItam.length !== 0){
+    localStorage.setItem("databuy", JSON.stringify(basket));
     window.location.href ="deliver.html";
   }else{
-    alert("please add item to chackout")
+    buyItam =[]
+    localStorage.setItem("databuy", JSON.stringify(basket));
+    window.location.href ="deliver.html";
   }
 }
 

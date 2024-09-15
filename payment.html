@@ -22,51 +22,23 @@
   </nav>
   <div class="big-b">
   <div class="bill">
-    <div class="product">
-    <img src="image/short.jpeg" alt="">
-    <div class="product-box">
-      <div class="name">
-        <div class="ditalis">Ditails</div>
-        <div class="dec">
-          this is a man short m size pore cotton and molaya
-        </div>
-      </div>
-      <div class="quantity-box">
-        <div class="quantity">Quantity</div>
-        <div class="qua">
-          <div class="add">+</div>
-          <div class="no">1</div>
-          <div class="dicrement">-</div>
-        </div>
-      </div>
-      <div class="price-box">
-        <div class="price-text">Price per Item</div>
-        <div class="price">$5</div>
-      </div>
-      <div class="totprice">
-        <div class="amount-text-">Amount</div>
-        <div class="ammunt">$5</div>
-      </div>
-    </div>
-    </div>
-    <div class="summary">
-      <p>Total Items: <span id="totalItems">0</span></p>
-      <p>Total Amount (without GST): $<span id="totalAmount">0.00</span></p>
-      <p>GST (18%): $<span id="gstAmount">0.00</span></p>
-      <p>Total Amount (with GST): $<span id="totalWithGst">0.00</span></p>
+    <div id="bill"></div>
+    <div class="summary"id="summary">
+      
   </div>
   </div>
 </div>
   <form action="" class="form">
     <h3>payment mode</h3>
   <div class="pay">
-    <span>$325</span>
+    <span id="pay"></span>
     <span>Pay</span>
   </div>
     <div class="caseondeliver">
-      <input type="radio" name="case" id="" value="caseon"><span>Case ondeliver</span>
+      <span>Case ondeliver</span>
     </div>
   </form>
+  <script src="src/shopdata.js"></script>
   <script src="src/payment.js"></script>
   <script src="src/dark.js"></script>
 </body>

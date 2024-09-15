@@ -129,7 +129,7 @@ let goo =(id)=>{
       id: selecteItam.id,
       item: 1
     });
-  }else if(buyItam.length === 1){
+  }else{
     buyItam = [];
     buyItam.push({
       id: selecteItam.id,
