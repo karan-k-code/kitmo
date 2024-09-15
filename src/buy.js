@@ -34,7 +34,8 @@ let buyshop = () => {
             <!-- !prioduct_container -->
             <div class="product_container">
                 <div class="title_itam">
-                    <h1>${search.name}</h1>
+                
+                    <h3>${search.name}</h3>
                     <div class="itam_dec">
                     ${search.desc}
                     </div>
@@ -142,11 +143,7 @@ let calculation = () => {
 
 // ! checkout funcation
 let checkout = ()=>{
-  if(basket.length !== 0){
-    window.location.href ="deliver.html";
-  }else{
-    alert("please add item to chackout")
-  }
+  window.location.href ="deliver.html";
 }
 
 // update();

@@ -5,46 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <link rel="stylesheet" href="allcss/payment.css">
+    <link rel="stylesheet" href="allcss/dark.css">
 </head>
-<body>
-    <!-- !big cantenr -->
-    <div class="big_cart_cantenr" id="big_cart_cantenr">
-        <!-- !cart cantenr -->
-        <div class="cart_cantenr" id="cart_cantenr">
-          <!-- !cart y  -->
-          <div class="cart_y" id="cart_y">
-            <!-- ?code cart.js -->
-            <div class="cart_box" id="cantenr_cart_item">
-                <div
-                  class="image_cart"
-                  style="background-image: url('image/short.jpeg')"
-                ></div>
-                <div class="title_itam">
-                  <h2>short</h2>
-                  <div class="itam_dec">
-                    man short hight qaliyte
-                  </div>
-                </div>
-                <div class="price_deleat">
-                <div class="delete_itam"><i class="fa-solid fa-xmark"></i></div>
-                <div class="price_itam" ><b>
-                  34</b>
-                  <div class="quantity_box">
-                    <div class="decremet" onclick="decrement('${id}')">-</div>
-                    <div class="quantity" id="${id}">${item}</div>
-                    <div class="increment" onclick="increment('${id}')">+</div>
-                  </div>
-                  <div class="delete_itam"> <b>$ ${item * search.price} </b></div>
-                </div>
-                </div>
-              </div>
-          </div>
-          <!-- total price -->
-          <div class="total_price" id="chekout"></div>
+<body class="light">
+  <nav>
+    <div class="h_container">
+      <li class="option_b">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-toggle-checkbox" />
+          <label for="dark-mode-toggle-checkbox"></label>
         </div>
-        
+        <div class="mode_line">Dark Mode</div>
+      </li>
+      <div class="help"><a href="help.html">Help</a></div>
+    </div>
+  </nav>
+  <div class="big-b">
+  <div class="bill">
+    <div class="product">
+    <img src="image/short.jpeg" alt="">
+    <div class="product-box">
+      <div class="name">
+        <div class="ditalis">Ditails</div>
+        <div class="dec">
+          this is a man short m size pore cotton and molaya
+        </div>
       </div>
-
-    <script src="src/payment.js"></script>
+      <div class="quantity-box">
+        <div class="quantity">Quantity</div>
+        <div class="qua">
+          <div class="add">+</div>
+          <div class="no">1</div>
+          <div class="dicrement">-</div>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price-text">Price per Item</div>
+        <div class="price">$5</div>
+      </div>
+      <div class="totprice">
+        <div class="amount-text-">Amount</div>
+        <div class="ammunt">$5</div>
+      </div>
+    </div>
+    </div>
+    <div class="summary">
+      <p>Total Items: <span id="totalItems">0</span></p>
+      <p>Total Amount (without GST): $<span id="totalAmount">0.00</span></p>
+      <p>GST (18%): $<span id="gstAmount">0.00</span></p>
+      <p>Total Amount (with GST): $<span id="totalWithGst">0.00</span></p>
+  </div>
+  </div>
+</div>
+  <form action="" class="form">
+    <h3>payment mode</h3>
+  <div class="pay">
+    <span>$325</span>
+    <span>Pay</span>
+  </div>
+    <div class="caseondeliver">
+      <input type="radio" name="case" id="" value="caseon"><span>Case ondeliver</span>
+    </div>
+  </form>
+  <script src="src/payment.js"></script>
+  <script src="src/dark.js"></script>
 </body>
 </html>

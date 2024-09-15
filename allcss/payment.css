@@ -1,55 +1,212 @@
-/* body {
-    font-family: Arial, sans-serif;
+/* !dark mode and help button */
+.h_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0 10px;
+    top: 0px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .option_b {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .option_b::marker {
+    content: "";
+  }
+  .help {
+    cursor: pointer;
+  }
+  a {
+    color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
+    text-decoration: none;
+  }
+.big-b{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 10px;
+}
+.product{
+    display: flex;
+    /* border: 1px solid black; */
+    border-radius: 6px;
+    width: 100%;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+}
+.product img{
+    height: 150px;
+    width: 110px;
+    border-radius: 6px;
+    margin: 0.4rem;
+}
+
+.product-box{
+   display: flex;
+   width: 90%;
+   justify-content: space-between;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 110px;
+    align-items: center;
+}
+.ditalis{
+    font-weight: bold;
+}
+.dec{
+    font-size: 0.9rem;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+.quantity-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1 {
-    margin-bottom: 20px;
-    text-align: center;
+.qua{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+.add ,.dicrement{
+    font-size: 1.3rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
+}
+.add{
+    color: green;
+}
+.dicrement{
+    color: red;
+}
+.price-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button:hover {
-    background-color: #218838;
-} */
+.price-text{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.price{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.totprice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #858889;
+    padding: 4px;
+    border-radius: 6px;
+    color: #fff;
+}
+.ammunt{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.summary{
+   width: 100%;
+   border-radius: 6px;
+   box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+}
+.summary p{
+    font-weight: bold;
+    margin-left: 10px;
+}
+.summary p span{
+    font-weight: normal;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.caseondeliver,.pay{
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+}
+.caseondeliver{
+    background-color: #858889;
+}
+.pay{
+    background-color: #2bc150;
+    justify-content: space-around;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+}
+/* 1140px */
+@media (max-width: 1140px) {
+}
+
+/* 1000px */
+@media (max-width: 1000px) {
+}
+/*pad screen */
+@media (max-width: 781px) {
+}
+/* mobile screen size */
+@media (max-width: 590px) {
+.big-b{
+    width: 100%;
+}
+.bill{
+    width: 100%;
+}
+.product{
+    width: 100%;
+}
+.product img{
+    height: 100px;
+    width: 75px;
+}
+.name{
+    height: 100px;
+}
+.dec{
+   font-size: 0.8rem;
+}
+}
+
+/* mobile screen size 382 */
+@media (max-width: 382px) {
+}
