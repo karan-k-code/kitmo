@@ -47,7 +47,7 @@
     /* border: 1px solid black; */
     border-radius: 6px;
     width: 100%;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+    box-shadow: 0 0 7px rgb(122, 114, 114);
 }
 .product img{
     height: 150px;
@@ -145,7 +145,7 @@
 .summary{
    width: 100%;
    border-radius: 6px;
-   box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+   box-shadow: 0 0 7px rgb(122, 114, 114);
 }
 .summary p{
     font-weight: bold;
@@ -167,7 +167,7 @@
     padding: 0.5rem;
     border-radius: 5px;
     width: 200px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.596);
+    box-shadow: 0 0 7px rgb(122, 114, 114);
     cursor: pointer;
 }
 .caseondeliver{

@@ -4,6 +4,8 @@ let label1 = document.getElementById("chekout");
 
 let checkout_box = document.querySelector("#big_cart_cantenr");
 
+let buyc = JSON.parse(localStorage.getItem("databuy")) || [];
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -14,30 +16,34 @@ let generateCartItem = () => {
         let { id, item } = x;
         let search = shopItamsData.find((y) => y.id === id) || [];
         return `
-    <div class="cart_box" id="cantenr_cart_item">
-              <div
-                class="image_cart"
-                style="background-image: url('${search.img}')"
-              ></div>
-              <div class="title_itam">
-                <h2>${search.name}</h2>
-                <div class="itam_dec">
-                  ${search.desc}
-                </div>
-              </div>
-              <div class="price_deleat">
-              <div class="delete_itam" onclick="removeItem(${id})"><i class="fa-solid fa-xmark"></i></div>
-              <div class="price_itam" ><b>
-                $ ${search.price} </b>
-                <div class="quantity_box">
-                  <div class="decremet" onclick="decrement('${id}')">-</div>
-                  <div class="quantity" id="${id}">${item}</div>
-                  <div class="increment" onclick="increment('${id}')">+</div>
-                </div>
-                <div class="delete_itam"> <b>$ ${item * search.price} </b></div>
-              </div>
-              </div>
-            </div>
+          <div class="product">
+    <img src="${search.img}" alt="" onclick="goo(${id})">
+    <div class="product-box">
+      <div class="name">
+        <div class="ditalis">Ditails</div>
+        <div class="dec">
+          ${search.name} ${search.desc}
+        </div>
+      </div>
+      <div class="quantity-box">
+        <div class="quantity">Quantity</div>
+        <div class="qua">
+          <div class="add" onclick="increment('${id}')">+</div>
+          <div class="no" id="${id}">${item}</div>
+          <div class="dicrement" onclick="decrement('${id}')">-</div>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price-text">Price per Item</div>
+        <div class="price">$${search.price}</div>
+      </div>
+      <div class="totprice">
+        <div class="amount-text-">Amount</div>
+        <div class="ammunt">$${item * search.price} </div>
+        <div class="delete"><button onclick="removeItem(${id})">Delete</button></div>
+      </div>
+    </div>
+    </div>
       `;
       })
       .join(""));
@@ -47,18 +53,20 @@ let generateCartItem = () => {
             <div class="cart_image">
               <img src="image/cartimg1.png" alt="">
             </div>
-            <!-- !todaydeals 
-            <div class="todaydeals">
-              <h2>Today's Deals</h2>
-              <h2>shop now</h2>
+            <div class="home">
+               <button onclick="home()">Go to Home</button>
             </div>
-            <!-- ! THIS IS ITAM box 
-            <div class="cantenr" id="shop">
-            -->`;
+           `;
   }
 };
 
 generateCartItem();
+
+// ! home button
+
+let home = ()=>{
+  window.location="index.html";
+}
 
 
 // !increment
@@ -112,39 +120,6 @@ let calculation = () => {
   
 };
 
-// ! shop item gennerateshop funcation
-// let generateShop = () => {
-//   return (shop.innerHTML = shopItamsData
-//     .map((x) => {
-//       let { id, name, price, desc, img } = x;
-//       let search = basket.find((x) => x.id === id) || [];
-//       return `
-//         <div class="box option_b dark_box nav_light" id="producat_id_${id}">
-//             <div class="itam_name dark_box nav_light">
-//                 <h3>${name}</h3>
-//             </div>
-//             <div class="itam_img" style="background-image:url('${img}')">
-//             </div>
-//             <div class="itam_detelas">
-//                 <div class="itam_price">
-//                     $ ${price}
-//                 </div>
-//                 <div class="desc">
-//                     ${desc}
-//                 </div>
-//             </div>
-//             <div class="shop_box dark_box nav_light" >
-//                 <div class="add_cart option_b" onclick="increment(${id})">
-//                 <b>ADD CART</b></div>
-//                 <div id="${id}">
-//                 </div>
-//                 <div class="buy option_b" onclick="decrement(${id})" ><b>BUY</b></div>
-//             </div>
-//         </div>`;
-//     })
-//     .join(""));
-// };
-
 // ! remove item
 
 let removeItem = (id) => {
@@ -157,6 +132,25 @@ let removeItem = (id) => {
   reload();
 };
 
+// ! goo funcation
+let goo =(id)=>{
+  let selecteItam = id;
+  
+  if (buyc.length === 0) {
+    buyc.push({
+      id: selecteItam.id,
+      item: 1
+    });
+  }else{
+    buyc = [];
+    buyc.push({
+      id: selecteItam.id,
+      item: 1
+    });
+  }
+  localStorage.setItem("databuy", JSON.stringify(buyc));
+  window.location="buy.html"
+}
 
 // ! total amount
 
@@ -171,13 +165,12 @@ let totalAmount = () => {
       .reduce((x, y) => x + y, 0);
 
     label1.innerHTML = `
-          <div>
-            <div class="total_item_text">total item :</div>
-            <div class="total_item" id="total_item"></div>
-            <div class="total_price_text">total amount :  <b>$ ${amount} </b></div>
+          <div class="total-box">
+            <div class="total_item_text">Total Item :<spam id="total_item"></spam></div>
+            <div class="total_price_text">Total Amount :  <b>$${amount} </b></div>
           </div>
           <div class="chackoutbtn">
-          <button onclick="checkout()">chackout</button>
+          <button onclick="checkout()">Chackout</button>
           </div>
       `;
   } else {

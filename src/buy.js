@@ -11,7 +11,6 @@ homePage=()=>{
   window.location.href="index.html";
 }
 
-
 // ! shop item gennerateshop funcation
 let buyshop = () => {
   if (buyItam.length !== 0) {
@@ -23,13 +22,12 @@ let buyshop = () => {
         <div class="buy_item_image">
             <div class="image_container">
                 <img src="${search.img}" alt="">
-              <!--  <div class="radio_img">
+                <div class="radio_img">
                     <input type="radio" id="huey" name="drone" value="huey" checked ></input>
                     <input type="radio" id="dewey" name="drone" value="dewey" ></input>
                     <input type="radio" id="louie" name="drone" value="louie" ></input>
                     <input type="radio" id="loue" name="drone" value="loue" ></input>
                 </div>
-                -->
             </div>
             <!-- !prioduct_container -->
             <div class="product_container">
@@ -41,7 +39,7 @@ let buyshop = () => {
                     </div>
                 </div>
                 <div class="price_quantity">
-                    <div class="price"> $ ${search.price}</div>
+                    <div class="price-c"> $${search.price}</div>
                     <div class="quantity_box">
                         <div class="decremet" onclick="decrement('${id}')">-</div>
                         <div class="quantity" id="${id}">${item}</div>
@@ -49,8 +47,8 @@ let buyshop = () => {
                     </div>
                 </div>
                 <div class="checkout_addcart">
-                    <div class="checkout" onclick="checkout()">checkout</div>
-                    <div class="addcart" onclick="addcart(${id})">add cart</div>
+                    <button class="checkout" onclick="checkout()">checkout</button>
+                    <button class="addcart" onclick="addcart(${id})">add cart</button>
                 </div>
             </div>
         </div>
