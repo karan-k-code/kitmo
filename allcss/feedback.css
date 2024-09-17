@@ -22,12 +22,11 @@
 
 h1 {
   text-align: center;
-  margin-top: 20px;
 }
 
 form {
   margin: 0;
-  padding: 20px;
+  padding: 1.2rem;
   border-radius: 5px;
   /* background-color: #111111; */
   /* background-color: #f8f8f8ef; */
@@ -65,11 +64,13 @@ textarea {
 button {
   background-color: #67abf4;
   color: #fff;
+  font-weight: bold;
   font-size: 1rem;
   border: none;
-  padding: 10px 10px;
+  padding: 6px;
   border-radius: 5px;
   cursor: pointer;
+  width: 15vh;
   transition: all 0.3s ease;
   &:hover{
     background-color:  #007bff;
@@ -81,7 +82,7 @@ button {
 
 
 .feedback_button {
-  padding: 6px 6px 6px 6px;
+  padding: 6px;
   width: 120px;
   border: none;
   cursor: pointer;
