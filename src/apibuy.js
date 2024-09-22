@@ -1,9 +1,31 @@
-let big_container =document.getElementById("big_container");
+// ! checkout
+let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
+
+let dt = buyItam.map((x)=> x.id);
+let id = `${dt}`;
+
+const serapi = `http://localhost:4000/api/user/${id}`
+
+let datashop;
+
+let buyApi =()=>{
+  fetch(serapi)
+}
+
+fetch(serapi)
+  .then(response => response.json()) // Parse the JSON response
+  .then(data => {
+    return datashop = data; // Handle the data received from the API
+  })
+  .catch(error => {
+    console.error('Error:', error); // Handle any errors
+  });
+
+  let big_container =document.getElementById("big_container");
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-// ! checkout
-let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
+
 
 // ! home page
 
@@ -12,52 +34,7 @@ homePage=()=>{
 }
 
 // ! shop item gennerateshop funcation
-let buyshop = () => {
-  if (buyItam.length !== 0) {
-    return (big_container.innerHTML = buyItam
-      .map((x) => {
-        let { id, item } = x;
-        let search = shopItamsData.find((y) => y.id === id) || [];
-        return `
-        <div class="buy_item_image">
-            <div class="image_container">
-                <img src="${search.img}" alt="">
-                <div class="radio_img">
-                    <input type="radio" id="huey" name="drone" value="huey" checked ></input>
-                    <input type="radio" id="dewey" name="drone" value="dewey" ></input>
-                    <input type="radio" id="louie" name="drone" value="louie" ></input>
-                    <input type="radio" id="loue" name="drone" value="loue" ></input>
-                </div>
-            </div>
-            <!-- !prioduct_container -->
-            <div class="product_container">
-                <div class="title_itam">
-                
-                    <h3>${search.name}</h3>
-                    <div class="itam_dec">
-                    ${search.desc}
-                    </div>
-                </div>
-                <div class="price_quantity">
-                    <div class="price-c"> $${search.price}</div>
-                    <div class="quantity_box">
-                        <div class="decremet" onclick="decrement('${id}')">-</div>
-                        <div class="quantity" id="${id}">${item}</div>
-                        <div class="increment" onclick="increment('${id}')">+</div>
-                    </div>
-                </div>
-                <div class="checkout_addcart">
-                    <button class="checkout" onclick="checkout()">Checkout</button>
-                    <button class="addcart" onclick="addcart(${id})">Add cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="delever_detels_container"> deliver tomorry</div>
-      `;
-      })
-      .join(""));
-  }
-};
+
 
 // ! add cart
 let pop =document.getElementById("pop")
@@ -71,11 +48,11 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    notif(selecteItam.id);
+    notifApi(selecteItam.id);
     pop.style.display= 'flex';
     setTimeout(popnone,3000)
   } else {
-    notif(selecteItam.id);
+    notifApi(selecteItam.id);
     pop.style.display= 'flex';
     setTimeout(popnone,3000)
   }
@@ -144,6 +121,7 @@ let checkout = ()=>{
     window.location.href ="deliver.html";
 }
 
+
 // update();
-calculation();
-buyshop();
+// calculation();
+// buyshop();

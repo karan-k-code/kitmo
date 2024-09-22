@@ -27,13 +27,13 @@ opationcut.addEventListener('click', function (){
 })
 
 function answcut() {  
-    if (boxa.style.display === 'flex') {
-        boxa.style.display = 'none';
-        opation.style.display = 'flex'
-        opationcut.style.display = 'none'
-    } else {
-        boxa.style.display = 'flex';
-    }
+  if (boxa.style.display === 'flex') {
+    boxa.style.display = 'none';
+    opation.style.display = 'flex'
+    opationcut.style.display = 'none'
+  } else {
+    boxa.style.display = 'flex';
+  }
 }
 
 // animation 
@@ -97,7 +97,7 @@ let generatequestion =()=>{
           let { id, q, a} = x;
         //   let search = basket.find((x) => x.id === id) || [];
           return `
-            <li class="option_b" onclick="dog(${id})" id="${id}" >${q} </li>
+            <li class="option_b noactive" onclick="dog(${id})" id="${id}" >${q} </li>
           `;
         })
         .join(""));
@@ -108,8 +108,26 @@ generatequestion();
 
 let answe = document.querySelector(".answe");
 
+let activeData ;
+
+let atv ;
+
 let dog =(id)=>{
   let selecteItam = id;
+  if (activeData === undefined) {
+      activeData = selecteItam.id;
+      atv = document.getElementById(activeData);
+      atv.classList.remove("noactive")
+      atv.classList.add("active");
+  }else{
+    atv.classList.remove("active");
+    atv.classList.add("noactive");
+    atv = undefined;
+    activeData= undefined;
+    activeData = selecteItam.id;
+    atv = document.getElementById(activeData);
+    atv.classList.add("active");
+  }
   generateAns(selecteItam.id);  
 }
 

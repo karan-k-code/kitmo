@@ -4,10 +4,9 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
-
 // ! shop item gennerateshop funcation
-let generateShop = () => {
-  return (shop.innerHTML = shopItamsData
+let generateShop = async () => {
+  return (shop.innerHTML = await shopItamsData
     .map((x) => {
       let { id, name, price, desc, img } = x;
       let search = basket.find((x) => x.id === id) || [];
@@ -20,7 +19,7 @@ let generateShop = () => {
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">
-                    $ ${price}
+                    $${price}
                 </div>
                 <div class="desc">
                     ${desc}
@@ -189,5 +188,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
   });
 });
-  
-  
+
+

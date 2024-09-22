@@ -21,7 +21,6 @@ body{
   top: 0;
 }
 .opation , .opationcut {
-  display: none;
   position: fixed;
   top: 10px;
   padding: 4px 4px 4px 6px;
@@ -33,6 +32,9 @@ body{
   z-index: 2;
 }
 
+.opation{
+  display: none;
+}
 .home{
   display: flex;
   position: fixed;
@@ -54,7 +56,7 @@ body{
 
 .boxa{
   width: 30%;
-  height: 800px;
+  height: 100vh;
   display: flex;
   /* position: relative; */
   position: sticky;
@@ -104,16 +106,22 @@ body{
   display: flex;
   justify-content: space-evenly;
   font-size: 1.2rem;
-  /* border: 1px solid black; */
   width: 100%;
   padding: 10px 0 10px 0;
   border-radius: 7px;
   margin-bottom: 2px;
   color: #fff;
-  background-color: #10765c8e;
   &:hover{
     background-color: #0a4c3c9e;
   }
+}
+
+.noactive{
+  background-color: #10765c8e;
+}
+
+.active {
+  background-color: #0a4c3c9e;
 }
 
 a {
@@ -183,8 +191,7 @@ img{
   font-size: 2rem;
 }
 
-.option_b{
-  background-color: #cf69e9c5;
+.option_b , .feedback button{
   width: 20vh;
   font-size: 1.2rem;
   padding: 6px;
@@ -192,10 +199,16 @@ img{
   border: none;
   cursor: pointer;
   margin-bottom: 10px;
+  
+}
+
+.feedback button{
+  background-color: #cf69e9c5;
   &:hover{
     background-color: #dfa6eec5;
   }
 }
+
 /* mobile screen size */
 @media (max-width: 590px) {
   .welcome_box {

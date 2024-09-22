@@ -3,7 +3,9 @@
 // const app = express()
 // const port = 3000
 
-let shopItamsData = [
+// const { response } = require("express");
+
+ let shopItamsData = [
   {
     id: "headphones",
     name: "Headphones",
@@ -58,3 +60,17 @@ let shopItamsData = [
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
 // })
+
+const serap = `http://localhost:4000/api/user`
+
+let dataApi =async ()=>{
+  let response = await fetch(serap)
+  .then(async response => response.json()) // Parse the JSON response
+  .then(async data => {
+   // Handle the data received from the API
+   return shopItamsData=data;
+  })
+  generateShop();
+}
+
+dataApi();
