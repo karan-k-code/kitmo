@@ -139,7 +139,7 @@ let generateAns =(id)=>{
 
   return answe.innerHTML =`
           ${ search.q === undefined? ``: `<div class="q">${search.q}</div>`}
-          ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" height="360" controls></video>` }
+          ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" controls></video>` }
           <div class="ans">
             <ul>
               ${ search.li1 === undefined? ``: `<li>1.${search.li1} </li>` }

@@ -41,8 +41,10 @@
 .kitmo_img {
   justify-content: center;
 }
-.search-secation {
+form{
   width: 55%;
+}
+.search-secation {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,7 +160,7 @@
   .navbar {
     height: 50px;
   }
-  .search-secation {
+  form {
     display: none;
   }
   /* .search_secation_panl2{

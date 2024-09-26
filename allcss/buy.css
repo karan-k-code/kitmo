@@ -2,33 +2,76 @@
   margin: 0;
   /* font-family: Arial; */
 }
+
 .big_container {
+  width: 100%;
+  justify-content: center;
   display: flex;
 }
 /* ! buy_item_image */
 .buy_item_image {
+  width: 90%;
   display: flex;
+  /* position: absolute; */
 }
 
 /* image container */
 .image_container {
   width: 40%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-}
-.image_container img {
-  width: 100%;
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
+
+.imgslide{
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+    /* width: 300%; 4 slides, so width is 400% */
+    
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.slide img {
+  height: 100%;
+  width: 100%;
+}
+
+.prev , .next {
+  position: absolute;
+  transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 14px 10px 14px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.prev{
+  left: 10px;
+}
+
+.next{
+  right: 10px;
+}
+
 .radio_img {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0px 10px 0px;
   gap: 5px;
+  position: absolute;
+  bottom: 0;
 }
 /* product detels container */
 .product_container {
@@ -104,20 +147,22 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   /* image container */
   .image_container {
     display: flex;
-    width: 100%;
-    background-color: #fff;
+    width: 90%;
+    border-radius: 6px;
   }
+  .imgslide{
+    width: 100%;
+  }
+
+
   /* producat image */
-  .image_container img {
-    width: 60%;
-    height: 50%;
-    max-height: 400px;
-    max-width: 200px;
-    
+  .slide img{
+    border-radius: 6px;
   }
   /* product detels container */
   .product_container {
@@ -142,13 +187,12 @@ a {
 @media (max-width: 382px) {
   /* image container */
   .image_container {
-    width: 100%;
+    
   }
+
+
   /* producat image */
-  .image_container img {
-    width: 60%;
-    height: 50%;
-  }
+ 
   /* product detels container */
   .product_container {
     width: 100%;

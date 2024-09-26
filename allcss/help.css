@@ -165,7 +165,12 @@ a {
 
 .video{
   width: 400; 
-  height: 200;
+  /* height: 200; */
+}
+
+video{
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 img{

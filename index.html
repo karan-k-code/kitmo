@@ -71,29 +71,32 @@
           <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
         </div>
         <!--! navbar search-secation  big screen-->
+        <form>
         <div class="search-secation">
           <!-- ! search select -->
-          <select class="search-select border light no_dark">
-            <option>ALL</option>
-            <option>Electronics</option>
-            <option>Genral</option>
-            <option>Medical</option>
-            <option>Beautti</option>
+          <select class="search-select border light no_dark" id="searchSelect">
+            <option >All</option>
+            <option >Electronics</option>
+            <option >home</option>
+            <option >Medical</option>
+            <option >Beautti</option>
           </select>
           <!--! microphone button -->
-          <div class="microphone light no_dark">
+          <div class="microphone light no_dark" id="start">
             <i class="fa-solid fa-microphone"></i>
           </div>
           <!--! search-input area-->
           <input type="text"
             placeholder="Search kitmo"
             class="search-input light no_dark"
+            id="transcript"
           />
           <!--! search_icon button -->
-          <div class="search-icon light no_dark">
+          <div class="search-icon light no_dark" onclick="submitForm()">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-        </div>
+          </div>
+        </form>
         <!-- ! user profile info-->
         <div class="user_Containe">
           <!-- ! login sign up button code--user.js -->
@@ -259,6 +262,8 @@
   <!-- !java script file-->
   <script src="src/shopdata.js"></script>
   <script src="src/main.js"></script>
+  <script src="src/microphone.js"></script>
+  <script src="src/sarchjs.js"></script>
   <script src="src/hello_ji.js"></script>
   <script src="src/user.js"></script>
   <script src="src/dark.js"></script>

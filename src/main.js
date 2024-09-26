@@ -4,9 +4,14 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
+
+
 // ! shop item gennerateshop funcation
 let generateShop = async () => {
-  return (shop.innerHTML = await shopItamsData
+
+  let sle = shopItamsData.slice(0, 16)
+
+  return (shop.innerHTML = await sle
     .map((x) => {
       let { id, name, price, desc, img } = x;
       let search = basket.find((x) => x.id === id) || [];

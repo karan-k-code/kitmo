@@ -11,7 +11,12 @@
     name: "Headphones",
     price: 22,
     desc: "This Is Boat Headphones",
+    image:{
+      img2:"hf",
+      img3:"ksdfl",
+    },
     img: "image/headphone.jpeg",
+    catgory: "Electronics",
   },
   {
     id: "goggles",
@@ -19,6 +24,7 @@
     price: 9,
     desc: "Stylish Goggles New Year",
     img: "image/goggles.jpeg",
+    catgory: "sports",
   },
   {
     id: "short",
@@ -26,6 +32,13 @@
     price: 25,
     desc: "Stylish Short For Man",
     img: "image/short.jpeg",
+    catgory:"cloths",
+    
+    cloths:{
+      "men": "men",
+      "women": "women" 
+    } ,
+    
   },
   {
     id: "jeans",
@@ -33,6 +46,7 @@
     price: 30,
     desc: "Boy Jeans So Prime",
     img: "image/jeans.jpeg",
+    catgory: "fashion",
   },
   {
     id: "cup",
@@ -40,6 +54,7 @@
     price: 9,
     desc: "This Is Stylish Cup",
     img: "image/cup.jpeg",
+    catgory: "home",
   },
   {
     id: "iPhone",
@@ -47,6 +62,7 @@
     price: 999,
     desc: "IPhone 15 Pro Max",
     img: "image/iphone.jpg",
+    catgory: "home",
   },
 ];
 // app.use(express.static('public'))
@@ -73,4 +89,4 @@ let dataApi =async ()=>{
   generateShop();
 }
 
-dataApi();
+// dataApi();
