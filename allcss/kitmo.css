@@ -76,8 +76,8 @@
   justify-content: center;
 }
 .box {
-  height: 380px;
   border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.327);
 
 }
 .itam_name {

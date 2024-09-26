@@ -85,7 +85,7 @@ form{
   cursor: text;
   border: none;
   &:hover {
-    color: aqua;
+    /* color: aqua; */
   }
 }
 .search-icon {

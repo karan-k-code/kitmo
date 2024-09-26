@@ -1,9 +1,9 @@
 const darkModeToggle = document.getElementById("dark-mode-toggle-checkbox");
 
 // !chackbox deta store hoclocal storege"
-let hii = localStorage.getItem("darkModeToggle");
+let darkd = localStorage.getItem("darkModeToggle");
 
-if (hii == "true") {
+if (darkd == "true") {
   darkModeToggle.checked = true;
 }
 // ! all class selecat function

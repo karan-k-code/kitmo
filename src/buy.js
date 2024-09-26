@@ -26,17 +26,11 @@ let buyshop = () => {
                 <div class="slide">
                   <img src="${search.img}" alt="">
                 </div>
-          
                 
                 ${ search.image.img1 === undefined? ``: `<div class="slide"><img src="${search.image.img1}" alt=""></div>` }
+                ${ search.image.img2 === undefined? ``: `<div class="slide"><img src="${search.image.img2}" alt=""></div>` }
+                ${ search.image.img3 === undefined? ``: `<div class="slide"><img src="${search.image.img3}" alt=""></div>` }
                   
-                
-                <div class="slide">
-                  <img src="${search.img}" alt="">
-                </div>
-                <div class="slide">
-                  <img src="${search.img}" alt="">
-                </div>
               </div>
               <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
               <button class="next" onclick="changeSlide(1)">&#10095;</button>

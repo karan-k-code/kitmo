@@ -12,8 +12,8 @@
     price: 22,
     desc: "This Is Boat Headphones",
     image:{
-      img2:"hf",
-      img3:"ksdfl",
+     img1:"image/boat1.webp",
+     img2:"image/boat2.jpg",
     },
     img: "image/headphone.jpeg",
     catgory: "Electronics",
@@ -24,6 +24,9 @@
     price: 9,
     desc: "Stylish Goggles New Year",
     img: "image/goggles.jpeg",
+    image:{
+      
+    },
     catgory: "sports",
   },
   {
@@ -32,6 +35,9 @@
     price: 25,
     desc: "Stylish Short For Man",
     img: "image/short.jpeg",
+    image:{
+      
+    },
     catgory:"cloths",
     
     cloths:{
@@ -46,6 +52,9 @@
     price: 30,
     desc: "Boy Jeans So Prime",
     img: "image/jeans.jpeg",
+    image:{
+      
+    },
     catgory: "fashion",
   },
   {
@@ -54,6 +63,9 @@
     price: 9,
     desc: "This Is Stylish Cup",
     img: "image/cup.jpeg",
+    image:{
+      
+    },
     catgory: "home",
   },
   {
@@ -62,7 +74,10 @@
     price: 999,
     desc: "IPhone 15 Pro Max",
     img: "image/iphone.jpg",
-    catgory: "home",
+    image:{
+      
+    },
+    catgory: "Electronics",
   },
 ];
 // app.use(express.static('public'))

@@ -17,17 +17,17 @@ let generateShop = async () => {
       let search = basket.find((x) => x.id === id) || [];
       return `
         <div class="box option_b dark_box nav_light" id="producat_id_${id}" >
-            <div class="itam_name dark_box nav_light">
+            <!--<div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
-            </div>
+            </div>-->
             <div class="itam_img" style="background-image:url('${img}')" onclick="goo(${id})">
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">
-                    $${price}
+                  $${price}
                 </div>
                 <div class="desc">
-                    ${desc}
+                  ${desc}
                 </div>
             </div>
             <div class="shop_box dark_box nav_light" >

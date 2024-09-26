@@ -10,7 +10,17 @@ function submitForm() {
     
     // ! shop item gennerateshop funcation
 let generateShopf = async () => {
-    let filterData = shopItamsData.filter((x) => x.catgory === select);
+
+    let filterData;
+    valC = shopItamsData.filter((x) =>x.catgory === select );
+    valN = shopItamsData.filter((x) =>x.name === select );
+
+    if (valC.length !== 0) {
+        filterData = valC;
+    } else if(valN !== 0){
+        filterData = valN;
+    }
+
     let sle = filterData.slice(0, 16)
 
     return (shop.innerHTML = await sle
@@ -19,9 +29,7 @@ let generateShopf = async () => {
         let search = basket.find((x) => x.id === id) || [];
         return `
           <div class="box option_b dark_box nav_light" id="producat_id_${id}" >
-              <div class="itam_name dark_box nav_light">
-                  <h3>${name}</h3>
-              </div>
+              
               <div class="itam_img" style="background-image:url('${img}')" onclick="goo(${id})">
               </div>
               <div class="itam_detelas">
@@ -51,11 +59,13 @@ let generateShopf = async () => {
     }else if(valB !==''){
         select = valB;
         generateShopf()
+    }else{
+        generateShop()
     }
 }
 
 
-
+submitForm()
 
 
 
