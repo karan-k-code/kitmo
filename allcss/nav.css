@@ -59,9 +59,6 @@ form{
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   outline: none;
-  &:hover {
-    color: aqua;
-  }
 }
 /* microphone */
 .microphone {
@@ -72,9 +69,6 @@ form{
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  &:hover {
-    color: aqua;
-  }
 }
 .search-input {
   width: 80%;
@@ -84,9 +78,7 @@ form{
   justify-content: center;
   cursor: text;
   border: none;
-  &:hover {
-    /* color: aqua; */
-  }
+  
 }
 .search-icon {
   height: 40px;

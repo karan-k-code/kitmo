@@ -105,3 +105,22 @@ let totalAmount = () => {
   };
   totalAmount();
   billProduct();
+
+
+  // JavaScript to handle showing and hiding the success message
+document.getElementById('showMessageBtn').addEventListener('click', function() {
+  const successMessage = document.getElementById('successMessage');
+  
+  // Show the success message
+  successMessage.classList.remove('hidden');
+  
+  // Automatically hide after 3 seconds
+  setTimeout(function() {
+      successMessage.classList.add('hidden');
+  }, 3000);
+});
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+  // Manually hide the success message when the close button is clicked
+  document.getElementById('successMessage').classList.add('hidden');
+});

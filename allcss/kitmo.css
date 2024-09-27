@@ -90,21 +90,26 @@
 }
 .itam_img {
   height: 245px;
-  background-color: #9100ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
   border-radius: 10px;
   background-size: cover;
+  background-position: center;
   cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
 }
+
+.itam_img img{
+  height: 100%;
+}
+
 .itam_detelas {
   height: 45px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 7px;
+  overflow: hidden;
 }
 .itam_price {
   color: white;

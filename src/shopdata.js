@@ -15,6 +15,17 @@
      img1:"image/boat1.webp",
      img2:"image/boat2.jpg",
     },
+    img: "image/boat3.jpg",
+    catgory: "Electronics",
+  },
+  {
+    id: "headphones2",
+    name: "Headphones",
+    price: 22,
+    desc: "This Is Boat Headphones",
+    image:{
+     
+    },
     img: "image/headphone.jpeg",
     catgory: "Electronics",
   },
@@ -66,7 +77,29 @@
     image:{
       
     },
-    catgory: "home",
+    catgory: "Home",
+  },
+  {
+    id: "iPhone",
+    name: "Mobile",
+    price: 999,
+    desc: "IPhone 15 Pro Max",
+    img: "image/iphone.jpg",
+    image:{
+      
+    },
+    catgory: "Electronics",
+  },
+  {
+    id: "ipad",
+    name: "Tab",
+    price: 677,
+    desc: "Apple ipad 8gb Ram 256gb storge 5000mAh bettar prime tab best Quality Apple ipad 8gb Ram 256gb storge 5000mAh bettar prime tab best Quality",
+    img: "image/iphone.jpg",
+    image:{
+      
+    },
+    catgory: "Electronics",
   },
   {
     id: "iPhone",

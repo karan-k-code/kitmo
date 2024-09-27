@@ -20,7 +20,8 @@ let generateShop = async () => {
             <!--<div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
             </div>-->
-            <div class="itam_img" style="background-image:url('${img}')" onclick="goo(${id})">
+            <div class="itam_img" onclick="goo(${id})">
+            <img src="${img}">
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">

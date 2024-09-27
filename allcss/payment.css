@@ -51,7 +51,6 @@
 }
 .product img{
     height: 150px;
-    width: 110px;
     border-radius: 6px;
     margin: 0.4rem;
 }
@@ -224,4 +223,79 @@
 
 /* mobile screen size 382 */
 @media (max-width: 382px) {
+}
+
+
+
+
+/* General styles */
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Success message styles */
+#successMessage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 20px;
+    border-radius: 4px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+/* Initially hidden message */
+.hidden {
+    display: none;
+}
+
+/* Close button inside the success message */
+#closeBtn {
+    background: none;
+    border: none;
+    color: #155724;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Success message animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }

@@ -1,4 +1,7 @@
 let big_container =document.getElementById("big_container");
+
+
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 

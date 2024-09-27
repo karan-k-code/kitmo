@@ -27,6 +27,7 @@ let generateCartItem = () => {
       </div>
       <div class="quantity-box">
         <div class="quantity">Quantity</div>
+        <div class="qty">Qty</div>
         <div class="qua">
           <div class="add" onclick="increment('${id}')">+</div>
           <div class="no" id="${id}">${item}</div>

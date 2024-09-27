@@ -63,27 +63,29 @@
                 <div class="kitmo-logo" onclick="homePage()">
                     <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
                 </div>
-                <!-- search-secation nav third option -->
+                <!--! search-secation nav third option -->
+                <form>
                 <div class="search-secation">
-                    <select class="search-select border light no_dark">
-                        <option>ALL</option>
+                    <select class="search-select border light no_dark" id="searchSelect">
+                        <option>All</option>
                         <option>Electronics</option>
-                        <option>Genral</option>
+                        <option>Home</option>
                         <option>Medical</option>
                         <option>Beautti</option>
                       </select>
                     <!-- microphone -->
-                    <div class="microphone light no_dark">
+                    <div class="microphone light no_dark" id="start">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                     <!-- search-input -->
-                    <input placeholder="Search kitmo" class="search-input light no_dark">
-                    <!-- search_icon -->
-                    <div class="search-icon light no_dark">
+                    <input placeholder="Search kitmo" class="search-input light no_dark" id="transcript">
+                    <!-- search_icon button -->
+                    <div class="search-icon light no_dark" onclick="submitForm()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
-                <!-- login sign up -->
+                </form>
+                <!--! login sign up -->
                 <div class="user_Containe" >
                     <div id="user_list" class="box_shadow box_no_dark_shadow light no_dark">
                         
@@ -93,14 +95,14 @@
                 <div class="usar" id="user_button">
                     <i class="fa-regular fa-user"></i>
                 </div>
-                <!-- shoping cart nav five options -->
+                <!--! shoping cart nav five options -->
                 <div class="cart">
                     <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>
                     <div class="amuntcart" id="cart_no">0</div>
                 </a>
                 </div>
             </div>
-            <!-- nevbar2 section and -->
+            <!--! nevbar2 section and -->
             <div class="navbar2 dark_box nav_light">
         
              </div>
@@ -123,6 +125,9 @@
         <div class="big_container" id="big_container">
             <!-- ! code buy.js  -->
         </div>
+        <div class="cantenr" id="shop">
+            <!-- ! code--js -->
+        </div>
 
     </body>
     
@@ -130,6 +135,8 @@
     <script src="src/shopdata.js"></script>
     <script src="src/imageslider.js"></script>
     <script src="src/buy.js"></script>
+    <script src="src/microphone.js"></script>
+    <script src="src/sarchjsb.js"></script>
     <script src="src/hello_ji.js"></script>
     <script src="src/user.js"></script>
     <script src="src/dark.js"></script>

@@ -1,5 +1,6 @@
 // ! this search area code
 
+let shop = document.getElementById("shop");
 
 
 
@@ -65,38 +66,38 @@ let generateShopf = async () => {
     if(valA !== 'All'){
         select = valA;
         generateShopf()
-        // big_container.style.display="none"
+        big_container.style.display="none"
 
     }else if(valB !==''){
         select = sentenceCase;
         generateShopf()
-        // big_container.style.display="none"
+        big_container.style.display="none"
     }else{
         generateShop()
-        // big_container.style.display="none"
+        big_container.style.display="none"
     }
 }
 
 // ! goo funcation
-// let goo =(id)=>{
-//     let selecteItam = id;
+let goo =(id)=>{
+    let selecteItam = id;
     
-//     if (buyItam.length === 0) {
-//       buyItam.push({
-//         id: selecteItam.id,
-//         item: 1
-//       });
-//     }else{
-//       buyItam = [];
-//       buyItam.push({
-//         id: selecteItam.id,
-//         item: 1
-//       });
-//     }
-//     localStorage.setItem("databuy", JSON.stringify(buyItam));
-//     window.location="buy.html"
-//     big_container.style.display="flex"
-//   }
+    if (buyItam.length === 0) {
+      buyItam.push({
+        id: selecteItam.id,
+        item: 1
+      });
+    }else{
+      buyItam = [];
+      buyItam.push({
+        id: selecteItam.id,
+        item: 1
+      });
+    }
+    localStorage.setItem("databuy", JSON.stringify(buyItam));
+    window.location="buy.html"
+    big_container.style.display="flex"
+  }
   
 
 
