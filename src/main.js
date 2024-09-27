@@ -5,11 +5,12 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
+let sle = shopItamsData.slice(0, 16)
 
 // ! shop item gennerateshop funcation
 let generateShop = async () => {
 
-  let sle = shopItamsData.slice(0, 16)
+   
 
   return (shop.innerHTML = await sle
     .map((x) => {
@@ -195,4 +196,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
+ let showMore=()=>{
+  sle = shopItamsData.slice(0, sle.length*2)
+  generateShop()
+ }

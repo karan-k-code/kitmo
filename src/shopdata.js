@@ -91,26 +91,136 @@
     catgory: "Electronics",
   },
   {
-    id: "ipad",
-    name: "Tab",
+    id: "sam",
+    name: "mobile",
     price: 677,
-    desc: "Apple ipad 8gb Ram 256gb storge 5000mAh bettar prime tab best Quality Apple ipad 8gb Ram 256gb storge 5000mAh bettar prime tab best Quality",
-    img: "image/iphone.jpg",
+    desc: "samsung s24 256gb storge 5000mAh bettar prime tab best Quality ",
+    img: "image/s24.jpg",
     image:{
       
     },
     catgory: "Electronics",
   },
   {
-    id: "iPhone",
-    name: "Mobile",
-    price: 999,
-    desc: "IPhone 15 Pro Max",
-    img: "image/iphone.jpg",
+    id: "mo",
+    name: "mouse",
+    price: 49,
+    desc: "rgb wirless mouse prime qualilty ",
+    img: "image/mouse.jpg",
     image:{
       
     },
     catgory: "Electronics",
+  },
+  {
+    id: "shoe",
+    name: "shoe",
+    price: 399,
+    desc: "shoe best qualilty",
+    img: "image/shoe.jpg",
+    image:{
+      img1:"image/shoe1.jpg",
+      img2:"image/shoe2.jpg",
+    },
+    catgory: "fashion",
+  },
+  {
+    id: "hfkjas",
+    name: "saree",
+    price: 1299,
+    desc: "saree best qualilty",
+    img: "image/saree2.jpg",
+    image:{
+    
+    },
+    catgory:"cloths",
+    
+    cloths:{
+      "women": "women" 
+    },
+  },
+  {
+    id: "hfks",
+    name: "tshirt",
+    price: 199,
+    desc: "tshirt best qualilty",
+    img: "image/tshirt1.jpg",
+    image:{
+    
+    },
+    catgory:"cloths",
+    
+    cloths:{
+      "man": "men" 
+    },
+  },
+  {
+    id: "hhgjs",
+    name: "skirt",
+    price: 1399,
+    desc: "skirt best qualilty",
+    img: "image/skirt.jpg",
+    image:{
+      img1:"image/skirt3.jpg"
+    },
+    catgory:"cloths",
+    
+    cloths:{
+      "woman": "women" 
+    },
+  },
+  {
+    id: "hgjs",
+    name: "skirt",
+    price: 1199,
+    desc: "skirt best qualilty",
+    img: "image/skirt2.jpg",
+    image:{
+
+    },
+    catgory:"cloths",
+    
+    cloths:{
+      "woman": "women" 
+    },
+  },
+  {
+    id: "hhgjs65",
+    name: "skirt",
+    price: 1899,
+    desc: "skirt best qualilty",
+    img: "image/skirt4.jpg",
+    image:{
+
+    },
+    catgory:"cloths",
+    
+    cloths:{
+      "woman": "women" 
+    },
+  },
+  {
+    id: "sho2e",
+    name: "shoe",
+    price: 349,
+    desc: "shoe best qualilty",
+    img: "image/shoeb1.jpg",
+    image:{
+      img1:"image/shoe2.1.jpg",
+      img2:"image/shoe2.2.jpg",
+    },
+    catgory: "fashion",
+  },
+  {
+    id: "weyiyi3",
+    name: "chair",
+    price: 4599,
+    desc: "chair best qualilty",
+    img: "image/chair.jpg",
+    image:{
+     
+    },
+    catgory: "home",
   },
 ];
 // app.use(express.static('public'))
