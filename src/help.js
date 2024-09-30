@@ -41,7 +41,7 @@ function answcut() {
 function fadeOutBox() {
     let box = document.getElementById('boxa');
     box.classList.add('fade-out');
-    // Optionally, you can remove the element from the DOM after the animation completes
+    
     box.addEventListener('animationend', function() {
       box.style.display = 'none'; // Or any other action you want to perform
     });

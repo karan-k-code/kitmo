@@ -17,7 +17,7 @@ let generateShop = async () => {
       let { id, name, price, desc, img } = x;
       let search = basket.find((x) => x.id === id) || [];
       return `
-        <div class="box option_b dark_box nav_light" id="producat_id_${id}" >
+        <div class="box option_b " id="producat_id_${id}" >
             <!--<div class="itam_name dark_box nav_light">
                 <h3>${name}</h3>
             </div>-->
@@ -32,7 +32,7 @@ let generateShop = async () => {
                   ${desc}
                 </div>
             </div>
-            <div class="shop_box dark_box nav_light" >
+            <div class="shop_box " >
                 <div class="add_cart " onclick="addcart(${id})">
                 <b>ADD CART</b></div>
                 <div id="${id}">

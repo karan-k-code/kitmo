@@ -38,7 +38,7 @@
     image:{
       
     },
-    catgory: "sports",
+    catgory: "Fashion",
   },
   {
     id: "short",
@@ -49,7 +49,7 @@
     image:{
       
     },
-    catgory:"cloths",
+    catgory:"Cloths",
     
     cloths:{
       "men": "men",
@@ -66,7 +66,7 @@
     image:{
       
     },
-    catgory: "fashion",
+    catgory: "Fashion",
   },
   {
     id: "cup",
@@ -92,7 +92,7 @@
   },
   {
     id: "sam",
-    name: "mobile",
+    name: "Mobile",
     price: 677,
     desc: "samsung s24 256gb storge 5000mAh bettar prime tab best Quality ",
     img: "image/s24.jpg",
@@ -103,7 +103,7 @@
   },
   {
     id: "mo",
-    name: "mouse",
+    name: "Mouse",
     price: 49,
     desc: "rgb wirless mouse prime qualilty ",
     img: "image/mouse.jpg",
@@ -114,7 +114,7 @@
   },
   {
     id: "shoe",
-    name: "shoe",
+    name: "Shoe",
     price: 399,
     desc: "shoe best qualilty",
     img: "image/shoe.jpg",
@@ -126,14 +126,14 @@
   },
   {
     id: "hfkjas",
-    name: "saree",
+    name: "Saree",
     price: 1299,
     desc: "saree best qualilty",
     img: "image/saree2.jpg",
     image:{
     
     },
-    catgory:"cloths",
+    catgory:"Cloths",
     
     cloths:{
       "women": "women" 
@@ -141,14 +141,14 @@
   },
   {
     id: "hfks",
-    name: "tshirt",
+    name: "Tshirt",
     price: 199,
     desc: "tshirt best qualilty",
     img: "image/tshirt1.jpg",
     image:{
     
     },
-    catgory:"cloths",
+    catgory:"Cloths",
     
     cloths:{
       "man": "men" 
@@ -247,4 +247,4 @@ let dataApi =async ()=>{
   generateShop();
 }
 
-// dataApi();
+// dataApi();/

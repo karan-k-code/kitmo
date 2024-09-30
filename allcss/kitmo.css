@@ -77,7 +77,7 @@
 }
 .box {
   border-radius: 10px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.327);
+  box-shadow: 0 0 7px rgba(122, 114, 114, 0.7);
 
 }
 .itam_name {
@@ -90,7 +90,7 @@
 }
 .itam_img {
   height: 245px;
-
+  margin-top: 5px;
   /* height: 100%; */
   display: flex;
   align-items: center;
@@ -99,12 +99,13 @@
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  background-color: #fff;
+  /* background-color: #fff; */
   overflow: hidden;
 }
 
 .itam_img img{
   height: 100%;
+  border-radius: 10px;
 }
 
 .itam_detelas {
@@ -114,11 +115,11 @@
   overflow: hidden;
 }
 .itam_price {
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  margin-left: 5px;
   text-shadow: 2px 2px 5px black;
 }
 .desc {
@@ -135,49 +136,31 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.add_cart {
+.add_cart , .buy{
   background-color: #9dacff;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   margin: 5px;
-  width: 37%;
   cursor: pointer;
-  font-size: 13px;
+  
   transition: all 0.3s ease;
   &:hover{
     background-color: #5f77ff;
     transform: scale(1.1);
   }
 }
+.add_cart{
+  width: 37%;
+  font-size: 13px;
+}
+
 .buy {
-  background-color: #9dacff;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
   width: 35%;
-  border-radius: 5px;
-  margin: 5px;
-  margin-right: 10px;
-  transition: all 0.3s ease;
-  &:hover{
-    background-color: #5f77ff;
-    transform: scale(1.1);
-  }
+
 }
 /* design touch */
-.tuch:hover {
-  background-color: #ff0070;
-}
-/* .light_color:hover{
-    box-shadow: 0 0 5px black;
-    transform: 29s;
-} */
-.white_color:hover {
-  box-shadow: 0 0 10px red;
-}
 
 
 .show_more{

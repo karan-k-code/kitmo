@@ -28,9 +28,7 @@ form {
   margin: 0;
   padding: 1.2rem;
   border-radius: 5px;
-  /* background-color: #111111; */
-  /* background-color: #f8f8f8ef; */
-  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(122, 114, 114, 0.5);
 }
 
 label {
@@ -44,7 +42,6 @@ textarea {
   padding: 8px;
   margin-bottom: 15px;
   border: none;
-  /* border: 1px solid #ccc; */
   border-radius: 3px;
   &:focus{
     outline: none;
@@ -153,7 +150,7 @@ a {
 /* mobile screen size */
 @media (max-width: 590px) {
   .feedback_cantenr {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 10px;
   }
 }

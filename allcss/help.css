@@ -235,6 +235,9 @@ img{
   .opation{
     display: flex;
   }
+  .opationcut{
+    display: none;
+  }
   video{
     width: 95%; 
     height: 100%;
