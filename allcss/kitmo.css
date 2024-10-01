@@ -14,33 +14,38 @@
 }
 /* website postar dile and offer*/
 .hero_box {
-  top: -13px;
-  height: 450px;
-  position: relative;
+  /* top: -13px; */
+  /* width: 100%; */
+  /* height: 400px; */
+  z-index: -1;
   display: flex;
-  border-top-left-radius: 13px;
-  border-top-right-radius: 13px;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+  overflow: hidden;
+  position: relative;
+}
+
+.imgslide{
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .image1{
-  /* display: flex; */
-  height: 600px;
+  min-width: 100%;
   width: 100%;
-  background-size: cover;
-
-  z-index: -1;
-
-  position: absolute;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image1.active {
-  opacity: 1;
+.image1 img{
+  width: 100%;
+  /* height: 100%; */
 }
+
 
 .hero-msg {
   background-color: white;

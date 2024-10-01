@@ -9,7 +9,7 @@
   {
     id: "headphones",
     name: "Headphones",
-    price: 22,
+    price: 77,
     desc: "This Is Boat Headphones",
     image:{
      img1:"image/boat1.webp",

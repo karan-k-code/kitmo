@@ -38,8 +38,11 @@ h2 {
   width: 350px;
 }
 .input_container {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
+
 .password {
   display: flex;
   align-items: center;
@@ -92,12 +95,14 @@ button::after {
   border-radius: 5px;
 }
 
-.div {
+.input_container label{
+  width: 100%;
   margin-top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
+
 .option_b::marker {
   content: "";
 }
@@ -112,11 +117,11 @@ button::after {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.888);
 }
 .darkmode_box_shadow {
-  box-shadow: 0 0 10px rgba(255, 255, 255);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 .btn_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 20px 0 20px;
 }
 .b_container {

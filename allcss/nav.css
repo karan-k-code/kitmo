@@ -1,11 +1,17 @@
+header{
+  position: sticky;
+  top: 0;
+}
 /*navbar*/
+
 .navbar2 {
   height: 60px;
   justify-content: space-around;
   align-items: center;
   display: flex;
+  position: sticky;
+
   top: 0px; 
-  z-index: -1;
   width: 100%;
 }
 .navbar {
@@ -13,7 +19,8 @@
   justify-content: space-around;
   align-items: center;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
   top: 0px; 
   width: 100%;
   z-index: 1;
@@ -133,15 +140,6 @@ form{
   align-items: center;
   height: 60px;
   z-index: 0;
-}
-.search_secation_panl2 {
-  display: none;
-  top: 50px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  z-index: -2;
 }
 .colam {
   height: 13px;
