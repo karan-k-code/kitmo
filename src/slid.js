@@ -32,9 +32,6 @@ slider.addEventListener('touchstart', startPosition);
 slider.addEventListener('touchmove', drag);
 slider.addEventListener('touchend', endPosition);
 
-let pre = document.getElementById("pre");
-let prey = document.getElementById("prey");
-let prex = document.getElementById("prex");
 
 function startPosition(e) {
     pre.innerText=e;
