@@ -1,32 +1,10 @@
 const slider = document.querySelector('.imgslide');
 
-let isDown = false;
-let startX;
-let scrollLeft;
-let currentTranslate;
-let cu;
+let isDragging;
+let start;
+let end;
+let valueD;
 
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    // prey.innerText= ++scrollLeft;
-});
-
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; //scroll-fast
-});
 
 slider.addEventListener('touchstart', startPosition);
 slider.addEventListener('touchmove', drag);
@@ -34,33 +12,27 @@ slider.addEventListener('touchend', endPosition);
 
 
 function startPosition(e) {
-    pre.innerText=e;
-    isDragging = true;
-    startPos = getPositionX(e);
-    startX = e.pageX - slider.offsetLeft;
-
-
+    isDragging = true
+    start = getPositionX(e);
+    console.log("start", start)
 }
 
+
 function drag(e) {
-    const currentPosition = getPositionX(e);
-    const walk = currentPosition - startPos;
-    currentTranslate = walk;
-    // console.log(walk)
-  
+    end = getPositionX(e);
+    valueD = end - start;
 }
 
 function endPosition() {
     isDragging = false;
-    prevTranslate = currentTranslate;
-    
-    console.log("startpos", startPos)
-    console.log("dic",currentTranslate)
-   if(currentTranslate > startPos){
+
+   if(valueD >= 100){
     changeSlide(-1)
-   }else if(currentTranslate < startPos){
-    
+    valueD=' ';
+   }else if(valueD <= -100){
+
     changeSlide(1)
+    valueD = '';
    }
 }
 
@@ -68,10 +40,3 @@ function endPosition() {
 function getPositionX(e) {
     return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
 }
-
-function setSliderPosition() {
-    slider.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-
-
