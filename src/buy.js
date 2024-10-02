@@ -38,10 +38,9 @@ let buyshop = () => {
               <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
               <button class="next" onclick="changeSlide(1)">&#10095;</button>
                 <div class="radio_img">
-                  <input type="radio" id="huey" name="drone" value="0" ${currentSlide === 0? console.log("check"): ``}  ></input>
-                  <input type="radio" id="dewey" name="drone" value="1" ${currentSlide === 1? `checked`: ``} onclick="lse()" ></input>
+                  <input type="radio" id="huey" name="drone" value="0" ></input>
+                  <input type="radio" id="dewey" name="drone" value="1" ></input>
                   <input type="radio" id="louie" name="drone" value="2" ></input>
-                  <input type="radio" id="loue" name="drone" value="3" ></input>
                 </div>
             </div>
             <!-- !prioduct_container -->

@@ -1,13 +1,13 @@
 let currentSlide = 0;
 function changeSlide(direction) {
   const slides = document.querySelector('.imgslide');
-  const totalSlides = document.querySelectorAll('.slide').length;
+  const totalSlides = document.querySelectorAll('.image1').length;
   currentSlide += direction;
 
   if (currentSlide < 0) {
-    currentSlide = 0;
-  } else if (currentSlide >= totalSlides) {
     currentSlide = totalSlides-1;
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0;
   }
 
   console.log(currentSlide);
@@ -15,6 +15,6 @@ function changeSlide(direction) {
 }
 
 // Auto-slide every 5 seconds
-// setInterval(() => {
-//   changeSlide(1);
-// }, 5000);
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
