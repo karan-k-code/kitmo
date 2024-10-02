@@ -26,7 +26,7 @@ let buyshop = () => {
         <div class="buy_item_image">
             <div class="image_container">
               <div class="imgslide">
-                <div class="slide">
+                <div class="slide" ">
                   <img src="${search.img}" alt="">
                 </div>
                 

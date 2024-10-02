@@ -10,7 +10,7 @@ let sle = shopItamsData.slice(0, 16)
 // ! shop item gennerateshop funcation
 let generateShop = async () => {
 
-   
+  
 
   return (shop.innerHTML = await sle
     .map((x) => {
@@ -197,6 +197,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
  let showMore=()=>{
-  sle = shopItamsData.slice(0, sle.length*2)
+  sle = shopItamsData.slice(0, sle.length + 16)
   generateShop()
+  
  }

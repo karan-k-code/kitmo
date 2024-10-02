@@ -1,57 +1,80 @@
-const initSlider = () => {
-    const imageList = document.querySelector(".slider-wrapper .image-list");
-    const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-    const sliderScrollbar = document.querySelector(".slider-wrapper .slider-scrollbar");
-    const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
-    const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+const slider = document.querySelector('.imgslide');
 
-    // Handle scrollbar thumb drag
-    scrollbarThumb.addEventListener("mousedown", (e) => {
-        const startX = e.clientX;
-        const thumbPosition = scrollbarThumb.offsetLeft;
-        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+let isDown = false;
+let startX;
+let scrollLeft;
+let currentTranslate;
+let cu;
 
-        // Update thumb position on mouse move
-        const handleMouseMove = (e) => {
-            const deltaX = e.clientX - startX;
-            const newThumbPosition = thumbPosition + deltaX;
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    // prey.innerText= ++scrollLeft;
+});
 
-            // Ensure the scrollbar thumb stays within bounds
-            const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
-            const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+});
 
-            scrollbarThumb.style.left = `${boundedPosition}px`;
-            imageList.scrollLeft = scrollPosition;
-        }
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+});
 
-        // Remove event listeners on mouse up
-        const handleMouseUp = () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleMouseUp);
-        }
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; //scroll-fast
+});
 
-        // Add event listeners for drag interaction
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mouseup", handleMouseUp);
-    });
+slider.addEventListener('touchstart', startPosition);
+slider.addEventListener('touchmove', drag);
+slider.addEventListener('touchend', endPosition);
 
-    // Slide images according to the slide button clicks
-    slideButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            if (button.id === "prev") {
-                // Scroll to the previous image
-                imageList.scrollLeft -= imageList.clientWidth;
-            } else if (button.id === "next") {
-                // Scroll to the next image
-                imageList.scrollLeft += imageList.clientWidth;
-            }
+let pre = document.getElementById("pre");
+let prey = document.getElementById("prey");
+let prex = document.getElementById("prex");
 
-            // Update scrollbar thumb position
-            const scrollPosition = imageList.scrollLeft / maxScrollLeft;
-            const thumbPosition = scrollPosition * (sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth);
-            scrollbarThumb.style.left = `${thumbPosition}px`;
-        });
-    });
+function startPosition(e) {
+    pre.innerText=e;
+    isDragging = true;
+    startPos = getPositionX(e);
+    startX = e.pageX - slider.offsetLeft;
+
+
 }
 
-initSlider();
+function drag(e) {
+    const currentPosition = getPositionX(e);
+    const walk = currentPosition - startPos;
+    currentTranslate = walk;
+    // console.log(walk)
+  
+}
+
+function endPosition() {
+    isDragging = false;
+    prevTranslate = currentTranslate;
+    
+    console.log("startpos", startPos)
+    console.log("dic",currentTranslate)
+   if(currentTranslate > startPos){
+    changeSlide(-1)
+   }else if(currentTranslate < startPos){
+    
+    changeSlide(1)
+   }
+}
+
+
+function getPositionX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
+
+function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+
+

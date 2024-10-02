@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Slider</title>
-  <link rel="stylesheet" href="allcss/imagesilder.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <link rel="stylesheet" href="allcss/imagesilder.css">
 </head>
 <body>
 
-<div class="slider">
-  <div class="slides">
-    <!-- Each slide -->
-    <div class="slide">
-      <img src="image/cart_image.png" alt="Image 1">
+    <div class="slider-container">
+        <div class="slider" onclick="alert('helo')">
+            <div class="slide"><img src="image/boat1.webp" alt="Image 1"></div>
+            <div class="slide"><img src="image/boat2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="image/boat3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="image/chair.jpg" alt="Image 4"></div>
+        </div>
     </div>
-    <div class="slide">
-      <img src="image/heroimage2.jpg" alt="Image 2">
-    </div>
-    <div class="slide">
-      <img src="image/goggles.jpeg" alt="Image 3">
-    </div>
-    <div class="slide">
-      <img src="image/cup.jpeg" alt="Image 4">
-    </div>
-  </div>
 
-  <!-- Navigation buttons -->
-  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-  <button class="next" onclick="changeSlide(1)">&#10095;</button>
-</div>
+    <div class="" id="pre">helo</div>
+    <div class="" id="prey">helo</div>
+    <div class="" id="prex">helo</div>
 
-<script src="src/imageslider.js"></script>
+    <script src="src/slid.js"></script>
 </body>
 </html>

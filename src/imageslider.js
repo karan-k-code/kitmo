@@ -1,8 +1,5 @@
 let currentSlide = 0;
 
-
-
-
 function changeSlide(direction) {
   const slides = document.querySelector('.imgslide');
   const totalSlides = document.querySelectorAll('.slide').length;

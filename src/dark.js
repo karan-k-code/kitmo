@@ -10,7 +10,7 @@ if (darkd == "true") {
 let classal = (classas) => {
   return document.querySelectorAll(classas);
 };
-darkModeToggle.addEventListener("change", function() {
+darkModeToggle.addEventListener("change", function dark() {
   let buttons = classal(".light"),
     nav_bar = classal(".dark_box"),
     opt_dark = classal(".option_b"),

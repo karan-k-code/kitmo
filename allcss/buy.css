@@ -7,6 +7,7 @@
   width: 100%;
   justify-content: center;
   display: flex;
+  /* z-index: -1; */
 }
 /* ! buy_item_image */
 .buy_item_image {
@@ -20,14 +21,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   overflow: hidden;
   position: relative;
 }
 
 .imgslide{
+  width: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
+  /* z-index: -2; */
     /* width: 300%; 4 slides, so width is 400% */
     
 }
@@ -41,6 +43,7 @@
 .slide img {
   /* height: 100%; */
   width: 100%;
+  
 }
 
 .prev , .next {
@@ -80,9 +83,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.itam_dec{
+  height: 100%;
+  width: 50%;
+}
+
 /* delever detels and time detels  */
 .delever_detels_container {
-  width: 25%;
   height: 100%;
   font-size: 1rem;
 }
