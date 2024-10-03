@@ -25,10 +25,10 @@ function drag(e) {
 function endPosition() {
     isDragging = false;
 
-   if(valueD >= 100){
+   if(valueD >= 80){
     changeSlide(-1)
     valueD=' ';
-   }else if(valueD <= -100){
+   }else if(valueD <= -80){
 
     changeSlide(1)
     valueD = '';
