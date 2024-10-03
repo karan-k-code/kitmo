@@ -73,8 +73,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0px 10px 0px;
-  gap: 5px;
+  margin: 0px 0px 15px 0px;
+  gap: 10px;
   position: absolute;
   bottom: 0;
 }
@@ -167,13 +167,12 @@ a {
   }
   .imgslide{
     width: 100%;
+    border-radius: 6px;
   }
 
 
   /* producat image */
-  .slide img{
-    border-radius: 6px;
-  }
+ 
   /* product detels container */
   .product_container {
     display: flex;
