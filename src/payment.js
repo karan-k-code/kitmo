@@ -16,11 +16,13 @@ let billProduct = () => {
       <div class="name">
         <div class="ditalis">Ditails</div>
         <div class="dec">
-          ${search.name} ${search.desc}
+          <strong>${search.name}</strong> 
+          <div>${search.desc}</div>
         </div>
       </div>
       <div class="quantity-box">
         <div class="quantity">Quantity</div>
+        <div class="qty">Qty</div>
         <div class="qua">
           <div class="add" onclick="increment('${id}')">+</div>
           <div class="no" id="${id}">${item}</div>
@@ -117,10 +119,14 @@ document.getElementById('showMessageBtn').addEventListener('click', function() {
   // Automatically hide after 3 seconds
   setTimeout(function() {
       successMessage.classList.add('hidden');
-  }, 3000);
+  }, 4000);
 });
 
 document.getElementById('closeBtn').addEventListener('click', function() {
   // Manually hide the success message when the close button is clicked
   document.getElementById('successMessage').classList.add('hidden');
 });
+
+
+
+const orderData =[];
