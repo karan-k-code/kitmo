@@ -93,7 +93,7 @@ let totalAmount = () => {
           return item * search.price;
         })
         .reduce((x, y) => x + y, 0);
-        pay.innerText =`${amount+(amount * (0.18))}`
+        pay.innerText =`$ ${amount+(amount * (0.18))}`
       summary.innerHTML = `
             <p>Total Items: <span id="totalItems">${buyItam.length}</span></p>
       <p>Total Amount (without GST): $<span id="totalAmount">${amount}</span></p>
@@ -127,6 +127,4 @@ document.getElementById('closeBtn').addEventListener('click', function() {
   document.getElementById('successMessage').classList.add('hidden');
 });
 
-
-
-const orderData =[];
+// const {addresh,user,paymentStatus}
