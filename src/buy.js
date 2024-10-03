@@ -37,10 +37,8 @@ let buyshop = () => {
               </div>
               <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
               <button class="next" onclick="changeSlide(1)">&#10095;</button>
-                <div class="radio_img">
-                  <input type="radio" id="huey" name="drone" value="0" ></input>
-                  <input type="radio" id="dewey" name="drone" value="1" ></input>
-                  <input type="radio" id="louie" name="drone" value="2" ></input>
+                <div class="radio_img" id="radio_img">
+                
                 </div>
             </div>
             <!-- !prioduct_container -->

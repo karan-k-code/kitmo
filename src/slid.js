@@ -14,7 +14,6 @@ slider.addEventListener('touchend', endPosition);
 function startPosition(e) {
     isDragging = true
     start = getPositionX(e);
-    console.log("start", start)
 }
 
 
