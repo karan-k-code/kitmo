@@ -90,8 +90,8 @@
   height: 100%;
   display: flex;
   overflow: hidden;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
 }
 
 .quantity-box{
@@ -234,6 +234,7 @@
 }
 .product{
   width: 100%;
+  overflow: hidden;
 }
 .product img{
   height: 100px;

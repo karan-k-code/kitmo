@@ -22,7 +22,8 @@ let generateCartItem = () => {
       <div class="name">
         <div class="ditalis">Ditails</div>
         <div class="dec">
-          ${search.name} ${search.desc}
+          <strong>${search.name}</strong>
+          <p> ${search.desc}</p>
         </div>
       </div>
       <div class="quantity-box">
