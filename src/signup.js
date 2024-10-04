@@ -2,7 +2,6 @@
 // ! user data
 const userData =[];
 
-
 document.getElementById('product').addEventListener('submit', function(event) {
   event.preventDefault();
   const username = document.getElementById('name').value;
@@ -20,26 +19,26 @@ document.getElementById('product').addEventListener('submit', function(event) {
  
 });
 
-
-
-
-
+let url ="http://127.0.0.1:4000/api/v1/users/register";
 
 const scriptURL ="https://script.google.com/macros/s/AKfycbyRjxVVBxXu9oxnWhHzW8cQE0erOYMC1qpSGvF_uC6QAEd7b8JTLPcYhHusOd2xVXs_1g/exec";
 const form = document.forms["product"];
 
 const loader =document.querySelector(".loader")
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit",async (e) => {
   e.preventDefault();
 
   loader.style.display= 'block';
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  let response =await fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) =>
       alert("welcome to kitmo ")
     )
     .then(() => {
-      window.location.href = "/";
+      // window.location.href = "/";
+      loader.style.display= 'flex';
+      
     })
     .catch((error) => console.error("Error!", error.message));
 });
+

@@ -30,6 +30,12 @@
 </div>
   <form action="" class="form">
     <h3>payment mode</h3>
+    <div id="paypal-button-container"></div>
+        <p id="result-message"></p>
+
+        
+        <!-- Initialize the JS-SDK -->
+        
   <div class="pay">
     <span id="pay"></span>
     <span>Pay</span>
@@ -48,5 +54,10 @@
   <script src="src/shopdata.js"></script>
   <script src="src/payment.js"></script>
   <script src="src/dark.js"></script>
+  <script
+            src="https://www.paypal.com/sdk/js?client-id=AfjodIKLGAG_xOOVvCCgacAOEn3vbVkR0JHfsrjp1enWVilyp7BhOV5sjKKRwfiQcOo17szfDniqJjG8&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo"
+            data-sdk-integration-source="developer-studio"
+        ></script>
+        <script src="app.js"></script>
 </body>
 </html>
