@@ -147,8 +147,8 @@
 .desc {
   display: flex;
   justify-content: center;
-  font-size: 12px;
-  text-shadow: 0 0 4px black;
+  font-size: 0.75rem;
+  /* text-shadow: 0 0 100px black; */
 }
 .shop_box {
   height: 40px;

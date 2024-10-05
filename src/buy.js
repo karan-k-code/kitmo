@@ -2,6 +2,7 @@ let big_container =document.getElementById("big_container");
 
 
 
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -14,6 +15,11 @@ homePage=()=>{
   window.location.href="index.html";
 }
 
+
+
+
+
+
 // ! shop item gennerateshop funcation
 let buyshop = () => {
   if (buyItam.length !== 0) {
@@ -25,8 +31,8 @@ let buyshop = () => {
         return `
         <div class="buy_item_image">
             <div class="image_container">
-              <div class="imgslide">
-                <div class="slide" ">
+              <div class="imgslide" id="imageG">
+                <div class="slide" >
                   <img src="${search.img}" alt="">
                 </div>
                 
@@ -165,3 +171,26 @@ let checkout = ()=>{
 // update();
 calculation();
 buyshop();
+
+
+// ${ search.image.img1 === undefined? ``: `<div class="slide"><img src="${search.image.img1}" alt=""></div>` }
+// ${ search.image.img2 === undefined? ``: `<div class="slide"><img src="${search.image.img2}" alt=""></div>` }
+// ${ search.image.img3 === undefined? ``: `<div class="slide"><img src="${search.image.img3}" alt=""></div>` }
+
+
+const imageG= document.getElementById('imageG');
+
+const genneratImageDiv = async (id)=>{
+  let product = shopItamsData.find((x)=>x.id ==id)
+  let  imageS= product.image;
+  const count = imageS.__defineGetter__.length
+
+
+  // for(let i =1; i<=count; i++){
+  //   imageG.innerHTML += `<div class="slide"><img src="${img}" alt=""></div>`
+  // };
+
+
+}
+
+genneratImageDiv("headphones")

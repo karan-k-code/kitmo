@@ -2,7 +2,16 @@ let currentSlide = 0;
 const slides = document.querySelector('.imgslide');
 const totalSlides = document.querySelectorAll('.slide').length;
 const radioImg = document.getElementById("radio_img")
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
+
+const btnNone =(btn)=>{
+  btn.style.display="none"
+}
+const btnShow =(btn)=>{
+  btn.style.display="flex"
+}
 
 for(let i =1; i<=totalSlides; i++){
   radioImg.innerHTML += `<span class="obox"></span>`
@@ -20,8 +29,22 @@ function changeSlide(direction) {
   slides.style.transform = `translateX(${-currentSlide * 100}%)`;
   current()
   
+  if (currentSlide === totalSlides-1) {
+    btnNone(nextBtn)
+  }else{
+    btnShow(nextBtn)
+  }
+
+  if (currentSlide==0) {
+    btnNone(prevBtn)
+  }else{
+    btnShow(prevBtn)
+  }
+
 }
 
+
+btnNone(prevBtn)
 
 // Auto-slide every 5 seconds
 // setInterval(() => {
