@@ -3,6 +3,7 @@ let big_container =document.getElementById("big_container");
 
 
 
+
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -20,6 +21,7 @@ homePage=()=>{
 
 
 
+
 // ! shop item gennerateshop funcation
 let buyshop = () => {
   if (buyItam.length !== 0) {
@@ -27,7 +29,7 @@ let buyshop = () => {
       .map((x) => {
         let { id, item } = x;
         let search = shopItamsData.find((y) => y.id === id) || [];
-
+        
         return `
         <div class="buy_item_image">
             <div class="image_container">
@@ -36,9 +38,7 @@ let buyshop = () => {
                   <img src="${search.img}" alt="">
                 </div>
                 
-                ${ search.image.img1 === undefined? ``: `<div class="slide"><img src="${search.image.img1}" alt=""></div>` }
-                ${ search.image.img2 === undefined? ``: `<div class="slide"><img src="${search.image.img2}" alt=""></div>` }
-                ${ search.image.img3 === undefined? ``: `<div class="slide"><img src="${search.image.img3}" alt=""></div>` }
+                
                   
               </div>
               <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -178,19 +178,23 @@ buyshop();
 // ${ search.image.img3 === undefined? ``: `<div class="slide"><img src="${search.image.img3}" alt=""></div>` }
 
 
-const imageG= document.getElementById('imageG');
 
-const genneratImageDiv = async (id)=>{
+const genneratImageDiv =(id)=>{
+  const imageG= document.getElementById('imageG');
   let product = shopItamsData.find((x)=>x.id ==id)
   let  imageS= product.image;
-  const count = imageS.__defineGetter__.length
 
+  const mappedKeys = Object.keys(imageS).map(key => key);
 
-  // for(let i =1; i<=count; i++){
-  //   imageG.innerHTML += `<div class="slide"><img src="${img}" alt=""></div>`
-  // };
-
-
+   return (imageG.innerHTML += mappedKeys.map((x)=>{
+    return `<div class="slide"><img src="${imageS[x]}" alt=""></div>`
+  }))
 }
 
-genneratImageDiv("headphones")
+if (buyItam) {
+  buyItam.forEach((x) => {
+    genneratImageDiv(x.id);
+  })
+}
+
+
