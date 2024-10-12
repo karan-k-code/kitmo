@@ -40,9 +40,13 @@ function changeSlide(direction) {
   }else{
     btnShow(prevBtn)
   }
-
 }
 
+if (currentSlide === totalSlides-1) {
+  btnNone(nextBtn)
+}else{
+  btnShow(nextBtn)
+}
 
 btnNone(prevBtn)
 

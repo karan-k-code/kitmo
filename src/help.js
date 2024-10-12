@@ -53,13 +53,14 @@ let quationData=[
         id: "a",
         q:"How To On Dark Mode",
         video:"image/darkmode.mp4",
-        li1:"Go To Kitmo Home Page",
-        img1:"image/clicktop.png",
-        li2:"Click On The Three Line",
-        img2:"image/turnon.png",
-        li3:"Turn on dark mode toggle",
-        img3:"image/dark.png",
-        li4:"Now Success",
+        answ:{
+          li1:"Go To Kitmo Home Page",
+          img1:"image/clicktop.png",
+          li2:"Click On The Three Line",
+          img2:"image/turnon.png",
+          li3:"Turn on dark mode toggle",
+          img3:"image/dark.png",
+        } 
     },
     {
         id: "b",
@@ -97,7 +98,7 @@ let generatequestion =()=>{
           let { id, q, a} = x;
         //   let search = basket.find((x) => x.id === id) || [];
           return `
-            <li class="option_b noactive" onclick="dog(${id})" id="${id}" >${q} </li>
+            <li class="option_b noactive" onclick="getAns(${id})" id="${id}" >${q} </li>
           `;
         })
         .join(""));
@@ -112,7 +113,7 @@ let activeData ;
 
 let atv ;
 
-let dog =(id)=>{
+let getAns =(id)=>{
   let selecteItam = id;
   if (activeData === undefined) {
       activeData = selecteItam.id;
@@ -129,6 +130,7 @@ let dog =(id)=>{
     atv.classList.add("active");
   }
   generateAns(selecteItam.id);  
+  generateAnsLi(selecteItam.id)
 }
 
 // ! generateAns funcation
@@ -141,7 +143,7 @@ let generateAns =(id)=>{
           ${ search.q === undefined? ``: `<div class="q">${search.q}</div>`}
           ${ search.video === undefined? ``: `<video src="${search.video}"  width="640" controls></video>` }
           <div class="ans">
-            <ul>
+            <ul id="ansli">
               ${ search.li1 === undefined? ``: `<li>1.${search.li1} </li>` }
               ${ search.img1 === undefined? ``: `<img src="${search.img1}" alt="">` }
               ${ search.li2 === undefined? ``: `<li>2.${search.li2} </li>` }
@@ -170,3 +172,12 @@ let generateAns =(id)=>{
 let home =()=>{
     window.location.href ="/"
 }
+
+const generateAnsLi =(id)=>{
+  const lineLI= document.getElementById("ansli");
+  let product = quationData.find((x)=>x.id ==id)
+  let  imageS= product.answ;
+
+  const mappedKeys = Object.keys(imageS).map(key => key);
+}
+

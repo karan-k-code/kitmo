@@ -8,9 +8,7 @@ const userData = JSON.parse(localStorage.getItem("userdata")) || [];
 
 let user = ()=>{
   if(userData.length !== 0){
-    userData.map((x) => {
-      let { username} = x;
-
+    let {username} = userData
     menuList.innerHTML=` <div class="profile">
             <img src="image/kitmo_logo.png" alt="" />
             <div class="profile_info">
@@ -25,20 +23,18 @@ let user = ()=>{
             <div class="longout" onclick="longoutBtn()">
             Longout
             </div>
-            </div>  `;
-          })
+            </div>`;
   }else{
   menuList.innerHTML=` <div class="button">
   <a href="login_kitmo.html" class="login">Login</a>
   <a href="signup.html" class="sign_up">Sign Up</a>
-</div> `;
+  </div> `;
   }
 }
 
   menuButton.addEventListener("click", function () {
     menuList.style.display = menuList.style.display === "none"? "block" : "none";
     user();
-  
   });
 
 // ! other click function
@@ -54,7 +50,23 @@ let user = ()=>{
 
 // ! longout
 let longoutBtn = () => {
-  localStorage.removeItem("userdata");
-  window.location.href = "index.html";
+  const url ="http://192.168.48.23:4000/api/v1/users/logout";
+  const urlencoded = new URLSearchParams();
+
+const requestOptions = {
+  method: "POST",
+  body: urlencoded,
+  redirect: "follow"
 };
+
+fetch(url, requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+  
+  localStorage.removeItem("userdata");
+  // window.location.href = "index.html";
+};
+
+
 

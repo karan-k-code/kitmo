@@ -14,17 +14,13 @@ function changeSlide(direction) {
 
   // console.log(currentSlide);
   slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-
   current();
-  
 }
 
 // Auto-slide every 5 seconds
 setInterval(() => {
   changeSlide(1);
 }, 5000);
-
-
 
 
 for(let i =1; i<=totalSlides ; i++){
@@ -57,4 +53,3 @@ let current =()=>{
 }
 
 current();
-

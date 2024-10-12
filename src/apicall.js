@@ -1,11 +1,11 @@
-const forml = document.getElementById("product");
-// const url ="http://127.0.0.1:4000/api/v1/users/register";
-const url ="http://192.168.48.23:4000/api/v1/users/register";
 
-forml.addEventListener('submit',async(e)=>{
-    e.preventDefault()
+
+let register =async (url,forml,loader)=>{
+
     let formData = new FormData(forml);
     let data = Object.fromEntries(formData);
+    
+    loader.style.display= 'flex';
 
     let result = await fetch(url,{
         method: 'POST',
@@ -13,8 +13,12 @@ forml.addEventListener('submit',async(e)=>{
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
-    })
-
-    console.log(result)
-
-})
+    }).then(
+        response => response.json()
+        
+    ).then(
+        data => {return data;}
+    )
+    loader.style.display= 'none';
+    return result;
+}

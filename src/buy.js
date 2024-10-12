@@ -173,12 +173,6 @@ calculation();
 buyshop();
 
 
-// ${ search.image.img1 === undefined? ``: `<div class="slide"><img src="${search.image.img1}" alt=""></div>` }
-// ${ search.image.img2 === undefined? ``: `<div class="slide"><img src="${search.image.img2}" alt=""></div>` }
-// ${ search.image.img3 === undefined? ``: `<div class="slide"><img src="${search.image.img3}" alt=""></div>` }
-
-
-
 const genneratImageDiv =(id)=>{
   const imageG= document.getElementById('imageG');
   let product = shopItamsData.find((x)=>x.id ==id)
@@ -196,5 +190,3 @@ if (buyItam) {
     genneratImageDiv(x.id);
   })
 }
-
-
