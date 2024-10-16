@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuList = document.getElementById("menu-list");
 
   menuButton.addEventListener("click", function () {
-    menuList.style.display =
-      menuList.style.display === "none" ? "block" : "none";
+    menuList.style.left =
+      menuList.style.left === "-200px" ? "0px" : "-200px";
   });
 
   document.addEventListener("click", function (event) {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       !menuButton.contains(event.target) &&
       !menuList.contains(event.target)
     ) {
-      menuList.style.display = "none";
+      menuList.style.left = "-200px";
     }
   });
 });
