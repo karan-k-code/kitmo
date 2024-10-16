@@ -1,9 +1,6 @@
 let big_container =document.getElementById("big_container");
 
 
-
-
-
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -15,10 +12,6 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 homePage=()=>{
   window.location.href="index.html";
 }
-
-
-
-
 
 
 
@@ -182,7 +175,7 @@ const genneratImageDiv =(id)=>{
 
    return (imageG.innerHTML += mappedKeys.map((x)=>{
     return `<div class="slide"><img src="${imageS[x]}" alt=""></div>`
-  }))
+  }).join(""))
 }
 
 if (buyItam) {

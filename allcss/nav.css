@@ -30,15 +30,40 @@ header{
   background-color: #bbcbcb;
 }
 .nav-option {
-  font-size: 25px;
   display: flex;
-  transition: all 0.1s ease;
-  /* &:hover {
-    transform: scale(1.2);
-    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
-  } */
-  overflow: auto;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.5s ease;
 }
+.option{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.coman{
+  height: 2px;
+  border-radius: 1px;
+  background: #000000;
+  width: 20px;
+  transition: all 0.5s ease;
+}
+
+.option .first_line{
+ transform: rotate(45deg);
+}
+
+.option .midel_line{
+opacity: 0;
+transform: translateX(30px);
+
+}
+
+.option .end_line{
+  transform: rotate(-45deg);
+}
+
 .kitmo-logo {
   display: flex;
   height: 100px;
