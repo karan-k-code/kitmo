@@ -1,49 +1,16 @@
 const forml = document.getElementById("product");
-const loader =document.querySelector(".loader")
-const url ="http://127.0.0.1:4000/api/v1/users/register";
+const loginBtn = document.getElementById("loginbtn");
+const url = "http://127.0.0.1:4000/api/v1/users/register";
 
+loginBtn.addEventListener("click", () => {
+  window.location.href = "login_kitmo.html";
+});
 
-
-forml.addEventListener('submit',async(e)=>{
-    e.preventDefault()
-    // ! Apicall
-    let userdata = await register(url,forml,loader);
-    console.log(userdata)
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+forml.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  // ! Apicall
+  let userdata = await register(url, forml);
+});
 
 // const userData =[];
 // document.getElementById('product').addEventListener('submit', function(event) {
@@ -60,14 +27,11 @@ forml.addEventListener('submit',async(e)=>{
 //   });
 
 //   localStorage.setItem("userdata", JSON.stringify(userData));
- 
-// });
 
+// });
 
 // const scriptURL ="https://script.google.com/macros/s/AKfycbyRjxVVBxXu9oxnWhHzW8cQE0erOYMC1qpSGvF_uC6QAEd7b8JTLPcYhHusOd2xVXs_1g/exec";
 // const form = document.forms["product"];
-
-
 
 // form.addEventListener("submit",async (e) => {
 //   e.preventDefault();
@@ -80,10 +44,9 @@ forml.addEventListener('submit',async(e)=>{
 //     .then(() => {
 //       // window.location.href = "/";
 //       loader.style.display= 'flex';
-      
+
 //     })
 //     .catch((error) => console.error("Error!", error.message));
 // });
-
 
 // const url ="http://127.0.0.1:4000/api/v1/users/register";

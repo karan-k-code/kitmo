@@ -1,26 +1,27 @@
+const register = async (url, forml) => {
+  loaderFn();
 
+  let formData = new FormData(forml);
+  let data = Object.fromEntries(formData);
 
-let register =async (url,forml,loader)=>{
+  let result = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+    redirect: "follow",
+    credentials: "include",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      loaderStop();
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      loaderStop();
+    });
 
-    let formData = new FormData(forml);
-    let data = Object.fromEntries(formData);
-    
-    loader.style.display= 'flex';
-
-    let result = await fetch(url,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        redirect: "follow",
-        credentials: 'include'
-    }).then(
-        response => response.json()
-        
-    ).then(
-        data => {return data;}
-    )
-    loader.style.display= 'none';
-    return result;
-}
+  return result;
+};

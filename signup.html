@@ -9,9 +9,13 @@
     <!-- ! Css files -->
     <link rel="stylesheet" href="allcss/singup.css" />
     <link rel="stylesheet" href="allcss/dark.css" />
+    <link rel="stylesheet" href="allcss/loader.css" />
   </head>
   <body class="light">
-    <div class="loader"></div>
+    <div class="loderbox">
+      <div class="success_box">Login Successfull.</div>
+      <div class="loader"></div>
+    </div>
     <div class="b_container">
       <li class="option_b">
         <div class="dark-mode-toggle">
@@ -73,13 +77,14 @@
             </label>
           </div>
           <div class="btn_container">
-            <button class="loginbtn">LOGIN IN</button>
-            <button class="signupbtn" type="submit">SING UP</button>
+            <button class="loginbtn" id="loginbtn">LOGIN</button>
+            <button class="signupbtn" type="submit">CONTINUE</button>
           </div>
         </form>
       </div>
     </div>
     <!-- src file -->
+    <script src="src/loader.js"></script>
     <script src="src/dark.js"></script>
     <script src="src/signup.js"></script>
     <script src="src/apicall.js"></script>
