@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>kitmo shop</title>
     <!-- k icon -->
-    <link rel="icon" href="k.png" type="image/x-icon">
+    <link rel="icon" href="k.png" type="image/x-icon" />
     <!--! Css file-->
     <link rel="stylesheet" href="allcss/hello_ji.css" title="" />
-    <link rel="stylesheet" href="allcss/kitmo.css" title=""  />
+    <link rel="stylesheet" href="allcss/kitmo.css" title="" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,27 +21,24 @@
     <link rel="stylesheet" href="allcss/user.css" />
     <link rel="stylesheet" href="allcss/nav.css" />
     <link rel="stylesheet" href="allcss/dark.css" />
-    <link rel="stylesheet" href="allcss/notification.css">
+    <link rel="stylesheet" href="allcss/notification.css" />
   </head>
   <body class="light">
     <div class="pop" id="pop">
-      <div class="notification animate" id="nothide">
-        
-      </div>
+      <div class="notification animate" id="nothide"></div>
     </div>
-    
+
     <header>
       <!-- ! Nevbar section and -->
       <div class="navbar dark_box nav_light">
-         <!--! nav menu container -->
+        <!--! nav menu container -->
         <div class="menu-container">
           <ul
             id="menu-list"
             class="box_shadow box_no_dark_shadow light no_dark"
-
-            style="left: -200px;"
-          > 
-          <!-- ! dark mode button -->
+            style="left: -200px"
+          >
+            <!-- ! dark mode button -->
             <li class="option_b">
               <div class="dark-mode-toggle">
                 <input type="checkbox" id="dark-mode-toggle-checkbox" />
@@ -51,9 +48,7 @@
             </li>
             <li class="option_b" id="location_p">
               <i class="fa-solid fa-location-dot"></i
-              ><a id="curent-location">
-                get location</a
-              >
+              ><a id="curent-location"> get location</a>
             </li>
             <li class="option_b"><a href="#">Deliver Location</a></li>
             <!-- ! about button -->
@@ -61,7 +56,7 @@
             <!-- ! help button -->
             <li class="option_b"><a href="help.html">Help</a></li>
             <!-- ! contact -->
-             <li class="option_b"><a href="#contact">Contact</a></li>
+            <li class="option_b"><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <!--! navbar menu button -->
@@ -70,7 +65,7 @@
             <span class="coman" id="first_line"></span>
             <span class="coman" id="midel_line"></span>
             <span class="coman" id="end_line"></span>
-        </div>
+          </div>
         </div>
         <!--!  kitmo-logo -->
         <div class="kitmo-logo">
@@ -78,29 +73,33 @@
         </div>
         <!--! navbar search-secation  big screen-->
         <form>
-        <div class="search-secation">
-          <!-- ! search select -->
-          <select class="search-select border light no_dark" id="searchSelect">
-            <option >All</option>
-            <option >Electronics</option>
-            <option >Home</option>
-            <option >Medical</option>
-            <option >Beautti</option>
-          </select>
-          <!--! microphone button -->
-          <div class="microphone light no_dark" id="start">
-            <i class="fa-solid fa-microphone"></i>
-          </div>
-          <!--! search-input area-->
-          <input type="text"
-            placeholder="Search kitmo"
-            class="search-input light no_dark"
-            id="transcript"
-          />
-          <!--! search_icon button -->
-          <div class="search-icon light no_dark" onclick="submitForm()">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
+          <div class="search-secation">
+            <!-- ! search select -->
+            <select
+              class="search-select border light no_dark"
+              id="searchSelect"
+            >
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Home</option>
+              <option>Medical</option>
+              <option>Beautti</option>
+            </select>
+            <!--! microphone button -->
+            <div class="microphone light no_dark" id="start">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+            <!--! search-input area-->
+            <input
+              type="text"
+              placeholder="Search kitmo"
+              class="search-input light no_dark"
+              id="transcript"
+            />
+            <!--! search_icon button -->
+            <div class="search-icon light no_dark" onclick="submitForm()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
           </div>
         </form>
         <!-- ! user profile info-->
@@ -109,9 +108,7 @@
           <div
             id="user_list"
             class="box_shadow box_no_dark_shadow light no_dark"
-          >
-          
-          </div>
+          ></div>
         </div>
         <!-- ! user profile button -->
         <div class="usar" id="user_button">
@@ -133,32 +130,39 @@
           <i class="fa-solid fa-microphone"></i>
         </div>
         <!--! search-input area -->
-        <input type="text" placeholder="Search kitmo" class="search-input light no_dark" />
+        <input
+          type="text"
+          placeholder="Search kitmo"
+          class="search-input light no_dark"
+        />
         <!--! search_icon button -->
         <div class="search-icon light no_dark">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
-      
+
       <div class="colam dark_box nav_light"></div>
     </header>
     <!--! main -->
+
+    <div class="sendcoookie">
+      <button onclick="longoutBtn()">send cookie</button>
+    </div>
     <main>
       <!--! hero section website postar dile and offer -->
       <div class="hero_box">
         <div class="imgslide">
-          <div class="image1" id="img1" >
-            <img src="image/heroiamge.png" alt="">
+          <div class="image1" id="img1">
+            <img src="image/heroiamge.png" alt="" />
           </div>
-          <div class="image1" id="img2" >
-            <img src="image/heroimage2.jpg" alt="">
+          <div class="image1" id="img2">
+            <img src="image/heroimage2.jpg" alt="" />
           </div>
-          <div class="image1" id="img3" >
-            <img src="image/hero_image.jpg" alt="">
+          <div class="image1" id="img3">
+            <img src="image/hero_image.jpg" alt="" />
           </div>
         </div>
-        <div class="slbox" id="slbox">
-        </div>
+        <div class="slbox" id="slbox"></div>
       </div>
       <div class="colam_cantenr light"></div>
       <!--! THIS IS ITAM BOX -->
@@ -226,7 +230,7 @@
       <div class="contacts_box_mobile">
         <!-- <div class="profile">
           <!-- ! Developer image mobile screen -->
-          <!-- <div
+        <!-- <div
             class="profile_img"
             style="background-image: url('image/karan.png')"
           ></div> 
@@ -273,6 +277,24 @@
         </a>
       </div>
     </footer>
+    <!-- HTML for cookie banner -->
+    <div
+      id="cookie-banner"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f2f2f2;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      "
+    >
+      This website uses cookies to improve your experience. By continuing to use
+      this website, you accept our use of cookies.
+      <button id="accept-cookies">Accept</button>
+    </div>
   </body>
   <!-- !java script file-->
   <script src="src/shopdata.js"></script>

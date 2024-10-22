@@ -12,7 +12,9 @@ let register =async (url,forml,loader)=>{
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        redirect: "follow",
+        credentials: 'include'
     }).then(
         response => response.json()
         

@@ -49,18 +49,16 @@ let user = ()=>{
 });
 
 // ! longout
-let longoutBtn = () => {
-  const url ="http://192.168.48.23:4000/api/v1/users/logout";
-  const urlencoded = new URLSearchParams();
+let longoutBtn = async () => {
+  const url ="http://127.0.0.1:4000/api/v1/users/logout";
 
 const requestOptions = {
   method: "POST",
-  body: urlencoded,
-  redirect: "follow"
+  credentials: 'include'
 };
 
-fetch(url, requestOptions)
-  .then((response) => response.text())
+ await fetch(url, requestOptions)
+  .then((response) => response.json())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
   
@@ -68,5 +66,52 @@ fetch(url, requestOptions)
   // window.location.href = "index.html";
 };
 
+// ! cookies 
+
+// // Function to set a cookie
+// function setCookie(name, value, days) {
+//   var expires = "";
+//   if (days) {
+//       var date = new Date();
+//       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+//       expires = "; expires=" + date.toUTCString();
+//   }
+//   document.cookie = name + "=" + (value || "") + expires + "; path=/";
+// }
+
+// // Function to get a cookie by name
+// function getCookie(name) {
+//   var nameEQ = name + "=";
+//   var ca = document.cookie.split(';');
+//   for (var i = 0; i < ca.length; i++) {
+//       var c = ca[i];
+//       while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+//       if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+//   }
+//   return null;
+// }
+
+// // Function to check if the cookie consent has been accepted
+// function checkCookieConsent() {
+//   return getCookie('cookieConsent') === 'accepted';
+// }
+
+// // Function to show the cookie banner if consent is not given
+// function showCookieBanner() {
+//   if (!checkCookieConsent()) {
+//       document.getElementById('cookie-banner').style.display = 'block';
+//   }
+// }
+
+// // Add event listener for the accept cookies button
+// document.getElementById('accept-cookies').addEventListener('click', function () {
+//   setCookie('cookieConsent', 'accepted', 365); // Set for 1 year
+//   document.getElementById('cookie-banner').style.display = 'none';
+// });
+
+// // Display cookie banner on page load if consent is not already given
+// window.onload = function () {
+//   showCookieBanner();
+// };
 
 

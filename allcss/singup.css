@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.help a{
+.help a {
   text-decoration: none;
   color: inherit;
 }
@@ -42,7 +42,6 @@ h2 {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-
 }
 
 .password {
@@ -57,47 +56,44 @@ input {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.832);
 }
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.btn_container button {
+  border: none;
+  border-radius: 5px;
+  height: 33px;
+  transition: all 0.5s ease;
+}
+
+.btn_container .loginbtn {
+  background-color: #8286f7;
+}
+.btn_container .signupbtn {
+  background-color: #5ab8e4;
+}
+
 .box1 {
-  background-color: #007BFF;
-  color: #fff;
   padding: 7px 10px;
   border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
-  height: 33px;
-  width: 70px;
   font-weight: 700;
   /* box-shadow: 2px 2px 4px rgb(0, 0, 0); */
-  
 }
-button:hover {
+.btn_container .loginbtn:hover {
+  color: white;
   background-color: #0056b3;
 }
-
-button::after {
-  content: '';
-  position: absolute;
-  translate: -56px -12px;
-  height: 19px;
-  width: 56px;
-  z-index: -1;
-  padding: 10px;
-  justify-content: center;
-  background: conic-gradient(
-    from 0deg,
-    #ff5f6d,
-    #ffc371,
-    #ffd700,
-    #32cd32,
-    #00fa9a,
-    #1e90ff,
-    #9370db,
-    #ff5f6d
-  );
-  border-radius: 5px;
+.btn_container .signupbtn:hover {
+  color: white;
+  background-color: #106886;
 }
 
-.input_container label{
+.input_container label {
   width: 100%;
   margin-top: 10px;
   display: flex;
@@ -122,11 +118,7 @@ button::after {
 .darkmode_box_shadow {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
-.btn_container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 20px 0 20px;
-}
+
 .b_container {
   display: flex;
   justify-content: space-between;
@@ -144,13 +136,8 @@ button::after {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 @media (max-width: 382px) {
-  .input_container label{
+  .input_container label {
     flex-direction: column;
     align-items: start;
     gap: 5px;

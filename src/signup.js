@@ -1,6 +1,6 @@
 const forml = document.getElementById("product");
 const loader =document.querySelector(".loader")
-const url ="http://192.168.48.23:8000/api/v1/users/register";
+const url ="http://127.0.0.1:4000/api/v1/users/register";
 
 
 
