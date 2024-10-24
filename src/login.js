@@ -9,6 +9,6 @@ singupBtn.addEventListener("click", () => {
 forml.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const re = register(url, forml);
+  const re = await register(url, forml);
   console.log(re);
 });
