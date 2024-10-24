@@ -1,6 +1,6 @@
 const forml = document.getElementById("product");
 const loginBtn = document.getElementById("loginbtn");
-const url = "http://127.0.0.1:4000/api/v1/users/register";
+const url = "https://kitmo.onrender.com/api/v1/users/register";
 
 loginBtn.addEventListener("click", () => {
   window.location.href = "login_kitmo.html";

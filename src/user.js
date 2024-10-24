@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ! longout
 let longoutBtn = async () => {
-  const url = "http://127.0.0.1:4000/api/v1/users/logout";
+  const url = "https://kitmo.onrender.com/api/v1/users/logout";
 
   const requestOptions = {
     method: "POST",
