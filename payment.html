@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
-    <link rel="stylesheet" href="allcss/payment.css">
-    <link rel="stylesheet" href="allcss/dark.css">
-</head>
-<body class="light">
-  <nav>
-    <div class="h_container">
-      <li class="option_b">
-        <div class="dark-mode-toggle">
-          <input type="checkbox" id="dark-mode-toggle-checkbox" />
-          <label for="dark-mode-toggle-checkbox"></label>
-        </div>
-        <div class="mode_line">Dark Mode</div>
-      </li>
-      <div class="help"><a href="help.html">Help</a></div>
+    <link rel="stylesheet" href="allcss/payment.css" />
+    <link rel="stylesheet" href="allcss/dark.css" />
+  </head>
+  <body class="light">
+    <nav>
+      <div class="h_container">
+        <li class="option_b">
+          <div class="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle-checkbox" />
+            <label for="dark-mode-toggle-checkbox"></label>
+          </div>
+          <div class="mode_line">Dark Mode</div>
+        </li>
+        <div class="help"><a href="help.html">Help</a></div>
+      </div>
+    </nav>
+    <div class="big-b">
+      <div class="bill">
+        <div id="bill"></div>
+        <div class="summary" id="summary"></div>
+      </div>
     </div>
-  </nav>
-  <div class="big-b">
-  <div class="bill">
-    <div id="bill"></div>
-    <div class="summary"id="summary">
-      
-  </div>
-  </div>
-</div>
-  <form action="" class="form">
-    <h3>payment mode</h3>
-    <div id="paypal-button-container"></div>
-        <p id="result-message"></p>
+    <form action="" class="form">
+      <h3>payment mode</h3>
+      <div id="paypal-button-container"></div>
+      <p id="result-message"></p>
 
-        
-        <!-- Initialize the JS-SDK -->
-        
-  <div class="pay">
-    <span id="pay"></span>
-    <span>Pay</span>
-  </div>
-    <div class="caseondeliver" id="showMessageBtn">
-      <span>Case ondeliver</span>
+      <!-- Initialize the JS-SDK -->
+
+      <div class="pay">
+        <span id="pay"></span>
+        <span>Pay</span>
+      </div>
+      <div class="caseondeliver" id="showMessageBtn">
+        <span>Case ondeliver</span>
+      </div>
+    </form>
+    <div class="labox">
+      <div id="successMessage" class="hidden">
+        <span>✔️ Success! Your order was completed.</span>
+        <button id="closeBtn">&times;</button>
+      </div>
     </div>
-  </form>
-  <div class="labox">
-    <div id="successMessage" class="hidden">
-      <span>✔️ Success! Your order was completed.</span>
-      <button id="closeBtn">&times;</button>
-    </div>
-  </div>
-  
-  <script src="src/shopdata.js"></script>
-  <script src="src/payment.js"></script>
-  <script src="src/dark.js"></script>
-  <script
-            src="https://www.paypal.com/sdk/js?client-id=AfjodIKLGAG_xOOVvCCgacAOEn3vbVkR0JHfsrjp1enWVilyp7BhOV5sjKKRwfiQcOo17szfDniqJjG8&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo"
-            data-sdk-integration-source="developer-studio"
-        ></script>
-        <script src="app.js"></script>
-</body>
+    <script src="src/const.js"></script>
+    <script src="src/shopdata.js"></script>
+    <script src="src/payment.js"></script>
+    <script src="src/dark.js"></script>
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=AfjodIKLGAG_xOOVvCCgacAOEn3vbVkR0JHfsrjp1enWVilyp7BhOV5sjKKRwfiQcOo17szfDniqJjG8&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo"
+      data-sdk-integration-source="developer-studio"
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>

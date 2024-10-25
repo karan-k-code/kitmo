@@ -1,6 +1,6 @@
 const forml = document.getElementById("product");
 const loginBtn = document.getElementById("loginbtn");
-const url = "https://kitmo.onrender.com/api/v1/users/register";
+const url = `${urls}/api/v1/users/register`;
 
 loginBtn.addEventListener("click", () => {
   window.location.href = "login_kitmo.html";
@@ -10,9 +10,13 @@ forml.addEventListener("submit", async (e) => {
   e.preventDefault();
   // ! Apicall
   let userdata = await register(url, forml);
+  localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
+  successMsg();
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 2000);
 });
 
-// const userData =[];
 // document.getElementById('product').addEventListener('submit', function(event) {
 //   event.preventDefault();
 //   const username = document.getElementById('name').value;

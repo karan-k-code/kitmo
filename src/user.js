@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // !user data
 
-  const userData = JSON.parse(localStorage.getItem("userdata")) || [];
+  userData = JSON.parse(localStorage.getItem("userdata"));
 
   let user = () => {
-    if (userData.length !== 0) {
+    if (userData) {
       let { username } = userData;
       menuList.innerHTML = ` <div class="profile">
             <img src="image/kitmo_logo.png" alt="" />
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ! longout
 let longoutBtn = async () => {
-  const url = "https://kitmo.onrender.com/api/v1/users/logout";
+  const url = `${urls}/api/v1/users/logout`;
 
   const requestOptions = {
     method: "POST",
@@ -64,5 +64,21 @@ let longoutBtn = async () => {
     .catch((error) => console.error(error));
 
   localStorage.removeItem("userdata");
-  // window.location.href = "index.html";
+  window.location.href = "index.html";
 };
+
+//! refresh-token
+let refreshToken = async () => {
+  const url = `${urls}/api/v1/users/refresh-token`;
+  const requestOptions = {
+    method: "POST",
+    credentials: "include",
+  };
+
+  await fetch(url, requestOptions)
+    .then((response) => response.json())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+};
+
+// refreshToken();
