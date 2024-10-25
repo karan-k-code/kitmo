@@ -1,0 +1,74 @@
+.menu-container {
+  position: fixed;
+  z-index: 2;
+  margin: 0;
+  right: -20px;
+  top: 60px;
+  width: 200px;
+}
+a {
+  color: inherit;
+}
+
+#menu-button {
+  cursor: pointer;
+}
+
+#menu-list {
+  list-style-type: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  transition: all 0.5s ease;
+}
+/* box shadow dark mode and no dark mode */
+.box_no_dark_shadow {
+  box-shadow: 4px 5px 6px rgb(0, 0, 0);
+}
+.box_dark_shadow {
+  box-shadow: 3px 2px 4px rgb(255, 255, 255);
+}
+#menu-list li {
+  padding: 10px;
+  display: flex;
+}
+#location_p {
+  padding-left: 4px;
+  gap: 4px;
+  cursor: pointer;
+}
+.option {
+  border: 2px solid transparent;
+}
+.option_b {
+  transition: all 0.4s ease;
+}
+a:visited {
+  background-color: red;
+}
+
+.option_b:hover {
+  box-shadow: 0 0 4px rgb(0, 0, 0);
+  border-radius: 7px;
+}
+.dark_option {
+  border: 2px solid transparent;
+}
+.dark_option_h:hover {
+  box-shadow: 0 0 4px rgb(255, 255, 255);
+  border-radius: 7px;
+}
+.mode_line {
+  margin-left: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.no_dark {
+  background-color: white;
+}

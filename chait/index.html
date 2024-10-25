@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chait</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu/style.css" />
+  </head>
+  <body>
+    <div class="sidebar" style="display: none">sidebar</div>
+    <div class="box">
+      <div class="nevbox">
+        <div class="imagebox">
+          <img src="../image/owner_image-removebg.png" alt="" srcset="" />
+          <div class="userid">karan</div>
+        </div>
+        <div class="menu" id="menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-container" id="menu-container">
+          <ul
+            id="menu-list"
+            class="box_shadow box_no_dark_shadow light no_dark"
+            style="right: -200px"
+          >
+            <!-- ! dark mode button -->
+            <li class="option_b">
+              <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle-checkbox" />
+                <label for="dark-mode-toggle-checkbox"></label>
+              </div>
+              <div class="mode_line">Dark Mode</div>
+            </li>
+            <li class="option_b" id="location_p">
+              <i class="fa-solid fa-location-dot"></i
+              ><a id="curent-location"> get location</a>
+            </li>
+            <li class="option_b"><a href="#">Deliver Location</a></li>
+            <!-- ! about button -->
+            <li class="option_b"><a href="about.html">About</a></li>
+            <!-- ! help button -->
+            <li class="option_b"><a href="help.html">Help</a></li>
+            <!-- ! contact -->
+            <li class="option_b"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="smsgo">
+          <div class="pdiv">
+            <p>go sms this not root</p>
+            <span>12:10 pm</span>
+          </div>
+        </div>
+        <div class="smscome">
+          <div class="pdiv">
+            <p>come sms this root message</p>
+            <span>12:10 pm</span>
+          </div>
+        </div>
+      </div>
+      <div class="sendmsg">
+        <input type="text" placeholder="Message" />
+        <button type="submit">Send</button>
+      </div>
+    </div>
+  </body>
+  <script src="menu/script.js"></script>
+</html>
