@@ -1,32 +1,41 @@
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ! sidebar */
 .sidebar {
-  display: flex;
-  background-color: black;
+  position: sticky;
+  top: 0;
+  background-color: #4caf50;
   width: 500px;
+  height: 100dvb;
+  flex-direction: column;
 }
 .box {
   position: sticky;
   top: 0px;
   width: 100%;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
   background-color: #6c6969;
-  border-radius: 5px;
-  justify-content: space-between;
   align-items: center;
-  padding: 0px 10px 0 10px;
   box-shadow: 0 0 100px 10px rgba(0, 0, 0, 0.342);
 }
+.boxchatu {
+  width: 100%;
+  display: flex;
+  height: 100dvh;
+  /* padding: 0px 10px 0 10px; */
+  flex-direction: column;
+}
 .nevbox {
+  position: sticky;
+  top: 0px;
   display: flex;
   background-color: #4caf50;
-  padding: 0 10px 0 10px;
   border-radius: 5px 5px 0 0;
   width: 100%;
   height: 60px;
@@ -69,14 +78,18 @@ body {
   border-radius: 50%;
 }
 
+/* ! send message */
+
 .sendmsg {
+  position: sticky;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #4caf50;
   border-radius: 0 0 5px 5px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0 10px 0;
   gap: 5px;
 }
 
@@ -88,6 +101,7 @@ body {
   border-radius: 5px;
   background-color: #f0f0f0;
   color: #6c6969;
+  margin-left: 10px;
   &:focus {
     outline: none;
   }
@@ -102,47 +116,71 @@ body {
   font-size: 1.5rem;
   height: 35px;
   border-radius: 2px;
+  margin-right: 10px;
   background-color: #1aabe9;
 }
 
+/* ! message area */
 .main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   gap: 5px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
 }
 
 .main .smsgo {
   display: flex;
   align-items: center;
   justify-content: end;
+  margin-right: 15px;
 }
 
 .smsgo .pdiv {
   display: flex;
+  max-width: 70%;
   flex-direction: column;
   background-color: rgb(32, 35, 31);
-  border-radius: 10px;
-  color: rgba(255, 255, 255, 0.847);
+  border-radius: 15px 0 15px 15px;
   padding: 0px 10px 0 15px;
 }
 
-.pdiv span {
+.pdiv .time {
   position: relative;
-  font-size: 0.9rem;
   display: flex;
+  font-size: 0.8rem;
+  justify-content: flex-end;
   width: 100%;
-  align-items: center;
-  justify-content: end;
   color: #a7a3a3;
   margin: 0;
   padding: 0;
+  right: 0;
   margin-bottom: 2px;
+  gap: 4px;
+}
+
+.time span {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.time span i {
+  padding: 0;
+  margin: 0;
+  rotate: -11deg;
+  color: #1aabe9;
+}
+
+.time .second {
+  position: relative;
+  right: 5px;
 }
 
 .pdiv p {
+  color: rgba(255, 255, 255, 0.847);
   font-size: 1.1rem;
   margin-bottom: 5px;
 }
@@ -150,14 +188,123 @@ body {
 .main .smscome {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 
 .smscome .pdiv {
   display: flex;
+  max-width: 70%;
   flex-direction: column;
   font-size: 1.1rem;
   background-color: rgb(32, 35, 31);
-  border-radius: 10px;
+  border-radius: 0 15px 15px 15px;
   color: rgba(255, 255, 255, 0.847);
   padding: 0px 10px 0 10px;
+}
+
+.pdiv img {
+  width: 100%;
+}
+
+/*! chats navbar  */
+.navchat {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.firstrow {
+  display: flex;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.firstrow span {
+  margin: 20px 0 10px 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.chatserch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.chatserch input {
+  width: 75%;
+  height: 25px;
+  border-radius: 10px;
+  background-color: #4caf50;
+  padding: 2px 25px 2px 10px;
+  border: 1px solid #6c6969;
+  &:focus {
+    outline: none;
+  }
+}
+
+.fa-magnifying-glass {
+  position: relative;
+  right: 24px;
+  cursor: pointer;
+}
+
+/* !chat user */
+
+.userbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+}
+
+.user {
+  display: flex;
+  width: 90%;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user .imagorname {
+  display: flex;
+}
+
+.user img {
+  width: 40px;
+  margin: 10px;
+}
+
+.user .name {
+  display: flex;
+  flex-direction: column;
+}
+
+.name p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 6px 0 0 0;
+}
+
+.name span {
+  font-size: 0.8rem;
+  color: #302d2d;
+}
+
+.user .time {
+  width: max-content;
+  font-size: 0.9rem;
+  margin-right: 4px;
+  color: #6c6969;
 }

@@ -1,7 +1,7 @@
 // Select elements
 const imageInputsContainer = document.getElementById("imageInputs");
 const imagePreviewsContainer = document.getElementById("imagePreviews");
-const addImageButton = document.getElementById("addImageButton");
+// const addImageButton = document.getElementById("addImageButton");
 const uploadForm = document.getElementById("uploadForm");
 
 //   chanege name

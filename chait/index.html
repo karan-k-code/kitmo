@@ -4,69 +4,165 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>chait</title>
+    <link rel="stylesheet" href="sendbutton.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="menu/style.css" />
   </head>
   <body>
-    <div class="sidebar" style="display: none">sidebar</div>
-    <div class="box">
-      <div class="nevbox">
-        <div class="imagebox">
-          <img src="../image/owner_image-removebg.png" alt="" srcset="" />
-          <div class="userid">karan</div>
+    <div class="sidebar" style="display: none">
+      <div class="navchat">
+        <div class="firstrow">
+          <span>Chats</span>
+          <div class="menuchat">:</div>
         </div>
-        <div class="menu" id="menu-button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-container" id="menu-container">
-          <ul
-            id="menu-list"
-            class="box_shadow box_no_dark_shadow light no_dark"
-            style="right: -200px"
-          >
-            <!-- ! dark mode button -->
-            <li class="option_b">
-              <div class="dark-mode-toggle">
-                <input type="checkbox" id="dark-mode-toggle-checkbox" />
-                <label for="dark-mode-toggle-checkbox"></label>
-              </div>
-              <div class="mode_line">Dark Mode</div>
-            </li>
-            <li class="option_b" id="location_p">
-              <i class="fa-solid fa-location-dot"></i
-              ><a id="curent-location"> get location</a>
-            </li>
-            <li class="option_b"><a href="#">Deliver Location</a></li>
-            <!-- ! about button -->
-            <li class="option_b"><a href="about.html">About</a></li>
-            <!-- ! help button -->
-            <li class="option_b"><a href="help.html">Help</a></li>
-            <!-- ! contact -->
-            <li class="option_b"><a href="#contact">Contact</a></li>
-          </ul>
+        <div class="chatserch">
+          <input type="text" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
-      <div class="main">
-        <div class="smsgo">
-          <div class="pdiv">
-            <p>go sms this not root</p>
-            <span>12:10 pm</span>
+      <div class="userbox">
+        <div class="user">
+          <div class="imagorname">
+            <img src="../image/owner_image-removebg.png" alt="" srcset="" />
+            <span class="name">
+              <p>chaitanya</p>
+              <span>hii </span>
+            </span>
+          </div>
+          <span class="time">12:12 AM</span>
+        </div>
+        <div class="user">
+          <div class="imagorname">
+            <img src="../image/owner_image-removebg.png" alt="" srcset="" />
+            <span class="name">
+              <p>chaitanya</p>
+              <span>hii </span>
+            </span>
+          </div>
+          <span class="time">12:12 AM</span>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxchatu">
+        <div class="nevbox">
+          <div class="imagebox">
+            <img src="../image/owner_image-removebg.png" alt="" srcset="" />
+            <div class="userid">karan</div>
+          </div>
+          <div class="menu" id="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-container" id="menu-container">
+            <ul
+              id="menu-list"
+              class="box_shadow box_no_dark_shadow light no_dark"
+              style="right: -200px"
+            >
+              <!-- ! dark mode button -->
+              <li class="option_b">
+                <div class="dark-mode-toggle">
+                  <input type="checkbox" id="dark-mode-toggle-checkbox" />
+                  <label for="dark-mode-toggle-checkbox"></label>
+                </div>
+                <div class="mode_line">Dark Mode</div>
+              </li>
+              <li class="option_b" id="location_p">
+                <i class="fa-solid fa-location-dot"></i
+                ><a id="curent-location"> get location</a>
+              </li>
+              <li class="option_b"><a href="#">Deliver Location</a></li>
+              <!-- ! about button -->
+              <li class="option_b"><a href="about.html">About</a></li>
+              <!-- ! help button -->
+              <li class="option_b"><a href="help.html">Help</a></li>
+              <!-- ! contact -->
+              <li class="option_b"><a href="#contact">Contact</a></li>
+            </ul>
           </div>
         </div>
-        <div class="smscome">
-          <div class="pdiv">
-            <p>come sms this root message</p>
-            <span>12:10 pm</span>
-          </div>
-        </div>
+        <div class="main" id="sendsms"></div>
       </div>
       <div class="sendmsg">
-        <input type="text" placeholder="Message" />
-        <button type="submit">Send</button>
+        <div class="messageBox">
+          <div class="fileUploadWrapper">
+            <label for="file">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 337 337"
+              >
+                <circle
+                  stroke-width="20"
+                  stroke="#6c6c6c"
+                  fill="none"
+                  r="158.5"
+                  cy="168.5"
+                  cx="168.5"
+                ></circle>
+                <path
+                  stroke-linecap="round"
+                  stroke-width="25"
+                  stroke="#6c6c6c"
+                  d="M167.759 79V259"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-width="25"
+                  stroke="#6c6c6c"
+                  d="M79 167.138H259"
+                ></path>
+              </svg>
+              <span class="tooltip">Add an image</span>
+            </label>
+            <input type="file" id="file" name="file" />
+          </div>
+          <input
+            required=""
+            placeholder="Message..."
+            type="text"
+            id="messageInput"
+          />
+          <button id="sendButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 664 663"
+            >
+              <path
+                fill="none"
+                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+              ></path>
+              <path
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="33.67"
+                stroke="#6c6c6c"
+                d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- <input type="text" placeholder="Message" id="sendmsg" au />
+        <button id="sendbtn">Send</button> -->
       </div>
     </div>
   </body>
+  <script
+    src="https://cdn.socket.io/4.8.0/socket.io.min.js"
+    integrity="sha384-OoIbkvzsFFQAG88r+IqMAjyOtYDPGO0cqK5HF5Uosdy/zUEGySeAzytENMDynREd"
+    crossorigin="anonymous"
+  ></script>
+  <script src="server.js"></script>
   <script src="menu/script.js"></script>
+  <!-- <script src="filesend.js"></script> -->
+  <script src="time.js"></script>
+  <script src="script.js"></script>
 </html>
