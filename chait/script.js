@@ -7,7 +7,7 @@ const typing = document.getElementById("typing");
 let userId;
 
 let comeuserId;
-let allMessage;
+let allMessage = [];
 
 // ! typing message
 sendmsg.addEventListener("focus", () => {
