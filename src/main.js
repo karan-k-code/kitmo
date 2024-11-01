@@ -5,13 +5,10 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-let sle = shopItamsData.slice(0, 16)
+let sle = shopItamsData.slice(0, 16);
 
 // ! shop item gennerateshop funcation
 let generateShop = async () => {
-
-  
-
   return (shop.innerHTML = await sle
     .map((x) => {
       let { id, name, price, desc, img } = x;
@@ -47,8 +44,8 @@ let generateShop = async () => {
 generateShop();
 
 // ! add cart
-let pop =document.getElementById("pop")
-let nothide =document.getElementById("nothide")
+let pop = document.getElementById("pop");
+let nothide = document.getElementById("nothide");
 
 let addcart = (id) => {
   let selecteItam = id;
@@ -58,29 +55,27 @@ let addcart = (id) => {
       id: selecteItam.id,
       item: 1,
     });
-    pop.style.display= 'flex';
+    pop.style.display = "flex";
     notif(selecteItam.id);
-    setTimeout(popnone,3000)
-  }
-  else {
-    pop.style.display= 'flex';
+    setTimeout(popnone, 3000);
+  } else {
+    pop.style.display = "flex";
     notif(selecteItam.id);
-    setTimeout(popnone,3000)
-
+    setTimeout(popnone, 3000);
   }
   update(selecteItam.id);
   calculation();
-  
+
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
-const popnone =()=>{
-  nothide.classList.add('hide');
-  setTimeout(()=>{
-    nothide.classList.remove('hide');
-    pop.style.display = 'none';
+const popnone = () => {
+  nothide.classList.add("hide");
+  setTimeout(() => {
+    nothide.classList.remove("hide");
+    pop.style.display = "none";
   }, 550); // 550ms corresponds to the animation duration
-}
+};
 
 // !increment
 let increment = (id) => {
@@ -127,24 +122,24 @@ let calculation = () => {
 
 calculation();
 // ! goo funcation
-let goo =(id)=>{
+let goo = (id) => {
   let selecteItam = id;
-  
+
   if (buyItam.length === 0) {
     buyItam.push({
       id: selecteItam.id,
-      item: 1
+      item: 1,
     });
-  }else{
+  } else {
     buyItam = [];
     buyItam.push({
       id: selecteItam.id,
-      item: 1
+      item: 1,
     });
   }
   localStorage.setItem("databuy", JSON.stringify(buyItam));
-  window.location="buy.html"
-}
+  window.location = "buy.html";
+};
 
 // ! profile
 
@@ -152,52 +147,50 @@ let ownerImg = document.querySelectorAll(".profile_img");
 ownerImg.forEach((img) => {
   img.addEventListener("click", () => {
     window.location.href = "profile.html";
-    });
-  })
-
-  // ! image slide code 
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const images = document.querySelectorAll('.image1');
-    let currentIndex = 0;
-  
-    function showNextImage() {
-      // Hide all images
-      images.forEach((img, index) => {
-        if (index === currentIndex) {
-          img.classList.add('active');
-        } else {
-          img.classList.remove('active');
-        }
-      });
-  
-      // Move to the next image
-      currentIndex = (currentIndex + 1) % images.length;
-    }
-  
-    // Initially show the first image
-    showNextImage();
-  
-    // Change image every 4 seconds
-    setInterval(showNextImage, 4000);
-  });
-
-
-  // ignor this code
-// script.js
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
   });
 });
 
- let showMore=()=>{
-  sle = shopItamsData.slice(0, sle.length + 16)
-  generateShop()
-  
- }
+// ! image slide code
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".image1");
+  let currentIndex = 0;
+
+  function showNextImage() {
+    // Hide all images
+    images.forEach((img, index) => {
+      if (index === currentIndex) {
+        img.classList.add("active");
+      } else {
+        img.classList.remove("active");
+      }
+    });
+
+    // Move to the next image
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Initially show the first image
+  showNextImage();
+
+  // Change image every 4 seconds
+  setInterval(showNextImage, 4000);
+});
+
+// ignor this code
+// script.js
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+let showMore = () => {
+  sle = shopItamsData.slice(0, sle.length + 16);
+  generateShop();
+};

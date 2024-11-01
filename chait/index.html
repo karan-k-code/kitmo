@@ -13,46 +13,30 @@
     <link rel="stylesheet" href="menu/style.css" />
   </head>
   <body>
-    <div class="sidebar" style="display: none">
+    <div class="sidebar" style="display: flex">
       <div class="navchat">
         <div class="firstrow">
           <span>Chats</span>
-          <div class="menuchat">:</div>
+          <div class="menuchat" onclick="refreshAccessTokan('')">
+            <i class="fa-solid fa-gear"></i>
+          </div>
         </div>
         <div class="chatserch">
           <input type="text" placeholder="Search" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
-      <div class="userbox">
-        <div class="user">
-          <div class="imagorname">
-            <img src="../image/owner_image-removebg.png" alt="" srcset="" />
-            <span class="name">
-              <p>chaitanya</p>
-              <span>hii </span>
-            </span>
-          </div>
-          <span class="time">12:12 AM</span>
-        </div>
-        <div class="user">
-          <div class="imagorname">
-            <img src="../image/owner_image-removebg.png" alt="" srcset="" />
-            <span class="name">
-              <p>chaitanya</p>
-              <span>hii </span>
-            </span>
-          </div>
-          <span class="time">12:12 AM</span>
-        </div>
-      </div>
+      <div class="userbox" id="userbox"></div>
     </div>
-    <div class="box">
+    <div class="box" id="box">
       <div class="boxchatu">
         <div class="nevbox">
           <div class="imagebox">
             <img src="../image/owner_image-removebg.png" alt="" srcset="" />
-            <div class="userid">karan</div>
+            <div class="userid">
+              <p id="username">Chaitanya</p>
+              <span id="typing"></span>
+            </div>
           </div>
           <div class="menu" id="menu-button">
             <span></span>
@@ -73,11 +57,14 @@
                 </div>
                 <div class="mode_line">Dark Mode</div>
               </li>
+              <!-- !get location -->
               <li class="option_b" id="location_p">
                 <i class="fa-solid fa-location-dot"></i
                 ><a id="curent-location"> get location</a>
               </li>
-              <li class="option_b"><a href="#">Deliver Location</a></li>
+              <li class="option_b">
+                <button id="clearAllMessage">clear</button>
+              </li>
               <!-- ! about button -->
               <li class="option_b"><a href="about.html">About</a></li>
               <!-- ! help button -->
@@ -149,20 +136,19 @@
             </svg>
           </button>
         </div>
-
-        <!-- <input type="text" placeholder="Message" id="sendmsg" au />
-        <button id="sendbtn">Send</button> -->
       </div>
     </div>
   </body>
-  <script
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script
     src="https://cdn.socket.io/4.8.0/socket.io.min.js"
     integrity="sha384-OoIbkvzsFFQAG88r+IqMAjyOtYDPGO0cqK5HF5Uosdy/zUEGySeAzytENMDynREd"
     crossorigin="anonymous"
-  ></script>
-  <script src="server.js"></script>
-  <script src="menu/script.js"></script>
-  <!-- <script src="filesend.js"></script> -->
-  <script src="time.js"></script>
+  ></script> -->
+  <script src="../src/const.js"></script>
+  <script src="users.js"></script>
+  <script src="chat.js"></script>
   <script src="script.js"></script>
+  <script src="time.js"></script>
+  <script src="menu/script.js"></script>
 </html>

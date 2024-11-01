@@ -2,42 +2,40 @@ const sendmsg = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendButton");
 const sendSms = document.getElementById("sendsms");
 const fileInput = document.getElementById("file");
+const typing = document.getElementById("typing");
 
-const socket = io("http://127.0.0.1:3000");
+let userId;
 
-// const socket = io();
-let message;
+let comeuserId;
+let allMessage;
 
+// ! typing message
 sendmsg.addEventListener("focus", () => {
   timeNow();
-  startTime = timeString; // Record the start time
-  console.log("Typing started at: ", startTime);
+  socket.emit("typing", timeString);
 });
 
-let sendmessge = () => {
-  let display = "none";
-  if (fileurl !== "") {
-    display = "flex";
-  } else if (sendmsg.value === "") {
-    if (sendmsg.value === "") {
-      console.log("hello");
-      return;
-    }
-  }
+// ! send message
 
-  message = sendmsg.value;
+let sendmessge = () => {
+  const display = fileurl !== "" ? "flex" : "none";
+  const display1 = sendmsg.value !== "" ? "flex" : "none";
+
+  if (sendmsg.value === "") {
+    return;
+  }
 
   timeNow();
   sendSms.innerHTML += `
     <div class="smsgo" id="lastmsg">
         <div class="pdiv">
-            <p>
+            <p style="display:${display1}">
               ${sendmsg.value}
             </p>
             <img src="${fileurl}" style="display:${display}">
             <span class="time"
               ><span id="nowtime">${timeString}</span>
-              <span>
+              <span class="">
                 <i class="fa-solid fa-check"></i>
                 <i class="fa-solid fa-check second"></i> </span
             ></span>
@@ -45,8 +43,29 @@ let sendmessge = () => {
     </div>
     `;
 
-  socket.emit("chat message", sendmsg.value); // Emit message to the server
-  socket.emit("chat time", timeString); // Emit time to the server
+  allMessage.push({
+    message: sendmsg.value,
+    file: fileurl,
+    time: timeString,
+    sendSuccess: result.connected,
+    messagetype: "send",
+  });
+
+  localStorage.setItem(`userId${chat}`, JSON.stringify(allMessage));
+
+  try {
+    socket.emit("chat", {
+      message: sendmsg.value,
+      file: fileurl,
+      time: timeString,
+      sendSuccess: result.connected,
+      messagetype: "come",
+      usertosend: chat,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
   sendmsg.value = "";
   fileurl = "";
 };
@@ -54,62 +73,116 @@ let sendmessge = () => {
 //! fileHandler.js
 let fileurl = "";
 
-document
-  .getElementById("file")
-  .addEventListener("change", async function (event) {
-    const file = event.target.files[0];
+fileInput.addEventListener("change", async function (event) {
+  const file = event.target.files[0]; // Get the selected file
 
-    if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
 
-      reader.onload = async function (e) {
-        //   console.log(e.target.result);
-        fileurl = await e.target.result;
-        // console.log(fileurl);
-        sendmessge();
-      };
+    reader.onload = async function (e) {
+      //   console.log(e.target.result);
+      fileurl = await e.target.result;
+      sendmessge();
+    };
 
-      reader.readAsDataURL(file); // Read the file as a data URL
-    } else {
-      alert("Please select a valid image file.");
-    }
-  });
+    reader.readAsDataURL(file); // Read the file as a data URL
+  } else {
+    alert("Please select a valid image file.");
+  }
+});
 
 //! Listen for "Enter" key press
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    // Check if the key pressed is "Enter"
     sendmessge();
   }
 });
 sendBtn.addEventListener("click", sendmessge);
 
+//! comming massage the server
+
 let comeMessage;
 
-let comeTime;
+socket.on("typing", async (typing) => {
+  this.typing.innerHTML = `typing start ${typing}`;
+});
+socket.on("your user id", async (id) => {
+  userId = id;
+});
 
-socket.on("chat message", (msg) => {
+let result = socket.on("chat message", async (msg) => {
+  allMessage.push(msg);
   comeMessage = msg;
-  socket.on("chat time", (time) => {
-    console.log(time);
-    comeTime = time;
-  });
+
+  const { userId } = msg;
+
+  comeuserId = userId;
+
+  localStorage.setItem(`userId${comeuserId}`, JSON.stringify(allMessage));
+  console.log(msg);
   comeMsg();
 });
 
+// show message
 let comeMsg = () => {
+  const { message, time, file } = comeMessage;
+
+  let show = file ? "flex" : "none";
+  let show2 = message ? "flex" : "none";
+
   sendSms.innerHTML += `
   <div class="smscome">
   <div class="pdiv">
-    <p>${comeMessage}</p>
-    <img src="" alt="" srcset="" style="display:none" />
+    <p style="display:${show2}">${message}</p>
+    <img src="${file}" alt="" srcset="" style="display:${show}" />
     <span class="time"
-      ><span id="nowtime">${comeTime}</span>
-      <span>
-        <i class="fa-solid fa-check"></i>
-        <i class="fa-solid fa-check second"></i> </span
-    ></span>
+      ><span id="nowtime">${time}</span>
+    </span>
   </div>
 </div>
 `;
 };
+
+const genreatMessage = async () => {
+  return (sendSms.innerHTML = allMessage
+    .map((x) => {
+      let { message, file, time, messagetype } = x;
+      if (messagetype === "come") {
+        return `
+      <div class="smscome">
+      <div class="pdiv">
+        <p style="display:flex">${message}</p>
+        <img src="${file}" alt="" srcset="" style="display:flex" />
+        <span class="time"
+          ><span id="nowtime">${time}</span></span>
+      </div>
+    </div>
+    `;
+      } else {
+        return `
+        <div class="smsgo" id="lastmsg">
+            <div class="pdiv">
+                <p>
+                  ${message}
+                </p>
+                <img src="${file}" style="display:flex">
+                <span class="time"
+                  ><span id="nowtime">${time}</span>
+                  <span class="">
+                    <i class="fa-solid fa-check"></i>
+                    <i class="fa-solid fa-check second"></i> </span
+                ></span>
+            </div>
+        </div>
+        `;
+      }
+    })
+    .join(""));
+};
+
+let clearAllMessage = document.getElementById("clearAllMessage");
+
+clearAllMessage.addEventListener("click", () => {
+  localStorage.setItem(`userId${comeuserId}`, JSON.stringify([]));
+  window.location.reload();
+});

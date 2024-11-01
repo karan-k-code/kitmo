@@ -1,19 +1,12 @@
-
-// const express = require('express')
-// const app = express()
-// const port = 3000
-
-// const { response } = require("express");
-
- let shopItamsData = [
+let shopItamsData = [
   {
     id: "headphones",
     name: "Headphones",
     price: 77,
     desc: "This Is Boat Headphones",
-    image:{
-     img1:"image/boat1.webp",
-     img2:"image/boat2.jpg",
+    image: {
+      img1: "image/boat1.webp",
+      img2: "image/boat2.jpg",
     },
     img: "image/boat3.jpg",
     catgory: "Electronics",
@@ -23,9 +16,7 @@
     name: "Headphones",
     price: 22,
     desc: "This Is Boat Headphones",
-    image:{
-     
-    },
+    image: {},
     img: "image/headphone.jpeg",
     catgory: "Electronics",
   },
@@ -35,9 +26,7 @@
     price: 9,
     desc: "Stylish Goggles New Year",
     img: "image/goggles.jpeg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Fashion",
   },
   {
@@ -46,16 +35,13 @@
     price: 25,
     desc: "Stylish Short For Man",
     img: "image/short.jpeg",
-    image:{
-      
+    image: {},
+    catgory: "Cloths",
+
+    cloths: {
+      men: "men",
+      women: "women",
     },
-    catgory:"Cloths",
-    
-    cloths:{
-      "men": "men",
-      "women": "women" 
-    } ,
-    
   },
   {
     id: "jeans",
@@ -63,9 +49,7 @@
     price: 30,
     desc: "Boy Jeans So Prime",
     img: "image/jeans.jpeg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Fashion",
   },
   {
@@ -74,9 +58,7 @@
     price: 9,
     desc: "This Is Stylish Cup",
     img: "image/cup.jpeg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Home",
   },
   {
@@ -85,9 +67,7 @@
     price: 999,
     desc: "IPhone 15 Pro Max",
     img: "image/iphone.jpg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Electronics",
   },
   {
@@ -96,9 +76,7 @@
     price: 677,
     desc: "samsung s24 256gb storge 5000mAh bettar prime tab best Quality ",
     img: "image/s24.jpg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Electronics",
   },
   {
@@ -107,9 +85,7 @@
     price: 49,
     desc: "rgb wirless mouse prime qualilty ",
     img: "image/mouse.jpg",
-    image:{
-      
-    },
+    image: {},
     catgory: "Electronics",
   },
   {
@@ -118,9 +94,9 @@
     price: 399,
     desc: "shoe best qualilty",
     img: "image/shoe.jpg",
-    image:{
-      img1:"image/shoe1.jpg",
-      img2:"image/shoe2.jpg",
+    image: {
+      img1: "image/shoe1.jpg",
+      img2: "image/shoe2.jpg",
     },
     catgory: "fashion",
   },
@@ -130,13 +106,11 @@
     price: 1299,
     desc: "saree best qualilty",
     img: "image/saree2.jpg",
-    image:{
-    
-    },
-    catgory:"Cloths",
-    
-    cloths:{
-      "women": "women" 
+    image: {},
+    catgory: "Cloths",
+
+    cloths: {
+      women: "women",
     },
   },
   {
@@ -145,13 +119,11 @@
     price: 199,
     desc: "tshirt best qualilty",
     img: "image/tshirt1.jpg",
-    image:{
-    
-    },
-    catgory:"Cloths",
-    
-    cloths:{
-      "man": "men" 
+    image: {},
+    catgory: "Cloths",
+
+    cloths: {
+      man: "men",
     },
   },
   {
@@ -160,13 +132,13 @@
     price: 1399,
     desc: "skirt best qualilty",
     img: "image/skirt.jpg",
-    image:{
-      img1:"image/skirt3.jpg"
+    image: {
+      img1: "image/skirt3.jpg",
     },
-    catgory:"cloths",
-    
-    cloths:{
-      "woman": "women" 
+    catgory: "cloths",
+
+    cloths: {
+      woman: "women",
     },
   },
   {
@@ -175,13 +147,11 @@
     price: 1199,
     desc: "skirt best qualilty",
     img: "image/skirt2.jpg",
-    image:{
+    image: {},
+    catgory: "cloths",
 
-    },
-    catgory:"cloths",
-    
-    cloths:{
-      "woman": "women" 
+    cloths: {
+      woman: "women",
     },
   },
   {
@@ -190,13 +160,11 @@
     price: 1899,
     desc: "skirt best qualilty",
     img: "image/skirt4.jpg",
-    image:{
+    image: {},
+    catgory: "cloths",
 
-    },
-    catgory:"cloths",
-    
-    cloths:{
-      "woman": "women" 
+    cloths: {
+      woman: "women",
     },
   },
   {
@@ -205,9 +173,9 @@
     price: 349,
     desc: "shoe best qualilty",
     img: "image/shoeb1.jpg",
-    image:{
-      img1:"image/shoe2.1.jpg",
-      img2:"image/shoe2.2.jpg",
+    image: {
+      img1: "image/shoe2.1.jpg",
+      img2: "image/shoe2.2.jpg",
     },
     catgory: "fashion",
   },
@@ -217,34 +185,24 @@
     price: 4599,
     desc: "chair best qualilty",
     img: "image/chair.jpg",
-    image:{
-     
-    },
+    image: {},
     catgory: "home",
   },
 ];
-// app.use(express.static('public'))
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
-// app.get('/about', (req, res) => {
-//   res.send(shopItamsData)
-// })
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+let dataApi = async () => {
+  let response = await fetch(`${urls}/api/v1/product/product`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await response.json();
+  shopItamsData = await data.data;
+  if (data) {
+    generateShop;
+  }
+  console.log(shopItamsData);
+};
 
-const serap = `http://localhost:4000/api/user`
-
-let dataApi =async ()=>{
-  let response = await fetch(serap)
-  .then(async response => response.json()) // Parse the JSON response
-  .then(async data => {
-   // Handle the data received from the API
-   return shopItamsData=data;
-  })
-  generateShop();
-}
-
-// dataApi();/
+dataApi();
