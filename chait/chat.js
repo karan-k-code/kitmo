@@ -7,7 +7,6 @@ const socket = io("https://chat-sjwo.onrender.com", {
 
 let chatBox = () => {
   if (chat) {
-    console.log(users);
     let search = users.find((y) => y._id === chat) || [];
     let username = document.getElementById("username");
     genreatMessage();

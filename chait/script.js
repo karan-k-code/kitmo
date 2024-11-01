@@ -25,6 +25,8 @@ let sendmessge = () => {
     return;
   }
 
+  console.log(result);
+
   timeNow();
   sendSms.innerHTML += `
     <div class="smsgo" id="lastmsg">
