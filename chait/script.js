@@ -64,8 +64,9 @@ let sendmessge = () => {
       messagetype: "come",
       usertosend: chat,
     });
+    console.log("is work profect");
   } catch (error) {
-    console.log(error);
+    console.log("error", error);
   }
 
   sendmsg.value = "";
