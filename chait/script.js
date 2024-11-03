@@ -111,6 +111,7 @@ socket.on("typing", async (typing) => {
 });
 socket.on("your user id", async (id) => {
   userId = id;
+  console.log(id);
 });
 
 let result = socket.on("chat message", async (msg) => {
