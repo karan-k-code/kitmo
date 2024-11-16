@@ -1,20 +1,24 @@
-// Select elements
 const imageInputsContainer = document.getElementById("imageInputs");
 const imagePreviewsContainer = document.getElementById("imagePreviews");
 const addImageButton = document.getElementById("addImageButton");
 const uploadForm = document.getElementById("uploadForm");
+const imageButton = document.getElementById("image_Button");
 
-//   chanege name
+//!   chanege name
 let count = 1;
 
-// Add a new image input when "Add Image" is clicked
+imageButton.addEventListener("change", () => {
+  updatePreviews();
+});
+
+// ! Add a new image input when "Add Image" is clicked
 addImageButton.addEventListener("click", function () {
   const imageInputDiv = document.createElement("div");
   imageInputDiv.classList.add("image-input");
 
   const imageInput = document.createElement("input");
   imageInput.setAttribute("type", "file");
-  imageInput.setAttribute("name", `productImages${count}`);
+  imageInput.setAttribute("name", `image${count}`);
   imageInput.setAttribute("accept", "image/*");
   imageInput.classList.add("productImage");
   imageInput.addEventListener("change", previewImages);
@@ -33,23 +37,21 @@ addImageButton.addEventListener("click", function () {
   imageInputsContainer.appendChild(imageInputDiv);
 
   count++;
-  console.log(count);
+  // console.log(count);
 });
 
-// Remove an image input field
+//! Remove an image input field
 function removeImageInput(element) {
   element.remove();
   updatePreviews();
 }
 
-// Preview images for all inputs
+//! Preview images for all inputs
 function previewImages() {
   updatePreviews();
 }
 
 function updatePreviews() {
-  imagePreviewsContainer.innerHTML = ""; // Clear previous previews
-
   const imageInputs = document.querySelectorAll(".productImage");
 
   imageInputs.forEach((input) => {
@@ -61,7 +63,7 @@ function updatePreviews() {
         const img = document.createElement("img");
         img.setAttribute("src", event.target.result);
         imagePreviewsContainer.appendChild(img);
-        console.log(event.target.result);
+        // console.log(event.target.result);
       };
 
       reader.readAsDataURL(file);
@@ -69,18 +71,17 @@ function updatePreviews() {
   });
 }
 
-// Form submission functionality
+// ! Form submission functionality
 document
   .getElementById("uploadForm")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent page refresh
 
-    const formData = new FormData(this);
+    const url = `${urls}/api/v1/product/uploadproduct`;
 
-    let data = Object.fromEntries(formData);
-    console.log(data);
+    let userdata = await sendproduct(url, this);
+    console.log(userdata);
 
-    // You can send formData to the server using an AJAX request
     document.getElementById("message").innerHTML =
       "Product uploaded successfully!";
 
@@ -88,3 +89,29 @@ document
     // this.reset();
     imagePreviewsContainer.innerHTML = "";
   });
+
+let categoryData = [];
+
+// ! geting product category
+
+let getcatgory = async () => {
+  let response = await fetch(`${urls}/api/v1/product/getcatgory`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await response.json();
+  categoryData = data.data;
+  categoryGen();
+};
+getcatgory();
+
+const productCategory = document.getElementById("productCategory");
+
+const categoryGen = async () => {
+  let catgory = await categoryData.map((item) => {
+    return `<option value="${item._id}">${item.name}</option>`;
+  });
+  productCategory.innerHTML += catgory.join("");
+};

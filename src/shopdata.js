@@ -4,11 +4,11 @@ let shopItamsData = [
     name: "Headphones",
     price: 77,
     desc: "This Is Boat Headphones",
-    image: {
-      img1: "image/boat1.webp",
-      img2: "image/boat2.jpg",
-    },
-    img: "image/boat3.jpg",
+    image: [
+      { img: "image/boat1.webp" },
+      { img: "image/boat2.jpg" },
+      { img: "image/boat3.jpg" },
+    ],
     catgory: "Electronics",
   },
   {

@@ -9,10 +9,13 @@ let sle = shopItamsData.slice(0, 16);
 
 // ! shop item gennerateshop funcation
 let generateShop = async () => {
-  return (shop.innerHTML = await sle
+  return (shop.innerHTML = sle
     .map((x) => {
-      let { id, name, price, desc, img } = x;
+      let { id, name, price, desc, img, image } = x;
       let search = basket.find((x) => x.id === id) || [];
+
+      console.log(image[0]);
+
       return `
         <div class="box option_b " id="producat_id_${id}" >
             <!--<div class="itam_name dark_box nav_light">
