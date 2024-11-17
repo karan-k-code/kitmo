@@ -5,46 +5,80 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
-let sle = shopItamsData.slice(0, 16);
+let sle = shopItamsData;
+// .slice(0, 16);
 
 // ! shop item gennerateshop funcation
-let generateShop = async () => {
-  return (shop.innerHTML = sle
-    .map((x) => {
-      let { id, name, price, desc, img, image } = x;
-      let search = basket.find((x) => x.id === id) || [];
+// let generateShop = async () => {
+//   return (shop.innerHTML = sle
+//     .map((x) => {
+//       let { id, name, price, desc, img, image } = x;
+//       let search = basket.find((x) => x.id === id) || [];
 
-      console.log(image[0]);
+//       console.log(image[0]);
+
+//       return `
+//         <div class="box option_b " id="producat_id_${id}" >
+//             <!--<div class="itam_name dark_box nav_light">
+//                 <h3>${name}</h3>
+//             </div>-->
+//             <div class="itam_img" onclick="goo(${id})">
+//             <img src="${img}">
+//             </div>
+//             <div class="itam_detelas">
+//                 <div class="itam_price">
+//                   $${price}
+//                 </div>
+//                 <div class="desc">
+//                   ${desc}
+//                 </div>
+//             </div>
+//             <div class="shop_box " >
+//                 <div class="add_cart " onclick="addcart(${id})">
+//                 <b>ADD CART</b></div>
+//                 <div id="${id}">
+//                 </div>
+//                 <div class="buy" onclick="goo(${id})" ><b>BUY</b></div>
+//             </div>
+//         </div>`;
+//     })
+//     .join(""));
+// };
+let generateSho = async () => {
+  return (shop.innerHTML = shopItamsData
+    .map((x) => {
+      let { _id, productName, productPrice, productDescription, image } = x;
+
+      console.log(image);
 
       return `
-        <div class="box option_b " id="producat_id_${id}" >
+        <div class="box option_b " id="producat_id_${_id}" >
             <!--<div class="itam_name dark_box nav_light">
-                <h3>${name}</h3>
+                <h3>${productName}</h3>
             </div>-->
-            <div class="itam_img" onclick="goo(${id})">
-            <img src="${img}">
+            <div class="itam_img" onclick="goo(${_id})">
+            <img src="${image[0].img}">
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">
-                  $${price}
+                  $${productPrice}
                 </div>
                 <div class="desc">
-                  ${desc}
+                  ${productDescription}
                 </div>
             </div>
             <div class="shop_box " >
-                <div class="add_cart " onclick="addcart(${id})">
+                <div class="add_cart " onclick="addcart(${_id})">
                 <b>ADD CART</b></div>
-                <div id="${id}">
+                <div id="${_id}">
                 </div>
-                <div class="buy" onclick="goo(${id})" ><b>BUY</b></div>
+                <div class="buy" onclick="goo(${_id})" ><b>BUY</b></div>
             </div>
         </div>`;
     })
     .join(""));
 };
-
-generateShop();
+// generateShop();
 
 // ! add cart
 let pop = document.getElementById("pop");

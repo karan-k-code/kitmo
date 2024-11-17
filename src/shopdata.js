@@ -1,4 +1,4 @@
-let shopItamsData = [
+let shopItamsDat = [
   {
     id: "headphones",
     name: "Headphones",
@@ -16,7 +16,7 @@ let shopItamsData = [
     name: "Headphones",
     price: 22,
     desc: "This Is Boat Headphones",
-    image: {},
+    image: [],
     img: "image/headphone.jpeg",
     catgory: "Electronics",
   },
@@ -190,6 +190,8 @@ let shopItamsData = [
   },
 ];
 
+let shopItamsData;
+
 let dataApi = async () => {
   let response = await fetch(`${urls}/api/v1/product/product`, {
     method: "GET",
@@ -200,9 +202,9 @@ let dataApi = async () => {
   let data = await response.json();
   shopItamsData = await data.data;
   if (data) {
-    generateShop;
+    generateSho();
   }
-  console.log(shopItamsData);
+  console.log("shopdata", shopItamsData);
 };
 
 dataApi();
