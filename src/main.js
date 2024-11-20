@@ -8,6 +8,8 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 let sle = shopItamsData;
 // .slice(0, 16);
 
+dataApi();
+
 // ! shop item gennerateshop funcation
 // let generateShop = async () => {
 //   return (shop.innerHTML = sle

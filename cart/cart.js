@@ -53,7 +53,7 @@ let generateCartItem = () => {
     not_cart.innerHTML = `
             <div class="add_cart1"><H1>Cart Is Empty</H1></div>
             <div class="cart_image">
-              <img src="image/cartimg1.png" alt="">
+              <img src="../image/cartimg1.png" alt="">
             </div>
             <div class="home">
                <button onclick="home()">Go to Home</button>
@@ -66,10 +66,9 @@ generateCartItem();
 
 // ! home button
 
-let home = ()=>{
-  window.location="index.html";
-}
-
+let home = () => {
+  window.location = "index.html";
+};
 
 // !increment
 let increment = (id) => {
@@ -115,11 +114,10 @@ let update = (id) => {
 
 // ! calculat
 let calculation = () => {
-  if(basket.length !== 0){
+  if (basket.length !== 0) {
     let total_item = document.getElementById("total_item");
-  total_item.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+    total_item.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
   }
-  
 };
 
 // ! remove item
@@ -135,24 +133,24 @@ let removeItem = (id) => {
 };
 
 // ! goo funcation
-let goo =(id)=>{
+let goo = (id) => {
   let selecteItam = id;
-  
+
   if (buyc.length === 0) {
     buyc.push({
       id: selecteItam.id,
-      item: 1
+      item: 1,
     });
-  }else{
+  } else {
     buyc = [];
     buyc.push({
       id: selecteItam.id,
-      item: 1
+      item: 1,
     });
   }
   localStorage.setItem("databuy", JSON.stringify(buyc));
-  window.location="buy.html"
-}
+  window.location = "buy.html";
+};
 
 // ! total amount
 
@@ -177,30 +175,30 @@ let totalAmount = () => {
       `;
   } else {
     // generateShop();
-  checkout_box.style.display = "none";  
+    checkout_box.style.display = "none";
   }
 };
 
-let buyItam = JSON.parse(localStorage.getItem("databuy")) || []; 
+let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
-let checkout = ()=>{
-  if(buyItam.length !== 0){
+let checkout = () => {
+  if (buyItam.length !== 0) {
     localStorage.setItem("databuy", JSON.stringify(basket));
-    window.location.href ="deliver.html";
-  }else{
-    buyItam =[]
+    window.location.href = "deliver.html";
+  } else {
+    buyItam = [];
     localStorage.setItem("databuy", JSON.stringify(basket));
-    window.location.href ="deliver.html";
+    window.location.href = "deliver.html";
   }
-}
+};
 
 // reload funcation
 
-let reload=() =>{
-if(basket.length === 0){
-  window.location.reload();
-}
-}
+let reload = () => {
+  if (basket.length === 0) {
+    window.location.reload();
+  }
+};
 
 totalAmount();
 calculation();

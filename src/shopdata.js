@@ -207,4 +207,4 @@ let dataApi = async () => {
   console.log("shopdata", shopItamsData);
 };
 
-dataApi();
+// dataApi();

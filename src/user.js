@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>`;
     } else {
       menuList.innerHTML = ` <div class="button">
-  <a href="login_kitmo.html" class="login">Login</a>
-  <a href="signup.html" class="sign_up">Sign Up</a>
+  <a href="./users/login/" class="login">Login</a>
+  <a href="./users/signup/" class="sign_up">Sign Up</a>
   </div> `;
     }
   };

@@ -3,7 +3,7 @@ const loginBtn = document.getElementById("loginbtn");
 const url = `${urls}/api/v1/users/register`;
 
 loginBtn.addEventListener("click", () => {
-  window.location.href = "login_kitmo.html";
+  window.location.href = "../login/";
 });
 
 forml.addEventListener("submit", async (e) => {
@@ -13,7 +13,7 @@ forml.addEventListener("submit", async (e) => {
   localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
   successMsg();
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "../../index.html";
   }, 2000);
 });
 

@@ -2,7 +2,7 @@ const forml = document.getElementById("product");
 const singupBtn = document.getElementById("singupbtn");
 
 singupBtn.addEventListener("click", () => {
-  window.location.href = "signup.html";
+  window.location.href = "../signup/";
 });
 
 function myFunction() {
@@ -18,6 +18,6 @@ forml.addEventListener("submit", async (e) => {
 
   localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "../../index.html";
   }, 2000);
 });
