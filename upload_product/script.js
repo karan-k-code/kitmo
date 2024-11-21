@@ -77,7 +77,7 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent page refresh
 
-    const url = `${urls}/api/v1/product/uploadproduct`;
+    const url = `${urls}/product/uploadproduct`;
 
     let userdata = await sendproduct(url, this);
     console.log(userdata);

@@ -193,7 +193,7 @@ let shopItamsDat = [
 let shopItamsData;
 
 let dataApi = async () => {
-  let response = await fetch(`${urls}/api/v1/product/product`, {
+  let response = await fetch(`${urls}/product/product`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

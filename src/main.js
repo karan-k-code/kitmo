@@ -8,7 +8,7 @@ let basket = JSON.parse(localStorage.getItem("data")) || [];
 let sle = shopItamsData;
 // .slice(0, 16);
 
-dataApi();
+// dataApi();
 
 // ! shop item gennerateshop funcation
 // let generateShop = async () => {
@@ -46,12 +46,12 @@ dataApi();
 //     })
 //     .join(""));
 // };
-let generateSho = async () => {
-  return (shop.innerHTML = shopItamsData
+let generateShop = async () => {
+  const product = await getProduct();
+
+  return (shop.innerHTML = product.data
     .map((x) => {
       let { _id, productName, productPrice, productDescription, image } = x;
-
-      console.log(image);
 
       return `
         <div class="box option_b " id="producat_id_${_id}" >
@@ -70,43 +70,21 @@ let generateSho = async () => {
                 </div>
             </div>
             <div class="shop_box " >
-                <div class="add_cart " onclick="addcart(${_id})">
+                <div class="add_cart " onclick="addCart('${_id}','1')">
                 <b>ADD CART</b></div>
                 <div id="${_id}">
                 </div>
-                <div class="buy" onclick="goo(${_id})" ><b>BUY</b></div>
+                <div class="buy" onclick="goo('${_id}')" ><b>BUY</b></div>
             </div>
         </div>`;
     })
     .join(""));
 };
-// generateShop();
+generateShop();
 
 // ! add cart
 let pop = document.getElementById("pop");
 let nothide = document.getElementById("nothide");
-
-let addcart = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search === undefined) {
-    basket.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-    pop.style.display = "flex";
-    notif(selecteItam.id);
-    setTimeout(popnone, 3000);
-  } else {
-    pop.style.display = "flex";
-    notif(selecteItam.id);
-    setTimeout(popnone, 3000);
-  }
-  update(selecteItam.id);
-  calculation();
-
-  localStorage.setItem("data", JSON.stringify(basket));
-};
 
 const popnone = () => {
   nothide.classList.add("hide");
@@ -116,78 +94,37 @@ const popnone = () => {
   }, 550); // 550ms corresponds to the animation duration
 };
 
-// !increment
-let increment = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search === undefined) {
-    basket.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  } else {
-    search.item += 1;
-  }
-  update(selecteItam.id);
-  localStorage.setItem("data", JSON.stringify(basket));
-};
+// ! calculat cart
+calculatCart();
 
-// ! decrement
-let decrement = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search === undefined) return;
-  else if (search.item === 0) return;
-  else {
-    search.item -= 1;
-  }
-  update(selecteItam.id);
-  basket = basket.filter((x) => x.item !== 0);
-  localStorage.setItem("data", JSON.stringify(basket));
-};
-
-// ! update
-let update = (id) => {
-  let search = basket.find((x) => x.id === id);
-  // document.getElementById(id).innerHTML = search.item;
-  calculation();
-};
-
-// ! calculat
-let calculation = () => {
-  let cartIcon = document.getElementById("cart_no");
-  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-};
-
-calculation();
 // ! goo funcation
-let goo = (id) => {
-  let selecteItam = id;
+let goo = async (id) => {
+  const response = await findProduct(id);
+  console.log(response);
 
-  if (buyItam.length === 0) {
-    buyItam.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  } else {
-    buyItam = [];
-    buyItam.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  }
-  localStorage.setItem("databuy", JSON.stringify(buyItam));
-  window.location = "buy.html";
+  // window.location = "./product/" + id;
+
+  window.location.href = `./buy/index.html?id=${id}`;
+
+  window.open("./buy/", "_blank");
+
+  // let selecteItam = id;
+
+  // if (buyItam.length === 0) {
+  //   buyItam.push({
+  //     id: selecteItam.id,
+  //     item: 1,
+  //   });
+  // } else {
+  //   buyItam = [];
+  //   buyItam.push({
+  //     id: selecteItam.id,
+  //     item: 1,
+  //   });
+  // }
+  // localStorage.setItem("databuy", JSON.stringify(buyItam));
+  // window.location = "./buy/";
 };
-
-// ! profile
-
-let ownerImg = document.querySelectorAll(".profile_img");
-ownerImg.forEach((img) => {
-  img.addEventListener("click", () => {
-    window.location.href = "profile.html";
-  });
-});
 
 // ! image slide code
 

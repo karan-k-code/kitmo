@@ -1,11 +1,10 @@
-const goCart = ()=>{
-window.location="cart.html"
-}
+const goCart = () => {
+  window.location = "cart.html";
+};
 
-const notif =(id)=>{
-  const search = shopItamsData.find((x)=>x.id === id);
-  return nothide.innerHTML =
-  `
+const notif = (id) => {
+  const search = shopItamsData.find((x) => x.id === id);
+  return (nothide.innerHTML = `
     <div class="header">
       <span class="title">New Add Cart</span>
       <span class="location">INDIA, Bihar</span>
@@ -18,12 +17,11 @@ const notif =(id)=>{
     <button class="btn-primary" onclick="goCart()">
       <i class="bi bi-cart3"></i> Go to Cart
     </button>
-  `
-}
+  `);
+};
 
-const notifApi =(id)=>{
-  return nothide.innerHTML =
-  `
+const notifApi = (id) => {
+  return (nothide.innerHTML = `
     <div class="header">
       <span class="title">New Add Cart</span>
       <span class="location">INDIA, Bihar</span>
@@ -36,6 +34,5 @@ const notifApi =(id)=>{
     <button class="btn-primary" onclick="goCart()">
       <i class="bi bi-cart3"></i> Go to Cart
     </button>
-  `
-}
-
+  `);
+};

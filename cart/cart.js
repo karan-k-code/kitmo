@@ -1,48 +1,52 @@
-let cart_y = document.getElementById("cart_y");
-let not_cart = document.getElementById("not_cart");
+const cart_y = document.getElementById("cart_y");
+const not_cart = document.getElementById("not_cart");
 let label1 = document.getElementById("chekout");
 
 let checkout_box = document.querySelector("#big_cart_cantenr");
 
 let buyc = JSON.parse(localStorage.getItem("databuy")) || [];
 
-// ! basket
-let basket = JSON.parse(localStorage.getItem("data")) || [];
+let generateCartItem = async () => {
+  const product = await getProduct();
+  const response = await getCart();
 
-let generateCartItem = () => {
-  if (basket.length !== 0) {
-    return (cart_y.innerHTML = basket
+  if (response.data.length !== 0) {
+    return (cart_y.innerHTML = response.data
       .map((x) => {
-        let { id, item } = x;
-        let search = shopItamsData.find((y) => y.id === id) || [];
+        let { productId, quantity } = x;
+        let search = product.data.find((y) => y._id === productId) || [];
+
+        console.log(productId);
+        console.log(search.productPrice);
+
         return `
-          <div class="product">
-    <img src="${search.img}" alt="" onclick="goo(${id})">
+    <div class="product">
+    <img src="${search.image[0].img}" alt="" onclick="goo(${productId})">
     <div class="product-box">
       <div class="name">
         <div class="ditalis">Ditails</div>
         <div class="dec">
-          <strong>${search.name}</strong>
-          <p> ${search.desc}</p>
+          <strong>${search.productName}</strong>
+          <p> ${search.productDescription}</p>
         </div>
       </div>
       <div class="quantity-box">
         <div class="quantity">Quantity</div>
         <div class="qty">Qty</div>
         <div class="qua">
-          <div class="add" onclick="increment('${id}')">+</div>
-          <div class="no" id="${id}">${item}</div>
-          <div class="dicrement" onclick="decrement('${id}')">-</div>
+          <div class="add" onclick="increment('${productId}')">+</div>
+          <div class="no" id="${productId}">${quantity}</div>
+          <div class="dicrement" onclick="decrement('${productId}')">-</div>
         </div>
       </div>
       <div class="price-box">
         <div class="price-text">Price per Item</div>
-        <div class="price">$${search.price}</div>
+        <div class="price">$${search.productPrice}</div>
       </div>
       <div class="totprice">
         <div class="amount-text-">Amount</div>
-        <div class="ammunt">$${item * search.price} </div>
-        <div class="delete"><button onclick="removeItem(${id})">Delete</button></div>
+        <div class="ammunt">$${quantity * search.productPrice} </div>
+        <div class="delete"><button onclick="removeItem('${productId}')">Delete</button></div>
       </div>
     </div>
     </div>
@@ -71,65 +75,52 @@ let home = () => {
 };
 
 // !increment
-let increment = (id) => {
+let increment = async (id) => {
   let selecteItam = id;
-  let search = basket.find((x) => x.id === id);
-  if (search === undefined) {
-    basket.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  } else {
-    search.item += 1;
-  }
+  let data = {
+    productId: selecteItam,
+    quantity: 1,
+  };
+  const response = await apiCall(urls + "/product/incrementcart", data);
+  console.log(response);
+
   update(id);
   generateCartItem();
-  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! decrement
-let decrement = (id) => {
+let decrement = async (id) => {
   let selecteItam = id;
-  let search = basket.find((x) => x.id === id);
-  if (search === undefined) return;
-  else if (search.item === 1) return;
-  else {
-    search.item -= 1;
-  }
+  let data = {
+    productId: selecteItam,
+    quantity: 1,
+  };
+  const response = await apiCall(urls + "/product/decrementcart", data);
+  console.log(response);
 
-  basket = basket.filter((x) => x.item !== 0);
-  localStorage.setItem("data", JSON.stringify(basket));
-  generateCartItem();
-  totalAmount();
   update(id);
+  generateCartItem();
 };
 
 // ! update
-let update = (id) => {
-  let search = basket.find((x) => x.id === id);
-  document.getElementById(id).innerHTML = search.item;
+let update = async (id) => {
+  const product = await getProduct();
+  let search = product.data.find((x) => x._id === id);
+  document.getElementById(id).innerHTML = search.quantity;
   totalAmount();
-  calculation();
-};
-
-// ! calculat
-let calculation = () => {
-  if (basket.length !== 0) {
-    let total_item = document.getElementById("total_item");
-    total_item.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-  }
 };
 
 // ! remove item
 
-let removeItem = (id) => {
+let removeItem = async (id) => {
   let selecteItam = id;
-  basket = basket.filter((x) => x.id !== selecteItam.id);
+  let data = {
+    productId: selecteItam,
+  };
+  const response = await apiCall(urls + "/product/deletcartitem", data);
+
+  update(id);
   generateCartItem();
-  totalAmount();
-  calculation();
-  localStorage.setItem("data", JSON.stringify(basket));
-  reload();
 };
 
 // ! goo funcation
@@ -154,19 +145,22 @@ let goo = (id) => {
 
 // ! total amount
 
-let totalAmount = () => {
-  if (basket.length !== 0) {
-    let amount = basket
+let totalAmount = async () => {
+  const product = await getProduct();
+  const response = await getCart();
+
+  if (response.data.length !== 0) {
+    let amount = response.data
       .map((x) => {
-        let { id, item } = x;
-        let search = shopItamsData.find((y) => y.id === id) || [];
-        return item * search.price;
+        let { productId, quantity } = x;
+        let search = product.data.find((y) => y._id === productId) || [];
+        return quantity * search.productPrice;
       })
       .reduce((x, y) => x + y, 0);
 
     label1.innerHTML = `
           <div class="total-box">
-            <div class="total_item_text">Total Item :<spam id="total_item"></spam></div>
+            <div class="total_item_text">Total Item :<spam> ${response.data.length}</spam></div>
             <div class="total_price_text">Total Amount :  <b>$${amount} </b></div>
           </div>
           <div class="chackoutbtn">
@@ -201,4 +195,4 @@ let reload = () => {
 };
 
 totalAmount();
-calculation();
+// calculation();

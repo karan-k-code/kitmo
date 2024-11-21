@@ -1,5 +1,4 @@
-let big_container =document.getElementById("big_container");
-
+let big_container = document.getElementById("big_container");
 
 // ! basket
 let basket = JSON.parse(localStorage.getItem("data")) || [];
@@ -9,26 +8,29 @@ let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
 // ! home page
 
-homePage=()=>{
-  window.location.href="index.html";
-}
-
-
+homePage = () => {
+  window.location.href = "index.html";
+};
 
 // ! shop item gennerateshop funcation
-let buyshop = () => {
-  if (buyItam.length !== 0) {
-    return (big_container.innerHTML = buyItam
-      .map((x) => {
-        let { id, item } = x;
-        let search = shopItamsData.find((y) => y.id === id) || [];
-        
-        return `
+let buyshop = async () => {
+  const productId = getQueryParam("id");
+  const product = await findProduct(productId);
+
+  const response = await findCartItem(productId);
+
+  const { quantity } = response.data;
+
+  const { _id, productName, productPrice, productDescription, image } =
+    product.data;
+
+  if (product.data) {
+    return (big_container.innerHTML = `
         <div class="buy_item_image">
             <div class="image_container">
               <div class="imgslide" id="imageG">
                 <div class="slide" >
-                  <img src="${search.img}" alt="">
+                  <img src="${image[0].img}" alt="">
                 </div>
                 
                 
@@ -44,41 +46,39 @@ let buyshop = () => {
             <div class="product_container">
                 <div class="title_itam">
                 
-                    <h3>${search.name}</h3>
+                    <h3>${productName}</h3>
                     <div class="itam_dec">
-                    ${search.desc}
+                    ${productDescription}
                     </div>
                 </div>
                 <div class="price_quantity">
-                    <div class="price-c"> $${search.price}</div>
+                    <div class="price-c"> $${productPrice}</div>
                     <div class="quantity_box">
-                      <div class="decremet" onclick="decrement('${id}')">-</div>
-                      <div class="quantity" id="${id}">${item}</div>
-                      <div class="increment" onclick="increment('${id}')">+</div>
+                      <div class="decremet" onclick="decrement('${_id}')">-</div>
+                      <div class="quantity" id="${_id}">${quantity}</div>
+                      <div class="increment" onclick="increment('${_id}')">+</div>
                     </div>
                 </div>
                 <div class="checkout_addcart">
                   <button class="checkout" onclick="checkout()">Checkout</button>
-                  <button class="addcart" onclick="addcart(${id})">Add cart</button>
+                  <button class="addcart" onclick="addcart(${_id})">Add cart</button>
                 </div>
             </div>
         </div>
         <div class="delever_detels_container"> deliver tomorry</div>
-      `;
-      })
-      .join(""));
+      `);
   }
 };
 
-let kaf =document.getElementById("dewey")
+let kaf = document.getElementById("dewey");
 
-let lse=()=>{
+let lse = () => {
   console.log(kaf);
-}
+};
 
 // ! add cart
-let pop =document.getElementById("pop")
-let nothide =document.getElementById("nothide")
+let pop = document.getElementById("pop");
+let nothide = document.getElementById("nothide");
 
 let addcart = (id) => {
   let selecteItam = id;
@@ -89,27 +89,27 @@ let addcart = (id) => {
       item: 1,
     });
     notif(selecteItam.id);
-    pop.style.display= 'flex';
-    setTimeout(popnone,3000)
+    pop.style.display = "flex";
+    setTimeout(popnone, 3000);
   } else {
     notif(selecteItam.id);
-    pop.style.display= 'flex';
-    setTimeout(popnone,3000)
+    pop.style.display = "flex";
+    setTimeout(popnone, 3000);
   }
   update(selecteItam.id);
-  
+
   calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
 // ! notification funcation
-const popnone =()=>{
-  nothide.classList.add('hide');
-  setTimeout(()=>{
-    pop.style.display = 'none';
-    nothide.classList.remove('hide');
+const popnone = () => {
+  nothide.classList.add("hide");
+  setTimeout(() => {
+    pop.style.display = "none";
+    nothide.classList.remove("hide");
   }, 500); // 500ms corresponds to the animation duration
-}
+};
 
 // !increment
 let increment = (id) => {
@@ -155,31 +155,32 @@ let calculation = () => {
   let cartIcon = document.getElementById("cart_no");
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
-const billItem =JSON.parse(localStorage.getItem("billdata")) || [];
+const billItem = JSON.parse(localStorage.getItem("billdata")) || [];
 // ! checkout funcation
-let checkout = ()=>{
-    window.location.href ="deliver.html";
-}
+let checkout = () => {
+  window.location.href = "deliver.html";
+};
 
 // update();
 calculation();
 buyshop();
 
+const genneratImageDiv = (id) => {
+  const imageG = document.getElementById("imageG");
+  let product = shopItamsData.find((x) => x.id == id);
+  let imageS = product.image;
 
-const genneratImageDiv =(id)=>{
-  const imageG= document.getElementById('imageG');
-  let product = shopItamsData.find((x)=>x.id ==id)
-  let  imageS= product.image;
+  const mappedKeys = Object.keys(imageS).map((key) => key);
 
-  const mappedKeys = Object.keys(imageS).map(key => key);
-
-   return (imageG.innerHTML += mappedKeys.map((x)=>{
-    return `<div class="slide"><img src="${imageS[x]}" alt=""></div>`
-  }).join(""))
-}
+  return (imageG.innerHTML += mappedKeys
+    .map((x) => {
+      return `<div class="slide"><img src="${imageS[x]}" alt=""></div>`;
+    })
+    .join(""));
+};
 
 if (buyItam) {
   buyItam.forEach((x) => {
     genneratImageDiv(x.id);
-  })
+  });
 }

@@ -11,13 +11,18 @@ function myFunction() {
 
 forml.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const url = `${urls}/api/v1/users/login`;
+  const url = `${urls}/users/login`;
 
-  const userdata = await register(url, forml);
-  successMsg();
+  let formData = new FormData(forml);
+  let data = Object.fromEntries(formData);
 
-  localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
-  setTimeout(() => {
-    window.location.href = "../../index.html";
-  }, 2000);
+  const response = apiCall(url, data);
+
+  // const userdata = await register(url, forml);
+  // successMsg();
+
+  // localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
+  // setTimeout(() => {
+  //   window.location.href = "../../index.html";
+  // }, 2000);
 });
