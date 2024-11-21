@@ -5,6 +5,7 @@ let userData;
 
 // ! Api Call
 const apiCall = async (url, data) => {
+  loaderFn();
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -18,6 +19,8 @@ const apiCall = async (url, data) => {
     .then((data) => {
       return data;
     });
+
+  loaderStop();
 
   return response;
 };
@@ -59,12 +62,14 @@ const getCart = async () => {
 
 // ! Get product >>>>
 const getProduct = async () => {
+  loaderFn();
   let response = await fetch(`${urls}/product/product`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
+  loaderStop();
   return response.json();
 };
 
@@ -78,12 +83,14 @@ const calculatCart = async () => {
 // ! find product <<<<<<>>>>>>>
 
 const findProduct = async (id) => {
+  loaderFn();
   const response = await fetch(`${urls}/product/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
+  loaderStop();
   return response.json();
 };
 
