@@ -181,5 +181,6 @@ const genneratImageDiv = () => {
 
 (async function runf() {
   await buyshop();
-  genneratImageDiv();
+  await genneratImageDiv();
+  imageslid();
 })();
