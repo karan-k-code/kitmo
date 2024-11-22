@@ -40,9 +40,9 @@ let buyshop = async () => {
             <div class="image_container">
             <div class="slider" id="slider">
               <div class="slides">
-                <img src="../../image/boat1.webp" alt="Slide 1" />
-                <img src="../../image/boat2.jpg" alt="Slide 2" />
-                <img src="../../image/boat3.jpg" alt="Slide 3" />
+                <img src="../image/boat1.webp" alt="Slide 1" />
+                <img src="../image/boat2.jpg" alt="Slide 2" />
+                <img src="../image/boat3.jpg" alt="Slide 3" />
               </div>
             </div>
 
