@@ -1,9 +1,9 @@
 // ! const
-const urls = "https://kitmo.onrender.com/api/v1";
-// const urls = "http://127.0.0.1:4000/api/v1";
-let userData;
+// const urls = "https://kitmo.onrender.com/api/v1";
+const urls = "http://127.0.0.1:4000/api/v1";
+let userData = JSON.parse(localStorage.getItem("userdata"));
 
-// ! Api Call
+// ! Api post Call
 const apiCall = async (url, data) => {
   loaderFn();
   const response = await fetch(url, {
@@ -25,6 +25,7 @@ const apiCall = async (url, data) => {
   return response;
 };
 
+// ! GET Api Call End
 const apiCallGet = async (url) => {
   const response = await fetch(url, {
     method: "GET",
@@ -112,3 +113,14 @@ function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
+
+// ! smoth animation a tag
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});

@@ -1,4 +1,4 @@
-header{
+header {
   position: sticky;
   top: 0;
   z-index: 2;
@@ -12,7 +12,7 @@ header{
   display: flex;
   position: sticky;
 
-  top: 0px; 
+  top: 0px;
   width: 100%;
 }
 .navbar {
@@ -22,7 +22,7 @@ header{
   display: flex;
   /* position: fixed; */
   position: sticky;
-  top: 0px; 
+  top: 0px;
   width: 100%;
   z-index: 2;
 }
@@ -35,14 +35,14 @@ header{
   gap: 5px;
   transition: all 0.5s ease;
 }
-.option{
+.option {
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
 }
 
-.coman{
+.coman {
   height: 2px;
   border-radius: 1px;
   background: #000000;
@@ -50,17 +50,16 @@ header{
   transition: all 0.5s ease;
 }
 
-.option .first_line{
- transform: rotate(45deg);
+.option .first_line {
+  transform: rotate(45deg);
 }
 
-.option .midel_line{
-opacity: 0;
-transform: translateX(30px);
-
+.option .midel_line {
+  opacity: 0;
+  transform: translateX(30px);
 }
 
-.option .end_line{
+.option .end_line {
   transform: rotate(-45deg);
 }
 
@@ -74,7 +73,7 @@ transform: translateX(30px);
 .kitmo_img {
   justify-content: center;
 }
-form{
+form {
   width: 55%;
 }
 .search-secation {
@@ -111,7 +110,6 @@ form{
   justify-content: center;
   cursor: text;
   border: none;
-  
 }
 .search-icon {
   height: 40px;
@@ -179,7 +177,7 @@ form{
   form {
     display: none;
   }
-  
+
   .search-select {
     height: 35px;
   }

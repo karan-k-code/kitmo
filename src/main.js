@@ -1,15 +1,4 @@
 let shop = document.getElementById("shop");
-/* product data and image */
-let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
-
-// ! basket
-let basket = JSON.parse(localStorage.getItem("data")) || [];
-
-let sle = shopItamsData;
-// .slice(0, 16);
-
-// dataApi();
-
 // ! shop item gennerateshop funcation
 // let generateShop = async () => {
 //   return (shop.innerHTML = sle
@@ -95,35 +84,13 @@ const popnone = () => {
 };
 
 // ! calculat cart
-calculatCart();
+if (userData) {
+  calculatCart();
+}
 
 // ! goo funcation
-let goo = async (id) => {
-  const response = await findProduct(id);
-  console.log(response);
-
-  // window.location = "./product/" + id;
-
-  window.location.href = `./buy/index.html?id=${id}`;
-
-  window.open("./buy/", "_blank");
-
-  // let selecteItam = id;
-
-  // if (buyItam.length === 0) {
-  //   buyItam.push({
-  //     id: selecteItam.id,
-  //     item: 1,
-  //   });
-  // } else {
-  //   buyItam = [];
-  //   buyItam.push({
-  //     id: selecteItam.id,
-  //     item: 1,
-  //   });
-  // }
-  // localStorage.setItem("databuy", JSON.stringify(buyItam));
-  // window.location = "./buy/";
+let goo = (id) => {
+  window.open(`./buy/index.html?id=${id}`, "_blank");
 };
 
 // ! image slide code
@@ -153,20 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextImage, 4000);
 });
 
-// ignor this code
-// script.js
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});
-
 let showMore = () => {
-  sle = shopItamsData.slice(0, sle.length + 16);
   generateShop();
 };

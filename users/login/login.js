@@ -16,13 +16,12 @@ forml.addEventListener("submit", async (e) => {
   let formData = new FormData(forml);
   let data = Object.fromEntries(formData);
 
-  const response = apiCall(url, data);
+  const response = await apiCall(url, data);
 
-  // const userdata = await register(url, forml);
-  // successMsg();
+  successMsg();
 
-  // localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
-  // setTimeout(() => {
-  //   window.location.href = "../../index.html";
-  // }, 2000);
+  localStorage.setItem("userdata", JSON.stringify(response.data.user));
+  setTimeout(() => {
+    window.location.href = "../../index.html";
+  }, 2000);
 });

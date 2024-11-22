@@ -12,30 +12,40 @@ homePage = () => {
   window.location.href = "index.html";
 };
 
+let imageArry;
+
 // ! shop item gennerateshop funcation
 let buyshop = async () => {
   const productId = getQueryParam("id");
   const product = await findProduct(productId);
 
-  const response = await findCartItem(productId);
-
-  const { quantity } = response.data;
+  const item = 1;
 
   const { _id, productName, productPrice, productDescription, image } =
     product.data;
+
+  imageArry = image;
+
+  // <!-- <div class="slide" >
+  //                  <img src="${image[0].img}" alt="">
+  //                </div> -->
+
+  // <div class="imgslide" id="imageG">
+
+  // </div>
 
   if (product.data) {
     return (big_container.innerHTML = `
         <div class="buy_item_image">
             <div class="image_container">
-              <div class="imgslide" id="imageG">
-                <div class="slide" >
-                  <img src="${image[0].img}" alt="">
-                </div>
-                
-                
-                  
+            <div class="slider" id="slider">
+              <div class="slides">
+                <img src="../../image/boat1.webp" alt="Slide 1" />
+                <img src="../../image/boat2.jpg" alt="Slide 2" />
+                <img src="../../image/boat3.jpg" alt="Slide 3" />
               </div>
+            </div>
+
               <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
               <button class="next" onclick="changeSlide(1)">&#10095;</button>
                 <div class="radio_img" id="radio_img">
@@ -55,7 +65,7 @@ let buyshop = async () => {
                     <div class="price-c"> $${productPrice}</div>
                     <div class="quantity_box">
                       <div class="decremet" onclick="decrement('${_id}')">-</div>
-                      <div class="quantity" id="${_id}">${quantity}</div>
+                      <div class="quantity" id="${_id}">${item}</div>
                       <div class="increment" onclick="increment('${_id}')">+</div>
                     </div>
                 </div>
@@ -71,10 +81,6 @@ let buyshop = async () => {
 };
 
 let kaf = document.getElementById("dewey");
-
-let lse = () => {
-  console.log(kaf);
-};
 
 // ! add cart
 let pop = document.getElementById("pop");
@@ -163,24 +169,19 @@ let checkout = () => {
 
 // update();
 calculation();
-buyshop();
 
-const genneratImageDiv = (id) => {
+const genneratImageDiv = () => {
   const imageG = document.getElementById("imageG");
-  let product = shopItamsData.find((x) => x.id == id);
-  let imageS = product.image;
+  console.log(imageArry);
 
-  const mappedKeys = Object.keys(imageS).map((key) => key);
-
-  return (imageG.innerHTML += mappedKeys
+  return (imageG.innerHTML += imageArry
     .map((x) => {
-      return `<div class="slide"><img src="${imageS[x]}" alt=""></div>`;
+      return `<div class="slide"><img src="${x.img}" alt=""></div>`;
     })
     .join(""));
 };
 
-if (buyItam) {
-  buyItam.forEach((x) => {
-    genneratImageDiv(x.id);
-  });
-}
+(async function runf() {
+  await buyshop();
+  genneratImageDiv();
+})();

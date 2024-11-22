@@ -16,9 +16,6 @@ let generateCartItem = async () => {
         let { productId, quantity } = x;
         let search = product.data.find((y) => y._id === productId) || [];
 
-        console.log(productId);
-        console.log(search.productPrice);
-
         return `
     <div class="product">
     <img src="${search.image[0].img}" alt="" onclick="goo(${productId})">
