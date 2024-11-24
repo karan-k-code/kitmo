@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userData) {
       let { username } = userData;
       menuList.innerHTML = ` <div class="profile">
-            <img src="image/kitmo_logo.png" alt="" />
+            <img src="../image/kitmo_logo.png" alt="" />
             <div class="profile_info">
              <h3>Hii, ${username}</h3>
             </div>
@@ -66,19 +66,3 @@ let longoutBtn = async () => {
   localStorage.removeItem("userdata");
   window.location.href = "index.html";
 };
-
-//! refresh-token
-let refreshToken = async () => {
-  const url = `${urls}/api/v1/users/refresh-token`;
-  const requestOptions = {
-    method: "POST",
-    credentials: "include",
-  };
-
-  await fetch(url, requestOptions)
-    .then((response) => response.json())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
-};
-
-// refreshToken();

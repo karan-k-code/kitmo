@@ -47,7 +47,7 @@ let generateShop = async () => {
             <!--<div class="itam_name dark_box nav_light">
                 <h3>${productName}</h3>
             </div>-->
-            <div class="itam_img" onclick="goo(${_id})">
+            <div class="itam_img" onclick="goo('${_id}')">
             <img src="${image[0].img}">
             </div>
             <div class="itam_detelas">
@@ -123,3 +123,5 @@ document.addEventListener("DOMContentLoaded", function () {
 let showMore = () => {
   generateShop();
 };
+
+refreshToken();

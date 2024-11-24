@@ -18,7 +18,7 @@ let generateCartItem = async () => {
 
         return `
     <div class="product">
-    <img src="${search.image[0].img}" alt="" onclick="goo(${productId})">
+    <img src="${search.image[0].img}" alt="" onclick="goo('${productId}')">
     <div class="product-box">
       <div class="name">
         <div class="ditalis">Ditails</div>
@@ -33,7 +33,7 @@ let generateCartItem = async () => {
         <div class="qua">
           <div class="add" onclick="increment('${productId}')">+</div>
           <div class="no" id="${productId}">${quantity}</div>
-          <div class="dicrement" onclick="decrement('${productId}')">-</div>
+          <div class="dicrement" onclick="decrement('${productId}','${quantity}')">-</div>
         </div>
       </div>
       <div class="price-box">
@@ -66,7 +66,6 @@ let generateCartItem = async () => {
 generateCartItem();
 
 // ! home button
-
 let home = () => {
   window.location = "index.html";
 };
@@ -79,21 +78,22 @@ let increment = async (id) => {
     quantity: 1,
   };
   const response = await apiCall(urls + "/product/incrementcart", data);
-  console.log(response);
 
   update(id);
   generateCartItem();
 };
 
 // ! decrement
-let decrement = async (id) => {
+let decrement = async (id, qut) => {
+  if (qut == 1) {
+    return;
+  }
   let selecteItam = id;
   let data = {
     productId: selecteItam,
     quantity: 1,
   };
   const response = await apiCall(urls + "/product/decrementcart", data);
-  console.log(response);
 
   update(id);
   generateCartItem();
@@ -108,7 +108,6 @@ let update = async (id) => {
 };
 
 // ! remove item
-
 let removeItem = async (id) => {
   let selecteItam = id;
   let data = {
@@ -122,26 +121,10 @@ let removeItem = async (id) => {
 
 // ! goo funcation
 let goo = (id) => {
-  let selecteItam = id;
-
-  if (buyc.length === 0) {
-    buyc.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  } else {
-    buyc = [];
-    buyc.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-  }
-  localStorage.setItem("databuy", JSON.stringify(buyc));
-  window.location = "buy.html";
+  window.open(`../buy/index.html?id=${id}`, "_blank");
 };
 
 // ! total amount
-
 let totalAmount = async () => {
   const product = await getProduct();
   const response = await getCart();
@@ -173,21 +156,8 @@ let totalAmount = async () => {
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
 let checkout = () => {
-  if (buyItam.length !== 0) {
-    localStorage.setItem("databuy", JSON.stringify(basket));
-    window.location.href = "deliver.html";
-  } else {
-    buyItam = [];
-    localStorage.setItem("databuy", JSON.stringify(basket));
-    window.location.href = "deliver.html";
-  }
-};
-
-// reload funcation
-
-let reload = () => {
-  if (basket.length === 0) {
-    window.location.reload();
+  if (!address) {
+    window.location.href = "../users/user_profile/address";
   }
 };
 

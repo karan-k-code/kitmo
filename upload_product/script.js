@@ -95,7 +95,7 @@ let categoryData = [];
 // ! geting product category
 
 let getcatgory = async () => {
-  let response = await fetch(`${urls}/api/v1/product/getcatgory`, {
+  let response = await fetch(`${urls}/product/getcatgory`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

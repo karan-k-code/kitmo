@@ -11,6 +11,7 @@
 
 .slides {
   display: flex;
+  align-items: center;
   transition: transform 0.3s ease-in-out;
   will-change: transform; /* Optimization hint for smoother animation */
 }

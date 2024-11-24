@@ -85,7 +85,7 @@ const calculatCart = async () => {
 
 const findProduct = async (id) => {
   loaderFn();
-  const response = await fetch(`${urls}/product/${id}`, {
+  const response = await fetch(`${urls}/product/product/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -124,3 +124,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+// ! refreshtoken
+const refreshToken = async () => {
+  const response = await apiCall(urls + "/users/refreshtoken", undefined);
+  console.log(response);
+};
