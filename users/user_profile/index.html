@@ -3,34 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Profile</title>
+    <!-- k icon -->
+    <link rel="icon" href="../../k.png" type="image/x-icon" />
+    <!-- ! Css files -->
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="../../Components/darkmode/dark.css" />
   </head>
-  <body>
-    <div class="profile-container">
-      <div class="profile-header">
-        <img
-          src="../../image/owner_image-removebg.png"
-          alt="Profile Picture"
-          class="profile-pic"
-        />
-        <h1 id="user-name">John Doe</h1>
-        <p id="user-title">Web Developer</p>
-      </div>
-      <div class="profile-details">
-        <h2>About Me</h2>
-        <p id="user-about">
-          I am a passionate web developer with experience in building modern web
-          applications.
-        </p>
-        <h2>Contact Info</h2>
-        <ul>
-          <li>Email: <span id="user-email">johndoe@example.com</span></li>
-          <li>Phone: <span id="user-phone">123-456-7890</span></li>
-        </ul>
-      </div>
-      <button id="edit-btn">Edit Profile</button>
+  <body class="light">
+    <div class="h_container">
+      <li class="option_b" style="display: none">
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-toggle-checkbox" />
+          <label for="dark-mode-toggle-checkbox"></label>
+        </div>
+        <div class="mode_line">Dark Mode</div>
+      </li>
+      <div class="help"><a href="../../help/">Help</a></div>
     </div>
-    <script src="script.js"></script>
+    <div
+      class="profile-card box_shadow box_no_dark_shadow light no_dark"
+      id="profile_detailes"
+    ></div>
   </body>
+  <script src="../../Components/functions/script.js"></script>
+  <script src="profile.js"></script>
+  <script src="../../Components/darkmode/dark.js"></script>
 </html>

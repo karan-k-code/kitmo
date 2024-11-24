@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="profile_info">
              <h3>Hii, ${username}</h3>
             </div>
-            <div class="manage_account">
+            <div class="manage_account" onclick="manageProfile()">
             Manage Account
             </div>
             <div class="manage_account">
@@ -65,4 +65,9 @@ let longoutBtn = async () => {
 
   localStorage.removeItem("userdata");
   window.location.href = "index.html";
+};
+
+// ! manageProfile
+const manageProfile = () => {
+  window.location.href = "./users/user_profile/";
 };

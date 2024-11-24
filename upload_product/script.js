@@ -53,7 +53,7 @@ function previewImages() {
 
 function updatePreviews() {
   const imageInputs = document.querySelectorAll(".productImage");
-
+  imagePreviewsContainer.innerHTML = "";
   imageInputs.forEach((input) => {
     if (input.files && input.files[0]) {
       const file = input.files[0];
@@ -86,7 +86,7 @@ document
       "Product uploaded successfully!";
 
     // Clear form fields
-    // this.reset();
+    this.reset();
     imagePreviewsContainer.innerHTML = "";
   });
 
