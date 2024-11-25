@@ -82,7 +82,6 @@ const calculatCart = async () => {
 };
 
 // ! find product <<<<<<>>>>>>>
-
 const findProduct = async (id) => {
   loaderFn();
   const response = await fetch(`${urls}/product/product/${id}`, {
