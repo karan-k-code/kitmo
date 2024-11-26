@@ -4,8 +4,6 @@ const imageslide = () => {
   let currentX = 0; // Current touch position
   let isDragging = false;
 
-  // const prevBtn = document.getElementById("prev");
-  // const nextBtn = document.getElementById("next");
   const radioImg = document.getElementById("radio_img");
   const slider = document.getElementById("slider");
   const slides = slider.querySelector(".slides");
@@ -61,17 +59,6 @@ const imageslide = () => {
     }
   });
 
-  // prevBtn.addEventListener("click", () => {
-  //   trackn();
-  //   showSlide(currentIndex - 1);
-  //   track();
-  // });
-  // nextBtn.addEventListener("click", () => {
-  //   trackn();
-  //   showSlide(currentIndex + 1);
-  //   track();
-  // });
-
   // Initialize the slider
   showSlide(currentIndex);
 
@@ -116,8 +103,10 @@ const genneratImageDiv = () => {
     .join(""));
 };
 
-genneratImageDiv();
-imageslide();
+(async function first() {
+  await genneratImageDiv();
+  imageslide();
+})();
 
 // let currentSlide = 0;
 // const slides = document.querySelector(".imgslide");
