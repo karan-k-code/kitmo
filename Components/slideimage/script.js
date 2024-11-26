@@ -49,11 +49,13 @@ const imageslideF = () => {
 
     // Determine if swipe distance is significant to change slides
     if (deltaX > 50) {
-      const fsa = radioImg.childNodes[currentIndex + 1];
-      fsa.checked = false;
+      trackn();
       showSlide(currentIndex - 1); // Swipe right, go to the previous slide
+      track();
     } else if (deltaX < -50) {
+      trackn();
       showSlide(currentIndex + 1); // Swipe left, go to the next slide
+      track();
     } else {
       showSlide(currentIndex); // Not enough movement, stay on current slide
     }
