@@ -27,6 +27,7 @@ const apiCall = async (url, data) => {
 
 // ! GET Api Call End
 const apiCallGet = async (url) => {
+  loaderFn();
   const response = await fetch(url, {
     method: "GET",
     headers: {
@@ -39,6 +40,8 @@ const apiCallGet = async (url) => {
     .then((data) => {
       return data;
     });
+
+  loaderStop();
 
   return response;
 };
@@ -128,4 +131,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const refreshToken = async () => {
   const response = await apiCall(urls + "/users/refreshtoken", undefined);
   console.log(response);
+};
+
+// ! checkOut function
+const checkout = async () => {
+  const url = urls + "/users/user";
+  const user = await apiCallGet(url);
+  console.log(user);
 };

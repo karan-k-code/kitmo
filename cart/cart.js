@@ -155,7 +155,7 @@ let totalAmount = async () => {
 
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
-let checkout = () => {
+let checkoutall = () => {
   if (!address) {
     window.location.href = "../users/user_profile/address";
   }

@@ -123,5 +123,3 @@ document.addEventListener("DOMContentLoaded", function () {
 let showMore = () => {
   generateShop();
 };
-
-refreshToken();

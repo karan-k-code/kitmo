@@ -167,16 +167,14 @@ if (userData) {
 
 const billItem = JSON.parse(localStorage.getItem("billdata")) || [];
 // ! checkout funcation
-let checkout = () => {
-  window.location.href = "deliver.html";
-};
+// let checkout = () => {
+//   window.location.href = "../users/user_profile/address/";
+// };
 
 // update();
 
 const genneratImageDiv = () => {
   const imageG = document.getElementById("imageG");
-  console.log(imageArry);
-
   return (imageG.innerHTML += imageArry
     .map((x) => {
       return `<img src="${x.img}" alt="Slide 1" />`;

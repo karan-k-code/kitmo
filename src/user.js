@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userData) {
       let { username } = userData;
       menuList.innerHTML = ` <div class="profile">
-            <img src="../image/kitmo_logo.png" alt="" />
+            <img src="../image/userimage.jpg" alt="" />
             <div class="profile_info">
              <h3>Hii, ${username}</h3>
             </div>
@@ -55,12 +55,13 @@ let longoutBtn = async () => {
 
   const response = await apiCall(url, undefined);
 
-  console.log(response);
-
-  localStorage.removeItem("userdata");
+  if (response.status === 200) {
+    localStorage.removeItem("userdata");
+    window.location.href = "../users/login/";
+  }
 };
 
 // ! manageProfile
 const manageProfile = () => {
-  window.location.href = "./users/user_profile/";
+  window.location.href = "../users/user_profile/";
 };
