@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  flex-direction: column;
+}
+
+/* !dark mode and help button */
+.h_container {
+  display: flex;
+  justify-content: end;
+  margin: 10px 10px 0 10px;
+  top: 0px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.help {
+  cursor: pointer;
+}
+a {
+  color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
+  text-decoration: none;
+}
+
+.profile-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.profile-img {
+  width: 100%;
+}
+
+.name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.bio {
+  font-size: 1.2rem;
+}
+
+.profile-card > button {
+  margin: 10px;
+}
+
+.profile-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.profile-card button:hover {
+  background-color: #0056b3;
+}
+
+/* more-info */
+
+.show_more {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.show_more > p {
+  font-size: 1.2rem;
+}
+
+.show_more > a > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 250px;
+}
+
+.show_more_animation {
+  display: flex;
+  animation: show_more 0.5s ease-in-out forwards;
+}
+
+/* box shadow dark mode and no dark mode */
+.box_no_dark_shadow {
+  /* box-shadow: 4px 5px 6px rgb(0, 0, 0); */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.box_dark_shadow {
+  box-shadow: 0 0px 8px rgba(255, 255, 255, 0.1);
+}
+
+.box_no_dark_shadow .profile-img {
+  filter: drop-shadow(0px -2px 8px rgba(0, 0, 0, 0.147));
+}
+.box_dark_shadow .profile-img {
+  filter: drop-shadow(0px -2px 8px rgba(255, 255, 255, 0.145));
+}
+
+@media (max-width: 700px) {
+  .profile-card {
+    width: 80%;
+  }
+}

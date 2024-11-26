@@ -44,8 +44,8 @@ let buyshop = async () => {
               </div>
             </div>
 
-              <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-              <button class="next" onclick="changeSlide(1)">&#10095;</button>
+              <button class="prev" id="prev" >&#10094;</button>
+              <button class="next" id="next" >&#10095;</button>
                 <div class="radio_img" id="radio_img">
                 
                 </div>
@@ -172,7 +172,6 @@ let checkout = () => {
 };
 
 // update();
-calculation();
 
 const genneratImageDiv = () => {
   const imageG = document.getElementById("imageG");
@@ -188,5 +187,5 @@ const genneratImageDiv = () => {
 (async function runf() {
   await buyshop();
   await genneratImageDiv();
-  imageslid();
+  imageslideF();
 })();

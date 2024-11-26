@@ -1,9 +1,12 @@
-const imageslid = () => {
+const imageslideF = () => {
   let currentIndex = 0;
   let startX = 0; // Starting X position
   let currentX = 0; // Current touch position
   let isDragging = false;
 
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const radioImg = document.getElementById("radio_img");
   const slider = document.getElementById("slider");
   const slides = slider.querySelector(".slides");
   const totalSlides = slides.children.length;
@@ -46,6 +49,8 @@ const imageslid = () => {
 
     // Determine if swipe distance is significant to change slides
     if (deltaX > 50) {
+      const fsa = radioImg.childNodes[currentIndex + 1];
+      fsa.checked = false;
       showSlide(currentIndex - 1); // Swipe right, go to the previous slide
     } else if (deltaX < -50) {
       showSlide(currentIndex + 1); // Swipe left, go to the next slide
@@ -54,6 +59,38 @@ const imageslid = () => {
     }
   });
 
+  prevBtn.addEventListener("click", () => {
+    trackn();
+    showSlide(currentIndex - 1);
+    track();
+  });
+  nextBtn.addEventListener("click", () => {
+    trackn();
+    showSlide(currentIndex + 1);
+    track();
+  });
+
   // Initialize the slider
   showSlide(currentIndex);
+
+  for (let i = 1; i <= totalSlides; i++) {
+    radioImg.innerHTML += `<input type="radio" check name="" id="" value="${i}">`;
+  }
+
+  const track = () => {
+    const fs = radioImg.childNodes[currentIndex + 1];
+    fs.checked = true;
+  };
+
+  const trackn = () => {
+    const fs = radioImg.childNodes[currentIndex + 1];
+    fs.checked = false;
+  };
+
+  track();
+
+  radioImg.addEventListener("click", (e) => {
+    trackn();
+    showSlide(e.target.value - 1);
+  });
 };

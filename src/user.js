@@ -51,20 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ! longout
 let longoutBtn = async () => {
-  const url = `${urls}/api/v1/users/logout`;
+  const url = `${urls}/users/logout`;
 
-  const requestOptions = {
-    method: "POST",
-    credentials: "include",
-  };
+  const response = await apiCall(url, undefined);
 
-  await fetch(url, requestOptions)
-    .then((response) => response.json())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
+  console.log(response);
 
   localStorage.removeItem("userdata");
-  window.location.href = "index.html";
 };
 
 // ! manageProfile

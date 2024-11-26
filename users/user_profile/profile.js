@@ -1,6 +1,6 @@
 function editProfile() {
   var moreInfo = document.getElementById("more-info");
-
+  moreInfo.style.display = "none";
   alert("wait for next update");
 }
 
