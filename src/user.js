@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>`;
     } else {
       menuList.innerHTML = ` <div class="button">
-  <a href="./users/login/" class="login">Login</a>
-  <a href="./users/signup/" class="sign_up">Sign Up</a>
+  <a href="${urlg}/users/login/" class="login">Login</a>
+  <a href="${urlg}/users/signup/" class="sign_up">Sign Up</a>
   </div> `;
     }
   };
@@ -57,11 +57,11 @@ let longoutBtn = async () => {
 
   if (response.status === 200) {
     localStorage.removeItem("userdata");
-    window.location.href = "../users/login/";
+    window.location.href = urlg + "/users/login/";
   }
 };
 
 // ! manageProfile
 const manageProfile = () => {
-  window.location.href = "../users/user_profile/";
+  window.location.href = urlg + "/users/user_profile/";
 };

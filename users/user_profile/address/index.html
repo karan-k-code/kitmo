@@ -5,22 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deliver Address</title>
     <link rel="stylesheet" href="deliver.css" />
+    <link rel="stylesheet" href="../../../Components/loader/loader.css" />
   </head>
   <body>
+    <!-- ! loader -->
+    <div class="loderbox">
+      <div class="loader"></div>
+    </div>
     <div class="container">
       <h2>Delivery Address</h2>
       <form id="addressForm">
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            placeholder="Enter your full name"
-            required
-          />
-        </div>
-
         <div class="form-group">
           <label for="address">Address</label>
           <input
@@ -55,13 +49,13 @@
         </div>
 
         <div class="form-group">
-          <label for="phoneNumber">Phone Number</label>
+          <label for="phoneNumber">Phone Number *(opational)</label>
           <input
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
             placeholder="Enter your phone number"
-            required
+            value="+91 "
           />
         </div>
 
@@ -71,6 +65,7 @@
       <div id="output"></div>
     </div>
     <script src="../../../Components/functions/script.js"></script>
+    <script src="../../../Components/loader/loader.js"></script>
     <script src="deliver.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 const forml = document.getElementById("product");
 const loginBtn = document.getElementById("loginbtn");
-const url = `${urls}/api/v1/users/register`;
+const url = `${urls}/users/register`;
 
 loginBtn.addEventListener("click", () => {
   window.location.href = "../login/";

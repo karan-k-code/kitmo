@@ -1,6 +1,12 @@
 // ! const
-const urls = "https://kitmo.onrender.com/api/v1";
-// const urls = "http://127.0.0.1:4000/api/v1";
+// cloud
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
+
+// local
+const urlg = "http://127.0.0.1:5502";
+const urls = "http://127.0.0.1:4000/api/v1";
+
 let userData = JSON.parse(localStorage.getItem("userdata"));
 
 // ! Api post Call
@@ -137,5 +143,9 @@ const refreshToken = async () => {
 const checkout = async () => {
   const url = urls + "/users/user";
   const user = await apiCallGet(url);
-  console.log(user);
+
+  if (!user.data.address) {
+    console.log("you have no address");
+    window.location.href = urlg + "/users/user_profile/address";
+  }
 };

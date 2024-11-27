@@ -167,9 +167,6 @@ if (userData) {
 
 const billItem = JSON.parse(localStorage.getItem("billdata")) || [];
 // ! checkout funcation
-// let checkout = () => {
-//   window.location.href = "../users/user_profile/address/";
-// };
 
 // update();
 
