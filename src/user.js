@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userData) {
       let { username } = userData;
       menuList.innerHTML = ` <div class="profile">
-            <img src="../image/userimage.jpg" alt="" />
+            <img src="${urlg}/image/userimage.jpg" alt="" />
             <div class="profile_info">
              <h3>Hii, ${username}</h3>
             </div>
