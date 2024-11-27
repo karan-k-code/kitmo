@@ -27,7 +27,6 @@ const apiCall = async (url, data) => {
     });
 
   loaderStop();
-
   return response;
 };
 
