@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mange product</title>
+    <link rel="stylesheet" href="../../Components/loader/loader.css" />
+    <link rel="stylesheet" href="../../Components/navbar/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="mange.css" />
+    <link rel="stylesheet" href="../../allcss/hello_ji.css" />
+    <link rel="stylesheet" href="../../allcss/user.css" />
+    <link rel="stylesheet" href="../../Components/darkmode/dark.css" />
+  </head>
+  <body class="light">
+    <!-- ! loader -->
+    <div class="loderbox">
+      <div class="loader"></div>
+    </div>
+
+    <header>
+      <!-- ! Nevbar section and -->
+      <div class="navbar dark_box nav_light">
+        <!--! nav menu container -->
+        <div class="menu-container">
+          <ul
+            id="menu-list"
+            class="box_shadow box_no_dark_shadow light no_dark"
+            style="left: -200px"
+          >
+            <!-- ! dark mode button -->
+            <li class="option_b">
+              <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle-checkbox" />
+                <label for="dark-mode-toggle-checkbox"></label>
+              </div>
+              <div class="mode_line">Dark Mode</div>
+            </li>
+            <li class="option_b" id="location_p">
+              <i class="fa-solid fa-location-dot"></i
+              ><a id="curent-location"> get location</a>
+            </li>
+            <li class="option_b">
+              <a href="./upload_product/">Upload Product</a>
+            </li>
+            <!-- ! about button -->
+            <li class="option_b"><a href="./about/">About</a></li>
+            <!-- ! help button -->
+            <li class="option_b"><a href="./help/">Help</a></li>
+            <!-- ! contact -->
+            <li class="option_b"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <!--! navbar menu button -->
+        <div class="nav-option" id="menu-button">
+          <div class="option">
+            <span class="coman" id="first_line"></span>
+            <span class="coman" id="midel_line"></span>
+            <span class="coman" id="end_line"></span>
+          </div>
+        </div>
+        <!--!  kitmo-logo -->
+        <div class="kitmo-logo">
+          <img class="kitmo_img" src="../../image/kitmo_logo.png" alt="" />
+        </div>
+        <!--! navbar search-secation  big screen-->
+        <form>
+          <div class="search-secation">
+            <!-- ! search select -->
+            <select
+              class="search-select border light no_dark"
+              id="searchSelect"
+            >
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Home</option>
+              <option>Medical</option>
+              <option>Beautti</option>
+            </select>
+            <!--! microphone button -->
+            <div class="microphone light no_dark" id="start">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+            <!--! search-input area-->
+            <input
+              type="text"
+              placeholder="Search kitmo"
+              class="search-input light no_dark"
+              id="transcript"
+            />
+            <!--! search_icon button -->
+            <div class="search-icon light no_dark" onclick="submitForm()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </form>
+        <!-- ! user profile info-->
+        <div class="user_Containe">
+          <!-- ! login sign up button code--user.js -->
+          <div
+            id="user_list"
+            class="box_shadow box_no_dark_shadow light no_dark"
+          ></div>
+        </div>
+        <!--! help -->
+        <div class="help">
+          <a href="../../help/">
+            <i class="fa-solid fa-question"></i>
+          </a>
+        </div>
+        <!-- ! user profile button -->
+        <div class="usar" id="user_button">
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </div>
+      <!-- ! small display search_secation_panl -->
+      <div class="search_secation_panl dark_box nav_light">
+        <!--! microphone button -->
+        <div class="microphone light no_dark">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+        <!--! search-input area -->
+        <input
+          type="text"
+          placeholder="Search kitmo"
+          class="search-input light no_dark"
+        />
+        <!--! search_icon button -->
+        <div class="search-icon light no_dark">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
+      <div class="colam dark_box nav_light"></div>
+    </header>
+    <main>
+      <div class="sidebar">
+        <div class="profilea" id="profilea"></div>
+        <ul>
+          <li>
+            <div class="productbtn">product</div>
+          </li>
+          <li>
+            <div class="views">views</div>
+          </li>
+          <li>
+            <div class="orders">orders</div>
+          </li>
+        </ul>
+        <div class="seting">seting</div>
+        <div class="seting">feedback</div>
+      </div>
+      <div class="content" id="productshow"></div>
+    </main>
+  </body>
+  <script src="../../Components/functions/script.js"></script>
+  <script src="../../Components/loader/loader.js"></script>
+  <script src="../../src/hello_ji.js"></script>
+  <script src="../../src/user.js"></script>
+  <script src="../../Components/darkmode/dark.js"></script>
+  <script src="mange.js"></script>
+</html>

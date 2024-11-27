@@ -51,14 +51,12 @@ let quationData = [
     id: "a",
     q: "How To On Dark Mode",
     video: "../image/darkmode.mp4",
-    answ: {
-      li1: "Go To Kitmo Home Page",
-      img1: "../image/clicktop.png",
-      li2: "Click On The Three Line",
-      img2: "../image/turnon.png",
-      li3: "Turn on dark mode toggle",
-      img3: "../image/dark.png",
-    },
+    li1: "Go To Kitmo Home Page",
+    img1: "../image/clicktop.png",
+    li2: "Click On The Three Line",
+    img2: "../image/turnon.png",
+    li3: "Turn on dark mode toggle",
+    img3: "../image/dark.png",
   },
   {
     id: "b",
@@ -142,55 +140,55 @@ let generateAns = (id) => {
           }
           <div class="ans">
             <ul id="ansli">
-              ${search.li1 === undefined ? `` : `<li>1.${search.li1} </li>`}
+              ${search.li1 === undefined ? `` : `<li>${search.li1} </li>`}
               ${
                 search.img1 === undefined
                   ? ``
                   : `<img src="${search.img1}" alt="">`
               }
-              ${search.li2 === undefined ? `` : `<li>2.${search.li2} </li>`}
+              ${search.li2 === undefined ? `` : `<li>${search.li2} </li>`}
               ${
                 search.img2 === undefined
                   ? ``
                   : `<img src="${search.img2}" alt="">`
               }
-              ${search.li3 === undefined ? `` : `<li>3.${search.li3} </li>`}
+              ${search.li3 === undefined ? `` : `<li>${search.li3} </li>`}
               ${
                 search.img3 === undefined
                   ? ``
                   : `<img src="${search.img3}" alt="">`
               }
-              ${search.li4 === undefined ? `` : `<li>4.${search.li4}  </li>`}
+              ${search.li4 === undefined ? `` : `<li>${search.li4}  </li>`}
               ${
                 search.img4 === undefined
                   ? ``
                   : `<img src="${search.img4}" alt="">`
               }
-              ${search.li5 === undefined ? `` : `<li>2.${search.li5} </li>`}
+              ${search.li5 === undefined ? `` : `<li>${search.li5} </li>`}
               ${
                 search.img5 === undefined
                   ? ``
                   : `<img src="${search.img5}" alt="">`
               }
-              ${search.li6 === undefined ? `` : `<li>3.${search.li6} </li>`}
+              ${search.li6 === undefined ? `` : `<li>${search.li6} </li>`}
               ${
                 search.img6 === undefined
                   ? ``
                   : `<img src="${search.img6}" alt="">`
               }
-              ${search.li7 === undefined ? `` : `<li>4.${search.li7}  </li>`}
+              ${search.li7 === undefined ? `` : `<li>${search.li7}  </li>`}
               ${
                 search.img7 === undefined
                   ? ``
                   : `<img src="${search.img7}" alt="">`
               }
-              ${search.li8 === undefined ? `` : `<li>4.${search.li8}  </li>`}
+              ${search.li8 === undefined ? `` : `<li>${search.li8}  </li>`}
               ${
                 search.img8 === undefined
                   ? ``
                   : `<img src="${search.img8}" alt="">`
               }
-              ${search.li9 === undefined ? `` : `<li>4.${search.li9}  </li>`}
+              ${search.li9 === undefined ? `` : `<li>${search.li9}  </li>`}
               ${
                 search.img9 === undefined
                   ? ``

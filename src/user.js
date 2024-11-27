@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="manage_account">
             My order
             </div>
+            <div class="longout" onclick="myProduct()">
+            My product
+            </div>
+            </div>
             <div class="longout" onclick="longoutBtn()">
             Longout
             </div>
@@ -64,4 +68,7 @@ let longoutBtn = async () => {
 // ! manageProfile
 const manageProfile = () => {
   window.location.href = urlg + "/users/user_profile/";
+};
+const myProduct = () => {
+  window.location.href = urlg + "/product/mange_product/";
 };
