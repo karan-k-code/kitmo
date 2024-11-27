@@ -14,7 +14,6 @@
 }
 /* website postar dile and offer*/
 .hero_box {
-  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,25 +21,25 @@
   position: relative;
 }
 
-.imgslide {
+/* .imgslide {
   width: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
-}
+} */
 
-.image1 {
+/* .image1 {
   min-width: 100%;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.image1 img {
+/* .image1 img {
   width: 100%;
   /* height: 100%; */
-}
+/* } */
 
 .slbox {
   display: flex;
@@ -57,10 +56,10 @@
   border: 1px solid black;
 }
 
-.curent {
+/* .curent {
   background-color: #0da994;
   border: 1px solid white;
-}
+} */
 
 .hero-msg {
   background-color: white;

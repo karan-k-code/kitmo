@@ -18,6 +18,7 @@ const imageslide = () => {
     } else {
       currentIndex = index;
     }
+
     const offset = -currentIndex * 100; // Slide width is 100%
     slides.style.transform = `translateX(${offset}%)`;
     slides.style.transition = "transform 0.3s ease-in-out";
@@ -59,32 +60,35 @@ const imageslide = () => {
     }
   });
 
-  // Initialize the slider
-  showSlide(currentIndex);
-
   for (let i = 1; i <= totalSlides; i++) {
     radioImg.innerHTML += `<input type="radio" check name="" id="" value="${i}">`;
   }
 
   const track = () => {
-    const fs = radioImg.childNodes[currentIndex + 1];
+    const fs = radioImg.childNodes[currentIndex];
     fs.checked = true;
   };
 
   const trackn = () => {
-    const fs = radioImg.childNodes[currentIndex + 1];
+    const fs = radioImg.childNodes[currentIndex];
     fs.checked = false;
   };
+
+  // Initialize the slider
+  showSlide(currentIndex);
 
   track();
 
   radioImg.addEventListener("click", (e) => {
     trackn();
     showSlide(e.target.value - 1);
+    track();
   });
 
   setInterval(() => {
+    trackn();
     showSlide(currentIndex + 1);
+    track();
   }, 5000);
 };
 
@@ -107,53 +111,3 @@ const genneratImageDiv = () => {
   await genneratImageDiv();
   imageslide();
 })();
-
-// let currentSlide = 0;
-// const slides = document.querySelector(".imgslide");
-// const totalSlides = document.querySelectorAll(".image1").length;
-// let slBox = document.getElementById("slbox");
-// function changeSlide(direction) {
-//   currentSlide += direction;
-
-//   if (currentSlide < 0) {
-//     currentSlide = totalSlides - 1;
-//   } else if (currentSlide >= totalSlides) {
-//     currentSlide = 0;
-//   }
-
-//   // console.log(currentSlide);
-//   slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-//   current();
-// }
-
-// Auto-slide every 5 seconds
-
-// for (let i = 1; i <= totalSlides; i++) {
-//   slBox.innerHTML += `<span class="obox"></span>`;
-// }
-
-// let current =()=>{
-//   if(slides){
-//     let radioC = slBox.children[currentSlide];
-//     let valeD = radioC.offsetParent.children[currentSlide];
-//     valeD.classList.add("curent");
-//     let count = currentSlide+1;
-//     let valeF = radioC.offsetParent.children[currentSlide-1]
-//     let valeE = radioC.offsetParent.children[count]
-
-//     let valeG = radioC.offsetParent.children[totalSlides-1]
-
-//     if (currentSlide) {
-//       valeF.classList.remove("curent");
-//     }
-
-//       if (totalSlides<count) {
-//         valeE.classList.remove("curent");
-//       }else if(currentSlide===0){
-//         valeG.classList.remove("curent")
-//       }
-
-//   }
-// }
-
-// current();
