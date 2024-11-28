@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="profile.css" />
     <link rel="stylesheet" href="../../Components/darkmode/dark.css" />
     <link rel="stylesheet" href="../../Components/loader/loader.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body class="light">
     <!-- ! Loader -->
@@ -25,13 +29,24 @@
         <div class="mode_line">Dark Mode</div>
       </li>
       <div class="help">
-        <a href="../../help/">Help</a>
+        <a href="../../help/">Help <i class="fa-solid fa-question"></i></a>
       </div>
     </div>
-    <div
-      class="profile-card box_shadow box_no_dark_shadow light no_dark"
-      id="profile_detailes"
-    ></div>
+    <main>
+      <div class="sidebar light no_dark box_shadow box_no_dark_shadow">
+        <ul>
+          <li><i class="fa-regular fa-user"></i> Account</li>
+          <li><i class="fa-regular fa-heart"></i> Likes</li>
+          <li><i class="fa-regular fa-bookmark"></i> Save</li>
+          <li><i class="fa-solid fa-clock-rotate-left"></i> Histry</li>
+          <li><i class="fa-solid fa-gear"></i> Setting</li>
+        </ul>
+      </div>
+      <div
+        class="profile-card box_shadow box_no_dark_shadow light no_dark"
+        id="profile_detailes"
+      ></div>
+    </main>
   </body>
   <script src="../../Components/functions/script.js"></script>
   <script src="../../Components/loader/loader.js"></script>
