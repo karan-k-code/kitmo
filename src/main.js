@@ -120,6 +120,10 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextImage, 4000);
 });
 
-let showMore = () => {
-  generateShop();
-};
+const more = document.getElementById("more");
+
+more.addEventListener("click", () => {
+  console.log("hello");
+});
+
+refreshToken();

@@ -105,6 +105,13 @@ main {
   background-color: #000000b9;
 }
 
+/* ! delete */
+.fa-trash {
+  padding: 7px;
+  border-radius: 3px;
+  color: rgba(255, 0, 0, 0.826);
+  /* background-color: #000000b9; */
+}
 .product:hover {
   .editproduct {
     display: flex;

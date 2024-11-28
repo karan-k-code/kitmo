@@ -201,7 +201,7 @@ let generateAns = (id) => {
 
 //! home button
 let home = () => {
-  window.location.href = "/";
+  window.location.href = urlg;
 };
 
 const generateAnsLi = (id) => {

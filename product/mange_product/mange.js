@@ -73,6 +73,9 @@ let generateCartItem = async () => {
             <div class="price-box">
               <div class="p-triceext">order</div>
               <div class="price">489</div>
+              <div class="editproduct" onclick="deleteproduct('${_id}')">
+                <i class="fa-solid fa-trash"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -85,3 +88,9 @@ let generateCartItem = async () => {
 };
 
 generateCartItem();
+
+const deleteproduct = async (id) => {
+  const response = await apiCallGet(urls + "/dashboad/delete/" + id);
+  console.log(response);
+  generateCartItem();
+};
