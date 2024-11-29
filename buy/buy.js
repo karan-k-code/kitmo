@@ -49,6 +49,12 @@ let buyshop = async () => {
                 <div class="radio_img" id="radio_img">
                 
                 </div>
+                <!-- share -->
+                <div class="share" id="share">
+                  <i class="fa-solid fa-heart" id="like-ture" onclick="like('${_id}')"></i>
+                  <i class="fa-regular fa-heart" id="like-falus" onclick="like('${_id}')"></i>
+                  <i class="fa-solid fa-share" onclick="shareProduct('${_id}')"></i>
+                </div>
             </div>
             <!-- !prioduct_container -->
             <div class="product_container">
@@ -184,3 +190,5 @@ const genneratImageDiv = () => {
   await genneratImageDiv();
   imageslideF();
 })();
+
+liked();

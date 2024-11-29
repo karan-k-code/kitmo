@@ -148,3 +148,42 @@ const checkout = async () => {
     window.location.href = urlg + "/users/user_profile/address";
   }
 };
+
+// ! share product
+
+const shareProduct = () => {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url);
+  // navigator.mediaDevices.getDisplayMedia();
+};
+
+// ! likes
+
+const like = async (id) => {
+  liketure();
+  const response = await apiCallGet(urls + "/likes/like/" + id);
+  console.log(response);
+};
+
+const liked = async () => {
+  const id = getQueryParam("id");
+  const response = await apiCallGet(urls + "/likes/liked/" + id);
+  console.log(response);
+  if (response.data == null) {
+    return;
+  } else {
+    liketure();
+  }
+};
+
+const liketure = () => {
+  const likeTure = document.getElementById("like-ture");
+  const likefalus = document.getElementById("like-falus");
+  if (likeTure.style.display == "flex") {
+    likeTure.style.display = "none";
+    likefalus.style.display = "flex";
+  } else {
+    likeTure.style.display = "flex";
+    likefalus.style.display = "none";
+  }
+};

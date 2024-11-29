@@ -28,6 +28,7 @@ main {
   flex-direction: column;
   width: 300px;
   overflow: hidden;
+  background-color: red;
 }
 
 .profilea {
@@ -50,29 +51,31 @@ main {
 }
 
 .sidebar > ul {
-  width: 100%;
+  width: 80%;
   display: flex;
+  gap: 5px;
   flex-direction: column;
-  align-items: center;
   list-style-type: none;
-  text-decoration: none;
   overflow: scroll;
+  padding: 5px;
 }
 
 .sidebar > ul > li {
   text-decoration: none;
-  font-size: 1.8rem;
-  width: 100%;
+  font-size: 1.5rem;
+  width: 90%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
+  border-radius: 5px;
+  border: 1px solid transparent;
 
   &:hover {
-    background-color: #f0f0f0;
+    border: 1px solid rgb(28, 28, 28);
+    /* background-color: #f0f0f0; */
   }
 }
 
@@ -83,7 +86,9 @@ main {
   align-items: center;
 }
 .seting {
+  width: 80%;
   font-size: 1.5rem;
+  padding: 5px;
 }
 
 /* ! */
@@ -122,7 +127,7 @@ main {
   display: flex;
   border-radius: 6px;
   padding-right: 5px;
-  width: 70%;
+  width: 80%;
   margin-top: 10px;
   box-shadow: 0 0 7px rgb(122, 114, 114);
   transition: all 0.2s ease;
@@ -182,13 +187,6 @@ main {
   justify-content: center;
 }
 
-.add,
-.dicrement {
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .price-box {
   display: flex;
   flex-direction: column;
@@ -216,60 +214,6 @@ main {
   border-radius: 6px;
   color: #fff;
 }
-.ammunt {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.delete {
-  display: flex;
-}
-
-.delete button {
-  margin: 0 0 10px 0;
-  padding: 4px;
-  border-radius: 4px;
-  border: none;
-  background-color: rgb(239, 38, 38);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  &:hover {
-    background-color: rgb(246, 21, 21);
-  }
-}
-
-.total_price {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  box-shadow: 0 0 7px rgb(122, 114, 114);
-}
-.total-box {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin: 10px 0 0 0;
-}
-.chackoutbtn {
-  margin: 10px 0 10px 0;
-}
-.chackoutbtn button {
-  background-color: #4caf50;
-  border: none;
-  width: 20vh;
-  padding: 4px;
-  border-radius: 4px;
-  &:hover {
-    background-color: #3e8e41;
-  }
-}
 
 @media (max-width: 700px) {
 }
@@ -279,9 +223,15 @@ main {
 
 /* 1000px */
 @media (max-width: 1000px) {
+  .product {
+    width: 90%;
+  }
 }
 /*pad screen */
 @media (max-width: 781px) {
+  .sidebar {
+    width: 45px;
+  }
 }
 /* mobile screen size */
 @media (max-width: 590px) {
