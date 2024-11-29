@@ -185,6 +185,9 @@ main {
 }
 /* mobile screen size */
 @media (max-width: 590px) {
+  .h_container {
+    display: none;
+  }
   main {
     flex-direction: column;
     align-items: center;
@@ -195,6 +198,7 @@ main {
   .sidebar > ul {
     flex-direction: row;
     justify-content: space-evenly;
+    padding-bottom: 5px;
   }
 
   .sidebar > ul > li > span {
