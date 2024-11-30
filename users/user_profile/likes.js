@@ -1,7 +1,7 @@
 const likes = document.getElementById("likes");
 
 const ganretLikes = async () => {
-  const url = urls + "/likes/all_likes";
+  const url = urls + "/likes/alllikes";
   const response = await apiCallGet(url);
 
   if (response.data.lenght !== 0) {

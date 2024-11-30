@@ -34,5 +34,3 @@ const generateProfile = async () => {
     </div>`);
   }
 };
-
-generateProfile();

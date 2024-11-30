@@ -28,6 +28,7 @@ profileBtn.addEventListener("click", (x) => {
 
   profileDetailes.style.display = "flex";
   likef.style.display = "none";
+  generateProfile();
 });
 orderBtn.addEventListener("click", (x) => {
   remoreclick();
