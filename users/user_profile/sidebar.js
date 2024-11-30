@@ -18,6 +18,8 @@ likeBtn.addEventListener("click", (x) => {
   currentclick();
   profileDetailes.style.display = "none";
   likef.style.display = "grid";
+
+  ganretLikes();
 });
 profileBtn.addEventListener("click", (x) => {
   remoreclick();

@@ -18,5 +18,3 @@ const ganretLikes = async () => {
       .join("");
   }
 };
-
-ganretLikes();
