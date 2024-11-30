@@ -140,6 +140,9 @@ main {
   justify-content: center;
   border-radius: 10px;
   transition: all 0.3s ease;
+  height: fit-content;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar > ul {
@@ -158,10 +161,48 @@ main {
   gap: 20px;
   cursor: pointer;
   border: 1px solid transparent;
+  border-radius: 5px;
   &:hover {
     border: 1px solid #4e4e4ed8;
-    border-radius: 5px;
   }
+}
+
+/* ! likes */
+
+.likes {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, 180px);
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  height: fit-content;
+  /* border-color: 1px solid rgba(0, 0, 0, 0.685); */
+}
+
+.product > img {
+  width: 170px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product > .dec {
+  font-size: 1.1rem;
+  height: 60px;
+  margin-top: 2px;
+  width: 180px;
+}
+
+/* ! click border */
+
+.click_border {
+  border: 1px solid #4e4e4ed8;
 }
 
 @media (max-width: 700px) {
@@ -175,13 +216,25 @@ main {
 }
 /* 1140px */
 @media (max-width: 1140px) {
+  .likes {
+    grid-template-columns: repeat(5, 180px);
+  }
 }
 
 /* 1000px */
 @media (max-width: 1000px) {
+  .likes {
+    grid-template-columns: repeat(4, 180px);
+  }
 }
 /*pad screen */
 @media (max-width: 781px) {
+  .likes {
+    grid-template-columns: repeat(3, 170px);
+  }
+  .product > img {
+    width: 160px;
+  }
 }
 /* mobile screen size */
 @media (max-width: 590px) {
@@ -207,8 +260,22 @@ main {
   .profile-card {
     width: 90%;
   }
+  .likes {
+    grid-template-columns: repeat(3, 150px);
+    gap: 5px;
+  }
+  .product > img {
+    width: 140px;
+  }
 }
 
 /* mobile screen size 382 */
 @media (max-width: 382px) {
+  .likes {
+    grid-template-columns: repeat(2, 150px);
+    gap: 5px;
+  }
+  .product > img {
+    width: 140px;
+  }
 }

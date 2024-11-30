@@ -33,26 +33,46 @@
       </div>
     </div>
     <main>
-      <div class="sidebar light no_dark box_shadow box_no_dark_shadow">
+      <div
+        class="sidebar light no_dark box_shadow box_no_dark_shadow"
+        id="sidebar"
+      >
         <ul>
-          <li><i class="fa-regular fa-user"></i> <span>Account</span></li>
-          <li><i class="fa-solid fa-box-open"></i><span>Orders</span></li>
-          <li><i class="fa-regular fa-heart"></i> <span>Likes</span></li>
-          <li><i class="fa-regular fa-bookmark"></i> <span>Save</span></li>
-          <li>
+          <li id="profile">
+            <i class="fa-regular fa-user"></i> <span>Account</span>
+          </li>
+          <li id="orderBtn">
+            <i class="fa-solid fa-box-open"></i><span>Orders</span>
+          </li>
+          <li id="likebtn">
+            <i class="fa-regular fa-heart"></i> <span>Likes</span>
+          </li>
+          <li id="saveBtn">
+            <i class="fa-regular fa-bookmark"></i> <span>Save</span>
+          </li>
+          <li id="histryBtn">
             <i class="fa-solid fa-clock-rotate-left"></i> <span>Histry</span>
           </li>
-          <li><i class="fa-solid fa-gear"></i><span>Setting</span></li>
+          <li id="SettingBtn">
+            <i class="fa-solid fa-gear"></i><span>Setting</span>
+          </li>
         </ul>
       </div>
       <div
         class="profile-card box_shadow box_no_dark_shadow light no_dark"
         id="profile_detailes"
-      ></div>
+      >
+        <!-- ? code is profile.js -->
+      </div>
+      <div class="likes" id="likes" style="display: none">
+        <!-- ? code is likes.js -->
+      </div>
     </main>
   </body>
   <script src="../../Components/functions/script.js"></script>
   <script src="../../Components/loader/loader.js"></script>
   <script src="profile.js"></script>
+  <script src="likes.js"></script>
+  <script src="sidebar.js"></script>
   <script src="../../Components/darkmode/dark.js"></script>
 </html>
