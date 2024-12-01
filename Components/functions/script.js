@@ -1,11 +1,11 @@
 // ! const
 // cloud
-const urlg = "https://india-software-karan.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5502";
-// const urls = "http://127.0.0.1:4000/api/v1";
+const urlg = "http://127.0.0.1:5502";
+const urls = "http://127.0.0.1:4000/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 
@@ -186,4 +186,13 @@ const liketure = () => {
     likeTure.style.display = "flex";
     likefalus.style.display = "none";
   }
+};
+
+// ! histry
+let history = [];
+
+const addHistry = async (id) => {
+  const url = urls + "/histry/histry/" + id;
+  const response = await apiCallGet(url);
+  console.log(response);
 };

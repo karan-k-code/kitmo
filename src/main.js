@@ -42,13 +42,17 @@ let generateShop = async () => {
     .map((x) => {
       let { _id, productName, productPrice, productDescription, image } = x;
 
+      const imageUrl = image[0].img;
+
+      const imageUr = imageUrl.replace("http://", "https://");
+
       return `
         <div class="box option_b " id="producat_id_${_id}" >
             <!--<div class="itam_name dark_box nav_light">
                 <h3>${productName}</h3>
             </div>-->
             <div class="itam_img" onclick="goo('${_id}')">
-            <img src="${image[0].img}">
+            <img src="${imageUr}">
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">

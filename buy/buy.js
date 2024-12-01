@@ -19,6 +19,8 @@ let buyshop = async () => {
   const productId = getQueryParam("id");
   const product = await findProduct(productId);
 
+  addHistry(productId);
+
   const item = 1;
 
   const { _id, productName, productPrice, productDescription, image } =
