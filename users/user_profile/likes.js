@@ -8,8 +8,13 @@ const ganretLikes = async () => {
     likes.innerHTML = response.data
       .map((x) => {
         const { _id, productName, productPrice, productDescription, image } = x;
+
+        const imageUrl = image[0].img;
+
+        const imageUr = imageUrl.replace("http://", "https://");
+
         return `<div class="product box_shadow box_no_dark_shadow">
-          <img src="${image[0].img}" alt="" srcset="" onclick="goo('${_id}')" />
+          <img src="${imageUr}" onclick="goo('${_id}')" />
           <div class="dec">
         <p>${productDescription}</p>
           </div>

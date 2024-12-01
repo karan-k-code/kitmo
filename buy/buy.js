@@ -180,7 +180,8 @@ const genneratImageDiv = () => {
   const imageG = document.getElementById("imageG");
   return (imageG.innerHTML += imageArry
     .map((x) => {
-      return `<img src="${x.img}" alt="Slide 1" />`;
+      const imageUr = x.img.replace("http://", "https://");
+      return `<img src="${imageUr}" alt="Slide 1" />`;
     })
     .join(""));
 };
