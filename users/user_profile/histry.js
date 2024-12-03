@@ -25,3 +25,12 @@ const genhistry = async () => {
       .join("");
   }
 };
+
+const deletehistry = async (id) => {
+  // ? id mins product id
+
+  const url = urls + "/histry/delete/" + id;
+  const response = await apiCallDelete(url);
+
+  console.log(response);
+};
