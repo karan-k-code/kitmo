@@ -62,7 +62,9 @@ let buyshop = async () => {
                 
                     <h3>${productName}</h3>
                     <div class="itam_dec">
+                    <pre>
                     ${productDescription}
+                    </pre>
                     </div>
                 </div>
                 <div class="price_quantity">

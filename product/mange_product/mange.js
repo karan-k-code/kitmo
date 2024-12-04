@@ -44,7 +44,7 @@ let generateCartItem = async () => {
                 ${productDescription}
                 </p>
               </div>
-              <div class="editproduct">
+              <div class="editproduct" onclick="editProduct('${_id}')">
                 <i class="fa-solid fa-pen-to-square"></i>
               </div>
             </div>

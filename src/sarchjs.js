@@ -1,36 +1,32 @@
 // ! this search area code
 
+let submitForm = () => {
+  // Get form input values
 
+  let select;
+  let valA = document.getElementById("searchSelect").value;
+  let valB = document.getElementById("transcript").value;
 
+  let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
+  console.log(sentenceCase);
 
-let submitForm =()=> {
-    // Get form input values
-
-    let select ;
-    let valA  = document.getElementById("searchSelect").value;
-    let valB  = document.getElementById("transcript").value;
-
-    let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
-        console.log(sentenceCase);
-    
-    // ! shop item gennerateshop funcation
-let generateShopf = async () => {
-
+  // ! shop item gennerateshop funcation
+  let generateShopf = async () => {
     let filterData;
-    valC = shopItamsData.filter((x) =>x.catgory === select );
-    valN = shopItamsData.filter((x) =>x.name === select );
+    valC = shopItamsData.filter((x) => x.catgory === select);
+    valN = shopItamsData.filter((x) => x.name === select);
 
-    console.log(select)
+    console.log(select);
 
     console.log(valN);
     console.log(valC);
     if (valC.length !== 0) {
-        filterData = valC;
-    } else if(valN !== 0){      
-        filterData = valN;
+      filterData = valC;
+    } else if (valN !== 0) {
+      filterData = valN;
     }
 
-    let sle = filterData.slice(0, 16)
+    let sle = filterData.slice(0, 16);
 
     return (shop.innerHTML = await sle
       .map((x) => {
@@ -62,41 +58,16 @@ let generateShopf = async () => {
       .join(""));
   };
 
-    if(valA !== 'All'){
-        select = valA;
-        generateShopf()
-        // big_container.style.display="none"
-
-    }else if(valB !==''){
-        select = sentenceCase;
-        generateShopf()
-        // big_container.style.display="none"
-    }else{
-        generateShop()
-        // big_container.style.display="none"
-    }
-}
-
-// ! goo funcation
-// let goo =(id)=>{
-//     let selecteItam = id;
-    
-//     if (buyItam.length === 0) {
-//       buyItam.push({
-//         id: selecteItam.id,
-//         item: 1
-//       });
-//     }else{
-//       buyItam = [];
-//       buyItam.push({
-//         id: selecteItam.id,
-//         item: 1
-//       });
-//     }
-//     localStorage.setItem("databuy", JSON.stringify(buyItam));
-//     window.location="buy.html"
-//     big_container.style.display="flex"
-//   }
-  
-
-
+  if (valA !== "All") {
+    select = valA;
+    generateShopf();
+    // big_container.style.display="none"
+  } else if (valB !== "") {
+    select = sentenceCase;
+    generateShopf();
+    // big_container.style.display="none"
+  } else {
+    generateShop();
+    // big_container.style.display="none"
+  }
+};

@@ -1,7 +1,9 @@
 const box = document.getElementById("box");
 let chat = localStorage.getItem("allMessage");
 
-const socket = io("https://chat-sjwo.onrender.com", {
+// https://chat-sjwo.onrender.com
+
+const socket = io("http://localhost:8000", {
   withCredentials: true,
 });
 
@@ -22,7 +24,7 @@ const goo = (id) => {
 };
 
 const refreshAccessTokan = async () => {
-  const url = `${urls}/api/v1/users/refresh-token`;
+  const url = `${urls}/users/refresh-token`;
 
   const requestOptions = {
     method: "POST",

@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upload Products</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../Components/loader/loader.css" />
+    <link rel="stylesheet" href="../../upload_product/style.css" />
+    <link rel="stylesheet" href="../../Components/loader/loader.css" />
   </head>
   <body>
     <!-- ! loader and success message -->
     <div class="loderbox">
-      <div class="success_box">Login Successfull.</div>
       <div class="loader"></div>
     </div>
     <div class="container">
-      <h1>Upload Product</h1>
+      <h1>Edite Product</h1>
       <form id="uploadForm">
         <label for="productName">Product Name</label>
         <input type="text" id="productName" name="productName" required />
@@ -47,7 +46,14 @@
           name="productQuantity"
           required
         />
+        <button type="submit">Save</button>
+      </form>
+      <div id="message"></div>
+    </div>
 
+    <div class="container">
+      <h1>Change Image</h1>
+      <form id="uploadForm">
         <label>Product Images</label>
         <div id="imageInputs">
           <div class="image-input">
@@ -70,15 +76,14 @@
         </div>
         <button type="button" id="addImageButton">Add Image</button>
 
+        <div class="image-previews" id="genimage"></div>
         <div class="image-previews" id="imagePreviews"></div>
 
-        <button type="submit">Upload Product</button>
+        <button type="submit">Save</button>
       </form>
-      <div id="message"></div>
     </div>
-    <script src="../Components/functions/script.js"></script>
-    <script src="../Components/loader/loader.js"></script>
-    <script src="script.js"></script>
-    <script src="../src/apicall.js"></script>
+    <script src="../../Components/functions/script.js"></script>
+    <script src="../../Components/loader/loader.js"></script>
+    <script src="edite.js"></script>
   </body>
 </html>

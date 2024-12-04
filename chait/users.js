@@ -3,10 +3,10 @@ let users = [];
 const userBox = document.getElementById("userbox");
 
 let usersfn = async () => {
-  const url = `${urls}/api/v1/users/user`;
+  const url = `${urls}/users/user`;
 
   const requestOptions = {
-    method: "POST",
+    method: "GET",
     credentials: "include",
   };
 

@@ -1,3 +1,38 @@
+const proname = document.getElementById("productName");
+const prodec = document.getElementById("productDescription");
+const proprice = document.getElementById("productPrice");
+const procategory = document.getElementById("productCategory");
+const proquntity = document.getElementById("productQuantity");
+const genimage = document.getElementById("genimage");
+
+let categoryData = [];
+
+const getp = async () => {
+  const id = getQueryParam("id");
+  const product = await findProduct(id);
+
+  console.log(product);
+
+  //   const caturl = urls + "/product/getcat/"+;
+
+  //   const catgory = await apiCallGet(caturl);
+
+  if (product) {
+    proname.value = product.data.productName;
+    prodec.value = product.data.productDescription;
+    proprice.value = product.data.productPrice;
+    proquntity.value = product.data.productQuntity;
+    procategory.value = product.data.productCatgory;
+  }
+  if (product.data.image) {
+    product.data.image.map((x) => {
+      const img = document.createElement("img");
+      img.setAttribute("src", x.img);
+      genimage.appendChild(img);
+    });
+  }
+};
+
 const imageInputsContainer = document.getElementById("imageInputs");
 const imagePreviewsContainer = document.getElementById("imagePreviews");
 const addImageButton = document.getElementById("addImageButton");
@@ -77,46 +112,22 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent page refresh
 
-    const url = `${urls}/product/uploadproduct`;
+    const id = getQueryParam("id");
 
-    let userdata = await sendproduct(url, this);
+    const url = `${urls}/dashboad/product/edite/${id}`;
+
+    const userdata = await sendproduct(url, this);
 
     if (!userdata) {
-      alert("Error uploading product");
+      alert("Error edeting product");
       return;
     }
 
-    document.getElementById("message").innerHTML =
-      "Product uploaded successfully!";
+    document.getElementById("message").innerHTML = "Product save successfully!";
 
     // Clear form fields
-    this.reset();
-    imagePreviewsContainer.innerHTML = "";
   });
 
-let categoryData = [];
-
-// ! geting product category
-
-let getcatgory = async () => {
-  let response = await fetch(`${urls}/product/getcatgory`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await response.json();
-  categoryData = data.data;
-  categoryGen();
-};
 getcatgory();
 
-const productCategory = document.getElementById("productCategory");
-
-// ! gen category
-const categoryGen = async () => {
-  let catgory = await categoryData.map((item) => {
-    return `<option value="${item._id}">${item.name}</option>`;
-  });
-  productCategory.innerHTML += catgory.join("");
-};
+getp();

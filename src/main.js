@@ -91,12 +91,6 @@ if (userData) {
   calculatCart();
 }
 
-// ! goo funcation
-let goo = (id) => {
-  addHistry(id);
-  window.open(`./buy/index.html?id=${id}`, "_blank");
-};
-
 // ! image slide code
 
 document.addEventListener("DOMContentLoaded", function () {

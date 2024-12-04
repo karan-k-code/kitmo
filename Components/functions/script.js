@@ -23,10 +23,10 @@ const apiCall = async (url, data) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      loaderStop();
       return data;
     });
 
-  loaderStop();
   return response;
 };
 
@@ -43,10 +43,9 @@ const apiCallGet = async (url) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      loaderStop();
       return data;
     });
-
-  loaderStop();
 
   return response;
 };
@@ -195,4 +194,79 @@ const addHistry = async (id) => {
   const url = urls + "/histry/histry/" + id;
   const response = await apiCallGet(url);
   console.log(response);
+};
+
+// ! goo funcation
+const goo = (id) => {
+  addHistry(id);
+  window.open(`${urlg}/buy/index.html?id=${id}`, "_blank");
+};
+
+// ! edit product
+const editProduct = (id) => {
+  window.open(`${urlg}/product/edite/index.html?id=${id}`, "_blank");
+};
+
+// ! edit product get
+const editproductget = async (id) => {
+  const response = await apiCallGet(urls + "/dashboad/product/edite/" + id);
+  return response;
+};
+
+// ! gen category
+const categoryGen = async () => {
+  const productCategory = document.getElementById("productCategory");
+
+  let catgory = await categoryData.map((item) => {
+    return `<option value="${item._id}">${item.name}</option>`;
+  });
+  productCategory.innerHTML += catgory.join("");
+};
+
+// ! geting product category
+let getcatgory = async () => {
+  let response = await fetch(`${urls}/product/getcatgory`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await response.json();
+  categoryData = data.data;
+  categoryGen();
+};
+
+// ! sendproduct
+const sendproduct = async (url, forml) => {
+  loaderFn(); // Start the loader
+
+  try {
+    // Create FormData object
+    let formData = new FormData(forml);
+
+    console.log(formData);
+
+    // Fetch request
+    let response = await fetch(url, {
+      method: "POST",
+      body: formData, // Pass the FormData directly
+      redirect: "follow",
+      credentials: "include",
+    });
+
+    // Check if the response is okay
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    // Parse JSON response
+    let result = await response.json();
+
+    loaderStop(); // Stop the loader
+    return result;
+  } catch (error) {
+    console.error("Error:", error);
+    loaderStop(); // Ensure loader stops even if there's an error
+    return null; // Optionally return null or handle it appropriately
+  }
 };

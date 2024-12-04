@@ -119,11 +119,6 @@ let removeItem = async (id) => {
   generateCartItem();
 };
 
-// ! goo funcation
-let goo = (id) => {
-  window.open(`../buy/index.html?id=${id}`, "_blank");
-};
-
 // ! total amount
 let totalAmount = async () => {
   const product = await getProduct();
@@ -162,4 +157,3 @@ let checkoutall = () => {
 };
 
 totalAmount();
-// calculation();
