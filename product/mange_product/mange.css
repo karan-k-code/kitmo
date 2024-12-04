@@ -28,7 +28,8 @@ main {
   flex-direction: column;
   width: 300px;
   overflow: hidden;
-  background-color: red;
+  box-shadow: 0 0 7px rgb(122, 114, 114);
+  /* background-color: red; */
 }
 
 .profilea {
@@ -62,9 +63,12 @@ main {
 
 .sidebar > ul > li {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   width: 90%;
   display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 6px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -89,6 +93,12 @@ main {
   width: 80%;
   font-size: 1.5rem;
   padding: 5px;
+  display: flex;
+  cursor: pointer;
+  gap: 6px;
+  &:hover {
+    color: rgb(170, 30, 217);
+  }
 }
 
 /* ! */
@@ -120,8 +130,8 @@ main {
 .product:hover {
   .editproduct {
     display: flex;
+    transition: all 0.2s ease;
   }
-  background-color: #f0f0f0;
 }
 .product {
   display: flex;
@@ -225,6 +235,19 @@ main {
 @media (max-width: 1000px) {
   .product {
     width: 90%;
+  }
+  .sidebar {
+    width: 45px;
+  }
+
+  .sidebar > ul > li > span {
+    display: none;
+    padding: 0;
+  }
+
+  .profilea > img {
+    width: 43px;
+    height: 43px;
   }
 }
 /*pad screen */
