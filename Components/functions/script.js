@@ -149,7 +149,6 @@ const checkout = async () => {
 };
 
 // ! share product
-
 const shareProduct = () => {
   const url = window.location.href;
   navigator.clipboard.writeText(url);
@@ -157,7 +156,6 @@ const shareProduct = () => {
 };
 
 // ! likes
-
 const like = async (id) => {
   liketure();
   const response = await apiCallGet(urls + "/likes/like/" + id);

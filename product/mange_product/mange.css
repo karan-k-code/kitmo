@@ -5,6 +5,11 @@
   scrollbar-color: #737171 transparent;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .fa-question {
   font-size: 1.8rem;
   cursor: pointer;
@@ -29,6 +34,8 @@ main {
   width: 300px;
   overflow: hidden;
   box-shadow: 0 0 7px rgb(122, 114, 114);
+  height: min-content;
+  transition: all 0.2s ease;
   /* background-color: red; */
 }
 
@@ -47,7 +54,9 @@ main {
   border-radius: 50%;
 }
 
-.profile > h2 {
+.profilea > p {
+  font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -249,6 +258,12 @@ main {
     width: 43px;
     height: 43px;
   }
+  .profilea > p {
+    display: none;
+  }
+  .seting > span {
+    display: none;
+  }
 }
 /*pad screen */
 @media (max-width: 781px) {
@@ -282,6 +297,9 @@ main {
   }
   .qty {
     display: flex;
+  }
+  .sidebar {
+    display: none;
   }
 }
 

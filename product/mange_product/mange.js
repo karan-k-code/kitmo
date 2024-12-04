@@ -9,7 +9,7 @@ const getuser = async () => {
 
   profilea.innerHTML = `
         <img src="${image ? "" : "../../image/userimage.jpg"}" alt="" />
-        <h2>${username}</h2>
+        <p>${username}</p>
   `;
 };
 
@@ -34,7 +34,7 @@ let generateCartItem = async () => {
         } = x;
         return `
     <div class="product">
-          <img src="${image[0].img}" alt="" />
+          <img src="${image[0].img}" alt="" onclick="viewsP('${_id}')" />
           <div class="product-box">
             <div class="name">
               <div class="ditalis">Ditails</div>
@@ -93,4 +93,8 @@ const deleteproduct = async (id) => {
   const response = await apiCallGet(urls + "/dashboad/delete/" + id);
   console.log(response);
   generateCartItem();
+};
+
+const viewsP = (id) => {
+  window.open(`${urlg}/buy/index.html?id=${id}`, "_blank");
 };

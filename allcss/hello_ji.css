@@ -44,12 +44,15 @@ a {
 .option {
   border: 2px solid transparent;
 }
-.option_b{
+.option_b {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
   transition: all 0.4s ease;
 }
 a:visited {
-    background-color: red;
-    
+  background-color: red;
 }
 
 .option_b:hover {

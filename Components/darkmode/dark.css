@@ -35,11 +35,16 @@
 }
 
 /* ! dark mode color */
-.dark-mode {
+.dark-mode,
+.coman {
   background-color: black;
   color: #fff;
 }
 
 .nav_dark {
   background-color: #315353;
+}
+
+.fhf {
+  background-color: #fff;
 }
