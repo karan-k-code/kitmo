@@ -11,8 +11,6 @@ const getp = async () => {
   const id = getQueryParam("id");
   const product = await findProduct(id);
 
-  console.log(product);
-
   //   const caturl = urls + "/product/getcat/"+;
 
   //   const catgory = await apiCallGet(caturl);
@@ -22,14 +20,41 @@ const getp = async () => {
     prodec.value = product.data.productDescription;
     proprice.value = product.data.productPrice;
     proquntity.value = product.data.productQuntity;
-    procategory.value = product.data.productCatgory;
+
+    // procategory.childNodes.find((x) => {
+    //   if (x.dataset.categoryid == product.data.productCategory) {
+    //     x.checked = true;
+    //   }
+    // });
+
+    const de = await getcatgory();
+    // procategory.nodeValue;
+    // de.map((x
+
+    // // procategory) => {
+    //   if (x._id == product.data.productCatgory) {
+    //     // procategory.value = "Electronics";
+    //     // selected;
+    //     // procategory.value = "Electronics";
+    //     console.log(procategory.childNodes);
+    //   }
+    // });
   }
   if (product.data.image) {
-    product.data.image.map((x) => {
-      const img = document.createElement("img");
-      img.setAttribute("src", x.img);
-      genimage.appendChild(img);
-    });
+    genimage.innerHTML = product.data.image
+      .map((x) => {
+        return `
+        <div class="col-md-3">
+
+        <img src="${x.img}" class="imagegen">
+      <div class="delateimg">delete</div>
+      </div>
+      `;
+        //   const img = document.createElement("img");
+        //   img.setAttribute("src", x.img);
+        //   genimage.appendChild(img);
+      })
+      .join("");
   }
 };
 
@@ -128,6 +153,39 @@ document
     // Clear form fields
   });
 
-getcatgory();
+// getcatgory();
 
 getp();
+
+// ! delete image
+const deleteImage = async (imageid) => {
+  const url = urls + "/dashboad/product/image/delete/" + imageid;
+  const response = await apiCallGet(url);
+  console.log(response);
+};
+
+// ! add image
+
+document
+  .getElementById("addimage")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent page refresh
+
+    const id = getQueryParam("id");
+
+    const url = urls + "/dashboad/product/addimage/" + id;
+
+    const userdata = await sendproduct(url, this);
+
+    if (!userdata) {
+      alert("Error edeting product");
+      return;
+    }
+  });
+
+// ! change image
+const changeImage = async (id) => {
+  const url = urls + "/dashboad/product/image/change/" + id;
+  const response = await apiCall(url, data);
+  console.log(response);
+};

@@ -1,69 +1,109 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.boxadd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.boxadd > form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.boxadd > form > div {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.boxadd > form > div > input {
+  position: absolute;
+  right: 10px;
+}
+
+.boxadd > button {
+  width: 400px;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: #3cc95d;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .container {
-    width: 100%;
-    max-width: 480px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+.form-group > button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+  background-color: #218838;
 }
 
 #output {
-    margin-top: 20px;
-    /* font-weight: bold; */
+  margin-top: 20px;
+  /* font-weight: bold; */
 }
 
 @media (max-width: 480px) {
-    .container{
-        max-width: 90%;
-    }
+  .container {
+    max-width: 90%;
+  }
 }

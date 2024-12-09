@@ -5,10 +5,6 @@ singupBtn.addEventListener("click", () => {
   window.location.href = "../signup/";
 });
 
-function myFunction() {
-  console.log("5 seconds passed!");
-}
-
 forml.addEventListener("submit", async (e) => {
   e.preventDefault();
   const url = `${urls}/users/login`;
@@ -20,7 +16,6 @@ forml.addEventListener("submit", async (e) => {
 
   successMsg();
 
-  localStorage.setItem("userdata", JSON.stringify(response.data.user));
   setTimeout(() => {
     window.location.href = "../../index.html";
   }, 2000);

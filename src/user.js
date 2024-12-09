@@ -1,10 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const menuButton = document.getElementById("user_button");
   const menuList = document.getElementById("user_list");
 
   // !user data
 
-  userData = JSON.parse(localStorage.getItem("userdata"));
+  const url = urls + "/users/user";
+  const userdata = await apiCallGet(url);
+
+  if (!userdata) {
+    window.location.href = `${urlg}/users/login`;
+  }
+
+  userData = userdata.data;
 
   let user = () => {
     if (userData) {

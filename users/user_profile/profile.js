@@ -7,7 +7,7 @@ function editProfile() {
 const generateProfile = async () => {
   const profileDetailes = document.getElementById("profile_detailes");
   const response = await apiCallGet(`${urls}/users/user`);
-  const { username, mobile, email } = response.data;
+  const { username, mobile, email, address } = response.data;
 
   if (response.data.lenght !== 0) {
     return (profileDetailes.innerHTML = `      
@@ -29,7 +29,7 @@ const generateProfile = async () => {
         <div class="email"><span>Email :</span><span>${email}</span></div>
         <div class="address">
           <span>Address :</span>
-          <address></address>
+          <address>${address[0].address}</address>
         </div>
     </div>`);
   }

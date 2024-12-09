@@ -12,7 +12,7 @@
     <div class="loderbox">
       <div class="loader"></div>
     </div>
-    <div class="container">
+    <div class="container" id="container">
       <h2>Delivery Address</h2>
       <form id="addressForm">
         <div class="form-group">
@@ -42,7 +42,7 @@
           <input
             type="text"
             id="postalCode"
-            name="postalCode"
+            name="zip"
             placeholder="Enter your postal code"
             required
           />
@@ -64,6 +64,11 @@
 
       <div id="output"></div>
     </div>
+    <div class="boxadd" id="boxadd">
+      <form id="addressFormA"></form>
+      <button type="submit" id="bsubmit">countinu</button>
+    </div>
+
     <script src="../../../Components/functions/script.js"></script>
     <script src="../../../Components/loader/loader.js"></script>
     <script src="deliver.js"></script>

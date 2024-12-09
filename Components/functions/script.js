@@ -25,6 +25,10 @@ const apiCall = async (url, data) => {
     .then((data) => {
       loaderStop();
       return data;
+    })
+    .catch((error) => {
+      loaderStop();
+      // console.log(error);
     });
 
   return response;
@@ -45,6 +49,10 @@ const apiCallGet = async (url) => {
     .then((data) => {
       loaderStop();
       return data;
+    })
+    .catch((error) => {
+      loaderStop();
+      // console.log(error);
     });
 
   return response;
@@ -76,6 +84,8 @@ const getProduct = async () => {
     headers: {
       "Content-Type": "application/json",
     },
+  }).catch((error) => {
+    console.log(error);
   });
   loaderStop();
   return response.json();
@@ -134,17 +144,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // ! refreshtoken
 const refreshToken = async () => {
   const response = await apiCall(urls + "/users/refreshtoken", undefined);
-  console.log(response);
 };
 
 // ! checkOut function
 const checkout = async () => {
+  const product = getQueryParam("id");
+  console.log(product);
   const url = urls + "/users/user";
   const user = await apiCallGet(url);
 
+  window.location.href = `${urlg}/users/user_profile/address/index.html?id=${product}`;
+
   if (!user.data.address) {
     console.log("you have no address");
-    window.location.href = urlg + "/users/user_profile/address";
+    window.location.href = `${urlg}/users/user_profile/address/index.html?id=${product}`;
   }
 };
 
@@ -158,14 +171,12 @@ const shareProduct = () => {
 // ! likes
 const like = async (id) => {
   liketure();
-  const response = await apiCallGet(urls + "/likes/like/" + id);
-  console.log(response);
+  await apiCallGet(urls + "/likes/like/" + id);
 };
 
 const liked = async () => {
   const id = getQueryParam("id");
   const response = await apiCallGet(urls + "/likes/liked/" + id);
-  console.log(response);
   if (response.data == null) {
     return;
   } else {
@@ -190,8 +201,7 @@ let history = [];
 
 const addHistry = async (id) => {
   const url = urls + "/histry/histry/" + id;
-  const response = await apiCallGet(url);
-  console.log(response);
+  apiCallGet(url);
 };
 
 // ! goo funcation
@@ -232,39 +242,34 @@ let getcatgory = async () => {
   let data = await response.json();
   categoryData = data.data;
   categoryGen();
+  return data.data;
 };
 
 // ! sendproduct
 const sendproduct = async (url, forml) => {
   loaderFn(); // Start the loader
 
-  try {
-    // Create FormData object
-    let formData = new FormData(forml);
+  // Create FormData object
+  let formData = new FormData(forml);
+  // Fetch request
+  let response = await fetch(url, {
+    method: "POST",
+    body: formData, // Pass the FormData directly
+    redirect: "follow",
+    credentials: "include",
+  }).catch((error) => {
+    loaderStop();
+    console.log(error);
+  });
 
-    console.log(formData);
-
-    // Fetch request
-    let response = await fetch(url, {
-      method: "POST",
-      body: formData, // Pass the FormData directly
-      redirect: "follow",
-      credentials: "include",
-    });
-
-    // Check if the response is okay
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    // Parse JSON response
-    let result = await response.json();
-
-    loaderStop(); // Stop the loader
-    return result;
-  } catch (error) {
-    console.error("Error:", error);
-    loaderStop(); // Ensure loader stops even if there's an error
-    return null; // Optionally return null or handle it appropriately
+  // Check if the response is okay
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
   }
+
+  // Parse JSON response
+  let result = await response.json();
+
+  loaderStop(); // Stop the loader
+  return result;
 };
