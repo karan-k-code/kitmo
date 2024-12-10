@@ -1,6 +1,4 @@
 function editProfile() {
-  var moreInfo = document.getElementById("more-info");
-  moreInfo.style.display = "none";
   alert("wait for next update");
 }
 
@@ -29,7 +27,7 @@ const generateProfile = async () => {
         <div class="email"><span>Email :</span><span>${email}</span></div>
         <div class="address">
           <span>Address :</span>
-          <address>${address[0].address}</address>
+          <address>${address[0].address}, ${address[0].city}, ${address[0].zip}</address>
         </div>
     </div>`);
   }

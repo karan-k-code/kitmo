@@ -3,6 +3,7 @@ let shopItamsData;
 
 // ! checkout
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
+
 // ! shop item gennerateshop funcation
 let billProduct = async () => {
   const url = urls + "/product/payprduct/gen";
@@ -49,6 +50,7 @@ let billProduct = async () => {
       .join(""));
   }
 };
+
 // !increment
 let increment = async (id) => {
   let selecteItam = id;
@@ -111,34 +113,32 @@ totalAmount();
 billProduct();
 
 // JavaScript to handle showing and hiding the success message
-document
-  .getElementById("showMessageBtn")
-  .addEventListener("click", function () {
-    const successMessage = document.getElementById("successMessage");
+document.getElementById("cashon").addEventListener("click", async function () {
+  const addressId = getQueryParam("address");
+  const orderdata = [];
 
-    const addressId = getQueryParam("address");
-
-    const orderdata = [];
-
-    buyItam.map((x) => {
-      const { productId, item } = x;
-      orderdata.push({
-        productId: productId,
-        item: item,
-        addressId: addressId,
-      });
+  buyItam.map((x) => {
+    const { productId, item } = x;
+    orderdata.push({
+      product: productId,
+      quantity: item,
+      paymentmode: "Cash",
     });
+  });
 
-    console.log(orderdata);
+  const url = urls + "/orders/order/" + addressId;
+  const response = await apiCall(url, orderdata);
 
+  if (response.success) {
+    const successMessage = document.getElementById("successMessage");
     // Show the success message
     successMessage.classList.remove("hidden");
-
-    // Automatically hide after 3 seconds
+    // Automatically hide after 4 seconds
     setTimeout(function () {
       successMessage.classList.add("hidden");
     }, 4000);
-  });
+  }
+});
 
 document.getElementById("closeBtn").addEventListener("click", function () {
   // Manually hide the success message when the close button is clicked
@@ -146,19 +146,32 @@ document.getElementById("closeBtn").addEventListener("click", function () {
 });
 
 const onlinepay = document.getElementById("onlinepay");
-onlinepay.addEventListener("click", (x) => {
-  const successMessage = document.getElementById("successMessage");
+onlinepay.addEventListener("click", async (x) => {
   const addressId = getQueryParam("address");
   const orderdata = [];
   buyItam.map((x) => {
     const { productId, item } = x;
     orderdata.push({
-      productId: productId,
-      item: item,
-      addressId: addressId,
+      product: productId,
+      quantity: item,
+      paymentmode: "Online",
     });
   });
-  console.log(orderdata);
-});
 
-// const {addresh,user,paymentStatus}
+  //  ! add payment funcation
+
+  if (true) {
+    const url = urls + "/orders/order/" + addressId;
+    const response = await apiCall(url, orderdata);
+
+    if (response.success) {
+      const successMessage = document.getElementById("successMessage");
+      // Show the success message
+      successMessage.classList.remove("hidden");
+      // Automatically hide after 4 seconds
+      setTimeout(function () {
+        successMessage.classList.add("hidden");
+      }, 4000);
+    }
+  }
+});

@@ -76,7 +76,7 @@ const imageslideF = () => {
   showSlide(currentIndex);
 
   for (let i = 1; i <= totalSlides; i++) {
-    radioImg.innerHTML += `<input type="radio" check name="" id="" value="${i}">`;
+    radioImg.innerHTML += `<input type="radio" check name="same" id="" value="${i}">`;
   }
 
   const track = () => {

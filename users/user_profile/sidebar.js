@@ -8,6 +8,7 @@ const histryBtn = document.getElementById("histryBtn");
 const profileDetailes = document.getElementById("profile_detailes");
 const likef = document.getElementById("likes");
 const histrys = document.getElementById("histrys");
+const orders = document.getElementById("orders");
 
 let click = profileBtn;
 
@@ -20,6 +21,7 @@ likeBtn.addEventListener("click", (x) => {
   profileDetailes.style.display = "none";
   likef.style.display = "grid";
   histrys.style.display = "none";
+  orders.style.display = "none";
 
   ganretLikes();
 });
@@ -31,15 +33,17 @@ profileBtn.addEventListener("click", (x) => {
   profileDetailes.style.display = "flex";
   likef.style.display = "none";
   histrys.style.display = "none";
+  orders.style.display = "none";
   generateProfile();
 });
 orderBtn.addEventListener("click", (x) => {
   remoreclick();
   click = orderBtn;
   currentclick();
-  profileDetailes.style.display = "flex";
+  profileDetailes.style.display = "none";
   likef.style.display = "none";
   histrys.style.display = "none";
+  orders.style.display = "flex";
 });
 saveBtn.addEventListener("click", (x) => {
   remoreclick();
@@ -49,6 +53,7 @@ saveBtn.addEventListener("click", (x) => {
   profileDetailes.style.display = "flex";
   likef.style.display = "none";
   histrys.style.display = "none";
+  orders.style.display = "none";
 });
 settingBtn.addEventListener("click", (x) => {
   remoreclick();
@@ -58,6 +63,7 @@ settingBtn.addEventListener("click", (x) => {
   profileDetailes.style.display = "flex";
   likef.style.display = "none";
   histrys.style.display = "none";
+  orders.style.display = "none";
 });
 histryBtn.addEventListener("click", (x) => {
   remoreclick();
@@ -66,7 +72,7 @@ histryBtn.addEventListener("click", (x) => {
   histrys.style.display = "grid";
   profileDetailes.style.display = "none";
   likef.style.display = "none";
-
+  orders.style.display = "none";
   genhistry();
 });
 

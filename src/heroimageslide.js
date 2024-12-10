@@ -48,11 +48,11 @@ const imageslide = () => {
 
     // Determine if swipe distance is significant to change slides
     if (deltaX > 50) {
-      trackn();
+      // trackn();
       showSlide(currentIndex - 1); // Swipe right, go to the previous slide
       track();
     } else if (deltaX < -50) {
-      trackn();
+      // trackn();
       showSlide(currentIndex + 1); // Swipe left, go to the next slide
       track();
     } else {
@@ -61,7 +61,7 @@ const imageslide = () => {
   });
 
   for (let i = 1; i <= totalSlides; i++) {
-    radioImg.innerHTML += `<input type="radio" check name="" id="" value="${i}">`;
+    radioImg.innerHTML += `<input type="radio" check name="same" id="" value="${i}">`;
   }
 
   const track = () => {

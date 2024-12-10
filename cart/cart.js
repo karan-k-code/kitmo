@@ -67,7 +67,7 @@ generateCartItem();
 
 // ! home button
 let home = () => {
-  window.location = "index.html";
+  window.location = urlg;
 };
 
 // !increment

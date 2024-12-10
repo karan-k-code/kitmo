@@ -38,11 +38,15 @@ forml.addEventListener("submit", async (e) => {
   e.preventDefault();
   // ! Apicall
   let userdata = await register(url, forml);
-  localStorage.setItem("userdata", JSON.stringify(userdata.data.user));
-  successMsg();
-  setTimeout(() => {
-    window.location.href = "../../index.html";
-  }, 2000);
+
+  if (userdata.success == true) {
+    successMsg();
+    setTimeout(() => {
+      // window.location.href = "../../index.html";
+    }, 2000);
+  } else {
+    alert(userdata.errors);
+  }
 });
 
 // document.getElementById('product').addEventListener('submit', function(event) {

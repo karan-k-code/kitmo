@@ -28,7 +28,7 @@ const apiCall = async (url, data) => {
     })
     .catch((error) => {
       loaderStop();
-      // console.log(error);
+      // console.log(error.message);
     });
 
   return response;

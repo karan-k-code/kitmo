@@ -1,10 +1,7 @@
 const genhistry = async () => {
-  let history = [];
   const histrys = document.getElementById("histrys");
   const url = urls + "/histry/histry";
   const response = await apiCallGet(url);
-
-  console.log(response);
 
   if (response.data.lenght !== 0) {
     histrys.innerHTML = response.data
@@ -20,6 +17,9 @@ const genhistry = async () => {
           <div class="dec">
         <p>${productDescription}</p>
           </div>
+          <div class="btns">
+          <button onclick="deletehistry('${_id}')">remove</button>
+          </div>
         </div>`;
       })
       .join("");
@@ -32,7 +32,7 @@ const deletehistry = async (id) => {
   const url = urls + "/histry/delete/" + id;
   const response = await apiCallGet(url);
 
-  console.log(response);
+  genhistry();
 };
 
 // ! delete all histry
