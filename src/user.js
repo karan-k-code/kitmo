@@ -66,15 +66,16 @@ let longoutBtn = async () => {
 
   const response = await apiCall(url, undefined);
 
-  if (response.status === 200) {
-    localStorage.removeItem("userdata");
+  if (response.success) {
     window.location.href = urlg + "/users/login/";
+  } else {
+    alert(response.errors);
   }
 };
 
 // ! manageProfile
 const manageProfile = () => {
-  window.location.href = urlg + "/users/user_profile/";
+  window.location.href = urlg + "/users/user_profile/index.html?fun=profile";
 };
 const myProduct = () => {
   window.location.href = urlg + "/product/mange_product/";

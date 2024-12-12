@@ -15,10 +15,10 @@ const genhistry = async () => {
         return `<div class="product box_shadow box_no_dark_shadow">
           <img src="${imageUr}" onclick="goo('${_id}')" />
           <div class="dec">
-        <p>${productDescription}</p>
+            <p>${productDescription}</p>
           </div>
           <div class="btns">
-          <button onclick="deletehistry('${_id}')">remove</button>
+            <button onclick="deletehistry('${_id}')">remove</button>
           </div>
         </div>`;
       })
@@ -30,7 +30,7 @@ const deletehistry = async (id) => {
   // ? id mins product id
 
   const url = urls + "/histry/delete/" + id;
-  const response = await apiCallGet(url);
+  await apiCallGet(url);
 
   genhistry();
 };
@@ -39,6 +39,6 @@ const deletehistry = async (id) => {
 const deleteAllhistry = async () => {
   const url = urls + "/histry/deleteall";
 
-  const response = await apiCallGet(url);
-  console.log(response);
+  await apiCallGet(url);
+  genhistry();
 };

@@ -7,6 +7,12 @@ const generateProfile = async () => {
   const response = await apiCallGet(`${urls}/users/user`);
   const { username, mobile, email, address } = response.data;
 
+  let addressdata = ``;
+
+  if (address.lenght == 0) {
+    addressdata = `${address[0].address}, ${address[0].city}, ${address[0].zip}`;
+  }
+
   if (response.data.lenght !== 0) {
     return (profileDetailes.innerHTML = `      
     <div class="image">
@@ -27,7 +33,7 @@ const generateProfile = async () => {
         <div class="email"><span>Email :</span><span>${email}</span></div>
         <div class="address">
           <span>Address :</span>
-          <address>${address[0].address}, ${address[0].city}, ${address[0].zip}</address>
+          <address>${addressdata}</address>
         </div>
     </div>`);
   }

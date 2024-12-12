@@ -11,23 +11,31 @@ const histrys = document.getElementById("histrys");
 const orders = document.getElementById("orders");
 
 let click = profileBtn;
+let fun = getQueryParam("fun");
 
 const sidebar = document.getElementById("sidebar");
 
-likeBtn.addEventListener("click", (x) => {
+// ! like
+const likeg = () => {
   remoreclick();
   click = likeBtn;
+  fun = "like";
   currentclick();
   profileDetailes.style.display = "none";
   likef.style.display = "grid";
   histrys.style.display = "none";
   orders.style.display = "none";
-
   ganretLikes();
+};
+likeBtn.addEventListener("click", (x) => {
+  likeg();
 });
-profileBtn.addEventListener("click", (x) => {
+
+// ! profile
+const profileg = () => {
   remoreclick();
   click = profileBtn;
+  fun = "profile";
   currentclick();
 
   profileDetailes.style.display = "flex";
@@ -35,45 +43,74 @@ profileBtn.addEventListener("click", (x) => {
   histrys.style.display = "none";
   orders.style.display = "none";
   generateProfile();
+};
+profileBtn.addEventListener("click", (x) => {
+  profileg();
 });
-orderBtn.addEventListener("click", (x) => {
+
+// ! order
+const orderg = () => {
   remoreclick();
   click = orderBtn;
+  fun = "order";
   currentclick();
+
   profileDetailes.style.display = "none";
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "flex";
+  ordergen();
+};
+orderBtn.addEventListener("click", (x) => {
+  orderg();
 });
-saveBtn.addEventListener("click", (x) => {
+
+// ! save
+const saveg = () => {
   remoreclick();
   click = saveBtn;
+  fun = "save";
   currentclick();
 
-  profileDetailes.style.display = "flex";
+  profileDetailes.style.display = "none";
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
+};
+saveBtn.addEventListener("click", (x) => {
+  saveg();
 });
-settingBtn.addEventListener("click", (x) => {
+
+// ! setting
+const settingg = () => {
   remoreclick();
   click = settingBtn;
+  fun = "setting";
   currentclick();
 
-  profileDetailes.style.display = "flex";
+  profileDetailes.style.display = "none";
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
+};
+settingBtn.addEventListener("click", (x) => {
+  settingg();
 });
-histryBtn.addEventListener("click", (x) => {
+
+// ! histry
+const historyg = () => {
   remoreclick();
   click = histryBtn;
+  fun = "histry";
   currentclick();
   histrys.style.display = "grid";
   profileDetailes.style.display = "none";
   likef.style.display = "none";
   orders.style.display = "none";
   genhistry();
+};
+histryBtn.addEventListener("click", (x) => {
+  historyg();
 });
 
 const currentclick = () => {
@@ -86,3 +123,19 @@ const remoreclick = () => {
 };
 
 currentclick();
+
+if (fun == "profile") {
+  profileg();
+} else if (fun == "like") {
+  likeg();
+} else if (fun == "histry") {
+  historyg();
+} else if (fun == "save") {
+  saveg();
+} else if (fun == "setting") {
+  settingg();
+} else if (fun == "order") {
+  orderg();
+} else {
+  profileg();
+}

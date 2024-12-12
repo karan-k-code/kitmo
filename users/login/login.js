@@ -14,10 +14,10 @@ forml.addEventListener("submit", async (e) => {
 
   const response = await apiCall(url, data);
 
-  if (response.success == true) {
+  if (response.success) {
     successMsg();
     setTimeout(() => {
-      // window.location.href = "../../index.html";
+      window.location.href = "../../index.html";
     }, 2000);
   } else {
     alert(response.errors);

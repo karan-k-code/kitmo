@@ -160,7 +160,9 @@ onlinepay.addEventListener("click", async (x) => {
 
   //  ! add payment funcation
 
-  if (true) {
+  alert("wait for next update");
+
+  if (false) {
     const url = urls + "/orders/order/" + addressId;
     const response = await apiCall(url, orderdata);
 

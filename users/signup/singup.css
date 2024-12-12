@@ -137,6 +137,14 @@ input {
   animation: spin 1s linear infinite;
 }
 
+.loginbtn {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 @media (max-width: 382px) {
   .input_container label {
     flex-direction: column;

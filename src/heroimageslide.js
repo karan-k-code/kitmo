@@ -69,10 +69,10 @@ const imageslide = () => {
     fs.checked = true;
   };
 
-  const trackn = () => {
-    const fs = radioImg.childNodes[currentIndex];
-    fs.checked = false;
-  };
+  // const trackn = () => {
+  //   const fs = radioImg.childNodes[currentIndex];
+  //   fs.checked = false;
+  // };
 
   // Initialize the slider
   showSlide(currentIndex);
@@ -80,13 +80,13 @@ const imageslide = () => {
   track();
 
   radioImg.addEventListener("click", (e) => {
-    trackn();
+    // trackn();
     showSlide(e.target.value - 1);
     track();
   });
 
   setInterval(() => {
-    trackn();
+    // trackn();
     showSlide(currentIndex + 1);
     track();
   }, 5000);
