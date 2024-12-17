@@ -4,9 +4,19 @@ let label1 = document.getElementById("chekout");
 
 let checkout_box = document.querySelector("#big_cart_cantenr");
 
-let buyc = JSON.parse(localStorage.getItem("databuy")) || [];
+// let buyc = JSON.parse(localStorage.getItem("databuy")) || [];
 
 let generateCartItem = async () => {
+  const url = urls + "/users/user";
+  const userdata = await apiCallGet(url);
+
+  if (!userdata.success) {
+    const response = await refreshToken();
+    if (!response.success) {
+      window.location.href = `${urlg}/users/login`;
+    }
+  }
+
   const product = await getProduct();
   const response = await getCart();
 
@@ -139,7 +149,7 @@ let totalAmount = async () => {
             <div class="total_price_text">Total Amount :  <b>$${amount} </b></div>
           </div>
           <div class="chackoutbtn">
-          <button onclick="checkout()">Chackout</button>
+          <button onclick="checkoutall()">Chackout</button>
           </div>
       `;
   } else {
@@ -148,12 +158,14 @@ let totalAmount = async () => {
   }
 };
 
-let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
+let checkoutall = async () => {
+  const response = await getCart();
 
-let checkoutall = () => {
-  if (!address) {
-    window.location.href = "../users/user_profile/address";
-  }
+  buyItam = response.data;
+
+  await localStorage.setItem("databuy", JSON.stringify(buyItam));
+
+  window.location.href = "../users/user_profile/address";
 };
 
 totalAmount();

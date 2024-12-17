@@ -175,10 +175,15 @@ main {
   grid-template-columns: repeat(6, 180px);
 }
 
+#like-ture {
+  color: red;
+}
+
 .product {
   display: flex;
   flex-direction: column;
   padding: 5px;
+  padding-top: 0;
   border-radius: 4px;
   overflow: hidden;
   background-color: #fff;

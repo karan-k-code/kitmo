@@ -10,11 +10,12 @@ let billProduct = async () => {
   const response = await apiCall(url, buyItam);
   shopItamsData = response.data;
 
-  if (response.data.length !== 0) {
-    return (bill.innerHTML = response.data
+  if (shopItamsData && shopItamsData !== 0) {
+    return (bill.innerHTML = shopItamsData
       .map((x) => {
         let { _id, productDescription, image, productPrice, productName } = x;
         const search = buyItam.find((y) => y.productId == _id);
+
         return `
           <div class="product">
     <img src="${image[0].img}" alt="">
@@ -31,7 +32,7 @@ let billProduct = async () => {
         <div class="qty">Qty</div>
         <div class="qua">
           <div class="add" onclick="increment('${_id}')">+</div>
-          <div class="no" id="${_id}">${search.item}</div>
+          <div class="no" id="${_id}">${search.quantity}</div>
           <div class="dicrement" onclick="decrement('${_id}')">-</div>
         </div>
       </div>
@@ -41,7 +42,7 @@ let billProduct = async () => {
       </div>
       <div class="totprice">
         <div class="amount-text-">Amount</div>
-        <div class="ammunt">$${search.item * productPrice} </div>
+        <div class="ammunt">$${search.quantity * productPrice} </div>
       </div>
     </div>
     </div>
@@ -53,12 +54,10 @@ let billProduct = async () => {
 
 // !increment
 let increment = async (id) => {
-  let selecteItam = id;
   let search = buyItam.find((x) => x.productId === id);
 
-  search.item += 1;
+  search.quantity += 1;
   update(id);
-  // billProduct();
   localStorage.setItem("databuy", JSON.stringify(buyItam));
 };
 
@@ -66,9 +65,9 @@ let increment = async (id) => {
 let decrement = (id) => {
   let search = buyItam.find((x) => x.productId === id);
   if (search === undefined) return;
-  else if (search.item === 1) return;
+  else if (search.quantity === 1) return;
   else {
-    search.item -= 1;
+    search.quantity -= 1;
   }
   localStorage.setItem("databuy", JSON.stringify(buyItam));
   update(id);
@@ -77,10 +76,11 @@ let decrement = (id) => {
 // ! update
 let update = (id) => {
   let search = buyItam.find((x) => x.productId === id);
-  document.getElementById(id).innerHTML = search.item;
+  document.getElementById(id).innerHTML = search.quantity;
   totalAmount();
   billProduct();
 };
+
 // ! total amount
 const summary = document.getElementById("summary");
 const pay = document.getElementById("pay");
@@ -93,7 +93,7 @@ let totalAmount = async () => {
       .map((x) => {
         let { _id, productPrice } = x;
         let search = buyItam.find((y) => y.productId === _id) || [];
-        return search.item * productPrice;
+        return search.quantity * productPrice;
       })
       .reduce((x, y) => x + y, 0);
     pay.innerText = `$ ${amount + amount * 0.18}`;

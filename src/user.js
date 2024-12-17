@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   const url = urls + "/users/user";
   const userdata = await apiCallGet(url);
 
-  if (!userdata) {
-    window.location.href = `${urlg}/users/login`;
+  if (!userdata.success) {
+    // window.location.href = `${urlg}/users/login`;
   }
 
   userData = userdata.data;

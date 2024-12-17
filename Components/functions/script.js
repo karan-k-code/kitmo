@@ -72,7 +72,14 @@ const addCart = async (id, qua) => {
 
 // ! Get cart  >>>>>>>
 const getCart = async () => {
+  loaderFn();
   const response = await apiCallGet(urls + "/product/getcart");
+  if (response.success) {
+    loaderStop();
+  } else {
+    loaderStop();
+    alert(response.errors);
+  }
   return response;
 };
 
@@ -85,7 +92,8 @@ const getProduct = async () => {
       "Content-Type": "application/json",
     },
   }).catch((error) => {
-    console.log(error);
+    alert(response.errors);
+    loaderStop();
   });
   loaderStop();
   return response.json();
@@ -144,21 +152,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // ! refreshtoken
 const refreshToken = async () => {
   const response = await apiCall(urls + "/users/refreshtoken", undefined);
+  console.log(response);
 };
 
 // ! checkOut function
 const checkout = async () => {
   const product = getQueryParam("id");
-  console.log(product);
-  const url = urls + "/users/user";
-  const user = await apiCallGet(url);
-
   window.location.href = `${urlg}/users/user_profile/address/index.html?id=${product}`;
-
-  if (!user.data.address) {
-    console.log("you have no address");
-    window.location.href = `${urlg}/users/user_profile/address/index.html?id=${product}`;
-  }
 };
 
 // ! share product

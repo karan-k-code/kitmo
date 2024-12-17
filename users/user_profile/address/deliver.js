@@ -88,18 +88,20 @@ const bsubmit = document.getElementById("bsubmit");
 
 bsubmit.addEventListener("click", async (x) => {
   x.preventDefault();
-  const url = urls + "/users/address";
+
   let formData = new FormData(boxadd);
   let data = Object.fromEntries(formData);
   const id = getQueryParam("id");
-  buyItam = [];
-  localStorage.setItem("databuy", JSON.stringify(buyItam));
-  buyItam.push({
-    productId: id,
-    item: 1,
-  });
 
-  localStorage.setItem("databuy", JSON.stringify(buyItam));
+  if (id !== null) {
+    buyItam = [];
+    buyItam.push({
+      productId: id,
+      quantity: 1,
+    });
+    localStorage.setItem("databuy", JSON.stringify(buyItam));
+  }
+
   window.location.href = `${urlg}/payment/index.html?address=${data.addressId}`;
 });
 
