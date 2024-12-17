@@ -152,7 +152,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // ! refreshtoken
 const refreshToken = async () => {
   const response = await apiCall(urls + "/users/refreshtoken", undefined);
-  console.log(response);
+  return response;
 };
 
 // ! checkOut function
