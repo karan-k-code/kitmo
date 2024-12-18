@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   const userdata = await apiCallGet(url);
 
   if (!userdata.success) {
-    // window.location.href = `${urlg}/users/login`;
+    const response = await refreshToken();
+    if (!response.success) {
+      window.location.href = `${urlg}/users/login`;
+    }
   }
 
   userData = userdata.data;
