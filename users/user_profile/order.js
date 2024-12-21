@@ -4,72 +4,25 @@ const ordergen = async () => {
 
   const orderid = document.getElementById("orders");
 
-  // if (!response.success) {
-  //   orderid.innerHTML = response.data
-  //     .map(async (x) => {
-  //       const { createdAt, total, orderItems } = x;
-
-  //       const product = await findProduct(orderItems[0].product);
-
-  //       const { image, productDescription, productName, productPrice, _id } =
-  //         product;
-
-  //       return `<div class="product_o">
-  //         <img src="" alt="" srcset="" />
-  //         <div class="product_dec">
-  //           <div class="product_d">Product Detailes</div>
-  //           <p>jhjkh</p>
-  //           <div class="">Qualilty</div>
-  //           <span>${orderItems.length}</span>
-  //           <div class="">Total</div>
-  //           <span>$ ${total}</span>
-  //         </div>
-  //         <div class="status">
-  //           <div class="p_status">Status</div>
-  //           <div class="processing" id="processing" style="display: flex">
-  //             Processing
-  //           </div>
-  //           <div class="processing" id="deliver" style="display: none">
-  //             Deliver
-  //           </div>
-  //           <div class="processing" id="cancel" style="display: none">
-  //             Cancel
-  //           </div>
-  //           <div class="btnd" onclick="">
-  //             <button>Track</button>
-  //           </div>
-  //         </div>
-  //         <div class="delevardate">
-  //           <div class="devDate">Deliver Date</div>
-  //           <span>${createdAt}</span>
-  //           <div class="btnd" onclick="">
-  //             <button>Cancel</button>
-  //           </div>
-  //         </div>
-  //       </div>`;
-  //     })
-  //     .join("");
-  // }
-
-  if (response.success) {
+  if (response.success && response.data.length !== 0) {
     // Use Promise.all to wait for all asynchronous operations to complete
     Promise.all(
       response.data.map(async (x) => {
-        const { createdAt, total, orderItems } = x;
+        const { createdAt, total, orderItems, _id, status } = x;
 
         // Assuming findProduct is an async function
 
         const img = await Promise.all(
           orderItems.map(async (j) => {
-            const product = await findProduct(j.product);
+            const product = await findProduct(j.productId);
             const dta = product.data.image[0];
             return dta;
           })
         );
 
-        const product = await findProduct(orderItems[0].product);
+        const product = await findProduct(orderItems[0].productId);
 
-        const { image, productDescription, productName, productPrice, _id } =
+        const { image, productDescription, productName, productPrice } =
           product.data;
 
         return `<div class="product_o">
@@ -85,7 +38,7 @@ const ordergen = async () => {
           <div class="status">
             <div class="p_status">Status</div>
             <div class="processing" id="processing" style="display: flex">
-              Processing
+              ${status}
             </div>
             <div class="processing" id="deliver" style="display: none">
               Deliver
@@ -101,7 +54,7 @@ const ordergen = async () => {
             <div class="devDate">Deliver Date</div>
             <span>${new Date(createdAt).toLocaleDateString()}</span>
             <div class="btnd">
-              <button onclick="">Cancel</button>
+              <button onclick="cancelOrder('${_id}')">Cancel</button>
             </div>
           </div>
         </div>`;
@@ -114,9 +67,17 @@ const ordergen = async () => {
       .catch((error) => {
         alert(response.errors);
       });
-  }
-
-  if (response.data.length == 0) {
+  } else {
     orderid.innerHTML = `<h1>null</h1>`;
+  }
+};
+
+const cancelOrder = async (id) => {
+  const url = urls + "/orders/cancel/" + id;
+  const response = await apiCallGet(url);
+  if (response.success) {
+    ordergen();
+  } else {
+    alert(response.errors);
   }
 };

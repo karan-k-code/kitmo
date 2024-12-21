@@ -9,8 +9,10 @@ const generateProfile = async () => {
 
   let addressdata = ``;
 
-  if (address.lenght == 0) {
-    addressdata = `${address[0].address}, ${address[0].city}, ${address[0].zip}`;
+  if (address.lenght !== 0) {
+    address.map((x) => {
+      addressdata = `${x.address}, ${x.city}, ${x.zip}`;
+    });
   }
 
   if (response.data.lenght !== 0) {

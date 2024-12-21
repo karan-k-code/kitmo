@@ -96,7 +96,7 @@ let totalAmount = async () => {
         return search.quantity * productPrice;
       })
       .reduce((x, y) => x + y, 0);
-    pay.innerText = `$ ${amount + amount * 0.18}`;
+    pay.innerText = `${Currency} ${amount + amount * 0.18}`;
     summary.innerHTML = `
             <p>Total Items: <span id="totalItems">${buyItam.length}</span></p>
       <p>Total Amount (without GST): ${Currency}<span id="totalAmount">${amount}</span></p>
@@ -118,16 +118,18 @@ document.getElementById("cashon").addEventListener("click", async function () {
   const orderdata = [];
 
   buyItam.map((x) => {
-    const { productId, item } = x;
+    const { productId, quantity } = x;
     orderdata.push({
-      product: productId,
-      quantity: item,
+      productId: productId,
+      quantity: quantity,
       paymentmode: "Cash",
     });
   });
 
   const url = urls + "/orders/order/" + addressId;
   const response = await apiCall(url, orderdata);
+
+  console.log(response);
 
   if (response.success) {
     const successMessage = document.getElementById("successMessage");
@@ -136,7 +138,10 @@ document.getElementById("cashon").addEventListener("click", async function () {
     // Automatically hide after 4 seconds
     setTimeout(function () {
       successMessage.classList.add("hidden");
+      window.location.href = urlg + "/users/user_profile/index.html?fun=order";
     }, 4000);
+  } else {
+    alert("Order failed");
   }
 });
 

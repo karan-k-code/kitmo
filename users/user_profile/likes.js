@@ -15,15 +15,17 @@ const ganretLikes = async () => {
 
         return `<div class="product box_shadow box_no_dark_shadow">
           <img src="${imageUr}" onclick="goo('${_id}')" />
-          <div class="dec">
-            <p>${productDescription}</p>
-          </div>
+          <!-- <div class="dec">
+             <p>${productDescription}</p>
+          </div> -->
            <div class="btns">
            <i class="fa-solid fa-heart" id="like-ture" onclick="unlike('${_id}')"></i>
           </div>
         </div>`;
       })
       .join("");
+  } else {
+    likes.innerHTML = `<p>No Likes</p>`;
   }
 };
 
