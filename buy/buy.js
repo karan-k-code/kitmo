@@ -69,7 +69,7 @@ let buyshop = async () => {
                     </div>
                 </div>
                 <div class="price_quantity">
-                    <div class="price-c"><b> price</b> $<b> ${productPrice}</b></div>
+                    <div class="price-c"><b> price</b> ${Currency}<b>${productPrice}</b></div>
                     <div class="quantity_box">
                     <!--
                       <div class="decremet" onclick="decrement('${_id}')">-</div>

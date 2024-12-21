@@ -55,7 +55,7 @@ let generateShop = async () => {
             </div>
             <div class="itam_detelas">
                 <div class="itam_price">
-                  $${productPrice}
+                  ${Currency}${productPrice}
                 </div>
                 <div class="desc">
                   ${productDescription}

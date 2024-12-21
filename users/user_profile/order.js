@@ -80,7 +80,7 @@ const ordergen = async () => {
             <div class="">Quantity</div>
             <span>${orderItems.length}</span>
             <div class="">Total</div>
-            <span>$ ${total}</span>
+            <span>${Currency} ${total}</span>
           </div>
           <div class="status">
             <div class="p_status">Status</div>

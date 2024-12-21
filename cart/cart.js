@@ -48,11 +48,11 @@ let generateCartItem = async () => {
       </div>
       <div class="price-box">
         <div class="price-text">Price per Item</div>
-        <div class="price">$${search.productPrice}</div>
+        <div class="price">${Currency}${search.productPrice}</div>
       </div>
       <div class="totprice">
         <div class="amount-text-">Amount</div>
-        <div class="ammunt">$${quantity * search.productPrice} </div>
+        <div class="ammunt">${Currency}${quantity * search.productPrice} </div>
         <div class="delete"><button onclick="removeItem('${productId}')">Delete</button></div>
       </div>
     </div>
@@ -146,7 +146,7 @@ let totalAmount = async () => {
     label1.innerHTML = `
           <div class="total-box">
             <div class="total_item_text">Total Item :<spam> ${response.data.length}</spam></div>
-            <div class="total_price_text">Total Amount :  <b>$${amount} </b></div>
+            <div class="total_price_text">Total Amount :  <b>${Currency}${amount} </b></div>
           </div>
           <div class="chackoutbtn">
           <button onclick="checkoutall()">Chackout</button>

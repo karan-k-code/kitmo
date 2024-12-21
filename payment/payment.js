@@ -38,11 +38,11 @@ let billProduct = async () => {
       </div>
       <div class="price-box">
         <div class="price-text">Price per Item</div>
-        <div class="price">$${productPrice}</div>
+        <div class="price">${Currency}${productPrice}</div>
       </div>
       <div class="totprice">
         <div class="amount-text-">Amount</div>
-        <div class="ammunt">$${search.quantity * productPrice} </div>
+        <div class="ammunt">${Currency}${search.quantity * productPrice} </div>
       </div>
     </div>
     </div>
@@ -99,11 +99,11 @@ let totalAmount = async () => {
     pay.innerText = `$ ${amount + amount * 0.18}`;
     summary.innerHTML = `
             <p>Total Items: <span id="totalItems">${buyItam.length}</span></p>
-      <p>Total Amount (without GST): $<span id="totalAmount">${amount}</span></p>
-      <p>GST (18%): $<span id="gstAmount">${amount * 0.18}</span></p>
-      <p>Total Amount (with GST): $<span id="totalWithGst">${
-        amount + amount * 0.18
-      }</span></p>
+      <p>Total Amount (without GST): ${Currency}<span id="totalAmount">${amount}</span></p>
+      <p>GST (18%): ${Currency}<span id="gstAmount">${amount * 0.18}</span></p>
+      <p>Total Amount (with GST): ${Currency}<span id="totalWithGst">${
+      amount + amount * 0.18
+    }</span></p>
         `;
   } else {
     // checkout_box.style.display = "none";
