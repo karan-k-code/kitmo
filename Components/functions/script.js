@@ -1,11 +1,11 @@
 // ! const
 // cloud
-const urlg = "https://india-software-karan.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5502";
-// const urls = "http://127.0.0.1:4000/api/v1";
+const urlg = "http://127.0.0.1:5502";
+const urls = "http://127.0.0.1:4000/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 
@@ -61,7 +61,6 @@ const apiCallGet = async (url) => {
 // ! >>>> AAD cart >>>>
 const addCart = async (id, qua) => {
   let selecteItam = id;
-  console.log(selecteItam);
   let data = {
     productId: selecteItam,
     quantity: qua,
@@ -103,7 +102,10 @@ const getProduct = async () => {
 const calculatCart = async () => {
   const response = await getCart();
   let cartIcon = document.getElementById("cart_no");
-  cartIcon.innerText = response.data.length;
+  console.log(response);
+  if (response.success) {
+    cartIcon.innerText = response.data.length || "0";
+  }
 };
 
 // ! find product <<<<<<>>>>>>>

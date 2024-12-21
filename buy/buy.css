@@ -5,13 +5,13 @@
 
 .big_container {
   width: 100%;
-  justify-content: center;
+  /* justify-content: center; */
   display: flex;
   /* z-index: -1; */
 }
 /* ! buy_item_image */
 .buy_item_image {
-  width: 90%;
+  /* width: 90%; */
   display: flex;
 }
 
@@ -19,7 +19,7 @@
 
 .share {
   position: absolute;
-  right: 70px;
+  right: 20px;
   top: 20px;
   display: flex;
   flex-direction: column;
@@ -33,8 +33,10 @@
 
 /* image container */
 .image_container {
-  width: 40%;
+  /* width: 40%; */
+  max-width: 40%;
   display: flex;
+  max-height: 80vh;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -94,22 +96,49 @@
 }
 /* product detels container */
 .product_container {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 }
 
 .itam_dec {
-  height: 100%;
-  width: 50%;
+  max-width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.itam_dec pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.3;
+  max-height: 125px;
+  transition: all 0.3s ease;
+}
+.itam_dec span {
+  position: absolute;
+  color: blue;
+  cursor: pointer;
+  right: 20px;
+  bottom: 0;
+  transition: all 0.3s ease;
 }
 
 /* delever detels and time detels  */
 .delever_detels_container {
   height: 100%;
   font-size: 1rem;
+  background-color: yellow;
 }
 a {
   text-decoration: none;
+}
+
+.price-c {
+  margin: 5px 0px 5px 10px;
+  font-size: 1.1rem;
 }
 
 .price_quantity {
@@ -182,12 +211,11 @@ a {
   /* image container */
   .image_container {
     display: flex;
-    width: 90%;
+    max-width: 100%;
     border-radius: 6px;
   }
   .imgslide {
     width: 100%;
-    border-radius: 6px;
   }
 
   /* producat image */
@@ -196,7 +224,6 @@ a {
   .product_container {
     display: flex;
     width: 90%;
-    height: 100%;
     font-size: 1rem;
     /* font-weight: bold; */
     padding: 4px;

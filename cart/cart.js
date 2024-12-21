@@ -24,7 +24,7 @@ let generateCartItem = async () => {
     return (cart_y.innerHTML = response.data
       .map((x) => {
         let { productId, quantity } = x;
-        let search = product.data.find((y) => y._id === productId) || [];
+        let search = product.data.find((y) => y._id === productId);
 
         return `
     <div class="product">

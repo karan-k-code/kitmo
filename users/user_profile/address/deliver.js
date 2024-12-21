@@ -8,7 +8,7 @@ const fn = async () => {
 };
 
 fn();
-
+// ! address data
 document
   .getElementById("addressForm")
   .addEventListener("submit", async function (event) {
@@ -29,8 +29,6 @@ document
     if (!address || !city || !postalCode) {
       alert("Please fill out all fields.");
       return;
-    } else {
-      // window.location.href ="payment.html";
     }
 
     // Display the entered information
@@ -40,9 +38,7 @@ document
         <p><strong>Address:</strong> ${address}</p>
         <p><strong>City:</strong> ${city}</p>
         <p><strong>Postal Code:</strong> ${postalCode}</p>
-        <p><strong>Phone Number:</strong>+91 ${phoneNumber}${
-      phoneNumberB == "+91 " ? "" : ", " + phoneNumberB
-    }</p>
+        <p><strong>Phone Number:</strong>+91 ${phoneNumber} , ${phoneNumberB}</p>
     `;
 
     const url = urls + "/users/address";
@@ -50,6 +46,8 @@ document
     let data = Object.fromEntries(formData);
 
     const result = await apiCall(url, data);
+    if (result.success) {
+    }
   });
 
 const boxad = document.getElementById("boxadd");

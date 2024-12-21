@@ -62,17 +62,20 @@ let buyshop = async () => {
                 
                     <h3>${productName}</h3>
                     <div class="itam_dec">
-                    <pre>
+                    <pre id="decm">
                     ${productDescription}
                     </pre>
+                    <span id="moreb" onclick="morefan()">...Show More</span>
                     </div>
                 </div>
                 <div class="price_quantity">
-                    <div class="price-c"> $${productPrice}</div>
+                    <div class="price-c"><b> price</b> $<b> ${productPrice}</b></div>
                     <div class="quantity_box">
+                    <!--
                       <div class="decremet" onclick="decrement('${_id}')">-</div>
                       <div class="quantity" id="${_id}">${item}</div>
                       <div class="increment" onclick="increment('${_id}')">+</div>
+                      -->
                     </div>
                 </div>
                 <div class="checkout_addcart">
@@ -195,3 +198,16 @@ const genneratImageDiv = () => {
 })();
 
 liked();
+
+const morefan = () => {
+  const moreb = document.getElementById("moreb");
+  const decm = document.getElementById("decm");
+
+  if (decm.style.maxHeight === "100%") {
+    decm.style.maxHeight = "125px";
+    moreb.innerHTML = "Show More";
+  } else {
+    decm.style.maxHeight = "100%";
+    moreb.innerHTML = "Show Less";
+  }
+};

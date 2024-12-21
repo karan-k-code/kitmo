@@ -87,9 +87,9 @@ const popnone = () => {
 };
 
 // ! calculat cart
-if (userData) {
-  calculatCart();
-}
+// if (userData) {
+//   calculatCart();
+// }
 
 // ! image slide code
 
@@ -125,3 +125,4 @@ more.addEventListener("click", () => {
 });
 
 // refreshToken();
+calculatCart();
