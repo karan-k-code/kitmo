@@ -1,10 +1,11 @@
+const bsubmit = document.getElementById("bsubmit");
+const addressForm = document.getElementById("addressForm");
 let response;
 
 let buyItam = JSON.parse(localStorage.getItem("databuy")) || [];
 
 const fn = async () => {
   response = await apiCallGet(urls + "/users/user");
-  console.log(response);
 };
 
 fn();
@@ -38,7 +39,7 @@ document
         <p><strong>Address:</strong> ${address}</p>
         <p><strong>City:</strong> ${city}</p>
         <p><strong>Postal Code:</strong> ${postalCode}</p>
-        <p><strong>Phone Number:</strong>+91 ${phoneNumber} , ${phoneNumberB}</p>
+        <p><strong>Phone Number:</strong>+91 ${phoneNumber} ${phoneNumberB}</p>
     `;
 
     const url = urls + "/users/address";
@@ -46,21 +47,26 @@ document
     let data = Object.fromEntries(formData);
 
     const result = await apiCall(url, data);
+
     if (result.success) {
+      genAddress();
+    } else {
+      alert(result.errors);
     }
   });
 
 const boxad = document.getElementById("boxadd");
 const boxadd = document.getElementById("addressFormA");
 const genAddress = async () => {
-  const url = urls + "/users/user";
-  const user = await apiCallGet(url);
+  const user = await apiCallGet(urls + "/users/user");
   const address = user.data.address;
 
-  const addressForm = document.getElementById("addressForm");
-  addressForm.style.display = "none";
-  if (address.lenght == 0) {
+  if (address.length == 0) {
     addressForm.style.display = "flex";
+    bsubmit.style.display = "none";
+  } else {
+    addressForm.style.display = "none";
+    bsubmit.style.display = "block";
   }
 
   boxadd.innerHTML = address
@@ -73,16 +79,12 @@ const genAddress = async () => {
       <p><strong>Address:</strong> ${address}</p>
       <p><strong>City:</strong> ${city}</p>
       <p><strong>Postal Code:</strong> ${zip}</p>
-      <p><strong>Phone Number:</strong>+91 ${user.data.mobile}${
-        phoneNumber == "+91 " ? "" : ", " + phoneNumber
-      }</p>
+      <p><strong>Phone Number:</strong>+91 ${user.data.mobile} ${phoneNumber}</p>
       </div>
   `;
     })
     .join(" ");
 };
-
-const bsubmit = document.getElementById("bsubmit");
 
 bsubmit.addEventListener("click", async (x) => {
   x.preventDefault();
@@ -90,6 +92,9 @@ bsubmit.addEventListener("click", async (x) => {
   let formData = new FormData(boxadd);
   let data = Object.fromEntries(formData);
   const id = getQueryParam("id");
+  if (!data.addressId) {
+    return;
+  }
 
   if (id !== null) {
     buyItam = [];
@@ -104,3 +109,8 @@ bsubmit.addEventListener("click", async (x) => {
 });
 
 genAddress();
+
+const newaddress = document.getElementById("newaddress");
+newaddress.addEventListener("click", async (x) => {
+  addressForm.style.display = "flex";
+});

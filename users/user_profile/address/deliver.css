@@ -9,6 +9,11 @@ body {
   background-color: #f4f4f4;
 }
 
+#addressForm {
+  display: none;
+  flex-direction: column;
+}
+
 .boxadd {
   display: flex;
   justify-content: center;
@@ -39,6 +44,17 @@ body {
 }
 
 .boxadd > button {
+  width: 400px;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: #3cc95d;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#addressForm > button {
   width: 400px;
   height: 40px;
   font-size: 1.2rem;
