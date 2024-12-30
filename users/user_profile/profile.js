@@ -18,11 +18,14 @@ const generateProfile = async () => {
   if (response.data.lenght !== 0) {
     return (profileDetailes.innerHTML = `      
     <div class="image">
+       <form id="imgdata" method="post">
         <img
           src="../../image/userimage.jpg"
           alt="Profile Picture"
           class="profile-img"
         />
+        </form>
+        <input type="file" id="image_user"  name="image" accept="image/*"">
       </div>
 
       <h1 class="name">${username}</h1>
@@ -39,4 +42,35 @@ const generateProfile = async () => {
         </div>
     </div>`);
   }
+};
+
+const changeImage = async () => {
+  const iImage = document.getElementById("image_user");
+  const imgdata = document.getElementById("imgdata");
+  iImage.addEventListener("change", async (x) => {
+    // image.src = URL.createObjectURL(x.target.files[0]);
+
+    let formData = new FormData(imgdata);
+    let data = Object.fromEntries(formData);
+
+    const file = x.target.files[0];
+
+    const url = urls + "/users/addimage";
+    console.log(data);
+    const response = await apiCall(url, data);
+    console.log(response);
+    if (response.success) {
+      alert("image add success");
+    } else {
+      alert(response.errors);
+    }
+
+    // console.log(response);
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = document.querySelector(".profile-img");
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
 };

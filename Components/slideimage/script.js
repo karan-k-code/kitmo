@@ -95,4 +95,22 @@ const imageslideF = () => {
     trackn();
     showSlide(e.target.value - 1);
   });
+
+  // ! image hover change
+  const imageHover = document.querySelectorAll(".hover_img");
+  const image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
+  imageHover.forEach((e) => {
+    e.addEventListener("mouseover", () => {
+      e.style.transform = "scale(1.1)";
+      const imageUrl = e.getAttribute("src");
+      slides.childNodes[currentIndex + 1].setAttribute("src", imageUrl);
+    });
+    e.addEventListener("mouseout", () => {
+      e.style.transform = "scale(1)";
+      slides.childNodes[currentIndex + 1].setAttribute("src", image_url_c);
+    });
+    e.addEventListener("click", () => {
+      showSlide(e.target.value - 1);
+    });
+  });
 };

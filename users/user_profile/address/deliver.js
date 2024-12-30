@@ -97,11 +97,6 @@ bsubmit.addEventListener("click", async (x) => {
   }
 
   if (id !== null) {
-    buyItam = [];
-    buyItam.push({
-      productId: id,
-      quantity: 1,
-    });
     localStorage.setItem("databuy", JSON.stringify(buyItam));
   }
 

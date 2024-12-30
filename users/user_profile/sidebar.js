@@ -32,7 +32,7 @@ likeBtn.addEventListener("click", (x) => {
 });
 
 // ! profile
-const profileg = () => {
+const profileg = async () => {
   remoreclick();
   click = profileBtn;
   fun = "profile";
@@ -42,7 +42,8 @@ const profileg = () => {
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
-  generateProfile();
+  await generateProfile();
+  changeImage();
 };
 profileBtn.addEventListener("click", (x) => {
   profileg();

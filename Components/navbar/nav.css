@@ -1,5 +1,5 @@
 header {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 2;
 }
@@ -10,7 +10,7 @@ header {
   justify-content: space-around;
   align-items: center;
   display: flex;
-  position: sticky;
+  /* position: sticky; */
 
   top: 0px;
   width: 100%;
@@ -21,7 +21,7 @@ header {
   align-items: center;
   display: flex;
   /* position: fixed; */
-  position: sticky;
+  /* position: sticky; */
   top: 0px;
   width: 100%;
   z-index: 2;

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (!userdata.success) {
     const response = await refreshToken();
     if (!response.success) {
-      window.location.href = `${urlg}/users/login`;
+      // window.location.href = `${urlg}/users/login`;
     }
   }
 

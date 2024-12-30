@@ -129,9 +129,8 @@ document.getElementById("cashon").addEventListener("click", async function () {
   const url = urls + "/orders/order/" + addressId;
   const response = await apiCall(url, orderdata);
 
-  console.log(response);
-
   if (response.success) {
+    buyItam = [];
     const successMessage = document.getElementById("successMessage");
     // Show the success message
     successMessage.classList.remove("hidden");

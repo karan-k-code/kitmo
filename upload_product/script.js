@@ -96,27 +96,14 @@ document
 
 let categoryData = [];
 
-// ! geting product category
-
-let getcatgory = async () => {
-  let response = await fetch(`${urls}/product/getcatgory`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let data = await response.json();
-  categoryData = data.data;
-  categoryGen();
-};
 getcatgory();
 
 const productCategory = document.getElementById("productCategory");
 
 // ! gen category
-const categoryGen = async () => {
-  let catgory = await categoryData.map((item) => {
-    return `<option value="${item._id}">${item.name}</option>`;
-  });
-  productCategory.innerHTML += catgory.join("");
-};
+// const categoryGen = async () => {
+//   let catgory = await categoryData.map((item) => {
+//     return `<option value="${item._id}">${item.name}</option>`;
+//   });
+//   productCategory.innerHTML += catgory.join("");
+// };

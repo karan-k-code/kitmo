@@ -5,7 +5,9 @@ const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
 // const urlg = "http://127.0.0.1:5502";
+// const urlg = "http://192.168.147.23:5502";
 // const urls = "http://127.0.0.1:4000/api/v1";
+// const urls = "http://192.168.147.23:4000/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 const Currency = "₹"; // $
@@ -224,15 +226,28 @@ const editproductget = async (id) => {
   return response;
 };
 
-// ! gen category
-// const categoryGen = async () => {
-//   const productCategory = document.getElementById("productCategory");
+// ! geting product category
+let getcatgory = async () => {
+  let response = await fetch(`${urls}/product/getcatgory`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let data = await response.json();
+  categoryData = data.data;
+  categoryGen();
+};
 
-//   let catgory = await categoryData.map((item) => {
-//     return `<option value="${item._id}">${item.name}</option>`;
-//   });
-//   productCategory.innerHTML += catgory.join("");
-// };
+// ! gen category
+const categoryGen = async () => {
+  const productCategory = document.getElementById("productCategory");
+
+  let catgory = await categoryData.map((item) => {
+    return `<option value="${item._id}">${item.name}</option>`;
+  });
+  productCategory.innerHTML += catgory.join("");
+};
 
 // ! geting product category
 // let getcatgory = async () => {
@@ -275,4 +290,9 @@ const sendproduct = async (url, forml) => {
 
   loaderStop(); // Stop the loader
   return result;
+};
+
+// ! kitmo log click
+homePage = () => {
+  window.location.href = urlg;
 };
