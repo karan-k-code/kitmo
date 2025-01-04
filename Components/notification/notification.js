@@ -2,8 +2,8 @@ const goCart = () => {
   window.location = "cart.html";
 };
 
-const notif = (id) => {
-  const search = shopItamsData.find((x) => x.id === id);
+const notif = async (id) => {
+  const search = await findProduct(id);
   return (nothide.innerHTML = `
     <div class="header">
       <span class="title">New Add Cart</span>

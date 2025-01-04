@@ -63,12 +63,11 @@ const apiCallGet = async (url) => {
 
 // ! >>>> AAD cart >>>>
 const addCart = async (id, qua) => {
-  let selecteItam = id;
   let data = {
-    productId: selecteItam,
+    productId: id,
     quantity: qua,
   };
-  const response = await apiCall(urls + "/product/cart", data);
+  await apiCall(urls + "/product/cart", data);
   calculatCart();
 };
 

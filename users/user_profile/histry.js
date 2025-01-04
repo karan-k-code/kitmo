@@ -13,7 +13,6 @@ const genhistry = async () => {
       return (histrys.innerHTML = validData
         .map((x) => {
           const { _id, image } = x;
-          console.log(_id);
           const imageUrl = image[0].img;
           const imageUr = imageUrl.replace("http://", "https://");
 

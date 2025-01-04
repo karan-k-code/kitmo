@@ -30,6 +30,11 @@
 
 .share i {
   cursor: pointer;
+  background-color: #ffffffad;
+  padding: 10px;
+  color: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
 }
 
 /* image container */
@@ -88,8 +93,6 @@
   z-index: 23;
 }
 .image_hover_change > img {
-  /* width: fit-content; */
-  /* height: auto; */
   object-fit: cover;
 }
 
@@ -130,8 +133,17 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   overflow-wrap: break-word;
+}
+
+.rating {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.fa-star {
+  color: #f7a130;
 }
 
 .line_zx {
@@ -164,7 +176,7 @@
   transition: all 0.3s ease;
 }
 
-/* delever detels and time detels  */
+/* ! delever detels and time detels  */
 .delever_detels_container {
   width: 13%;
   height: fit-content;
@@ -175,6 +187,11 @@
 
 .delever_detels_container a {
   color: rgba(0, 0, 255, 0.644);
+}
+
+.day_d {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .price_d {
@@ -188,8 +205,31 @@
   top: 3;
 }
 .price_d > span {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.deliver_date_d {
+  font-size: 0.9rem;
+}
+
+.hour {
+  font-size: 1.2rem;
+  color: #4caf50;
+}
+
+.diliver_address_d {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 255, 0.644);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.stock {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4caf50;
 }
 
 a {
@@ -285,8 +325,10 @@ a {
   margin-top: 3px;
 }
 
-/* offers */
-.offers_p {
+/* offers bank offers*/
+.offers_p,
+.color_product,
+.about_d {
   margin-top: 10px;
   margin-bottom: 4px;
   font-size: 1rem;
@@ -309,11 +351,40 @@ a {
   padding: 10px;
   border: 1px solid rgba(61, 63, 65, 0.735);
   border-radius: 7px;
+  cursor: pointer;
 }
 
-/* offers cash on pay */
+/* offers cash on pay add delever or quallity  */
 .offers_cash {
   margin-top: 10px;
+}
+.offer_item_C {
+  display: flex;
+  max-width: 60px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.offer_item_C > i {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  color: rgb(144, 103, 234);
+}
+.offer_item_C > div {
+  color: #2e82f895;
+  display: flex;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ! product details */
+.product_details_p,
+.about_p {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 /* ! checkout_addcart */
@@ -392,6 +463,9 @@ a {
   .title_product {
     font-size: 1.2rem;
   }
+  .rating {
+    font-size: 0.7rem;
+  }
   /* deleve detels and time detels  */
   .delever_detels_container {
     width: 100%;
@@ -424,6 +498,12 @@ a {
   .quntity_secation_d > div {
     font-size: 1.8rem;
     font-weight: 800;
+  }
+  .stock {
+    margin-left: 20px;
+  }
+  .diliver_address_d {
+    margin-left: 20px;
   }
 }
 

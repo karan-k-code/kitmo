@@ -65,6 +65,14 @@ let buyshop = async () => {
             <!-- !prioduct_container -->
             <div class="product_container">
                 <div class="title_product">${productName}</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <span id="rating">(0)</span>
+                </div>
                 <span class="line_zx"></span>
                 <!-- price -->
                 <div class="price_product">
@@ -92,14 +100,62 @@ let buyshop = async () => {
                 <span class="line_zx"></span>
                 <!-- cash onpay  -->
                 <div class="offers offers_cash">
-                  <div class="offer_item" id="offer_item">
-                  offer one
+                  <div class="offer_item_C" id="offer_item">
+                    <i class="fa-solid fa-truck"></i>
+                    <div>free deliver</div>
+                  </div>
+                  <div class="offer_item_C" id="offer_item">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <div>Best Quality.</div>
+                  </div>
+                  <div class="offer_item_C" id="offer_item">
+                    <i class="fa-solid fa-lock"></i>
+                    <div>Secure transition</div>
+                  </div>
+                  <div class="offer_item_C" id="offer_item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>Top brand</div>
+                  </div>
+                  <div class="offer_item_C" id="offer_item">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <div>7day Replacement</div>
                   </div>
                 </div>
 
                 <span class="line_zx"></span>
 
+                <!-- color and models size -->
+                <div class="color_product">Color : <span>black</span></div>
+                <div class="offers" id="color">
+                  <div class="offer_item thin_box" >
+                  Black
+                  </div>
+                  <div class="offer_item thin_box" >
+                  Aqua
+                  </div>
+                  <div class="offer_item thin_box" >
+                  Grey
+                  </div>
+                </div>
+                <div class="color_product">Size : <span>23cm</span></div>
+                
+                <div class="color_product">Model</div>
+                <div class="offers" id="model">
+                  <div class="offer_item" >
+                  offer one
+                  </div>
+                </div>
+                <!-- product details -->
+                <div class="product_details_p">Product Details</div>
+                <div class="product_details">
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <span class="line_zx"></span>
+                
                 <!-- decripation -->
+                <div class="about_p">About this item</div>
                 <div class="itam_dec">
                   <pre id="decm">
                     ${productDescription}
@@ -111,7 +167,9 @@ let buyshop = async () => {
             </div>
             <div class="delever_detels_container">
               <div class="price_d"><span class="sambole_d">${Currency}</span><span>${productPrice}</span></div>
-              <div class="deliver_date_d"><a href="${urlg}/help">Free Deliver</a><span> sunday, 1 January.</span> <a href="${urlg}/help">Details</a></div>
+              <div class="deliver_date_d"><a href="${urlg}/help">Free Deliver</a><span class="day_d"> sunday, 1 January.</span><span> Order within <span class="hour">14 hrs 44 mins. </span></span><a href="${urlg}/help">Details</a></div>
+              <div class="diliver_address_d"><i class="fa-solid fa-location-dot"></i> Dilever to sitmarhi 843302 update location</div>
+              <div class="stock">In stock</div>
               <!-- quntity secation-->
               <div class="quntity_sec">Quntity</div>
               <div class="button_d">
@@ -122,8 +180,8 @@ let buyshop = async () => {
                 </div>
               </div>
               
-              <div class="button_d"><button class="checkout" onclick="checkout()">Checkout</button></div>
-              <div class="button_d"><button class="addcart" onclick="addcart(${_id})">Add Cart</button></div>
+              <div class="button_d"><button class="checkout" onclick="checkout_buy('${_id}')">Checkout</button></div>
+              <div class="button_d"><button class="addcart" onclick="addcart('${_id}')">Add Cart</button></div>
             </div>
         </div>
         
@@ -138,25 +196,8 @@ let pop = document.getElementById("pop");
 let nothide = document.getElementById("nothide");
 
 let addcart = (id) => {
-  let selecteItam = id;
-  let search = basket.find((x) => x.id === selecteItam.id);
-  if (search === undefined) {
-    basket.push({
-      id: selecteItam.id,
-      item: 1,
-    });
-    notif(selecteItam.id);
-    pop.style.display = "flex";
-    setTimeout(popnone, 3000);
-  } else {
-    notif(selecteItam.id);
-    pop.style.display = "flex";
-    setTimeout(popnone, 3000);
-  }
-  update(selecteItam.id);
-
-  calculation();
-  localStorage.setItem("data", JSON.stringify(basket));
+  const quantity = document.getElementById(id).innerText;
+  addCart(id, quantity);
 };
 
 // ! notification funcation
@@ -200,7 +241,6 @@ let decrement = (id) => {
 // ! update
 let update = (id) => {
   let search = buyItam.find((x) => x.productId === id);
-  console.log(search);
   document.getElementById(id).innerHTML = search.quantity;
 };
 
@@ -216,7 +256,6 @@ if (userData) {
 // };
 
 const billItem = JSON.parse(localStorage.getItem("billdata")) || [];
-// ! checkout funcation
 
 // update();
 
@@ -265,4 +304,19 @@ const morefan = () => {
     decm.style.maxHeight = "100%";
     moreb.innerHTML = "Show Less";
   }
+};
+
+// ! checkout buy
+
+const checkout_buy = (id) => {
+  const quantity = document.getElementById(id).innerText;
+
+  buyItam = [
+    {
+      productId: id,
+      quantity: quantity,
+    },
+  ];
+  localStorage.setItem("databuy", JSON.stringify(buyItam));
+  checkout();
 };

@@ -31,11 +31,11 @@
     <div class="loderbox">
       <div class="loader"></div>
     </div>
-
+    <!-- ! notification -->
     <div class="pop" id="pop">
       <div class="notification animate" id="nothide"></div>
     </div>
-
+    <!-- ! navbar -->
     <header>
       <!-- ! Nevbar section and -->
       <div class="navbar dark_box nav_light">
@@ -54,17 +54,23 @@
               </div>
               <div class="mode_line">Dark Mode</div>
             </li>
+
+            <!-- ! get location -->
             <li class="option_b" id="location_p">
               <i class="fa-solid fa-location-dot"></i
               ><a id="curent-location"> get location</a>
             </li>
-            <li class="option_b">
-              <a href="./upload_product/">Upload Product</a>
-            </li>
-            <!-- ! about button -->
-            <li class="option_b"><a href="./about/">About</a></li>
+
             <!-- ! help button -->
-            <li class="option_b"><a href="./help/">Help</a></li>
+            <li class="option_b">
+              <a href="./help/"><i class="fa-solid fa-question"></i> Help</a>
+            </li>
+            <!-- ! feedback -->
+            <li class="option_b">
+              <a href="./feedback/"
+                ><i class="fa-regular fa-message"></i> Feedback</a
+              >
+            </li>
             <!-- ! contact -->
             <li class="option_b"><a href="#contact">Contact</a></li>
           </ul>
@@ -82,36 +88,31 @@
           <img class="kitmo_img" src="image/kitmo_logo.png" alt="" />
         </div>
         <!--! navbar search-secation  big screen-->
-        <form>
-          <div class="search-secation">
-            <!-- ! search select -->
-            <select
-              class="search-select border light no_dark"
-              id="searchSelect"
-            >
-              <option>All</option>
-              <option>Electronics</option>
-              <option>Home</option>
-              <option>Medical</option>
-              <option>Beautti</option>
-            </select>
-            <!--! microphone button -->
-            <div class="microphone light no_dark" id="start">
-              <i class="fa-solid fa-microphone"></i>
-            </div>
-            <!--! search-input area-->
-            <input
-              type="text"
-              placeholder="Search kitmo"
-              class="search-input light no_dark"
-              id="transcript"
-            />
-            <!--! search_icon button -->
-            <div class="search-icon light no_dark" onclick="submitForm()">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+        <div class="search-secation">
+          <!-- ! search select -->
+          <select class="search-select border light no_dark" id="searchSelect">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Home</option>
+            <option>Medical</option>
+            <option>Beautti</option>
+          </select>
+          <!--! microphone button -->
+          <div class="microphone light no_dark" id="start">
+            <i class="fa-solid fa-microphone"></i>
           </div>
-        </form>
+          <!--! search-input area-->
+          <input
+            type="text"
+            placeholder="Search kitmo"
+            class="search-input light no_dark"
+            id="transcript"
+          />
+          <!--! search_icon button -->
+          <div class="search-icon light no_dark" onclick="submitForm()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
         <!-- ! user profile info-->
         <div class="user_Containe">
           <!-- ! login sign up button code--user.js -->
@@ -163,11 +164,233 @@
         <div class="radio_img" id="radio_img"></div>
         <div class="slbox" id="slbox"></div>
       </div>
+
       <div class="colam_cantenr light"></div>
       <!--! THIS IS ITAM BOX -->
       <div class="cantenr" id="shop">
         <!-- ! code--main.js -->
       </div>
+
+      <!--! group product by catgory -->
+      <div class="group" id="group">
+        <div class="group_box">
+          <div class="group_box_title" id="Electronics">Electronics</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Beautti">Beautti</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Home">Home</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Cloth">Cloth</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Kids">Kids</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="group">
+        <div class="group_box">
+          <div class="group_box_title" id="Electronics">Electronics</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Beautti">Beautti</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Home">Home</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Cloth">Cloth</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Kids">Kids</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group" id="group">
+        <div class="group_box">
+          <div class="group_box_title" id="Electronics">Electronics</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Beautti">Beautti</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Home">Home</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Cloth">Cloth</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+        <div class="group_box">
+          <div class="group_box_title" id="Kids">Kids</div>
+          <div class="group_box_content" id="Electronics_content">
+            <!-- ! code--main.js -->
+            <div class="image_a">
+              <img src="./image/boat1.webp" />
+              <img src="./image/headphone.jpeg" />
+            </div>
+            <div class="image_a">
+              <img src="image/s24.jpg" />
+              <img src="image/mouse.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!--! show more-->
       <div class="show_more">
         <button id="more">Show more</button>
@@ -275,6 +498,8 @@
           <button class="option_b">Feedback</button>
         </a>
       </div>
+      <!-- ! about button -->
+      <li class="option_b"><a href="./about/">About</a></li>
     </footer>
     <!-- HTML for cookie banner -->
     <div
@@ -295,18 +520,18 @@
       <button id="accept-cookies">Accept</button>
     </div>
   </body>
-  <!-- !java script file-->
+
+  <!-- ! javascript file-->
   <script src="Components/functions/script.js"></script>
   <script src="Components/loader/loader.js"></script>
   <script src="Components/darkmode/dark.js"></script>
-  <script src="src/shopdata.js"></script>
+  <script src="Components/navbar/nav.js"></script>
+  <script src="Components/notification/notification.js"></script>
   <script src="src/heroimageslide.js"></script>
   <script src="src/main.js"></script>
   <script src="src/microphone.js"></script>
   <script src="src/sarchjs.js"></script>
-  <script src="src/hello_ji.js"></script>
   <script src="src/user.js"></script>
   <script src="src/getlocation.js"></script>
-  <!-- <script src="Components/notification/notification.js"></script> -->
   <script src="src/apicall.js"></script>
 </html>
