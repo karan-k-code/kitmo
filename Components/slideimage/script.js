@@ -109,8 +109,5 @@ const imageslideF = () => {
       e.style.transform = "scale(1)";
       slides.childNodes[currentIndex + 1].setAttribute("src", image_url_c);
     });
-    e.addEventListener("click", () => {
-      showSlide(e.target.value - 1);
-    });
   });
 };

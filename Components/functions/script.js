@@ -69,6 +69,7 @@ const addCart = async (id, qua) => {
   };
   await apiCall(urls + "/product/cart", data);
   calculatCart();
+  notif(id);
 };
 
 // ! Get cart  >>>>>>>

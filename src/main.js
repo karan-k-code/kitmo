@@ -56,6 +56,7 @@ let generateShop = async () => {
             <div class="itam_detelas">
                 <div class="itam_price">
                   ${Currency}${productPrice}
+                  <div>-34%</div>
                 </div>
                 <div class="desc">
                   ${productDescription}
@@ -126,3 +127,21 @@ more.addEventListener("click", () => {
 
 // refreshToken();
 calculatCart();
+
+// ! keep_shoping
+
+const keepShoping = async () => {
+  const keep_shoping = document.getElementById("keep_shoping");
+  const url = urls + "/histry/histry";
+  const response = await apiCallGet(url);
+
+  keep_shoping.innerHTML = response.data
+    .map((x) => {
+      return `<div class="best_product_content" onclick="goo('${x._id}')"">
+          <img src="${x.image[0].img}" />
+        </div>`;
+    })
+    .join("");
+};
+
+keepShoping();

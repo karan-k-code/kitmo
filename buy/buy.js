@@ -102,7 +102,7 @@ let buyshop = async () => {
                 <div class="offers offers_cash">
                   <div class="offer_item_C" id="offer_item">
                     <i class="fa-solid fa-truck"></i>
-                    <div>free deliver</div>
+                    <div>Free Deliver</div>
                   </div>
                   <div class="offer_item_C" id="offer_item">
                     <i class="fa-regular fa-circle-check"></i>
@@ -110,15 +110,15 @@ let buyshop = async () => {
                   </div>
                   <div class="offer_item_C" id="offer_item">
                     <i class="fa-solid fa-lock"></i>
-                    <div>Secure transition</div>
+                    <div>Secure Transactions</div>
                   </div>
                   <div class="offer_item_C" id="offer_item">
                     <i class="fa-solid fa-chart-line"></i>
-                    <div>Top brand</div>
+                    <div>Top Brand</div>
                   </div>
                   <div class="offer_item_C" id="offer_item">
                     <i class="fa-solid fa-arrows-rotate"></i>
-                    <div>7day Replacement</div>
+                    <div>7Day Replacement</div>
                   </div>
                 </div>
 
@@ -145,11 +145,39 @@ let buyshop = async () => {
                   offer one
                   </div>
                 </div>
+              <div class="delever_detels_container moble_deliver">
+                <div class="price_d"><span class="sambole_d">${Currency}</span><span>${productPrice}</span></div>
+                <div class="deliver_date_d"><a href="${urlg}/help">Free Deliver</a><span class="day_d"> sunday, 1 January.</span><span> Order within <span class="hour">14 hrs 44 mins. </span></span><a href="${urlg}/help">Details</a></div>
+                <div class="diliver_address_d"><i class="fa-solid fa-location-dot"></i> Dilever to sitmarhi 843302 update location</div>
+                <div class="stock">In stock</div>
+                <!-- quntity secation-->
+                <div class="quntity_sec">Quntity</div>
+                <div class="button_d">
+                  <div class="quntity_secation_d">
+                    <div class="increment" onclick="decrement('${_id}')">-</div>
+                    <div class="quntity" id="${_id}">${quantity}</div>
+                    <div class="increment" onclick="increment('${_id}')">+</div>
+                  </div>
+                </div>
+
+                <div class="button_d"><button class="checkout" onclick="checkout_buy('${_id}')">Checkout</button></div>
+                <div class="button_d"><button class="addcart" onclick="addcart('${_id}')">Add Cart</button></div>
+              </div>
                 <!-- product details -->
                 <div class="product_details_p">Product Details</div>
-                <div class="product_details">
-                  <span></span>
-                  <span></span>
+                <div class="product_details" id="sfsf">
+                  <ul>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                    <li>Brand name: <span>mouse</span></li>
+                  </ul>
+                  <span class="show_more" id="sfhj" onclick="morefan('sfhj', 'sfsf')">...Show More</span>
                 </div>
 
                 <span class="line_zx"></span>
@@ -160,12 +188,13 @@ let buyshop = async () => {
                   <pre id="decm">
                     ${productDescription}
                   </pre>
-                  <span id="moreb" onclick="morefan()">...Show More</span>
+                 <!-- <span class="show_more" id="moreb" onclick="morefan('moreb','decm')">...Show More</span> -->
                 </div>   
-                   
+                
+                
                 
             </div>
-            <div class="delever_detels_container">
+            <div class="delever_detels_container laptop_deliver">
               <div class="price_d"><span class="sambole_d">${Currency}</span><span>${productPrice}</span></div>
               <div class="deliver_date_d"><a href="${urlg}/help">Free Deliver</a><span class="day_d"> sunday, 1 January.</span><span> Order within <span class="hour">14 hrs 44 mins. </span></span><a href="${urlg}/help">Details</a></div>
               <div class="diliver_address_d"><i class="fa-solid fa-location-dot"></i> Dilever to sitmarhi 843302 update location</div>
@@ -261,26 +290,34 @@ const billItem = JSON.parse(localStorage.getItem("billdata")) || [];
 
 // ! gen image div
 const genneratImageDiv = () => {
-  const imageG = document.getElementById("imageG");
-  return (imageG.innerHTML += imageArry
-    .map((x) => {
-      const imageUr = x.img.replace("http://", "https://");
-      return `<img src="${imageUr}" alt="Slide 1" />`;
-    })
-    .join(""));
+  try {
+    const imageG = document.getElementById("imageG");
+    return (imageG.innerHTML += imageArry
+      .map((x) => {
+        const imageUr = x.img.replace("http://", "https://");
+        return `<img src="${imageUr}" alt="Slide 1" />`;
+      })
+      .join(""));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // ! gen image hover
 const genHoverImage = () => {
-  const imageG = document.getElementById("image_hover");
-  let i = 0;
-  return (imageG.innerHTML += imageArry
-    .map((x) => {
-      const imageUr = x.img.replace("http://", "https://");
-      i = i++;
-      return `<span><img class="hover_img" src="${imageUr}" value="${i}"></span>`;
-    })
-    .join(""));
+  try {
+    const imageG = document.getElementById("image_hover");
+    let i = 0;
+    return (imageG.innerHTML += imageArry
+      .map((x) => {
+        const imageUr = x.img.replace("http://", "https://");
+        i = i++;
+        return `<span><img class="hover_img" src="${imageUr}" value="${i}"></span>`;
+      })
+      .join(""));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 (async function runf() {
@@ -293,13 +330,13 @@ const genHoverImage = () => {
 liked();
 
 // ! more funcation dec
-const morefan = () => {
-  const moreb = document.getElementById("moreb");
-  const decm = document.getElementById("decm");
+const morefan = (x, y) => {
+  const moreb = document.getElementById(x);
+  const decm = document.getElementById(y);
 
   if (decm.style.maxHeight === "100%") {
     decm.style.maxHeight = "125px";
-    moreb.innerHTML = "Show More";
+    moreb.innerHTML = "...Show More";
   } else {
     decm.style.maxHeight = "100%";
     moreb.innerHTML = "Show Less";

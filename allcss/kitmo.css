@@ -79,7 +79,8 @@
 }
 
 .itam_detelas {
-  height: 45px;
+  /* height: 45px; */
+  max-height: 52px;
   display: flex;
   gap: 7px;
   overflow: hidden;
@@ -88,9 +89,16 @@
   /* color: white; */
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  font-size: 1.2rem;
   margin-left: 5px;
   text-shadow: 2px 2px 5px black;
+}
+.itam_price > div {
+  color: red;
+  font-size: 1.1rem;
+  text-shadow: none;
 }
 .desc {
   display: flex;
@@ -101,8 +109,6 @@
 .shop_box {
   height: 40px;
   display: flex;
-  /* position: absolute; */
-  bottom: 0;
   justify-content: space-evenly;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -115,6 +121,7 @@
   justify-content: center;
   border-radius: 5px;
   margin: 5px;
+  /* margin-top: 0; */
   cursor: pointer;
 
   /* position: absolute; */
@@ -174,6 +181,41 @@
   width: 150px;
   height: 150px;
   object-fit: cover;
+}
+
+/* best_product_title */
+
+::-webkit-scrollbar {
+  width: 5px; /*  Set the width of the scrollbar */
+}
+
+.best_product_title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.best_product {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+}
+
+.best_product_content {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.169);
+  overflow: -moz-hidden-unscrollable;
+  cursor: pointer;
+}
+.best_product_content > img {
+  max-width: 150px;
+  max-height: 300px;
 }
 
 .show_more {

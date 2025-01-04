@@ -173,7 +173,7 @@
   padding: 4px;
   border-radius: 4px;
   border: none;
-  background-color: rgb(239, 38, 38);
+  background-color: rgba(239, 38, 38, 0.845);
   color: white;
   font-weight: bold;
   cursor: pointer;
