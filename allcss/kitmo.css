@@ -193,9 +193,23 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-left: 10px;
+  margin-right: 10px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
+.view_all {
+  font-size: 1rem;
+  border: 1px solid rgba(130, 130, 130, 0.292);
+  background-color: rgba(130, 130, 130, 0.112);
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .best_product {
   display: flex;
   gap: 10px;
@@ -210,12 +224,14 @@
   border-radius: 10px;
   justify-content: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.169);
-  overflow: -moz-hidden-unscrollable;
   cursor: pointer;
 }
 .best_product_content > img {
+  aspect-ratio: 2/3;
+  border-radius: 10px;
   max-width: 150px;
   max-height: 300px;
+  object-fit: cover;
 }
 
 .show_more {

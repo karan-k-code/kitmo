@@ -202,7 +202,7 @@ const liketure = () => {
 };
 
 // ! histry
-let history = [];
+// let history = [];
 
 const addHistry = async (id) => {
   const url = urls + "/histry/histry/" + id;
