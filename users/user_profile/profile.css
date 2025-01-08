@@ -16,14 +16,27 @@ body {
 /* !dark mode and help button */
 .h_container {
   display: flex;
-  justify-content: end;
-  margin: 10px 10px 0 10px;
+  justify-content: space-between;
   top: 0px;
   width: 90%;
-  margin-bottom: 10px;
+}
+
+.kitmo_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+}
+.kitmo_img > img {
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .help {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 a {

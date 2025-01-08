@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>KARAN</title>
     <!-- k icon -->
     <link rel="icon" href="../k.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../Components/darkmode/dark.css" />
+    <!-- <link rel="stylesheet" href="../Components/darkmode/dark.css" /> -->
     <link rel="stylesheet" href="about.css" />
   </head>
   <body class="light">
-    <div class="h_container">
+    <!-- <div class="h_container">
       <li class="option_b" style="display: none">
         <div class="dark-mode-toggle">
           <input type="checkbox" id="dark-mode-toggle-checkbox" />
@@ -23,46 +23,348 @@
         <div class="mode_line">Dark Mode</div>
       </li>
       <div class="help"><a href="../help/">Help</a></div>
-    </div>
-    <div class="profile-card box_shadow box_no_dark_shadow light no_dark">
-      <img src="../image/karan.png" alt="Profile Picture" class="profile-img" />
-      <h1 class="name">Karan kumar</h1>
-      <p class="bio">
-        Web Developer from india. Passionate about coding and coffee.
-      </p>
-      <button onclick="showMore()">Show More</button>
-      <div class="show_more" id="more-info">
-        <p>Additional information about karan...</p>
-        <a
-          href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0"
-        >
-          <button class="feedback_button">
-            <i class="fa-brands fa-whatsapp"></i>
-            <pre> Whatsapp</pre>
-          </button>
-        </a>
-        <a href="mailto:karankumar8538922663@gmail.com">
-          <button class="feedback_button">
-            <i class="fa-regular fa-envelope"></i>
-            <pre> Email</pre>
-          </button>
-        </a>
-        <a href="sms:8538922663">
-          <button class="feedback_button">
-            <i class="fa-solid fa-comment"></i>
-            <pre> Sms</pre>
-          </button>
-        </a>
-        <a href="tel:+918538922663">
-          <button class="feedback_button">
-            <i class="fa-solid fa-phone"></i>
-            <pre> Call</pre>
-          </button>
-        </a>
+    </div> -->
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">My Portfolio</div>
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </div>
-    </div>
+      <div class="togle_button" id="togle_button" onclick="menu_click()">
+        <span id="line_a"></span>
+        <span id="line_b"></span>
+        <span id="line_c"></span>
+      </div>
+      <div class="menu_togale" id="menu_togale">
+        <ul>
+          <li onclick="menu_click()"><a href="#about">About</a></li>
+          <li onclick="menu_click()"><a href="#projects">Projects</a></li>
+          <li onclick="menu_click()"><a href="#skills">Skills</a></li>
+          <li onclick="menu_click()"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <section class="profile_images_k">
+        <div class="image_b">
+          <span class="img_a">
+            <img src="../image/boat1.webp" alt="Profile Picture" />
+          </span>
+          <span class="img_b">
+            <img src="../image/boat2.jpg" alt="Profile Picture" />
+          </span>
+          <span class="img_c">
+            <img src="../image/boat3.jpg" alt="Profile Picture" />
+          </span>
+        </div>
+        <div class="profile-card">
+          <img src="../image/karan.png" alt="Profile Picture" />
+          <h1 class="name">Karan kumar</h1>
+          <p class="bio">
+            Web Developer from india. Passionate about coding and coffee.
+          </p>
+          <!-- <button onclick="showMore()">Show More</button> -->
+          <!-- <div class="show_more" id="more-info">
+            <p>Additional information about karan...</p>
+            <a
+              href="https://api.whatsapp.com/send/?phone=8538922663&text&type=phone_number&app_absent=0"
+            >
+              <button class="feedback_button">
+                <i class="fa-brands fa-whatsapp"></i>
+                <pre> Whatsapp</pre>
+              </button>
+            </a>
+            <a href="mailto:karankumar8538922663@gmail.com">
+              <button class="feedback_button">
+                <i class="fa-regular fa-envelope"></i>
+                <pre> Email</pre>
+              </button>
+            </a>
+            <a href="sms:8538922663">
+              <button class="feedback_button">
+                <i class="fa-solid fa-comment"></i>
+                <pre> Sms</pre>
+              </button>
+            </a>
+            <a href="tel:+918538922663">
+              <button class="feedback_button">
+                <i class="fa-solid fa-phone"></i>
+                <pre> Call</pre>
+              </button>
+            </a>
+          </div> -->
+        </div>
+        <div class="image_b">
+          <span class="img_a">
+            <img src="../image/boat1.webp" alt="Profile Picture" />
+          </span>
+          <span class="img_b">
+            <img src="../image/boat2.jpg" alt="Profile Picture" />
+          </span>
+          <span class="img_c">
+            <img src="../image/boat3.jpg" alt="Profile Picture" />
+          </span>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Hello! I'm karan, a coder passionate about coding. With a focus on web
+          development, I strive to create impactful and meaningful work.
+        </p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>
+          Here are some of the projects I have worked on. Each one showcases my
+          skills and dedication to solving problems creatively.
+        </p>
+
+        <div class="projects">
+          <div class="project">
+            <div class="image">
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+            </div>
+            <div class="description">
+              <h3>E-commerce Website backend and frontend and designe</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aspernatur sit eius laboriosam laudantium facilis ea accusamus
+                corporis, quam totam vero mollitia eligendi fugit sunt ab ad at
+                velit ut alias? Iusto cumque a, quia alias accusantium
+                laboriosam ex voluptate! Esse, atque veniam quibusdam voluptatum
+                fuga amet eaque reprehenderit saepe rem magnam velit fugiat
+                cupiditate pariatur? Corrupti id voluptas accusamus adipisci?
+                Amet ex aut officiis, delectus sapiente facere officia porro
+                explicabo velit. Iure id ratione officia aliquam rerum neque.
+                Quibusdam quam consequatur voluptatem facere optio est
+                laudantium aspernatur nulla sint. Laboriosam. Minima eaque
+                aliquid vel alias quod placeat eius eum, quis ab! Eveniet
+                quaerat voluptates illo ullam quis ratione necessitatibus
+                dignissimos quisquam in atque, dolorem alias expedita aperiam.
+                Accusantium, eos. Ad! Facilis saepe illo ad in animi cum
+                incidunt esse voluptate quasi, architecto sit maxime harum
+                facere consequuntur officia ex ut! Eos quidem deleniti
+                consectetur dicta officiis distinctio debitis, voluptate quasi.
+              </p>
+              <div class="buttons">
+                <button class="github-button">View on GitHub</button>
+                <button class="live-button">Live Demo</button>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image" id="small_display_image">
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+            </div>
+            <div class="description">
+              <h3>Project 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aspernatur sit eius laboriosam laudantium facilis ea accusamus
+                corporis, quam totam vero mollitia eligendi fugit sunt ab ad at
+                velit ut alias? Iusto cumque a, quia alias accusantium
+                laboriosam ex voluptate! Esse, atque veniam quibusdam voluptatum
+                fuga amet eaque reprehenderit saepe rem magnam velit fugiat
+                cupiditate pariatur? Corrupti id voluptas accusamus adipisci?
+                Amet ex aut officiis, delectus sapiente facere officia porro
+                explicabo velit. Iure id ratione officia aliquam rerum neque.
+                Quibusdam quam consequatur voluptatem facere optio est
+                laudantium aspernatur nulla sint. Laboriosam. Minima eaque
+                aliquid vel alias quod placeat eius eum, quis ab! Eveniet
+                quaerat voluptates illo ullam quis ratione necessitatibus
+                dignissimos quisquam in atque, dolorem alias expedita aperiam.
+                Accusantium, eos. Ad! Facilis saepe illo ad in animi cum
+                incidunt esse voluptate quasi, architecto sit maxime harum
+                facere consequuntur officia ex ut! Eos quidem deleniti
+                consectetur dicta officiis distinctio debitis, voluptate quasi.
+              </p>
+              <div class="buttons">
+                <button class="github-button">View on GitHub</button>
+                <button class="live-button">Live Demo</button>
+              </div>
+            </div>
+            <div class="image" id="big_display_image">
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+              <span>
+                <img src="../image/headphone.jpeg" alt="Project Image" />
+              </span>
+            </div>
+            <div class="description">
+              <h3>Project 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aspernatur sit eius laboriosam laudantium facilis ea accusamus
+                corporis, quam totam vero mollitia eligendi fugit sunt ab ad at
+                velit ut alias? Iusto cumque a, quia alias accusantium
+                laboriosam ex voluptate! Esse, atque veniam quibusdam voluptatum
+                fuga amet eaque reprehenderit saepe rem magnam velit fugiat
+                cupiditate pariatur? Corrupti id voluptas accusamus adipisci?
+                Amet ex aut officiis, delectus sapiente facere officia porro
+                explicabo velit. Iure id ratione officia aliquam rerum neque.
+                Quibusdam quam consequatur voluptatem facere optio est
+                laudantium aspernatur nulla sint. Laboriosam. Minima eaque
+                aliquid vel alias quod placeat eius eum, quis ab! Eveniet
+                quaerat voluptates illo ullam quis ratione necessitatibus
+                dignissimos quisquam in atque, dolorem alias expedita aperiam.
+                Accusantium, eos. Ad! Facilis saepe illo ad in animi cum
+                incidunt esse voluptate quasi, architecto sit maxime harum
+                facere consequuntur officia ex ut! Eos quidem deleniti
+                consectetur dicta officiis distinctio debitis, voluptate quasi.
+              </p>
+              <div class="buttons">
+                <button class="github-button">View on GitHub</button>
+                <button class="live-button">Live Demo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <p>
+          Throughout my career, I have developed expertise in [Skill 1], [Skill
+          2], and [Skill 3]. I'm always eager to learn and grow.
+        </p>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contactcontact">
+        <h2>Contact</h2>
+        <div class="socal_media">
+          <a
+            href="https://www.facebook.com/share/g6CULxzUt6DLVopG/?mibextid=qi2Omg"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <!-- ! Instagram M -->
+
+          <a href="https://www.instagram.com/karan_k_code/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <!-- ! Lindedin M -->
+
+          <a href="https://www.linkedin.com/in/karan-kumar-306a27273">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <!-- ! twitter M-->
+
+          <a href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <!-- ! Github M-->
+
+          <a href="https://github.com/india-software-karan">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <p>
+          If you'd like to get in touch, feel free to reach out at
+          <a href="mailto:kitmoindia@gmail.com">karan@senme.com</a>.
+        </p>
+        <div class="contact-form">
+          <h1>Contact Us</h1>
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message"
+              required
+            ></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+          <p id="responseMessage" style="margin-top: 10px; color: green"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/india-software-karan" target="_blank"
+          ><i class="fa-brands fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/karan-kumar-306a27273"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a
+          href="https://x.com/Karan7352590?t=hPMORdpRBrhYPjMc0Y1Mkw&s=09"
+          target="_blank"
+          ><i class="fa-brands fa-twitter"></i> Twitter</a
+        >
+      </div>
+    </footer>
   </body>
   <script src="../Components/functions/script.js"></script>
-  <script src="../Components/darkmode/dark.js"></script>
   <script src="about.js"></script>
 </html>
