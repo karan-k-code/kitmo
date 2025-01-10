@@ -172,7 +172,6 @@ main {
 .image_b {
   width: 30%;
   display: flex;
-  /* justify-content: center; */
   gap: 10px;
   position: relative;
 }
@@ -191,7 +190,7 @@ main {
   transition: all 0.3s ease;
 }
 .image_b > span > img {
-  height: inherit;
+  height: 100%;
 }
 
 .img_a,
@@ -253,6 +252,7 @@ main {
 }
 .projects > .project {
   display: flex;
+  align-items: flex-start;
 }
 .project > .description {
   margin-left: 20px;
@@ -272,6 +272,19 @@ main {
 .project > .description > p {
   font-size: 1.2rem;
   text-align: left;
+  max-height: 300px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.project > .description > span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #00bcd4;
+  transition: all 0.2s ease;
 }
 
 .project > .description > .buttons {
@@ -289,19 +302,22 @@ main {
   font-weight: 600;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: #84808092;
+  }
 }
 
 .project > .image {
   width: 44%;
   display: flex;
   gap: 10px;
-  /* flex-direction: column;  */
 }
 .project > .image > span {
   width: 33%;
   display: flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
   overflow: hidden;
   transition: all 0.3s ease;
   border-radius: 2rem;
@@ -353,7 +369,7 @@ main {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 88%;
   max-width: 400px;
 }
 .contact-form h1 {
@@ -410,6 +426,11 @@ main {
   }
   .project > .image {
     width: 100%;
+    overflow: auto;
+  }
+  .project > .image > span {
+    width: 100%;
+    overflow: initial;
   }
   #small_display_image {
     display: flex;

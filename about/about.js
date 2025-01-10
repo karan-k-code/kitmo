@@ -53,3 +53,18 @@ document
     // Clear form fields
     document.getElementById("contactForm").reset();
   });
+
+// ! how more funcation p
+
+const des_show_more = () => {
+  const dec = document.getElementById("dec");
+  const show_more_text = document.getElementById("show_more_text");
+
+  if (dec.style.maxHeight == "100vh") {
+    dec.style.maxHeight = "300px";
+    show_more_text.innerText = "..Show more";
+  } else {
+    dec.style.maxHeight = "100vh";
+    show_more_text.innerText = "..Show less";
+  }
+};
