@@ -49,25 +49,25 @@ const imageslideF = () => {
 
     // Determine if swipe distance is significant to change slides
     if (deltaX > 50) {
-      trackn();
+      // trackn();
       showSlide(currentIndex - 1); // Swipe right, go to the previous slide
       track();
     } else if (deltaX < -50) {
-      trackn();
+      // trackn();
       showSlide(currentIndex + 1); // Swipe left, go to the next slide
-      track();
+      // track();
     } else {
       showSlide(currentIndex); // Not enough movement, stay on current slide
     }
   });
 
   prevBtn.addEventListener("click", () => {
-    trackn();
+    // trackn();
     showSlide(currentIndex - 1);
     track();
   });
   nextBtn.addEventListener("click", () => {
-    trackn();
+    // trackn();
     showSlide(currentIndex + 1);
     track();
   });
@@ -84,23 +84,24 @@ const imageslideF = () => {
     fs.checked = true;
   };
 
-  const trackn = () => {
-    const fs = radioImg.childNodes[currentIndex + 1];
-    fs.checked = false;
-  };
+  // const trackn = () => {
+  //   const fs = radioImg.childNodes[currentIndex + 1];
+  //   fs.checked = false;
+  // };
 
   track();
 
   radioImg.addEventListener("click", (e) => {
-    trackn();
+    // trackn();
     showSlide(e.target.value - 1);
   });
 
   // ! image hover change
   const imageHover = document.querySelectorAll(".hover_img");
-  const image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
+  let image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
   imageHover.forEach((e) => {
     e.addEventListener("mouseover", () => {
+      image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
       e.style.transform = "scale(1.1)";
       const imageUrl = e.getAttribute("src");
       slides.childNodes[currentIndex + 1].setAttribute("src", imageUrl);

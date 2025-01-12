@@ -209,5 +209,5 @@ const generateAnsLi = (id) => {
   let product = quationData.find((x) => x.id == id);
   let imageS = product.answ;
 
-  const mappedKeys = Object.keys(imageS).map((key) => key);
+  // const mappedKeys = Object.keys(imageS).map((key) => key);
 };

@@ -307,73 +307,9 @@
 .dark-mode .profile_img {
   filter: drop-shadow(0px -2px 8px rgba(255, 255, 255, 0.153));
 }
-.midea {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 150px;
-  width: 65%;
-  font-size: 45;
-}
-.contacts_box_mobile {
-  display: none;
-  justify-content: center;
-  margin-top: 10px;
-}
-.profile {
-  display: flex;
-  justify-content: center;
-}
-.midea_mobile {
-  margin-top: 25px;
-  display: none;
-  justify-content: space-evenly;
-  font-size: 37px;
-  margin-bottom: 10px;
-}
-.Instagram,
-.Instagram,
-.LinkedIn,
-.github,
-.fecebook {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  font-size: 25px;
-  transition: all 0.1s ease;
-  &:hover {
-    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.6);
-    translate: 0 -10px;
-  }
-}
-
-.fecebook_m,
-.Instagram_m,
-.LinkedIn_m {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-}
 
 a {
   text-decoration: none;
-}
-
-.feedback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.feedback button {
-  margin: 10px;
-  padding: 7px;
-  border: none;
-  border-radius: 7px;
-  color: rgb(255, 255, 255);
-  background-color: #8816f3;
-  cursor: pointer;
 }
 
 @media (max-width: 500px) {

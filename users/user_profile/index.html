@@ -21,7 +21,7 @@
       <div class="loader"></div>
     </div>
     <div class="h_container">
-      <div class="kitmo_img">
+      <div class="kitmo_img" onclick="homePage()">
         <img src="../../image/kitmo_logo.png" alt="" srcset="" />
       </div>
       <div class="help">
@@ -68,6 +68,18 @@
         <!-- ? code is likes.js -->
       </div>
       <div class="orders" id="orders" style="display: flex">
+        <div class="filter_order">
+          <span id="filter_all" onclick="filterOrder('all');">All</span>
+          <span id="filter_pending" onclick="filterOrder('pending');"
+            >Pending</span
+          >
+          <span id="filter_deliverd" onclick="filterOrder('deliverd');"
+            >Deliverd</span
+          >
+          <span id="filter_cancelled" onclick="filterOrder('cancelled');"
+            >Cancelled</span
+          >
+        </div>
         <!-- ? code is order.js -->
       </div>
     </main>
@@ -79,5 +91,4 @@
   <script src="histry.js"></script>
   <script src="order.js"></script>
   <script src="sidebar.js"></script>
-  <script src="../../Components/darkmode/dark.js"></script>
 </html>

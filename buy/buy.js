@@ -270,7 +270,12 @@ let decrement = (id) => {
 // ! update
 let update = (id) => {
   let search = buyItam.find((x) => x.productId === id);
-  document.getElementById(id).innerHTML = search.quantity;
+  quantity = search.quantity;
+  const sfjls = document.getElementById(id);
+  sfjls.innerText = search.quantity;
+  console.log(sfjls);
+
+  // ! destop mode error not change html quntity but mobile screen change quntitiy or reload to show quntity"
 };
 
 // ! calculat
@@ -323,8 +328,11 @@ const genHoverImage = () => {
 (async function runf() {
   await buyshop();
   await genneratImageDiv();
-  genHoverImage();
-  imageslideF();
+
+  try {
+    genHoverImage();
+    imageslideF();
+  } catch (error) {}
 })();
 
 liked();

@@ -119,12 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextImage, 4000);
 });
 
-const more = document.getElementById("more");
-
-more.addEventListener("click", () => {
-  console.log("hello");
-});
-
 // refreshToken();
 calculatCart();
 

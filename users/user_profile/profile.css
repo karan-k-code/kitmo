@@ -151,7 +151,7 @@ address {
 main {
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -193,8 +193,10 @@ main {
 
 .likes {
   display: grid;
+  width: 80%;
+  /* grid-template-columns: repeat(3); */
   gap: 10px;
-  grid-template-columns: repeat(6, 180px);
+  grid-template-columns: repeat(6, 16%);
 }
 
 #like-ture {
@@ -252,11 +254,38 @@ main {
 
 /* ! orders  */
 
+.filter_order {
+  display: flex;
+  width: 100%;
+  /* padding: 4px; */
+  justify-content: space-around;
+}
+
+.filter_order > span {
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.324);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter_order > span:hover {
+  background-color: rgba(212, 234, 236, 0.685);
+  border-color: rgba(153, 229, 235, 0.685);
+}
+
+.filter_active {
+  background-color: rgba(212, 234, 236, 0.685);
+  border-color: rgba(153, 229, 235, 0.685);
+}
+
 .orders {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 70%;
+  color: rgba(0, 0, 0, 0.774);
 }
 
 .orders > .product_o {
@@ -346,7 +375,7 @@ main {
   cursor: pointer;
   transition: all 0.2s ease;
   &:hover {
-    background-color: #007bff;
+    background-color: #007bff65;
   }
 }
 
@@ -397,7 +426,7 @@ main {
   cursor: pointer;
   transition: all 0.2s ease;
   &:hover {
-    background-color: #007bff;
+    background-color: rgba(255, 0, 0, 0.676);
   }
 }
 
@@ -419,20 +448,20 @@ main {
 /* 1140px */
 @media (max-width: 1140px) {
   .likes {
-    grid-template-columns: repeat(5, 180px);
+    grid-template-columns: repeat(5, 19%);
   }
 }
 
 /* 1000px */
 @media (max-width: 1000px) {
   .likes {
-    grid-template-columns: repeat(4, 180px);
+    grid-template-columns: repeat(4, 24%);
   }
 }
 /*pad screen */
 @media (max-width: 781px) {
   .likes {
-    grid-template-columns: repeat(3, 170px);
+    grid-template-columns: repeat(3, 32%);
   }
   .product > img {
     width: 160px;
@@ -463,7 +492,10 @@ main {
     width: 90%;
   }
   .likes {
-    grid-template-columns: repeat(3, 150px);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 30%);
     gap: 5px;
   }
   .product > img {

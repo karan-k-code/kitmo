@@ -28,7 +28,8 @@ const likeg = () => {
   ganretLikes();
 };
 likeBtn.addEventListener("click", (x) => {
-  likeg();
+  window.location.href = urlg + "/users/user_profile/index.html?fun=like";
+  // likeg();
 });
 
 // ! profile
@@ -46,7 +47,9 @@ const profileg = async () => {
   changeImage();
 };
 profileBtn.addEventListener("click", (x) => {
-  profileg();
+  window.location.href = urlg + "/users/user_profile/index.html?fun=profile";
+
+  // profileg();
 });
 
 // ! order
@@ -60,10 +63,13 @@ const orderg = () => {
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "flex";
-  ordergen();
+  // ordergen("all");
 };
 orderBtn.addEventListener("click", (x) => {
-  orderg();
+  window.location.href =
+    urlg + "/users/user_profile/index.html?fun=order&filter=all";
+
+  // orderg();
 });
 
 // ! save
@@ -79,7 +85,9 @@ const saveg = () => {
   orders.style.display = "none";
 };
 saveBtn.addEventListener("click", (x) => {
-  saveg();
+  window.location.href = urlg + "/users/user_profile/index.html?fun=save";
+
+  // saveg();
 });
 
 // ! setting
@@ -95,7 +103,8 @@ const settingg = () => {
   orders.style.display = "none";
 };
 settingBtn.addEventListener("click", (x) => {
-  settingg();
+  window.location.href = urlg + "/users/user_profile/index.html?fun=setting";
+  // settingg();
 });
 
 // ! histry
@@ -111,7 +120,8 @@ const historyg = () => {
   genhistry();
 };
 histryBtn.addEventListener("click", (x) => {
-  historyg();
+  window.location.href = urlg + "/users/user_profile/index.html?fun=histry";
+  // historyg();
 });
 
 const currentclick = () => {
