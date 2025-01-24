@@ -83,17 +83,15 @@
         </div>
         <!-- ? code is order.js -->
       </div>
-      <div class="seting" id="setings" style="display: flex">
+      <div class="seting" id="setings" style="display: none">
         <!-- them -->
         <div class="them">
           <div class="them_title">Theme</div>
           <div class="them_list">
-            <select name="dark_value" id="them_list">
-              <option value="dark" onclick="darkValue()">Dark</option>
-              <option value="light" onclick="darkValue()" selected>
-                Light
-              </option>
-              <option value="system" onclick="darkValue()">system</option>
+            <select name="dark_value" id="them_list" onclick="darkValue()">
+              <option value="dark">Dark</option>
+              <option value="light" selected>Light</option>
+              <option value="system">System</option>
             </select>
           </div>
         </div>

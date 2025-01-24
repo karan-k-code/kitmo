@@ -18,7 +18,7 @@ if (darkseting == "dark") {
 }
 
 if (darkd == "true") {
-  darkModeToggle.checked = false;
+  darkModeToggle.checked = true;
 }
 
 // ! all class selecat function

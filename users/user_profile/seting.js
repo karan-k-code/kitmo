@@ -1,19 +1,13 @@
+// ! dark mode seting
+
 let darkseting = localStorage.getItem("dark_seting");
 
-// localStorage.setItem("dark_seting", "dark");
-
-try {
-  //   const them_list = document.querySelectorAll(".theme-list");
-} catch (error) {}
-
-const themeChange = () => {
-  const them_list = document.getElementById("them_list");
-};
-
-themeChange();
+if (darkseting) {
+  const dark_list = document.getElementById("them_list");
+  dark_list.value = darkseting;
+}
 
 const darkValue = () => {
-  console.log("helo");
-  const them_list = document.getElementById("them_list");
-  console.log(them_list.value);
+  const dark_list = document.getElementById("them_list");
+  localStorage.setItem("dark_seting", dark_list.value);
 };
