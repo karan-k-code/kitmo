@@ -55,7 +55,7 @@ const imageslideF = () => {
     } else if (deltaX < -50) {
       // trackn();
       showSlide(currentIndex + 1); // Swipe left, go to the next slide
-      // track();
+      track();
     } else {
       showSlide(currentIndex); // Not enough movement, stay on current slide
     }
