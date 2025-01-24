@@ -1,0 +1,30 @@
+.seting {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.them {
+  display: flex;
+  width: 90%;
+  padding: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.151);
+  justify-content: space-between;
+  background: #ffffff90;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.them_list > select {
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #ffffff90;
+  &:focus {
+    outline: none;
+  }
+}

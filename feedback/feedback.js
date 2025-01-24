@@ -6,16 +6,12 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // Disable the submit button to prevent multiple clicks
-  form.querySelector("button[type='submit']").disabled = true;
-
-  let formData = new FormData(form);
+  // form.querySelector("button[type='submit']").disabled = true;
 
   const url = urls + "/feedback/developer";
-  // const response = await apiCall(url, formData);
 
   const result = await fetch(url, { method: "POST", body: new FormData(form) });
 
-  console.log(formData);
   console.log(result);
 
   // fetch(scriptURL, { method: "POST", body: new FormData(form) })

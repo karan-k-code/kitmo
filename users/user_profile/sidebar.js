@@ -9,6 +9,7 @@ const profileDetailes = document.getElementById("profile_detailes");
 const likef = document.getElementById("likes");
 const histrys = document.getElementById("histrys");
 const orders = document.getElementById("orders");
+const setings = document.getElementById("setings");
 
 let click = profileBtn;
 let fun = getQueryParam("fun");
@@ -24,6 +25,7 @@ const likeg = () => {
   profileDetailes.style.display = "none";
   likef.style.display = "grid";
   histrys.style.display = "none";
+  setings.style.display = "none";
   orders.style.display = "none";
   ganretLikes();
 };
@@ -43,6 +45,8 @@ const profileg = async () => {
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
+  setings.style.display = "none";
+
   await generateProfile();
   changeImage();
 };
@@ -62,6 +66,8 @@ const orderg = () => {
   profileDetailes.style.display = "none";
   likef.style.display = "none";
   histrys.style.display = "none";
+  setings.style.display = "none";
+
   orders.style.display = "flex";
   // ordergen("all");
 };
@@ -83,6 +89,7 @@ const saveg = () => {
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
+  setings.style.display = "none";
 };
 saveBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=save";
@@ -101,6 +108,7 @@ const settingg = () => {
   likef.style.display = "none";
   histrys.style.display = "none";
   orders.style.display = "none";
+  setings.style.display = "flex";
 };
 settingBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=setting";
@@ -117,6 +125,8 @@ const historyg = () => {
   profileDetailes.style.display = "none";
   likef.style.display = "none";
   orders.style.display = "none";
+  setings.style.display = "none";
+
   genhistry();
 };
 histryBtn.addEventListener("click", (x) => {

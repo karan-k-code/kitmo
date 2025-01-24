@@ -2,10 +2,25 @@ const darkModeToggle = document.getElementById("dark-mode-toggle-checkbox");
 
 // !chackbox deta store hoclocal storege"
 let darkd = localStorage.getItem("darkModeToggle");
+let darkseting = localStorage.getItem("dark_seting");
+const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (darkseting == "dark") {
+  darkModeToggle.checked = true;
+} else if (darkseting == "system") {
+  if (systemPrefersDark.matches == true) {
+    darkModeToggle.checked = true;
+  } else {
+    darkModeToggle.checked = false;
+  }
+} else {
+  darkModeToggle.checked = false;
+}
 
 if (darkd == "true") {
-  darkModeToggle.checked = true;
+  darkModeToggle.checked = false;
 }
+
 // ! all class selecat function
 let classal = (classas) => {
   return document.querySelectorAll(classas);
@@ -66,7 +81,7 @@ darkModeToggle.addEventListener("change", function dark() {
   black.forEach(function (btn) {
     if (darkModeToggle.checked) {
       btn.classList.add("darkbox");
-      btn.classList.remove("blackD")
+      btn.classList.remove("blackD");
     } else {
       btn.classList.remove("darkbox");
       btn.classList.add("blackD");
@@ -82,11 +97,12 @@ let fanc = () => {
     localStorage.setItem("darkModeToggle", "false");
   }
 };
+
 {
   let buttons = classal(".light");
   let nav_bar = classal(".dark_box");
   let opt_dark = classal(".option_b");
-  let black = classal(".black")
+  let black = classal(".black");
   let box_shadow = classal(".box_shadow");
   let shadow_darkmode = classal(".shadow_darkmode");
 
@@ -137,10 +153,14 @@ let fanc = () => {
   black.forEach(function (btn) {
     if (darkModeToggle.checked) {
       btn.classList.add("darkbox");
-      btn.classList.remove("blackD")
+      btn.classList.remove("blackD");
     } else {
       btn.classList.remove("darkbox");
       btn.classList.add("blackD");
     }
   });
 }
+
+// ! dark mode seting
+
+// dark, light, system default

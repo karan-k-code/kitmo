@@ -8,6 +8,7 @@
     <link rel="icon" href="../../k.png" type="image/x-icon" />
     <!-- ! Css files -->
     <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="seting.css" />
     <link rel="stylesheet" href="../../Components/darkmode/dark.css" />
     <link rel="stylesheet" href="../../Components/loader/loader.css" />
     <link
@@ -67,7 +68,7 @@
       <div class="likes" id="histrys" style="display: none">
         <!-- ? code is likes.js -->
       </div>
-      <div class="orders" id="orders" style="display: flex">
+      <div class="orders" id="orders" style="display: none">
         <div class="filter_order">
           <span id="filter_all" onclick="filterOrder('all');">All</span>
           <span id="filter_pending" onclick="filterOrder('pending');"
@@ -82,6 +83,22 @@
         </div>
         <!-- ? code is order.js -->
       </div>
+      <div class="seting" id="setings" style="display: flex">
+        <!-- them -->
+        <div class="them">
+          <div class="them_title">Theme</div>
+          <div class="them_list">
+            <select name="dark_value" id="them_list">
+              <option value="dark" onclick="darkValue()">Dark</option>
+              <option value="light" onclick="darkValue()" selected>
+                Light
+              </option>
+              <option value="system" onclick="darkValue()">system</option>
+            </select>
+          </div>
+        </div>
+        <!-- ? code is order.js -->
+      </div>
     </main>
   </body>
   <script src="../../Components/functions/script.js"></script>
@@ -91,4 +108,5 @@
   <script src="histry.js"></script>
   <script src="order.js"></script>
   <script src="sidebar.js"></script>
+  <script src="seting.js"></script>
 </html>

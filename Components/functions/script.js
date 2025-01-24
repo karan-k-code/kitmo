@@ -7,7 +7,7 @@ const urls = "https://kitmo.onrender.com/api/v1";
 // const urlg = "http://127.0.0.1:5502";
 // const urlg = "http://192.168.147.23:5502";
 // const urls = "http://127.0.0.1:4000/api/v1";
-// const urls = "http://192.168.147.23:4000/api/v1";
+// const urls = "http://192.168.147.23:4003/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 const Currency = "₹"; // $
