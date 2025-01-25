@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Access</title>
+  </head>
+  <body>
+    <button id="get-contacts">Get Contacts</button>
+    <div id="output"></div>
+
+    <script>
+      document.getElementById("get-contacts").addEventListener("click", () => {
+        // Check if the Contacts API is supported
+        if ("contacts" in navigator) {
+          // Define fields to request
+          const fields = ["name", "tel", "email"];
+          const options = { multiple: true }; // Allow multiple contacts to be selected
+
+          // Open the contact picker
+          navigator.contacts
+            .select(fields, options)
+            .then((contacts) => {
+              const outputDiv = document.getElementById("output");
+              outputDiv.innerHTML = "<h3>Selected Contacts:</h3>";
+
+              // Display selected contacts
+              contacts.forEach((contact) => {
+                const name = contact.name ? contact.name.join(", ") : "No Name";
+                const tel = contact.tel ? contact.tel.join(", ") : "No Phone";
+                const email = contact.email
+                  ? contact.email.join(", ")
+                  : "No Email";
+
+                outputDiv.innerHTML += `
+                <p>
+                  <strong>Name:</strong> ${name}<br>
+                  <strong>Phone:</strong> ${tel}<br>
+                  <strong>Email:</strong> ${email}
+                </p>
+              `;
+              });
+            })
+            .catch((error) => {
+              console.error("Error accessing contacts:", error);
+              alert("Unable to access contacts.");
+            });
+        } else {
+          alert("Contacts API is not supported on this browser.");
+        }
+      });
+    </script>
+  </body>
+</html>

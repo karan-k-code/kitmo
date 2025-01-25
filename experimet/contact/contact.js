@@ -11,3 +11,14 @@ if ("contacts" in navigator) {
 } else {
   console.log("Contacts API not supported in this browser.");
 }
+
+if ("contacts" in navigator) {
+  navigator.contacts
+    .select(["name", "email", "tel"], { multiple: true })
+    .then((contacts) => {
+      console.log("Selected contacts:", contacts);
+    })
+    .catch((error) => console.error("Error accessing contacts:", error));
+} else {
+  console.log("Contacts API not supported in this browser.");
+}
