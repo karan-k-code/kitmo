@@ -39,3 +39,28 @@ const notifApi = (id) => {
     </button>
   `);
 };
+
+// Request Notification Permission
+if (Notification.permission === "default") {
+  Notification.requestPermission();
+}
+
+// Function to show a notification and navigate
+function showNotification() {
+  if (Notification.permission === "granted") {
+    const notification = new Notification("New Alert!", {
+      body: "Click here to go to the page",
+      icon: "k.png", // Optional icon
+    });
+
+    // Add click event to navigate
+    notification.onclick = function () {
+      window.open(urlg);
+    };
+  } else {
+    alert("Please enable notifications to see alerts!");
+  }
+}
+
+// Call the function
+showNotification();

@@ -35,8 +35,7 @@
 }
 
 /* ! dark mode color */
-.dark-mode,
-.coman {
+.dark-mode {
   background-color: black;
   color: #fff;
 }
@@ -47,4 +46,11 @@
 
 .fhf {
   background-color: #fff;
+}
+
+.menu_dark {
+  background-color: #fff;
+}
+.menu_dark_ff {
+  background-color: black;
 }
