@@ -1,5 +1,6 @@
 .loderbox {
   position: fixed;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
@@ -10,9 +11,13 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: #24d2ac;
-  position: absolute;
+  background-color: #3d4341;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100px;
+  width: fit-content;
   padding: 10px;
   border-radius: 6px;
   font-size: 2rem;

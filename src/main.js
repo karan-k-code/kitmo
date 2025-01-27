@@ -139,3 +139,9 @@ const keepShoping = async () => {
 };
 
 keepShoping();
+
+// ! wel come box Call
+
+if (!localStorage.getItem("welcome")) {
+  document.getElementById("welcome_box").style.display = "block";
+}

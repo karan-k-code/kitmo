@@ -296,3 +296,9 @@ const sendproduct = async (url, forml) => {
 homePage = () => {
   window.location.href = urlg;
 };
+
+// ! welcome close button
+const welcomeClose = () => {
+  document.getElementById("welcome_box").style.display = "none";
+  localStorage.setItem("welcome", true);
+};

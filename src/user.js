@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   const menuList = document.getElementById("user_list");
 
   // !user data
-
   const url = urls + "/users/user";
   const userdata = await apiCallGet(url);
 
   if (!userdata.success) {
     const response = await refreshToken();
+    console.log(response);
     if (!response.success) {
       // window.location.href = `${urlg}/users/login`;
     }

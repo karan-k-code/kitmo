@@ -63,4 +63,4 @@ function showNotification() {
 }
 
 // Call the function
-showNotification();
+// showNotification();
