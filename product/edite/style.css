@@ -6,3 +6,14 @@
     background-color: #f0f0f0;
   }
 }
+
+.delateimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background-color: rgb(210, 74, 74);
+  &:hover {
+    background-color: rgb(240, 100, 100);
+  }
+}

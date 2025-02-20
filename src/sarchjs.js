@@ -8,7 +8,6 @@ let submitForm = () => {
   let valB = document.getElementById("transcript").value;
 
   let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
-  console.log(sentenceCase);
 
   // ! shop item gennerateshop funcation
   let generateShopf = async () => {

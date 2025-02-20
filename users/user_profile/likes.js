@@ -33,7 +33,7 @@ const ganretLikes = async () => {
 const unlike = async (id) => {
   // ? id mins product id
 
-  const url = urls + "/likes/unlike/" + id;
+  const url = urls + "/likes/like/" + id;
   await apiCallGet(url);
 
   ganretLikes();

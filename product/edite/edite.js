@@ -47,7 +47,7 @@ const getp = async () => {
         <div class="col-md-3">
 
         <img src="${x.img}" class="imagegen">
-      <div class="delateimg">delete</div>
+      <button class="delateimg" onclick="deleteImage('${x._id}')">delete</button>
       </div>
       `;
         //   const img = document.createElement("img");
@@ -159,8 +159,14 @@ getp();
 
 // ! delete image
 const deleteImage = async (imageid) => {
-  const url = urls + "/dashboad/product/image/delete/" + imageid;
-  const response = await apiCallGet(url);
+  console.log(imageid);
+
+  const data = {
+    imageid: imageid,
+  };
+
+  const url = urls + "/dashboad/product/image/delete";
+  const response = await apiCall(url, data);
   console.log(response);
 };
 

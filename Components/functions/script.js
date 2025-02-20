@@ -1,12 +1,12 @@
 // ! const
 // cloud
-const urlg = "https://india-software-karan.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5502";
+const urlg = "http://127.0.0.1:5502";
 // const urlg = "http://192.168.147.23:5502";
-// const urls = "http://127.0.0.1:4000/api/v1";
+const urls = "http://127.0.0.1:4000/api/v1";
 // const urls = "http://192.168.147.23:4003/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
@@ -172,6 +172,27 @@ const shareProduct = () => {
   navigator.clipboard.writeText(url);
   // navigator.mediaDevices.getDisplayMedia();
 };
+
+function generateShareURL(title, description) {
+  // Base URL for sharing (e.g., a social media platform or a custom sharing service)
+  const baseURL = "https://example.com/share";
+
+  // Encode the title and description to be URL-friendly
+  const encodedTitle = encodeURIComponent(title);
+  const encodedDescription = encodeURIComponent(description);
+
+  // Construct the full shareable URL
+  const shareURL = `${baseURL}?title=${encodedTitle}&description=${encodedDescription}`;
+
+  return shareURL;
+}
+
+// Example usage:
+const title = "My Awesome Article";
+const description = "Check out this amazing article about JavaScript!";
+const shareURL = generateShareURL(title, description);
+
+// Output: https://example.com/share?title=My%20Awesome%20Article&description=Check%20out%20this%20amazing%20article%20about%20JavaScript!
 
 // ! likes
 const like = async (id) => {

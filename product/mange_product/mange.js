@@ -8,7 +8,7 @@ const getuser = async () => {
   const { username, image } = response.data;
 
   profilea.innerHTML = `
-        <img src="${image ? "" : "../../image/userimage.jpg"}" alt="" />
+        <img src="${image}" alt="" />
         <p>${username}</p>
   `;
 };
@@ -102,7 +102,6 @@ generateCartItem();
 
 const deleteproduct = async (id) => {
   const response = await apiCallGet(urls + "/dashboad/delete/" + id);
-  console.log(response);
   generateCartItem();
 };
 
