@@ -159,15 +159,15 @@ getp();
 
 // ! delete image
 const deleteImage = async (imageid) => {
-  console.log(imageid);
-
   const data = {
     imageid: imageid,
   };
 
   const url = urls + "/dashboad/product/image/delete";
   const response = await apiCall(url, data);
-  console.log(response);
+  if (response.success) {
+    window.location.reload();
+  }
 };
 
 // ! add image
@@ -186,6 +186,9 @@ document
     if (!userdata) {
       alert("Error edeting product");
       return;
+    }
+    if (userdata.success) {
+      window.location.reload();
     }
   });
 

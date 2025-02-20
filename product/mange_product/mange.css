@@ -24,6 +24,12 @@ main {
   overflow: auto;
 }
 
+/* option */
+
+.option {
+  display: none;
+}
+
 /* ! sidebar */
 .sidebar {
   position: sticky;
@@ -65,9 +71,10 @@ main {
   display: flex;
   gap: 5px;
   flex-direction: column;
+  align-items: flex-start;
   list-style-type: none;
-  overflow: auto;
-  padding: 5px;
+  /* overflow: auto; */
+  padding: 0px;
 }
 
 .sidebar > ul > li {
@@ -108,6 +115,10 @@ main {
   &:hover {
     color: rgb(170, 30, 217);
   }
+}
+
+.fa-message {
+  margin-bottom: 10px;
 }
 
 /* ! */
@@ -300,6 +311,9 @@ main {
   }
   .sidebar {
     display: none;
+  }
+  .option {
+    display: flex;
   }
 }
 

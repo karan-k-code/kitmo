@@ -8,6 +8,7 @@
         <link rel="icon" href="../k.png" type="image/x-icon">
         <!-- ! Css files -->
         <link rel="stylesheet" href="buy.css">
+        <link rel="stylesheet" href="rating.css">
         <link rel="stylesheet" href="../allcss/footer.css">
         <link rel="stylesheet" href="../allcss/hello_ji.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -139,13 +140,46 @@
             <!-- ! code buy.js  -->
             </div>
             <!-- Reviews & Ratings -->
-            <div class="about_p">Reviews & Ratings</div>
-            <div class="itam_dec">
-                
-            </div>   
-            
+            <div class="review_center">
+              <div class="Reviews_H">Reviews & Ratings</div>
 
+              <div class="review_box" id="review_box">
+                
+            </div> 
+            </div>
         </main>
+
+
+        <!-- ! show reviews -->
+         <div class="show_review" id="show_review">
+          <div class="review">
+            <i class="fa-solid fa-xmark" onclick="close_review()"></i>
+            <img src="../image/userimage.jpg" alt="">
+            <div class="review_w">
+              <div class="rating">
+                <span><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  </span>
+                  <span class="time">
+                    11 day age
+                  </span>
+              </div>
+              <div class="review_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam
+                vero aut ab eius nulla, dolorum facere. Tenetur minus cupiditate magni,
+                dolor quaerat, assumenda similique totam ipsum hic iste voluptates voluptate
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, sapiente! Dolore placeat quaerat, beatae delectus dolor ut facilis harum consequatur! Dolor, architecto nemo possimus atque non ad fugit. Voluptates, hic.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim blanditiis corporis voluptatum cumque quisquam temporibus odio impedit quasi consequuntur nemo perferendis aliquid similique, laudantium obcaecati sint dolor? Non, voluptatem quos.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolor distinctio, porro laborum ea repudiandae ratione voluptate amet placeat quod eligendi in sit qui nulla nostrum delectus eaque provident voluptates!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quis doloremque nobis modi quidem fuga enim recusandae unde reiciendis veniam ipsam, totam autem. Error, esse? Eum dolore corrupti excepturi nam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita et delectus dicta qui magni impedit nam, doloremque facere explicabo ipsa recusandae dolor distinctio ex veniam. Asperiores ipsa veniam explicabo totam.
+                </div>
+
+            </div>
+          </div>
+         </div>
 
             <!--! this is a website footer -->
     <footer class="dark_box nav_light">
@@ -217,6 +251,7 @@
     <script src="../Components/darkmode/dark.js"></script>
     <script src="../Components/navbar/nav.js"></script>
     <script src="buy.js"></script>
+    <script src="rating.js"></script>
     <script src="../src/microphone.js"></script>
     <script src="../src/sarchjsb.js"></script>
     <script src="../src/user.js"></script>
