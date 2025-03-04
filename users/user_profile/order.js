@@ -3,10 +3,10 @@ const ordergen = async (filter) => {
   const response = await apiCallGet(url);
   const orderid = document.getElementById("orders");
 
-  if (response.success && response.data.length !== 0) {
+  if (response?.success && response?.data.length !== 0) {
     // Use Promise.all to wait for all asynchronous operations to complete
     Promise.all(
-      response.data.map(async (x) => {
+      response?.data.map(async (x) => {
         const { createdAt, total, orderItems, _id, status } = x;
 
         if (status == filter) {
@@ -22,7 +22,7 @@ const ordergen = async (filter) => {
 
           const product = await findProduct(orderItems[0].productId);
 
-          const { image, productDescription, productName, productPrice } =
+          const { productDescription, productName, productPrice } =
             product.data;
 
           return `<div class="product_o">
@@ -71,14 +71,11 @@ const ordergen = async (filter) => {
 
           const product = await findProduct(orderItems[0].productId);
 
-          const { image, productDescription, productName, productPrice } =
-            product.data;
+          const { image, productName, productPrice } = product.data;
 
           return `<div class="product_o">
           <img src="${img[0].img}" alt="${productName}" />
           <div class="product_dec">
-            <div class="product_d">Product Details</div>
-            <p>${productDescription}</p>
             <div class="">Quantity</div>
             <span>${orderItems.length}</span>
             <div class="">Total</div>
@@ -115,7 +112,7 @@ const ordergen = async (filter) => {
         orderid.innerHTML += htmlArray.join("");
       })
       .catch((error) => {
-        alert(response.errors);
+        console.log(error);
       });
   } else {
     orderid.innerHTML = `<h1>null</h1>`;
@@ -162,7 +159,7 @@ try {
 const cancelOrder = async (id) => {
   const url = urls + "/orders/cancel/" + id;
   const response = await apiCallGet(url);
-  if (response.success) {
+  if (response?.success) {
     ordergen();
   } else {
     alert(response.errors);

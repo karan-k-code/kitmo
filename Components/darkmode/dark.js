@@ -15,12 +15,8 @@ if (darkseting == "dark") {
   } else {
     darkModeToggle.checked = false;
   }
-} else {
+} else if (darkseting == "light") {
   darkModeToggle.checked = false;
-}
-
-if (darkd == "true") {
-  darkModeToggle.checked = true;
 }
 
 // ! all class selecat function
@@ -105,8 +101,10 @@ darkModeToggle.addEventListener("change", function dark() {
 let fanc = () => {
   if (darkModeToggle.checked) {
     localStorage.setItem("darkModeToggle", "true");
+    localStorage.setItem("dark_seting", "dark");
   } else {
     localStorage.setItem("darkModeToggle", "false");
+    localStorage.setItem("dark_seting", "light");
   }
 };
 

@@ -7,9 +7,7 @@
 body {
   display: flex;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
+  /* height: 100vh; */
   flex-direction: column;
 }
 
@@ -28,6 +26,7 @@ body {
   width: 100px;
   height: 40px;
 }
+
 .kitmo_img > img {
   height: 80px;
   object-fit: cover;
@@ -39,13 +38,13 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
 a {
   color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
   text-decoration: none;
 }
 
 .profile-card {
-  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   width: 50%;
@@ -53,6 +52,7 @@ a {
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.537), 0 0 8px rgba(255, 255, 255, 0.352);
 }
 
 .image {
@@ -132,22 +132,6 @@ address {
   width: 70%;
 }
 
-/* box shadow dark mode and no dark mode */
-.box_no_dark_shadow {
-  /* box-shadow: 4px 5px 6px rgb(0, 0, 0); */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.box_dark_shadow {
-  box-shadow: 0 0px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* .box_no_dark_shadow .profile-img {
-  /* filter: drop-shadow(0px -2px 8px rgba(0, 0, 0, 0.147)); */
-/* } */
-/* .box_dark_shadow .profile-img {
-  filter: drop-shadow(0px -2px 8px rgba(255, 255, 255, 0.145));
-} */
-
 main {
   display: flex;
   justify-content: flex-start;
@@ -157,7 +141,6 @@ main {
 
 .sidebar {
   width: 20%;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -165,6 +148,7 @@ main {
   height: fit-content;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .sidebar > ul {
@@ -206,23 +190,22 @@ main {
 .product {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  padding-top: 0;
+  align-items: center;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #fff;
-  height: fit-content;
   position: relative;
-  /* border-color: 1px solid rgba(0, 0, 0, 0.685); */
+  max-height: fit-content;
+  width: fit-content;
 }
 
 .product > img {
   width: 170px;
   border-radius: 5px;
   cursor: pointer;
-  aspect-ratio: 2/2;
+  aspect-ratio: 1/1;
   object-fit: contain;
   background-color: #fff;
+  /* border-radius: 4px; */
 }
 
 .product > .dec {
@@ -257,13 +240,12 @@ main {
 .filter_order {
   display: flex;
   width: 100%;
-  /* padding: 4px; */
   justify-content: space-around;
 }
 
 .filter_order > span {
   font-size: 1.2rem;
-  border: 1px solid rgba(0, 0, 0, 0.324);
+  border: 1px solid rgb(143, 139, 139);
   border-radius: 4px;
   padding: 4px;
   cursor: pointer;
@@ -285,17 +267,16 @@ main {
   flex-direction: column;
   gap: 10px;
   width: 70%;
-  color: rgba(0, 0, 0, 0.774);
 }
 
 .orders > .product_o {
   display: flex;
   width: 100%;
   height: 200px;
-  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   justify-content: space-between;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.322), 0 0 10px black;
 }
 .orders > .product_o > img {
   /* width: 150px; */
@@ -439,7 +420,7 @@ main {
     width: 70%;
   }
   .orders {
-    width: 87%;
+    width: 97%;
   }
   .orders > .product_o > .status > .processing {
     font-size: 1.2rem;

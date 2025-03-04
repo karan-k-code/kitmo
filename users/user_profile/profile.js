@@ -5,17 +5,17 @@ function editProfile() {
 const generateProfile = async () => {
   const profileDetailes = document.getElementById("profile_detailes");
   const response = await apiCallGet(`${urls}/users/user`);
-  const { username, mobile, email, address } = response.data;
+  const { username, mobile, email, address } = response?.data;
 
   let addressdata = ``;
 
-  if (address.lenght !== 0) {
+  if (address?.lenght !== 0) {
     address.map((x) => {
       addressdata = `${x.address}, ${x.city}, ${x.zip}`;
     });
   }
 
-  if (response.data.lenght !== 0) {
+  if (response?.data.lenght !== 0) {
     return (profileDetailes.innerHTML = `      
     <div class="image">
        <form id="imgdata" method="post">
@@ -59,7 +59,7 @@ const changeImage = async () => {
     console.log(data);
     const response = await apiCall(url, data);
     console.log(response);
-    if (response.success) {
+    if (response?.success) {
       alert("image add success");
     } else {
       alert(response.errors);

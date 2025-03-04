@@ -1,6 +1,6 @@
 const likeBtn = document.getElementById("likebtn");
 const profileBtn = document.getElementById("profile");
-const saveBtn = document.getElementById("saveBtn");
+const reviewBtn = document.getElementById("reviewBtn");
 const orderBtn = document.getElementById("orderBtn");
 const settingBtn = document.getElementById("SettingBtn");
 const histryBtn = document.getElementById("histryBtn");
@@ -12,13 +12,12 @@ const orders = document.getElementById("orders");
 const setings = document.getElementById("setings");
 
 let click = profileBtn;
-let fun = getQueryParam("fun");
+let fun = getQueryParam("fun") || "profile";
 
 const sidebar = document.getElementById("sidebar");
 
 // ! like
 const likeg = () => {
-  remoreclick();
   click = likeBtn;
   fun = "like";
   currentclick();
@@ -29,6 +28,7 @@ const likeg = () => {
   orders.style.display = "none";
   ganretLikes();
 };
+
 likeBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=like";
   // likeg();
@@ -36,7 +36,6 @@ likeBtn.addEventListener("click", (x) => {
 
 // ! profile
 const profileg = async () => {
-  remoreclick();
   click = profileBtn;
   fun = "profile";
   currentclick();
@@ -50,6 +49,7 @@ const profileg = async () => {
   await generateProfile();
   changeImage();
 };
+
 profileBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=profile";
 
@@ -58,7 +58,6 @@ profileBtn.addEventListener("click", (x) => {
 
 // ! order
 const orderg = () => {
-  remoreclick();
   click = orderBtn;
   fun = "order";
   currentclick();
@@ -69,20 +68,17 @@ const orderg = () => {
   setings.style.display = "none";
 
   orders.style.display = "flex";
-  // ordergen("all");
 };
+
 orderBtn.addEventListener("click", (x) => {
   window.location.href =
     urlg + "/users/user_profile/index.html?fun=order&filter=all";
-
-  // orderg();
 });
 
-// ! save
-const saveg = () => {
-  remoreclick();
-  click = saveBtn;
-  fun = "save";
+// ! Review
+const reviewg = () => {
+  click = reviewBtn;
+  fun = "review";
   currentclick();
 
   profileDetailes.style.display = "none";
@@ -91,15 +87,13 @@ const saveg = () => {
   orders.style.display = "none";
   setings.style.display = "none";
 };
-saveBtn.addEventListener("click", (x) => {
-  window.location.href = urlg + "/users/user_profile/index.html?fun=save";
 
-  // saveg();
+reviewBtn.addEventListener("click", (x) => {
+  window.location.href = urlg + "/users/user_profile/index.html?fun=review";
 });
 
 // ! setting
 const settingg = () => {
-  remoreclick();
   click = settingBtn;
   fun = "setting";
   currentclick();
@@ -110,6 +104,7 @@ const settingg = () => {
   orders.style.display = "none";
   setings.style.display = "flex";
 };
+
 settingBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=setting";
   // settingg();
@@ -117,7 +112,6 @@ settingBtn.addEventListener("click", (x) => {
 
 // ! histry
 const historyg = () => {
-  remoreclick();
   click = histryBtn;
   fun = "histry";
   currentclick();
@@ -129,21 +123,16 @@ const historyg = () => {
 
   genhistry();
 };
+
 histryBtn.addEventListener("click", (x) => {
   window.location.href = urlg + "/users/user_profile/index.html?fun=histry";
   // historyg();
 });
 
+// ! current click color
 const currentclick = () => {
   click.style.borderColor = "rgb( 78 , 78 , 78)";
 };
-
-const remoreclick = () => {
-  click.style.borderColor = "transparent";
-  //   click.style.borderColor = "transparent";
-};
-
-currentclick();
 
 if (fun == "profile") {
   profileg();
@@ -151,12 +140,10 @@ if (fun == "profile") {
   likeg();
 } else if (fun == "histry") {
   historyg();
-} else if (fun == "save") {
-  saveg();
+} else if (fun == "review") {
+  reviewg();
 } else if (fun == "setting") {
   settingg();
 } else if (fun == "order") {
   orderg();
-} else {
-  profileg();
 }

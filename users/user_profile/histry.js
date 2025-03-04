@@ -3,13 +3,13 @@ const genhistry = async () => {
   const url = urls + "/histry/histry";
   const response = await apiCallGet(url);
 
-  if (response.data) {
+  if (response?.data) {
     //check if there is a data object
-    const validData = response.data.filter(
+    const validData = response?.data.filter(
       (x) => x && x._id && x.image && x.image.length > 0 && x.image[0].img
     );
     // Filter to remove null, undefined, and objects that are missing _id or image or image.length is 0 or image[0].img is missing
-    if (validData.length > 0) {
+    if (validData?.length > 0) {
       return (histrys.innerHTML = validData
         .map((x) => {
           const { _id, image } = x;

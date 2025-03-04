@@ -4,10 +4,10 @@ const ganretLikes = async () => {
   const url = urls + "/likes/alllikes";
   const response = await apiCallGet(url);
 
-  if (response.data.lenght !== 0) {
+  if (response?.data.lenght !== 0) {
     likes.innerHTML = response.data
       .map((x) => {
-        const { _id, productName, productPrice, productDescription, image } = x;
+        const { _id, image } = x;
 
         const imageUrl = image[0].img;
 
@@ -15,9 +15,6 @@ const ganretLikes = async () => {
 
         return `<div class="product box_shadow box_no_dark_shadow">
           <img src="${imageUr}" onclick="goo('${_id}')" />
-          <!-- <div class="dec">
-             <p>${productDescription}</p>
-          </div> -->
            <div class="btns">
            <i class="fa-solid fa-heart" id="like-ture" onclick="unlike('${_id}')"></i>
           </div>

@@ -30,44 +30,41 @@
       </div>
     </div>
     <main>
-      <div
-        class="sidebar light no_dark box_shadow box_no_dark_shadow"
-        id="sidebar"
-      >
+      <div class="sidebar" id="sidebar">
         <ul>
           <li id="profile">
-            <i class="fa-regular fa-user"></i> <span>Account</span>
+            <i class="fa-regular fa-user"></i><span>Account</span>
           </li>
           <li id="orderBtn">
             <i class="fa-solid fa-box-open"></i><span>Orders</span>
           </li>
           <li id="likebtn">
-            <i class="fa-regular fa-heart"></i> <span>Likes</span>
+            <i class="fa-regular fa-heart"></i><span>Likes</span>
           </li>
-          <li id="saveBtn">
-            <i class="fa-regular fa-bookmark"></i> <span>Save</span>
+          <li id="reviewBtn">
+            <i class="fa-regular fa-star"></i><span>Reviews</span>
           </li>
           <li id="histryBtn">
-            <i class="fa-solid fa-clock-rotate-left"></i> <span>Histry</span>
+            <i class="fa-solid fa-clock-rotate-left"></i><span>Histry</span>
           </li>
           <li id="SettingBtn">
             <i class="fa-solid fa-gear"></i><span>Setting</span>
           </li>
         </ul>
       </div>
-      <div
-        class="profile-card box_shadow box_no_dark_shadow light no_dark"
-        id="profile_detailes"
-        style="display: none"
-      >
+      <!-- ! profile card -->
+      <div class="profile-card" id="profile_detailes" style="display: none">
         <!-- ? code is profile.js -->
       </div>
+      <!-- ! likes secation -->
       <div class="likes" id="likes" style="display: none">
         <!-- ? code is likes.js -->
       </div>
+      <!-- ! histrys secation -->
       <div class="likes" id="histrys" style="display: none">
         <!-- ? code is likes.js -->
       </div>
+      <!-- ! orders secation -->
       <div class="orders" id="orders" style="display: none">
         <div class="filter_order">
           <span id="filter_all" onclick="filterOrder('all');">All</span>
@@ -83,12 +80,43 @@
         </div>
         <!-- ? code is order.js -->
       </div>
+      <!-- ! seting -->
       <div class="seting" id="setings" style="display: none">
         <!-- them -->
         <div class="them">
           <div class="them_title">Theme</div>
           <div class="them_list">
             <select name="dark_value" id="them_list" onclick="darkValue()">
+              <option value="dark">Dark</option>
+              <option value="light" selected>Light</option>
+              <option value="system">System</option>
+            </select>
+          </div>
+        </div>
+        <!-- log out -->
+        <div class="them">
+          <div class="them_title">user</div>
+          <div class="them_list">
+            <button>logout</button>
+          </div>
+        </div>
+
+        <div class="message_box">
+          <p>are you sory you log out</p>
+          <div class="button">
+            <button>Cencel</button>
+            <button>Yes</button>
+          </div>
+          <!-- ? code is seting.js -->
+        </div>
+      </div>
+      <!-- ! review -->
+      <div class="review" id="review" style="display: none">
+        <!-- them -->
+        <div class="them">
+          <div class="them_title">Theme</div>
+          <div class="them_list">
+            <select name="dark_value" id="them_list_s" onclick="darkValue()">
               <option value="dark">Dark</option>
               <option value="light" selected>Light</option>
               <option value="system">System</option>
@@ -107,4 +135,5 @@
   <script src="order.js"></script>
   <script src="sidebar.js"></script>
   <script src="seting.js"></script>
+  <script src="darkmode.js"></script>
 </html>

@@ -1,12 +1,12 @@
 // ! const
 // cloud
-const urlg = "https://india-software-karan.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5502";
+const urlg = "http://127.0.0.1:5503";
 // const urlg = "http://192.168.147.23:5502";
-// const urls = "http://127.0.0.1:4000/api/v1";
+const urls = "http://127.0.0.1:4000/api/v1";
 // const urls = "http://192.168.147.23:4003/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
@@ -76,11 +76,11 @@ const addCart = async (id, qua) => {
 const getCart = async () => {
   loaderFn();
   const response = await apiCallGet(urls + "/product/getcart");
-  if (response.success) {
+  if (response?.success) {
     loaderStop();
   } else {
     loaderStop();
-    alert(response.errors);
+    alert(response?.errors);
   }
   return response;
 };
@@ -106,7 +106,7 @@ const calculatCart = async () => {
   const response = await getCart();
   let cartIcon = document.getElementById("cart_no");
 
-  if (response.success) {
+  if (response?.success) {
     cartIcon.innerText = response.data.length || "0";
   }
 };
