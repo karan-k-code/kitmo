@@ -19,6 +19,10 @@ let buyshop = async () => {
 
   imageArry = image;
 
+  // Example usage
+  const result = calculateDiscount(productPrice, 0); // 20% discount on 1000
+  console.log(result);
+
   // <!-- <div class="slide" >
   //                  <img src="${image[0].img}" alt="">
   //                </div> -->

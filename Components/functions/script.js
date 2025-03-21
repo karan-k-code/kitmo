@@ -1,12 +1,12 @@
 // ! const
 // cloud
-const urlg = "https://india-software-karan.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://india-software-karan.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5503";
+const urlg = "http://127.0.0.1:5503";
 // const urlg = "http://192.168.147.23:5502";
-// const urls = "http://127.0.0.1:4000/api/v1";
+const urls = "http://127.0.0.1:5000/api/v1";
 // const urls = "http://192.168.147.23:4003/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
@@ -323,3 +323,20 @@ const welcomeClose = () => {
   document.getElementById("welcome_box").style.display = "none";
   localStorage.setItem("welcome", true);
 };
+
+//! discountAmount funcation
+
+function calculateDiscount(price, discount) {
+  if (price <= 0 || discount < 0 || discount > 100) {
+    return "Invalid input";
+  }
+
+  const discountAmount = (price * discount) / 100;
+  const finalPrice = price - discountAmount;
+
+  return {
+    originalPrice: price,
+    discountAmount: discountAmount.toFixed(2),
+    finalPrice: finalPrice.toFixed(2),
+  };
+}

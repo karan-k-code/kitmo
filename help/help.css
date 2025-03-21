@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
-body{
+body {
   background-color: #92dbca88;
 }
 /*  ! welcome box */
@@ -20,7 +20,8 @@ body{
   position: sticky;
   top: 0;
 }
-.opation , .opationcut {
+.opation,
+.opationcut {
   position: fixed;
   top: 10px;
   padding: 4px 4px 4px 6px;
@@ -32,10 +33,10 @@ body{
   z-index: 2;
 }
 
-.opation{
+.opation {
   display: none;
 }
-.home{
+.home {
   display: flex;
   position: fixed;
   top: 10px;
@@ -49,12 +50,12 @@ body{
 
 /* ! big box  */
 
-.bigbox{
+.bigbox {
   display: flex;
   height: 100%;
 }
 
-.boxa{
+.boxa {
   width: 30%;
   height: 100vh;
   display: flex;
@@ -95,13 +96,13 @@ body{
   animation: fadeOut 2s ease-in-out;
 }
 
-.boxa ul{
+.boxa ul {
   list-style: none;
   width: 100%;
   max-height: 800px; /* Set the max height for scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
 }
-.boxa li{
+.boxa li {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
@@ -111,12 +112,12 @@ body{
   border-radius: 7px;
   margin-bottom: 2px;
   color: #fff;
-  &:hover{
+  &:hover {
     background-color: #0a4c3c9e;
   }
 }
 
-.noactive{
+.noactive {
   background-color: #10765c8e;
 }
 
@@ -129,7 +130,7 @@ a {
   color: inherit;
 }
 
-.boxb{
+.boxb {
   width: 70%;
   /* background-color: #1e28296e; */
   /* color: #fff; */
@@ -139,17 +140,16 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
-.answe{
+.answe {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.q{
+.q {
   width: 100%;
   font-size: 1.2rem;
   display: flex;
@@ -163,40 +163,41 @@ a {
   font-weight: bold;
 }
 
-.video{
-  width: 400; 
+.video {
+  width: 400;
   /* height: 200; */
 }
 
-video{
+video {
   margin-top: 10px;
   border-radius: 10px;
 }
 
-img{
+img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
   margin-top: 5px;
 }
 
-.ans{
+.ans {
   width: 90%;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
 }
 
-.ans li{
+.ans li {
   font-size: 1.2rem;
 }
 
-.thank{
+.thank {
   display: flex;
   font-size: 2rem;
 }
 
-.option_b , .feedback button{
+.option_b,
+.feedback button {
   width: 20vh;
   font-size: 1.2rem;
   padding: 6px;
@@ -204,12 +205,11 @@ img{
   border: none;
   cursor: pointer;
   margin-bottom: 10px;
-  
 }
 
-.feedback button{
+.feedback button {
   background-color: #cf69e9c5;
-  &:hover{
+  &:hover {
     background-color: #dfa6eec5;
   }
 }
@@ -219,27 +219,27 @@ img{
   .welcome_box {
     font-size: 1.3rem;
   }
-  .boxa{
+  .boxa {
     display: none;
     position: fixed;
     top: 40px;
     height: 100%;
     width: 90%;
   }
-  .boxb{
+  .boxb {
     width: 100%;
   }
-  ul{
+  ul {
     width: 100%;
   }
-  .opation{
+  .opation {
     display: flex;
   }
-  .opationcut{
+  .opationcut {
     display: none;
   }
-  video{
-    width: 95%; 
+  video {
+    width: 95%;
     height: 100%;
     border-radius: 8px;
     margin-top: 5px;

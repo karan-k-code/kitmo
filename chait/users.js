@@ -16,6 +16,8 @@ let usersfn = async () => {
 
   let data = await response.json();
   users = await data.data;
+
+  console.log(users);
   genretusers();
 };
 

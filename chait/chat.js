@@ -16,7 +16,7 @@ let chatBox = () => {
   }
 };
 
-const goo = (id) => {
+const goot = (id) => {
   chat = id;
   localStorage.setItem("chat", chat);
   allMessage = JSON.parse(localStorage.getItem(`userId${chat}`)) || [];

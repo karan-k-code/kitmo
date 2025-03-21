@@ -54,7 +54,9 @@ input {
   padding: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.832);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.832), 0 2px 5px white;
+  background-color: inherit;
+  color: inherit;
   &:focus {
     outline: none;
   }

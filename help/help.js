@@ -136,7 +136,7 @@ let generateAns = (id) => {
           ${
             search.video === undefined
               ? ``
-              : `<video src="${search.video}"  width="640" controls></video>`
+              : `<video src="${search.video}"  width="90%" controls></video>`
           }
           <div class="ans">
             <ul id="ansli">
