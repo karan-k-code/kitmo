@@ -91,7 +91,7 @@ const genRatingAndReview = () => {
       //   const imageUr = imageUrl.replace("http://", "https://");
 
       return `
-          <div class="review" onclick="showReviewFun()">
+          <div class="review" onclick="showandclosereview()">
                   <img src="../image/userimage.jpg" alt="">
                   <div class="review_w">
                     <div class="rating">
@@ -115,10 +115,21 @@ const genRatingAndReview = () => {
     })
     .join(""));
 };
+
 genRatingAndReview();
 
 const close_review = () => {
   show_review.style.display = "none";
+};
+
+const showandclosereview = () => {
+  if (show_review.style.display == "flex") {
+    show_review.style.display = "none";
+    document.body.classList.remove("disabled");
+  } else {
+    show_review.style.display = "flex";
+    document.body.classList.add("disabled");
+  }
 };
 
 const showReviewFun = () => {
@@ -126,3 +137,19 @@ const showReviewFun = () => {
 };
 
 // close_review();
+
+function adjustHeight(textarea) {
+  textarea.style.height = "auto"; // Reset height
+  textarea.style.height = textarea.scrollHeight + "px"; // Set height based on content
+}
+
+const closer_rev_btn_i = () => {
+  const image_video_review = document.getElementById("image_video_review");
+  if (image_video_review.style.display == "flex") {
+    image_video_review.style.display = "none";
+    document.body.classList.remove("disabled");
+  } else {
+    image_video_review.style.display = "flex";
+    document.body.classList.add("disabled"); // Deactivate body
+  }
+};

@@ -1,13 +1,13 @@
 // ! const
 // cloud
-const urlg = "https://karan-k-code.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://karan-k-code.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5503";
-// const urlg = "http://192.168.147.23:5502";
-// const urls = "http://127.0.0.1:5000/api/v1";
-// const urls = "http://192.168.147.23:4003/api/v1";
+const urlg = "http://127.0.0.1:5503";
+// const urlg = "http://192.168.220.23:5503";
+const urls = "http://127.0.0.1:5000/api/v1";
+// const urls = "http://192.168.220.23:5000/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 const Currency = "₹"; // $
@@ -88,13 +88,13 @@ const getCart = async () => {
 // ! Get product >>>>
 const getProduct = async () => {
   loaderFn();
-  let response = await fetch(`${urls}/product/product`, {
+  const response = await fetch(`${urls}/product/product`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   }).catch((error) => {
-    alert(response.errors);
+    console.log(error);
     loaderStop();
   });
   loaderStop();

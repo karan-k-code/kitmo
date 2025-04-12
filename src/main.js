@@ -159,3 +159,16 @@ keepShoping();
 if (!localStorage.getItem("welcome")) {
   document.getElementById("welcome_box").style.display = "block";
 }
+
+//
+
+const ipff = async () => {
+  const ddd = await fetch("https://api64.ipify.org?format=json")
+    .then((response) => response.json())
+    .then((data) => console.log("IP Address:", data.ip))
+    .catch((error) => console.error("Error:", error));
+
+  console.log(ddd);
+};
+
+ipff();

@@ -96,6 +96,7 @@ const heroimage = [
   { img: "./image/heroiamge.png" },
   { img: "./image/heroimage2.jpg" },
   { img: "./image/hero_image.jpg" },
+  { img: "./image/heroim.jpg" },
 ];
 
 const genneratImageDiv = () => {
