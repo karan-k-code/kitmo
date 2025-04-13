@@ -149,6 +149,10 @@ try {
       cancelled.classList.add("filter_active");
       cancelled.style.borderColor = "rgba(153, 229, 235, 0.685)";
       ordergen("cancelled");
+    } else {
+      all.classList.add("filter_active");
+      all.style.borderColor = "rgba(153, 229, 235, 0.685)";
+      ordergen("all");
     }
   })();
 } catch (error) {

@@ -52,7 +52,7 @@ let generateShop = async () => {
                   <h3>${productName}</h3>
               </div>-->
               <div class="itam_img" onclick="goo('${_id}')">
-              <img src="${image[0].img}">
+              <img loading="lazy" src="${image[0].img}">
               </div>
               <div class="itam_detelas">
                   <div class="itam_price">

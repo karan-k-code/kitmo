@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     reviewsList.appendChild(reviewItem);
 
+    console.log(reviewText.value, currentRating); // Log the review and rating
+
     // Clear the form
     reviewText.value = "";
     stars.forEach((star) => star.classList.remove("active"));
