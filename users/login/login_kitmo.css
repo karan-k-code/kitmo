@@ -1,3 +1,7 @@
+:root {
+  --dark-color: black;
+}
+
 body {
   font-family: Arial, sans-serif;
 }
