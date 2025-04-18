@@ -1,11 +1,13 @@
+// Edit profile
 function editProfile() {
   alert("wait for next update");
 }
 
+// generete Profile
 const generateProfile = async () => {
   const profileDetailes = document.getElementById("profile_detailes");
   const response = await apiCallGet(`${urls}/users/user`);
-  const { username, mobile, email, address } = response?.data;
+  const { full_name, mobile, email, address, image } = response?.data;
 
   let addressdata = ``;
 
@@ -18,17 +20,18 @@ const generateProfile = async () => {
   if (response?.data.lenght !== 0) {
     return (profileDetailes.innerHTML = `      
     <div class="image">
-       <form id="imgdata" method="post">
+       <form id="imgdata">
         <img
-          src="../../image/userimage.jpg"
+          src="${image}"
           alt="Profile Picture"
           class="profile-img"
         />
-        </form>
         <input type="file" id="image_user"  name="image" accept="image/*"">
+        </form>
+
       </div>
 
-      <h1 class="name">${username}</h1>
+      <h1 class="name">${full_name}</h1>
       <button onclick="editProfile()">Edit Profile</button>
       <div class="show_more" id="more-info">
         <p>Additional information</p>
@@ -44,33 +47,41 @@ const generateProfile = async () => {
   }
 };
 
+// change user image
 const changeImage = async () => {
   const iImage = document.getElementById("image_user");
   const imgdata = document.getElementById("imgdata");
+
   iImage.addEventListener("change", async (x) => {
     // image.src = URL.createObjectURL(x.target.files[0]);
 
-    let formData = new FormData(imgdata);
-    let data = Object.fromEntries(formData);
-
     const file = x.target.files[0];
 
-    const url = urls + "/users/addimage";
-    console.log(data);
-    const response = await apiCall(url, data);
-    console.log(response);
-    if (response?.success) {
-      alert("image add success");
-    } else {
-      alert(response.errors);
-    }
+    const url = `${urls}/users/addimage`;
+
+    try {
+      let userdata = await sendproduct(url, imgdata);
+      if (userdata.success) {
+        show_mess(userdata.message);
+      }
+    } catch (error) {}
 
     // console.log(response);
     const reader = new FileReader();
+
     reader.onload = () => {
       const image = document.querySelector(".profile-img");
       image.src = reader.result;
     };
     reader.readAsDataURL(file);
   });
+};
+
+const show_mess = (message) => {
+  const alart_jjj = document.getElementById("alart_jjj");
+  alart_jjj.style.display = "flex";
+  alart_jjj.innerText = message;
+  setTimeout(() => {
+    alart_jjj.style.display = "none";
+  }, 3000);
 };

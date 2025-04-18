@@ -11,21 +11,17 @@ try {
       const response = await refreshToken();
       console.log(response);
       if (!response?.success) {
-        // window.location.href = `${urlg}/users/login`;
+        window.location.href = `${urlg}/users/login`;
       }
     }
 
-    userData = userdata?.data;
-
-    console.log("userdata", userdata);
-
     let user = () => {
-      if (userData) {
-        let { username } = userData;
+      if (userdata?.data) {
+        let { full_name } = userdata?.data;
         menuList.innerHTML = ` <div class="profile">
               <img src="${urlg}/image/userimage.jpg" alt="" />
               <div class="profile_info">
-               <h3>Hii, ${username}</h3>
+               <h3>Hii, ${full_name}</h3>
               </div>
               <div class="manage_account" onclick="manageProfile()">
               Manage Account

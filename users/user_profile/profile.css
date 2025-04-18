@@ -63,7 +63,6 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #fff;
   position: relative;
 }
 
@@ -71,12 +70,15 @@ a {
   width: 100%;
 }
 
-.image > input {
-  width: 100%;
-  height: 100%;
+form > input {
+  width: 150px;
+  height: 150px;
+  background-color: red;
   object-fit: cover;
   position: absolute;
   opacity: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .name {
@@ -222,6 +224,7 @@ main {
   bottom: 4px;
   right: 10px;
 }
+
 .btns > button {
   padding: 3px 6px 3px 6px;
   border: none;
@@ -409,6 +412,26 @@ main {
   &:hover {
     background-color: rgba(255, 0, 0, 0.676);
   }
+}
+
+/* ! alert and erro or sucess message */
+.message_box_alart {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  min-height: 40px;
+  min-width: 77%;
+  max-width: 500px;
+  right: 50%;
+  top: 40px;
+  transform: translate(50%, 50%);
+  background-color: #ddd;
+  color: green;
+  font-weight: bold;
 }
 
 @media (max-width: 700px) {

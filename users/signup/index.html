@@ -48,7 +48,7 @@
             <label for="phone"
               ><b>Mobile Number</b>
               <input
-                type="phone"
+                type="number"
                 id="phone"
                 name="mobile"
                 placeholder="Enter your mobile number"
@@ -76,10 +76,22 @@
               />
             </label>
           </div>
+          <!-- term and policy -->
+          <div class="term_and_condition">
+            <div class="checkbox" onclick="contnubtnDisbal();">
+              <input type="checkbox" name="term" id="term_and_condition" />
+            </div>
+            <div class="term_or">
+              i Agree to this <a href="">term</a> and
+              <a href="./hello">condetion</a>
+            </div>
+          </div>
           <div class="btn_container">
             <div class="loginbtn" id="loginbtn">LOGIN</div>
             <!-- <button class="loginbtn" id="loginbtn">LOGIN</button> -->
-            <button class="signupbtn" type="submit">CONTINUE</button>
+            <button class="signupbtn" type="submit" id="continue">
+              CONTINUE
+            </button>
           </div>
         </form>
       </div>

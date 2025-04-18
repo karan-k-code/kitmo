@@ -165,7 +165,9 @@ if (!localStorage.getItem("welcome")) {
 const ipff = async () => {
   const ddd = await fetch("https://api64.ipify.org?format=json")
     .then((response) => response.json())
-    .then((data) => console.log("IP Address:", data.ip))
+    .then((data) => {
+      return data;
+    })
     .catch((error) => console.error("Error:", error));
 
   console.log(ddd);

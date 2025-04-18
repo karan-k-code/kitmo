@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Product | E-Commerce</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1><i class="fas fa-plus-circle"></i> Add New Product</h1>
+        <a href="#" class="btn btn-secondary"
+          ><i class="fas fa-arrow-left"></i> Back to Products</a
+        >
+      </div>
+
+      <form id="productForm">
+        <div class="upload-card">
+          <h2 class="card-title">
+            <i class="fas fa-info-circle"></i> Basic Information
+          </h2>
+
+          <div class="form-group">
+            <label for="productName">Product Name *</label>
+            <input
+              type="text"
+              id="productName"
+              class="form-control"
+              placeholder="Enter product name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="productDescription">Description *</label>
+            <textarea
+              id="productDescription"
+              class="form-control"
+              placeholder="Enter detailed product description"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productCategory">Category *</label>
+              <select id="productCategory" class="form-control" required>
+                <option value="">Select category</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home & Garden</option>
+                <option value="beauty">Beauty</option>
+                <option value="sports">Sports</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productBrand">Brand</label>
+              <input
+                type="text"
+                id="productBrand"
+                class="form-control"
+                placeholder="Enter brand name"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="upload-card">
+          <h2 class="card-title">
+            <i class="fas fa-image"></i> Product Images
+          </h2>
+
+          <div class="image-upload" id="dropArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag & drop product images here</p>
+            <small>or</small>
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              multiple
+              style="display: none"
+            />
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('fileInput').click()"
+            >
+              Browse Files
+            </button>
+          </div>
+
+          <div id="image-preview"></div>
+        </div>
+
+        <div class="upload-card">
+          <h2 class="card-title">
+            <i class="fas fa-tag"></i> Pricing & Inventory
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productPrice">Price *</label>
+              <div style="position: relative">
+                <span
+                  style="
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  "
+                  >$</span
+                >
+                <input
+                  type="number"
+                  id="productPrice"
+                  class="form-control"
+                  placeholder="0.00"
+                  style="padding-left: 30px"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="productComparePrice">Compare at Price</label>
+              <div style="position: relative">
+                <span
+                  style="
+                    position: absolute;
+                    left: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  "
+                  >$</span
+                >
+                <input
+                  type="number"
+                  id="productComparePrice"
+                  class="form-control"
+                  placeholder="0.00"
+                  style="padding-left: 30px"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="productSKU">SKU *</label>
+              <input
+                type="text"
+                id="productSKU"
+                class="form-control"
+                placeholder="Product SKU"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="productQuantity">Quantity *</label>
+            <input
+              type="number"
+              id="productQuantity"
+              class="form-control"
+              placeholder="Available quantity"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="upload-card">
+          <h2 class="card-title"><i class="fas fa-list-alt"></i> Variants</h2>
+
+          <div id="variants-container" class="variants-container">
+            <div class="variant-item">
+              <div class="form-group">
+                <label>Variant Type</label>
+                <select class="form-control variant-type">
+                  <option value="size">Size</option>
+                  <option value="color">Color</option>
+                  <option value="material">Material</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Variant Value</label>
+                <input
+                  type="text"
+                  class="form-control variant-value"
+                  placeholder="e.g. Red, Large, etc."
+                />
+              </div>
+              <div class="form-group">
+                <label>Additional Price</label>
+                <input
+                  type="number"
+                  class="form-control variant-price"
+                  placeholder="0.00"
+                />
+              </div>
+              <button type="button" class="remove-variant">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="add-variant" id="addVariant">
+            <i class="fas fa-plus"></i> Add Variant
+          </button>
+        </div>
+
+        <div class="upload-card">
+          <h2 class="card-title"><i class="fas fa-toggle-on"></i> Status</h2>
+
+          <div class="form-group">
+            <div class="status-toggle">
+              <label>Product Status</label>
+              <label class="switch">
+                <input type="checkbox" id="productStatus" checked />
+                <span class="slider"></span>
+              </label>
+              <span id="statusText">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button type="button" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -42,47 +42,25 @@ forml.addEventListener("submit", async (e) => {
   if (userdata.success == true) {
     successMsg();
     setTimeout(() => {
-      // window.location.href = "../../index.html";
+      window.location.href = "../../index.html";
     }, 2000);
   } else {
     alert(userdata.errors);
   }
 });
 
-// document.getElementById('product').addEventListener('submit', function(event) {
-//   event.preventDefault();
-//   const username = document.getElementById('name').value;
-//   const phone = document.getElementById('phone').value;
-//   const email = document.getElementById('email').value;
-//   const password = document.getElementById('password').value;
-//   userData.push({
-//     username: username,
-//     phone: phone,
-//     email: email,
-//     password: password,
-//   });
+const contnubtnDisbal = () => {
+  const continueH = document.getElementById("continue");
+  const term_and_condition_h = document.getElementById("term_and_condition");
 
-//   localStorage.setItem("userdata", JSON.stringify(userData));
+  if (term_and_condition_h.checked) {
+    continueH.style.backgroundColor = "#5ab8e4";
+    continueH.disabled = false;
+  } else {
+    continueH.style.backgroundColor = "rgba(142, 142, 145, 0.897)";
+    continueH.style.cursor = "default";
+    continueH.disabled = true;
+  }
+};
 
-// });
-
-// const scriptURL ="https://script.google.com/macros/s/AKfycbyRjxVVBxXu9oxnWhHzW8cQE0erOYMC1qpSGvF_uC6QAEd7b8JTLPcYhHusOd2xVXs_1g/exec";
-// const form = document.forms["product"];
-
-// form.addEventListener("submit",async (e) => {
-//   e.preventDefault();
-
-//   loader.style.display= 'block';
-//   let response =await fetch(scriptURL, { method: "POST", body: new FormData(form) })
-//     .then((response) =>
-//       alert("welcome to kitmo ")
-//     )
-//     .then(() => {
-//       // window.location.href = "/";
-//       loader.style.display= 'flex';
-
-//     })
-//     .catch((error) => console.error("Error!", error.message));
-// });
-
-// const url ="http://127.0.0.1:4000/api/v1/users/register";
+contnubtnDisbal();
