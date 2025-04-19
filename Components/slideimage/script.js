@@ -61,6 +61,10 @@ const imageslideF = () => {
     }
   });
 
+  if (currentIndex == 0) {
+    prevBtn.style.display = "none";
+  }
+
   prevBtn.addEventListener("click", () => {
     // trackn();
     showSlide(currentIndex - 1);
@@ -82,6 +86,20 @@ const imageslideF = () => {
   const track = () => {
     const fs = radioImg.childNodes[currentIndex + 1];
     fs.checked = true;
+    Disable_btn();
+  };
+
+  const Disable_btn = () => {
+    if (currentIndex == 0) {
+      prevBtn.style.display = "none";
+    } else {
+      prevBtn.style.display = "flex";
+    }
+    if (currentIndex !== totalSlides - 1) {
+      nextBtn.style.display = "flex";
+    } else {
+      nextBtn.style.display = "none";
+    }
   };
 
   // const trackn = () => {
@@ -94,21 +112,38 @@ const imageslideF = () => {
   radioImg.addEventListener("click", (e) => {
     // trackn();
     showSlide(e.target.value - 1);
+    Disable_btn();
   });
 
   // ! image hover change
   const imageHover = document.querySelectorAll(".hover_img");
   let image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
   imageHover.forEach((e) => {
+    // Store the mouseout handler in a variable
+    const handleMouseout = () => {
+      e.style.transform = "scale(1)";
+      slides.childNodes[currentIndex + 1].setAttribute("src", image_url_c);
+    };
+
     e.addEventListener("mouseover", () => {
-      image_url_c = slides.childNodes[currentIndex + 1].getAttribute("src");
       e.style.transform = "scale(1.1)";
       const imageUrl = e.getAttribute("src");
       slides.childNodes[currentIndex + 1].setAttribute("src", imageUrl);
+
+      // Restore the mouseout handler after a delay (optional)
+      e.addEventListener("mouseout", handleMouseout);
     });
-    e.addEventListener("mouseout", () => {
-      e.style.transform = "scale(1)";
-      slides.childNodes[currentIndex + 1].setAttribute("src", image_url_c);
+
+    e.addEventListener("mouseout", handleMouseout);
+
+    e.addEventListener("click", (c) => {
+      handleMouseout();
+      // Temporarily remove the mouseout handler to prevent it from firing
+      e.removeEventListener("mouseout", handleMouseout);
+      // Perform the click action
+      showSlide(e.getAttribute("value") - 1);
+      image_url_c = e.getAttribute("src");
+      track();
     });
   });
 };

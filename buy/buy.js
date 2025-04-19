@@ -320,7 +320,7 @@ const genHoverImage = () => {
     return (imageG.innerHTML += imageArry
       .map((x) => {
         const imageUr = x.img.replace("http://", "https://");
-        i = i++;
+        i = i + 1;
         return `<span><img class="hover_img" src="${imageUr}" value="${i}"></span>`;
       })
       .join(""));

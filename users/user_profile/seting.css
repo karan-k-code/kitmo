@@ -22,6 +22,7 @@
   font-weight: 600;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
 .them_list > select {
   border: none;
   width: 100%;
@@ -33,6 +34,7 @@
     outline: none;
   }
 }
+
 .them_list > select > option {
   color: inherit;
 }
@@ -62,6 +64,7 @@
   background-color: black;
   border-radius: 7px;
 }
+
 .message_box > p {
   font-size: 1.2rem;
 }

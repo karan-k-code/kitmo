@@ -1,40 +1,6 @@
 let shop = document.getElementById("shop");
 // ! shop item gennerateshop funcation
-// let generateShop = async () => {
-//   return (shop.innerHTML = sle
-//     .map((x) => {
-//       let { id, name, price, desc, img, image } = x;
-//       let search = basket.find((x) => x.id === id) || [];
 
-//       console.log(image[0]);
-
-//       return `
-//         <div class="box option_b " id="producat_id_${id}" >
-//             <!--<div class="itam_name dark_box nav_light">
-//                 <h3>${name}</h3>
-//             </div>-->
-//             <div class="itam_img" onclick="goo(${id})">
-//             <img src="${img}">
-//             </div>
-//             <div class="itam_detelas">
-//                 <div class="itam_price">
-//                   $${price}
-//                 </div>
-//                 <div class="desc">
-//                   ${desc}
-//                 </div>
-//             </div>
-//             <div class="shop_box " >
-//                 <div class="add_cart " onclick="addcart(${id})">
-//                 <b>ADD CART</b></div>
-//                 <div id="${id}">
-//                 </div>
-//                 <div class="buy" onclick="goo(${id})" ><b>BUY</b></div>
-//             </div>
-//         </div>`;
-//     })
-//     .join(""));
-// };
 let generateShop = async () => {
   try {
     const product = await getProduct();
@@ -77,7 +43,6 @@ let generateShop = async () => {
     console.log(error);
   }
 };
-generateShop();
 
 // ! add cart
 let pop = document.getElementById("pop");
@@ -88,46 +53,10 @@ const popnone = () => {
   setTimeout(() => {
     nothide.classList.remove("hide");
     pop.style.display = "none";
-  }, 550); // 550ms corresponds to the animation duration
+  }, 1000); // 1s corresponds to the animation duration
 };
 
-// ! calculat cart
-// if (userData) {
-//   calculatCart();
-// }
-
-// ! image slide code
-
-document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".image1");
-  let currentIndex = 0;
-
-  function showNextImage() {
-    // Hide all images
-    images.forEach((img, index) => {
-      if (index === currentIndex) {
-        img.classList.add("active");
-      } else {
-        img.classList.remove("active");
-      }
-    });
-
-    // Move to the next image
-    currentIndex = (currentIndex + 1) % images.length;
-  }
-
-  // Initially show the first image
-  showNextImage();
-
-  // Change image every 4 seconds
-  setInterval(showNextImage, 4000);
-});
-
-// refreshToken();
-calculatCart();
-
-// ! keep_shoping
-
+// ! keep_shoping user histry
 const keepShoping = async () => {
   const keep_shoping = document.getElementById("keep_shoping");
   const url = urls + "/histry/histry";
@@ -152,16 +81,13 @@ const keepShoping = async () => {
   }
 };
 
-keepShoping();
-
 // ! wel come box Call
 
 if (!localStorage.getItem("welcome")) {
   document.getElementById("welcome_box").style.display = "block";
 }
 
-//
-
+// ip address funacation
 const ipff = async () => {
   const ddd = await fetch("https://api64.ipify.org?format=json")
     .then((response) => response.json())
@@ -173,4 +99,19 @@ const ipff = async () => {
   console.log(ddd);
 };
 
+//! run all funcation hear
+
+//? product item genrate funcation
+generateShop();
+
+//? get ip address
 ipff();
+
+//? user hestry
+keepShoping();
+
+//? calculat cart item
+calculatCart();
+
+//? refreshToken
+// refreshToken();
