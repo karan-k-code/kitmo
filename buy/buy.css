@@ -1,8 +1,18 @@
+:root {
+  --dark-text-color: rgba(255, 255, 255, 0.9);
+  --dark-text-color: rgba(15, 15, 15, 0.9);
+}
+
 * {
   margin: 0;
   font-family: Arial;
   border: border-box;
   padding: 0;
+}
+
+body {
+  color: var(--dark-text-color);
+  /* background-color: black; */
 }
 
 .big_container {
@@ -60,9 +70,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 10px 14px 10px 14px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border-radius: 50%;
+  font-size: 1.3rem;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
@@ -124,7 +140,7 @@
 
 /* product detels container */
 .product_container {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   transition: 0.3s ease;

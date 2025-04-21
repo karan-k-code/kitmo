@@ -130,20 +130,22 @@ const imageslideF = () => {
       const imageUrl = e.getAttribute("src");
       slides.childNodes[currentIndex + 1].setAttribute("src", imageUrl);
 
-      // Restore the mouseout handler after a delay (optional)
+      // image_url_c =
+      // Restore the mouseout handler after a delay
       e.addEventListener("mouseout", handleMouseout);
     });
 
     e.addEventListener("mouseout", handleMouseout);
 
-    e.addEventListener("click", (c) => {
+    e.addEventListener("click", () => {
       handleMouseout();
       // Temporarily remove the mouseout handler to prevent it from firing
       e.removeEventListener("mouseout", handleMouseout);
       // Perform the click action
       showSlide(e.getAttribute("value") - 1);
-      image_url_c = e.getAttribute("src");
+
       track();
+      image_url_c = e.getAttribute("src");
     });
   });
 };
