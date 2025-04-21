@@ -1,5 +1,6 @@
 // ! this search area code
 
+// secarch function destop and laptop and big device
 let submitForm = async () => {
   // Get form input values
 
@@ -11,28 +12,6 @@ let submitForm = async () => {
 
   const searchdd = await apiCallGet(`${urls}/product/search?q=${valB}`);
 
-  // let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
-
-  // // ! shop item gennerateshop funcation
-  // let generateShopf = async () => {
-  //   let filterData;
-  //   valC = shopItamsData.filter((x) => x.catgory === select);
-  //   valN = shopItamsData.filter((x) => x.name === select);
-
-  //   console.log(select);
-
-  //   console.log(valN);
-  //   console.log(valC);
-  //   if (valC.length !== 0) {
-  //     filterData = valC;
-  //   } else if (valN !== 0) {
-  //     filterData = valN;
-  //   }
-
-  //   let sle = filterData.slice(0, 16);
-
-  //   // search?q=shirt
-
   let search_hh = document.getElementById("search_hh");
   document.getElementById("main_dd").style.display = "none";
 
@@ -71,21 +50,9 @@ let submitForm = async () => {
           </div>`;
     })
     .join(""));
-  // };
-
-  // if (valA !== "All") {
-  //   select = valA;
-  //   generateShopf();
-  //   // big_container.style.display="none"
-  // } else if (valB !== "") {
-  //   select = sentenceCase;
-  //   generateShopf();
-  //   // big_container.style.display="none"
-  // } else {
-  //   generateShop();
-  //   // big_container.style.display="none"
-  // }
 };
+
+// search secation moblie screen and small device
 let submitForm_s = async () => {
   // Get form input values
 
@@ -97,8 +64,6 @@ let submitForm_s = async () => {
 
   const searchdd = await apiCallGet(`${urls}/product/search?q=${valB}`);
 
-  // let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
-
   // // ! shop item gennerateshop funcation
   // let generateShopf = async () => {
   //   let filterData;
@@ -157,18 +122,4 @@ let submitForm_s = async () => {
           </div>`;
     })
     .join(""));
-  // };
-
-  // if (valA !== "All") {
-  //   select = valA;
-  //   generateShopf();
-  //   // big_container.style.display="none"
-  // } else if (valB !== "") {
-  //   select = sentenceCase;
-  //   generateShopf();
-  //   // big_container.style.display="none"
-  // } else {
-  //   generateShop();
-  //   // big_container.style.display="none"
-  // }
 };
