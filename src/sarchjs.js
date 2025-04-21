@@ -29,7 +29,7 @@ let submitForm = async () => {
       return `
           <div class="box option_b dark_box nav_light" id="producat_id_${_id}" >
 
-              <div class="itam_img" onclick="goo(${_id})">
+              <div class="itam_img" onclick="goo('${_id}')">
               <img src="${image[0].img}">
               </div>
               <div class="itam_detelas">
@@ -41,11 +41,11 @@ let submitForm = async () => {
                   </div>
               </div>
               <div class="shop_box dark_box nav_light" >
-                  <div class="add_cart " onclick="addcart(${_id})">
+                  <div class="add_cart " onclick="addcart('${_id}')">
                   <b>ADD CART</b></div>
-                  <div id="${_id}">
+                  <div id="'${_id}'">
                   </div>
-                  <div class="buy" onclick="goo(${_id})" ><b>BUY</b></div>
+                  <div class="buy" onclick="goo('${_id}')" ><b>BUY</b></div>
               </div>
           </div>`;
     })
