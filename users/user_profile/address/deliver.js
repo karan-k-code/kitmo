@@ -75,7 +75,7 @@ const genAddress = async () => {
       return `
       <div>
       <input type="radio" name="addressId" value="${_id}">
-      <p><strong>Name:</strong> ${user.data.username}</p>
+      <p><strong>Name:</strong> ${user.data.fullName}</p>
       <p><strong>Address:</strong> ${address}</p>
       <p><strong>City:</strong> ${city}</p>
       <p><strong>Postal Code:</strong> ${zip}</p>

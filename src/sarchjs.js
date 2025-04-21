@@ -1,72 +1,174 @@
 // ! this search area code
 
-let submitForm = () => {
+let submitForm = async () => {
   // Get form input values
 
   let select;
   let valA = document.getElementById("searchSelect").value;
   let valB = document.getElementById("transcript").value;
 
-  let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
+  // /api/products/search?q=shirt&category=men&minPrice=10&maxPrice=100
 
-  // ! shop item gennerateshop funcation
-  let generateShopf = async () => {
-    let filterData;
-    valC = shopItamsData.filter((x) => x.catgory === select);
-    valN = shopItamsData.filter((x) => x.name === select);
+  const searchdd = await apiCallGet(`${urls}/product/search?q=${valB}`);
 
-    console.log(select);
+  // let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
 
-    console.log(valN);
-    console.log(valC);
-    if (valC.length !== 0) {
-      filterData = valC;
-    } else if (valN !== 0) {
-      filterData = valN;
-    }
+  // // ! shop item gennerateshop funcation
+  // let generateShopf = async () => {
+  //   let filterData;
+  //   valC = shopItamsData.filter((x) => x.catgory === select);
+  //   valN = shopItamsData.filter((x) => x.name === select);
 
-    let sle = filterData.slice(0, 16);
+  //   console.log(select);
 
-    return (shop.innerHTML = await sle
-      .map((x) => {
-        let { id, name, price, desc, img } = x;
-        let search = basket.find((x) => x.id === id) || [];
-        return `
-          <div class="box option_b dark_box nav_light" id="producat_id_${id}" >
-              
-              <div class="itam_img" onclick="goo(${id})">
-              <img src="${img}">
+  //   console.log(valN);
+  //   console.log(valC);
+  //   if (valC.length !== 0) {
+  //     filterData = valC;
+  //   } else if (valN !== 0) {
+  //     filterData = valN;
+  //   }
+
+  //   let sle = filterData.slice(0, 16);
+
+  //   // search?q=shirt
+
+  let search_hh = document.getElementById("search_hh");
+  document.getElementById("main_dd").style.display = "none";
+
+  return (search_hh.innerHTML = await searchdd
+    .map((x) => {
+      let {
+        _id,
+        productQuntity,
+        productName,
+        productPrice,
+        productDescription,
+        image,
+        productCatgory,
+      } = x;
+      return `
+          <div class="box option_b dark_box nav_light" id="producat_id_${_id}" >
+
+              <div class="itam_img" onclick="goo(${_id})">
+              <img src="${image[0].img}">
               </div>
               <div class="itam_detelas">
                   <div class="itam_price">
-                      $${price}
+                      $${productPrice}
                   </div>
                   <div class="desc">
-                      ${desc}
+                      ${productDescription}
                   </div>
               </div>
               <div class="shop_box dark_box nav_light" >
-                  <div class="add_cart " onclick="addcart(${id})">
+                  <div class="add_cart " onclick="addcart(${_id})">
                   <b>ADD CART</b></div>
-                  <div id="${id}">
+                  <div id="${_id}">
                   </div>
-                  <div class="buy" onclick="goo(${id})" ><b>BUY</b></div>
+                  <div class="buy" onclick="goo(${_id})" ><b>BUY</b></div>
               </div>
           </div>`;
-      })
-      .join(""));
-  };
+    })
+    .join(""));
+  // };
 
-  if (valA !== "All") {
-    select = valA;
-    generateShopf();
-    // big_container.style.display="none"
-  } else if (valB !== "") {
-    select = sentenceCase;
-    generateShopf();
-    // big_container.style.display="none"
-  } else {
-    generateShop();
-    // big_container.style.display="none"
-  }
+  // if (valA !== "All") {
+  //   select = valA;
+  //   generateShopf();
+  //   // big_container.style.display="none"
+  // } else if (valB !== "") {
+  //   select = sentenceCase;
+  //   generateShopf();
+  //   // big_container.style.display="none"
+  // } else {
+  //   generateShop();
+  //   // big_container.style.display="none"
+  // }
+};
+let submitForm_s = async () => {
+  // Get form input values
+
+  let select;
+  let valA = document.getElementById("searchSelect").value;
+  let valB = document.getElementById("transcript_s").value;
+
+  // /api/products/search?q=shirt&category=men&minPrice=10&maxPrice=100
+
+  const searchdd = await apiCallGet(`${urls}/product/search?q=${valB}`);
+
+  // let sentenceCase = valB.charAt(0).toUpperCase() + valB.slice(1).toLowerCase();
+
+  // // ! shop item gennerateshop funcation
+  // let generateShopf = async () => {
+  //   let filterData;
+  //   valC = shopItamsData.filter((x) => x.catgory === select);
+  //   valN = shopItamsData.filter((x) => x.name === select);
+
+  //   console.log(select);
+
+  //   console.log(valN);
+  //   console.log(valC);
+  //   if (valC.length !== 0) {
+  //     filterData = valC;
+  //   } else if (valN !== 0) {
+  //     filterData = valN;
+  //   }
+
+  //   let sle = filterData.slice(0, 16);
+
+  //   // search?q=shirt
+
+  let search_hh = document.getElementById("search_hh");
+  document.getElementById("main_dd").style.display = "none";
+
+  return (search_hh.innerHTML = await searchdd
+    .map((x) => {
+      let {
+        _id,
+        productQuntity,
+        productName,
+        productPrice,
+        productDescription,
+        image,
+        productCatgory,
+      } = x;
+      return `
+          <div class="box option_b dark_box nav_light" id="producat_id_${_id}" >
+
+              <div class="itam_img" onclick="goo(${_id})">
+              <img src="${image[0].img}">
+              </div>
+              <div class="itam_detelas">
+                  <div class="itam_price">
+                      $${productPrice}
+                  </div>
+                  <div class="desc">
+                      ${productDescription}
+                  </div>
+              </div>
+              <div class="shop_box dark_box nav_light" >
+                  <div class="add_cart " onclick="addcart(${_id})">
+                  <b>ADD CART</b></div>
+                  <div id="${_id}">
+                  </div>
+                  <div class="buy" onclick="goo(${_id})" ><b>BUY</b></div>
+              </div>
+          </div>`;
+    })
+    .join(""));
+  // };
+
+  // if (valA !== "All") {
+  //   select = valA;
+  //   generateShopf();
+  //   // big_container.style.display="none"
+  // } else if (valB !== "") {
+  //   select = sentenceCase;
+  //   generateShopf();
+  //   // big_container.style.display="none"
+  // } else {
+  //   generateShop();
+  //   // big_container.style.display="none"
+  // }
 };

@@ -138,7 +138,11 @@
       <!-- ! small display search_secation_panl -->
       <div class="search_secation_panl dark_box nav_light">
         <!--! microphone button -->
-        <div class="microphone light no_dark">
+        <div
+          class="microphone light no_dark"
+          id="start"
+          onclick="recognition.start();"
+        >
           <i class="fa-solid fa-microphone"></i>
         </div>
         <!--! search-input area -->
@@ -146,17 +150,18 @@
           type="text"
           placeholder="Search kitmo"
           class="search-input light no_dark"
+          id="transcript_s"
         />
         <!--! search_icon button -->
         <div class="search-icon light no_dark">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass" onclick="submitForm_s()"></i>
         </div>
       </div>
 
       <div class="colam dark_box nav_light"></div>
     </header>
     <!--! main -->
-    <main>
+    <main id="main_dd">
       <!--! hero section website postar dile and offer -->
       <div class="hero_box">
         <div class="slider" id="slider">
@@ -281,6 +286,8 @@
         </div>
       </div> -->
     </main>
+
+    <section class="cantenr" id="search_hh"></section>
 
     <!-- ! first time -->
     <div id="welcome_box" class="first_time">

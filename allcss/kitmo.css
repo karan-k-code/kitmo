@@ -369,6 +369,8 @@ a {
   cursor: pointer;
 }
 
+/* search secation */
+
 @media (max-width: 500px) {
   .contacts_box {
     display: none;

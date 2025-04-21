@@ -89,6 +89,7 @@ h2 {
 
 .btn_container .signupbtn {
   background-color: #5ab8e4;
+  cursor: pointer;
 }
 
 .box1 {

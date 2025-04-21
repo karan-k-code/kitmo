@@ -304,7 +304,7 @@ const genneratImageDiv = () => {
     return (imageG.innerHTML += imageArry
       .map((x) => {
         const imageUr = x.img.replace("http://", "https://");
-        return `<img src="${imageUr}" alt="Slide 1" />`;
+        return `<img loading="lazy" src="${imageUr}" alt="Slide 1" />`;
       })
       .join(""));
   } catch (error) {
@@ -321,7 +321,7 @@ const genHoverImage = () => {
       .map((x) => {
         const imageUr = x.img.replace("http://", "https://");
         i = i + 1;
-        return `<span><img class="hover_img" src="${imageUr}" value="${i}"></span>`;
+        return `<span><img loading="lazy" class="hover_img" src="${imageUr}" value="${i}" ></span>`;
       })
       .join(""));
   } catch (error) {

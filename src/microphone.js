@@ -1,19 +1,20 @@
 // Check if the browser supports SpeechRecognition
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 
 if (SpeechRecognition) {
   const recognition = new SpeechRecognition();
-  recognition.lang = 'en-US'; // Set language (optional)
+  recognition.lang = "en-US"; // Set language (optional)
   recognition.interimResults = false; // Show only final results
   recognition.maxAlternatives = 1; // Limit to 1 transcription alternative
 
-  const startButton = document.getElementById('start');
-  const stopButton = document.getElementById('stop');
-  const transcriptParagraph = document.getElementById('transcript');
+  const startButton = document.getElementById("start");
+  const stopButton = document.getElementById("stop");
+  const transcriptParagraph = document.getElementById("transcript");
 
   // Event when speech recognition starts
   recognition.onstart = () => {
-    transcriptParagraph.value = 'Listening...';
+    transcriptParagraph.value = "Listening...";
     startButton.disabled = true;
     // stopButton.disabled = false;
   };
@@ -22,6 +23,7 @@ if (SpeechRecognition) {
   recognition.onend = () => {
     startButton.disabled = false;
     // stopButton.disabled = true;
+    submitForm();
   };
 
   // Event when speech recognition gets a result
@@ -33,20 +35,20 @@ if (SpeechRecognition) {
 
   // Event if there’s an error
   recognition.onerror = (event) => {
-      let jfjf = `Error: ${event.error}`;
-      console.log(jfjf)
+    let jfjf = `Error: ${event.error}`;
+    console.log(jfjf);
     console.error(event.error);
   };
 
   // Start listening for voice input
-  startButton.addEventListener('click', () => {
+  startButton.addEventListener("click", () => {
     recognition.start();
   });
 
-//   Stop listening
-//   stopButton.addEventListener('click', () => {
-//     recognition.stop();
-//   });
+  //   Stop listening
+  //   stopButton.addEventListener('click', () => {
+  //     recognition.stop();
+  //   });
 } else {
   alert("Sorry, your browser doesn't support speech recognition.");
 }
