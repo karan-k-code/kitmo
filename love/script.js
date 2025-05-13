@@ -212,6 +212,7 @@ function playMusic() {
 }
 
 function pauseMusic() {
+  hasPlayed = false;
   bgMusic.pause();
 }
 
