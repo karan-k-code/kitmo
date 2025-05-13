@@ -1,15 +1,15 @@
 // ! const
 // cloud
-const urlg = "https://karan-k-code.github.io/kitmo";
-const urls = "https://kitmo.onrender.com/api/v1";
+// const urlg = "https://karan-k-code.github.io/kitmo";
+// const urls = "https://kitmo.onrender.com/api/v1";
 
 // local
-// const urlg = "http://127.0.0.1:5503";
-// const urls = "http://127.0.0.1:5000/api/v1";
+const urlg = "http://127.0.0.1:5503";
+const urls = "http://127.0.0.1:5000/api/v1";
 
 // network
-// const urlg = "http://192.168.220.23:5503";
-// const urls = "http://192.168.220.23:5000/api/v1";
+// const urlg = "http://192.168.240.23:5503";
+// const urls = "http://192.168.240.23:5000/api/v1";
 
 let userData = JSON.parse(localStorage.getItem("userdata"));
 const Currency = "₹"; // $

@@ -1,0 +1,229 @@
+:root {
+  --card-color: #ddd;
+  --input-color: #ffffff4f;
+}
+
+body {
+}
+
+.contenr {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+  columns: 3 130px;
+  column-gap: 0.7em;
+}
+
+.contenr > img {
+  display: block;
+  margin-bottom: 0.7em;
+  width: 100%;
+}
+
+.contenr > span > .l_video {
+  display: block;
+  margin-bottom: 0.7em;
+  width: 100%;
+}
+
+.contenr > span {
+  display: block;
+  margin-bottom: 0.7em;
+  width: 100%;
+  position: relative;
+}
+
+.contenr > span > .fa-play {
+  position: absolute;
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 3px black;
+  color: #ddddddd1;
+  cursor: pointer;
+}
+
+.view_image {
+  width: min(600px, 100%);
+  display: none;
+  max-height: 100dvh;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  margin: auto;
+  background: var(--card-color);
+  border-radius: 1rem;
+}
+
+.view_image > img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+.view_image > video {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 100%;
+  border-radius: 0.4rem;
+}
+
+.view_image > .fa-times {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 4;
+  text-shadow: 0 0 2px white;
+}
+
+.view_image > button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 3px 1rem 3px 1rem;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.password {
+  position: fixed;
+  background-image: url("../image/roses.mp4");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.password > samp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.password > samp > input {
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  /* border: none; */
+  background-color: var(--input-color);
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: black;
+    text-shadow: 0 0 6px white;
+  }
+  &:focus {
+    outline-color: white;
+    box-shadow: 0 0 10px #fff;
+  }
+}
+
+.password > samp > button {
+  padding: 0.5rem;
+  width: fit-content;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: var(--input-color);
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 -5px 6px black;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px white;
+    border: 1px solid #fff;
+  }
+}
+
+.delet_image_password {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: 100%;
+  height: 100dvb;
+}
+
+.delet_image_password > span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1.5rem;
+  background-color: #ddd;
+  border-radius: 1rem;
+}
+
+.delet_image_password > span > input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.delet_image_password > span > span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delet_image_password > span > span > button {
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: #51dcd3;
+  }
+}
+
+.upload_img {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.upload_img > button {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  background-color: #4343e0;
+}
+
+.video_bgc {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1; /* Behind content */
+}
+
+.video-background .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+#audio-player {
+  display: none;
+}
+
+.music {
+  position: absolute;
+}

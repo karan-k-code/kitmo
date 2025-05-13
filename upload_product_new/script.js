@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Form submission
   const productForm = document.getElementById("productForm");
 
-  productForm.addEventListener("submit", function (e) {
+  productForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     // Basic validation
@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const productPrice = document.getElementById("productPrice").value;
     const productSKU = document.getElementById("productSKU").value;
     const productQuantity = document.getElementById("productQuantity").value;
+    const fileInput = document.getElementById("fileInput").files;
 
     if (
       !productName ||
@@ -145,26 +146,46 @@ document.addEventListener("DOMContentLoaded", function () {
       !productCategory ||
       !productPrice ||
       !productSKU ||
-      !productQuantity
+      !productQuantity ||
+      fileInput.length === 0
     ) {
-      alert("Please fill in all required fields.");
+      alert("Please fill in all required fields and upload an image.");
       return;
     }
 
-    // In a real application, you would send the form data to the server here
-    alert("Product submitted successfully!");
-    console.log("Form submitted:", {
-      name: productName,
-      description: productDescription,
-      category: productCategory,
-      price: productPrice,
-      sku: productSKU,
-      quantity: productQuantity,
-      // Add other fields as needed
-    });
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("productName", productName);
+    formData.append("productDescription", productDescription);
+    formData.append("productCategory", productCategory);
+    formData.append("productPrice", productPrice);
+    formData.append("sku", productSKU);
+    formData.append("productQuantity", productQuantity);
+    formData.append("image", fileInput[0]); // Assuming only one image is uploaded
 
-    // Reset form (optional)
-    // this.reset();
+    try {
+      // Send data to the server
+      const response = await fetch(`${urls}/product/uploadproduct`, {
+        method: "POST",
+        body: formData,
+        redirect: "follow",
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to upload product. Please try again.");
+      }
+
+      const result = await response.json();
+      alert("Product submitted successfully!");
+      console.log("Server response:", result);
+
+      // Reset form (optional)
+      // this.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while submitting the product.");
+    }
   });
 });
 

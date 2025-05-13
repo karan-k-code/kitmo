@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>photo</title>
+    <link rel="icon" href="../k.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <video class="video_bgc" autoplay muted loop playsinline>
+      <source src="../image/roses.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="delet_image_password" id="delet_image_password">
+      <span>
+        <input
+          type="password"
+          id="delet_password"
+          placeholder="Enter Password"
+        />
+        <span>
+          <button onclick="cencel_btn_delete()">Cencal</button>
+          <button id="next_de">NEXT</button>
+        </span>
+      </span>
+    </div>
+
+    <div class="password" id="password_c">
+      <samp>
+        <input type="password" id="password" placeholder="Enter password" />
+        <button onclick="gen_image()">Submit</button>
+      </samp>
+    </div>
+
+    <div class="contenr" id="contenr"></div>
+
+    <div class="view_image" id="view_image"></div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" autoplay loop>
+      <source src="../image/Slow_Wipers_In_Rain.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play Button (optional) -->
+    <div class="music">
+      <button onclick="playMusic()">Play Music</button>
+      <button onclick="pauseMusic()">Pause Music</button>
+    </div>
+
+    <div class="upload_img" id="image_uuu">
+      <input type="file" id="file" style="display: none" />
+      <button
+        type="button"
+        class="btn"
+        onclick="document.getElementById('file').click()"
+      >
+        Browse Files
+      </button>
+    </div>
+
+    <script src="../Components/functions/script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
