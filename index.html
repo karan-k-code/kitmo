@@ -29,9 +29,13 @@
   </head>
   <body class="light">
     <!-- ! Loader -->
+    <!-- ! Loader -->
     <div class="loderbox">
+      <div class="success_box">Login Successfull.</div>
       <div class="loader"></div>
+      <div class="alart_b" id="alart_b">worng password</div>
     </div>
+
     <!-- ! notification -->
     <div class="pop" id="pop">
       <div class="notification animate" id="nothide"></div>
@@ -47,8 +51,14 @@
             class="box_shadow box_no_dark_shadow light no_dark"
             style="left: -200px"
           >
-            <!-- ! dark mode button -->
+            <!-- seting -->
             <li class="option_b">
+              <a href="./users/user_profile/index.html?fun=setting"
+                ><i class="fa-solid fa-gear"></i> Setting</a
+              >
+            </li>
+            <!-- ! dark mode button -->
+            <li class="option_b" style="display: none">
               <div class="dark-mode-toggle">
                 <input type="checkbox" id="dark-mode-toggle-checkbox" />
                 <label for="dark-mode-toggle-checkbox"></label>
@@ -56,8 +66,26 @@
               <div class="mode_line">Dark Mode</div>
             </li>
 
+            <li class="option_b">
+              <a href="./users/user_profile/index.html?fun=order&filter=all"
+                ><i class="fa-solid fa-box-open"></i> Orders</a
+              >
+            </li>
+            <li class="option_b">
+              <a href="./users/user_profile/index.html?fun=like"
+                ><i class="fa-regular fa-heart"></i
+                ><span> Likes product</span></a
+              >
+            </li>
+
+            <li class="option_b">
+              <a href="">
+                <i class="fa-solid fa-clock-rotate-left"></i> Histry</a
+              >
+            </li>
+
             <!-- ! get location -->
-            <li class="option_b" id="location_p">
+            <li class="option_b" id="location_p" style="display: none">
               <i class="fa-solid fa-location-dot"></i
               ><a id="curent-location"> get location</a>
             </li>
@@ -66,14 +94,13 @@
             <li class="option_b">
               <a href="./help/"><i class="fa-solid fa-question"></i> Help</a>
             </li>
+
             <!-- ! feedback -->
             <li class="option_b">
               <a href="./feedback/"
                 ><i class="fa-regular fa-message"></i> Feedback</a
               >
             </li>
-            <!-- ! contact -->
-            <li class="option_b"><a href="./contact/">Contact</a></li>
           </ul>
         </div>
         <!--! navbar menu button -->
@@ -187,10 +214,12 @@
 
       <div class="colam_cantenr light"></div>
       <!-- ! keep shoping -->
-      <div class="best_product_title">
+      <div class="best_product_title" id="histry_product">
         <span>Keep Shoping</span><span class="view_all">View all</span>
       </div>
+
       <div class="best_product" id="keep_shoping"></div>
+
       <!--! THIS IS ITAM BOX -->
       <div class="cantenr" id="shop">
         <!-- ! code--main.js -->
@@ -331,7 +360,7 @@
         <!-- Copy rights -->
         <div class="footer_div">
           <div class="title_f">Copy rights</div>
-          <a href="">Conditions of use</a>
+          <a href="./term_or_condition/">Conditions of use</a>
           <a href="./policy/Privacy_Policy.docx" download="Privacy_Policy.docx"
             >Privacy notice</a
           >

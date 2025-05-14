@@ -74,7 +74,7 @@ let longoutBtn = async () => {
   if (response.success) {
     window.location.href = urlg + "/users/login/";
   } else {
-    alert(response.errors);
+    alart_mess("error");
   }
 };
 

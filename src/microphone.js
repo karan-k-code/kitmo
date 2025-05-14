@@ -52,7 +52,7 @@ const mic_bg = () => {
     //     recognition.stop();
     //   });
   } else {
-    alert("Sorry, your browser doesn't support speech recognition.");
+    alart_mess("Sorry, your browser doesn't support speech recognition.");
   }
 };
 
@@ -109,6 +109,6 @@ const mic_fff = () => {
     //     recognition.stop();
     //   });
   } else {
-    alert("Sorry, your browser doesn't support speech recognition.");
+    alart_mess("Sorry, your browser doesn't support speech recognition.");
   }
 };

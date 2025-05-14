@@ -82,7 +82,7 @@ const getCart = async () => {
     loaderStop();
   } else {
     loaderStop();
-    alert(response?.errors);
+    alart_mess(response?.errors);
   }
   return response;
 };
@@ -278,7 +278,7 @@ const sendproduct = async (url, forml) => {
     credentials: "include",
   }).catch((error) => {
     loaderStop();
-    console.log(error);
+    alart_mess(error);
   });
 
   // Check if the response is okay
@@ -305,7 +305,6 @@ const welcomeClose = () => {
 };
 
 //! discountAmount funcation
-
 function calculateDiscount(price, discount) {
   if (price <= 0 || discount < 0 || discount > 100) {
     return "Invalid input";
@@ -319,4 +318,10 @@ function calculateDiscount(price, discount) {
     discountAmount: discountAmount.toFixed(2),
     finalPrice: finalPrice.toFixed(2),
   };
+}
+
+// backbutton
+
+function goBack() {
+  window.history.back();
 }

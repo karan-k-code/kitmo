@@ -36,16 +36,36 @@ const register = async (url, forml) => {
 
 forml.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  let formData = new FormData(forml);
+  let data = Object.fromEntries(formData);
+
+  const nameRegex = /^[A-Za-z\s]+$/;
+
+  if (!nameRegex.test(data.username)) {
+    alart_mess("Username can only contain letters and spaces.");
+    return;
+  }
+
+  if (data.mobile.length !== 10) {
+    alart_mess("worng mobile number");
+    return;
+  }
+  if (data.password.length < 7) {
+    alart_mess("min 8 charter password reqied");
+    return;
+  }
+
   // ! Apicall
   let userdata = await register(url, forml);
 
   if (userdata.success == true) {
-    successMsg();
+    successMsg("welcome to kitmo");
     setTimeout(() => {
       window.location.href = "../../index.html";
     }, 2000);
   } else {
-    alert(userdata.errors);
+    alart_mess(userdata.errors);
   }
 });
 
@@ -55,6 +75,7 @@ const contnubtnDisbal = () => {
 
   if (term_and_condition_h.checked) {
     continueH.style.backgroundColor = "#5ab8e4";
+    continueH.style.cursor = "pointer";
     continueH.disabled = false;
   } else {
     continueH.style.backgroundColor = "rgba(142, 142, 145, 0.897)";

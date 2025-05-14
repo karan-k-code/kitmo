@@ -59,6 +59,13 @@ h2 {
   margin-top: 10px;
 }
 
+.password_eee {
+  margin-top: 10px;
+  color: #6b6969b0;
+}
+.input_container {
+  opacity: 0.8;
+}
 .input_container input {
   padding: 8px;
   border: 1px solid transparent;
@@ -128,17 +135,6 @@ h2 {
   padding: 0 20px 0 20px;
 }
 
-.loader {
-  display: none;
-  position: absolute;
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #2596e6; /* Blue */
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  animation: spin 1s linear infinite;
-}
-
 .loginbtn {
   display: flex;
   align-items: center;
@@ -152,6 +148,8 @@ h2 {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 @media (max-width: 382px) {

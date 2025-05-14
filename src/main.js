@@ -40,7 +40,7 @@ let generateShop = async () => {
       })
       .join(""));
   } catch (error) {
-    console.log(error);
+    alart_mess(error);
   }
 };
 
@@ -77,7 +77,8 @@ const keepShoping = async () => {
       })
       .join("");
   } else {
-    return (keep_shoping.innerHTML = "No history to display.");
+    document.getElementById("histry_product").style.display = "none";
+    return (keep_shoping.innerHTML = "");
   }
 };
 
@@ -105,7 +106,7 @@ const ipff = async () => {
 generateShop();
 
 //? get ip address
-ipff();
+// ipff();
 
 //? user hestry
 keepShoping();

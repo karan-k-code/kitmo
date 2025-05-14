@@ -1,5 +1,23 @@
 :root {
   --dark-color: black;
+
+  /* button */
+  --btn-con-color: #3498db;
+  --btn-readias: 0.4rem;
+  --btn-padding: 7px 10px;
+  --btn-shadow: 2px 2px 4px rgb(0, 0, 0);
+  --btn-boader: 1px solid transparent;
+
+  /* input */
+  --in-padding: 0.6rem;
+  --in-shadow: 0 2px 5px rgba(0, 0, 0, 0.832), 0 2px 5px white;
+
+  /* form contaner */
+
+  /* light shadow */
+  --fm-shadow: 0 0 10px rgba(0, 0, 0, 0.888);
+  /* dark shadow */
+  --fm-shadow-d: 0 0 10px rgba(255, 255, 255);
 }
 
 body {
@@ -9,10 +27,12 @@ body {
 .help {
   cursor: pointer;
 }
+
 .help a {
   text-decoration: none;
   color: inherit;
 }
+
 .kitmo-logo {
   display: flex;
   width: 100%;
@@ -20,23 +40,28 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .kitmo_img {
   justify-content: center;
   width: 200px;
   height: 100px;
 }
+
 .l_row {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 h2 {
   margin-top: 0;
 }
+
 #login-form {
   flex-direction: column;
   display: flex;
 }
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -45,20 +70,23 @@ h2 {
   text-align: center;
   width: 350px;
 }
+
 .input_container {
   margin-bottom: 20px;
 }
+
 .password {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-top: 10px;
 }
+
 input {
-  padding: 10px;
+  padding: var(--in-padding);
   border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.832), 0 2px 5px white;
+  border-radius: var(--btn-readias);
+  box-shadow: var(--in-shadow);
   background-color: inherit;
   color: inherit;
   &:focus {
@@ -67,26 +95,29 @@ input {
 }
 
 button {
-  background-color: #3498db;
+  background-color: var(--btn-con-color);
   color: #fff;
-  padding: 7px 10px;
-  border: 1px solid transparent;
-  border-radius: 5px;
+  padding: var(--btn-padding);
+  border: var(--btn-boader);
+  border-radius: var(--btn-readias);
   cursor: pointer;
   font-weight: 700;
-  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  box-shadow: var(--btn-shadow);
 }
 
 #singupbtn {
   display: flex;
   background-color: #2ef3f3;
+  border: var(--btn-boader);
   align-items: center;
-  padding: 3px;
-  border-radius: 4px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-readias);
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  box-shadow: var(--btn-shadow);
 }
 
+/* dark mode setting */
 .option_b {
   display: flex;
 }
@@ -98,17 +129,21 @@ button {
 }
 /* dark mode box shadow */
 .box_shadow_light {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.888);
+  box-shadow: var(--fm-shadow);
 }
 
 .darkmode_box_shadow {
-  box-shadow: 0 0 10px rgba(255, 255, 255);
+  box-shadow: var(--fm-shadow-d);
 }
+
+/* button */
 .btn_container {
   display: flex;
   justify-content: space-between;
   padding: 0 20px 0 20px;
 }
+
+/* nav bar */
 .h_container {
   display: flex;
   justify-content: space-between;

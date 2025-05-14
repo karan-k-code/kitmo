@@ -25,6 +25,8 @@ h1 {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 1.2rem;
   border-radius: 5px;
@@ -38,25 +40,23 @@ label {
 
 input,
 textarea {
-  width: 90%;
+  width: 320px;
   padding: 8px;
   margin-bottom: 15px;
   border: none;
   border-radius: 3px;
-  &:focus{
+  &:focus {
     outline: none;
   }
-  
 }
-.blackD{
+.blackD {
   background-color: #fff;
   color: black;
 }
-.darkbox{
+.darkbox {
   background-color: black;
-  color: white; 
+  color: white;
 }
-
 
 button {
   background-color: #67abf4;
@@ -69,14 +69,12 @@ button {
   cursor: pointer;
   width: 15vh;
   transition: all 0.3s ease;
-  &:hover{
-    background-color:  #007bff;
+  &:hover {
+    background-color: #007bff;
     color: #151515;
     transform: scale(1.1);
   }
 }
-
-
 
 .feedback_button {
   padding: 6px;
@@ -115,63 +113,11 @@ button {
 }
 .help {
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: #ec1ce9;
   }
 }
 a {
   color: inherit; /* Isse anchor tag apne parent element `ka color inherit karega */
   text-decoration: none;
-}
-
-
-/*  !  success_box */
-
-.success_box {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: #24d2ac;
-  position: absolute;
-  height: 100px;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 2rem;
-}
-
-
-@media (max-width: 700px) {
-}
-/* 1000px */
-
-/*pad screen */
-@media (max-width: 781px) {
-}
-/* mobile screen size */
-@media (max-width: 590px) {
-  .feedback_cantenr {
-    /* flex-direction: column; */
-    gap: 10px;
-  }
-}
-
-/* mobile screen size 382 */
-@media (max-width: 382px) {
-}
-
-/* ! loader */
-.loader {
-  display: none;
-  position: absolute;
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #2596e6; /* Blue */
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
