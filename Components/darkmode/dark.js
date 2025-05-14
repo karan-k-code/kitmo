@@ -8,15 +8,20 @@ const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 // ! dark mode seting
 // dark, light, system default
 if (darkseting == "dark") {
+  document.documentElement.style.setProperty("--bgc-color", "#000");
+
   darkModeToggle.checked = true;
 } else if (darkseting == "system") {
   if (systemPrefersDark.matches == true) {
     darkModeToggle.checked = true;
+    document.documentElement.style.setProperty("--bgc-color", "#000");
   } else {
     darkModeToggle.checked = false;
+    document.documentElement.style.setProperty("--bgc-color", "#fff");
   }
 } else if (darkseting == "light") {
   darkModeToggle.checked = false;
+  document.documentElement.style.setProperty("--bgc-color", "#fff");
 }
 
 // ! all class selecat function

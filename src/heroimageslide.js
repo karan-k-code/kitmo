@@ -93,10 +93,11 @@ const imageslide = () => {
 };
 
 const heroimage = [
-  { img: "./image/heroiamge.png" },
-  { img: "./image/heroimage2.jpg" },
-  { img: "./image/hero_image.jpg" },
-  { img: "./image/heroim.jpg" },
+  { img: "./image/pexels-mingche-lee-2072368-14097746.jpg" },
+  { img: "./image/pexels-max-fischer-5868738.jpg" },
+  { img: "./image/pexels-shkrabaanthony-5264897.jpg" },
+  { img: "./image/pexels-laura-james-6097877.jpg" },
+  { img: "./image/pexels-gustavo-fring-4173321.jpg" },
 ];
 
 const genneratImageDiv = () => {

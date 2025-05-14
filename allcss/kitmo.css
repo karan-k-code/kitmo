@@ -48,6 +48,7 @@
   padding: 0px 10px 0 10px;
   justify-content: center;
 }
+
 .box {
   /* min-width: 150px; */
   display: flex;
@@ -60,6 +61,7 @@
   border-radius: 10px;
   box-shadow: 0 0 7px rgba(122, 114, 114, 0.7);
 }
+
 .itam_name {
   display: flex;
   align-items: center;
@@ -68,6 +70,7 @@
   border-radius: 10px;
   text-shadow: 0 0 4px black;
 }
+
 .itam_img {
   display: flex;
   align-items: center;
@@ -92,6 +95,7 @@
   gap: 7px;
   overflow: hidden;
 }
+
 .itam_price {
   /* color: white; */
   display: flex;
@@ -102,17 +106,20 @@
   margin-left: 5px;
   text-shadow: 2px 2px 5px black;
 }
+
 .itam_price > div {
   color: red;
   font-size: 1.1rem;
   text-shadow: none;
 }
+
 .desc {
   display: flex;
   justify-content: center;
   font-size: 0.75rem;
   /* text-shadow: 0 0 100px black; */
 }
+
 .shop_box {
   height: 40px;
   display: flex;
@@ -141,7 +148,9 @@
 }
 .add_cart {
   width: 37%;
+  min-width: fit-content;
   font-size: 13px;
+  padding: 0 5px 0 5px;
 }
 
 .buy {
@@ -269,17 +278,20 @@
   bottom: -13px;
   z-index: 1;
 }
+
 .contacts_second_line {
   height: 13px;
   display: flex;
   z-index: 0;
 }
+
 .cantacts {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;
 }
+
 .contacts_bottom_line {
   height: 14px;
   border-top-right-radius: 13px;
@@ -290,11 +302,13 @@
   top: -13px;
   z-index: 1;
 }
+
 .contacts_box {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+
 .profile_img {
   height: 150px;
   width: 150px;
@@ -307,6 +321,7 @@
     transform: scale(1.35);
   }
 }
+
 .no_dark .profile_img {
   filter: drop-shadow(0px -2px 8px rgba(0, 0, 0, 0.327));
 }
@@ -351,6 +366,7 @@ a {
   font-size: 1.2rem;
   gap: 20px;
 }
+
 .auth > a {
   border: 1px solid rgba(0, 0, 0, 0.39);
   font-weight: 600;
@@ -370,7 +386,6 @@ a {
 }
 
 /* search secation */
-
 @media (max-width: 500px) {
   .contacts_box {
     display: none;
@@ -392,6 +407,7 @@ a {
     height: 60px;
   }
 }
+
 /* 1140px */
 @media (max-width: 1140px) {
   .group {
@@ -428,6 +444,7 @@ a {
     height: 350px;
   }
 }
+
 /*pad screen */
 @media (max-width: 781px) {
   .group {
@@ -438,6 +455,7 @@ a {
     height: 80px;
   }
 }
+
 /* mobile screen size */
 @media (max-width: 590px) {
   .box {

@@ -1,3 +1,7 @@
+:root {
+  --bgc-color: white;
+}
+
 .slider {
   position: relative;
   width: 100%;
@@ -29,4 +33,48 @@
   position: absolute;
   bottom: 0;
   cursor: pointer;
+}
+
+.shadow {
+  position: absolute;
+  height: 40px;
+  bottom: -41px;
+  background-color: inherit;
+  width: 100%;
+  box-shadow: 0 0 10px var(--bgc-color), 0 0 20px var(--bgc-color),
+    0 0 20px var(--bgc-color), 0 0 20px var(--bgc-color),
+    0 0 40px var(--bgc-color), 0 0px 40px var(--bgc-color),
+    0 0 80px var(--bgc-color), 0 0 80px var(--bgc-color),
+    0 0 120px var(--bgc-color), 0 0 120px var(--bgc-color),
+    0 0 160px var(--bgc-color), 0 0 160px var(--bgc-color),
+    0 0 200px var(--bgc-color), 0 0 200px var(--bgc-color),
+    0 0 250px var(--bgc-color), 0 0 300px var(--bgc-color),
+    0 0 350px var(--bgc-color);
+}
+
+.text_hero {
+  position: absolute;
+  /* left: 3rem; */
+  /* width: 100%; */
+  left: 2rem;
+  min-width: 500px;
+
+  display: flex;
+  align-items: center;
+  /* z-index: -1; */
+}
+
+.text_hero > h1 {
+  position: absolute;
+  left: 3rem;
+  font-size: 4rem;
+  /* color: transparent; */
+  text-shadow: 0 0 4px black;
+}
+
+@media (max-width: 700px) {
+  .text_hero > h1 {
+    font-size: 2rem;
+    left: 1rem;
+  }
 }
