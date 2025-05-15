@@ -101,6 +101,7 @@ header {
   justify-content: center;
   cursor: text;
   border: none;
+  outline: none;
 }
 /* search icon */
 .search-icon {
