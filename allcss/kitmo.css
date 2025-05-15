@@ -277,9 +277,12 @@
 }
 .cat_im_te > img {
   max-width: 150px;
+  width: 150px;
   max-height: 150px;
+  height: 150px;
   border-radius: 50%;
   cursor: pointer;
+  object-fit: cover;
 }
 .cat_im_te > span {
   font-size: 1.1rem;
