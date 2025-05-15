@@ -98,6 +98,8 @@ const heroimage = [
   { img: "./image/pexels-shkrabaanthony-5264897.jpg" },
   { img: "./image/pexels-laura-james-6097877.jpg" },
   { img: "./image/pexels-gustavo-fring-4173321.jpg" },
+  { img: "./image/pexels-cottonbro-4503732.jpg" },
+  { img: "./image/pexels-cottonbro-6686141.jpg" },
 ];
 
 const genneratImageDiv = () => {

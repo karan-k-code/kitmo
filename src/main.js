@@ -69,6 +69,7 @@ const keepShoping = async () => {
   // Filter to remove null, undefined, and objects that are missing _id or image or image.length is 0 or image[0].img is missing
 
   if (validData?.length > 0) {
+    document.getElementById("histry_product").style.display = "flex";
     keep_shoping.innerHTML = validData
       .map((x) => {
         return `<div class="best_product_content" onclick="goo('${x._id}')">
