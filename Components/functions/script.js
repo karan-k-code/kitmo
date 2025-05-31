@@ -325,7 +325,7 @@ function goBack() {
   window.history.back();
 }
 
-function initMap(let = 26.639796, lng = 85.575444) {
+function initMap(let = 25.764184, lng = 87.467168) {
   const kiev = { lat: let, lng: lng };
 
   if (typeof google !== "undefined" && google.maps) {
