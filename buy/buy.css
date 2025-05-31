@@ -15,10 +15,15 @@ body {
   /* background-color: black; */
 }
 
+main {
+  margin-top: 10px;
+}
+
 .big_container {
   width: 100%;
   display: flex;
 }
+
 /* ! buy_item_image */
 .buy_item_image {
   width: 100%;

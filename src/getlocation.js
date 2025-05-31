@@ -4,6 +4,7 @@ const getLocation = document.getElementById("location_p");
 
 //  api call
 async function getp(let, lot) {
+  initMap(let, lot);
   const promise = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=0ef92f8f99604c3095f23816242808&q=${let},${lot}&aqi=yes`
   );

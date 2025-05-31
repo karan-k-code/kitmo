@@ -40,6 +40,7 @@
     <div class="pop" id="pop">
       <div class="notification animate" id="nothide"></div>
     </div>
+
     <!-- ! navbar -->
     <header>
       <!-- ! Nevbar section and -->
@@ -51,6 +52,11 @@
             class="box_shadow box_no_dark_shadow light no_dark"
             style="left: -200px"
           >
+            <!--  git location -->
+            <li class="option_b" id="location_p">
+              <i class="fa-solid fa-location-dot"></i
+              ><a id="curent-location"> get location</a>
+            </li>
             <!-- seting -->
             <li class="option_b">
               <a href="./users/user_profile/index.html?fun=setting"
@@ -201,6 +207,7 @@
 
       <div class="colam dark_box nav_light"></div>
     </header>
+
     <!--! main -->
     <main id="main_dd">
       <!--! hero section website postar dile and offer -->
@@ -383,6 +390,13 @@
       <span onclick="welcomeClose()"><i class="fa-solid fa-xmark"></i></span>
     </div>
 
+    <!-- map -->
+
+    <section class="location">
+      <h2 class="title high location__title">Our location</h2>
+      <div id="map"></div>
+    </section>
+
     <!--! this is a website footer -->
     <footer class="dark_box nav_light">
       <div class="footer_box">
@@ -468,6 +482,11 @@
   </body>
 
   <!-- ! javascript file-->
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmlhC0ZPmRPo54nVFcOgbl9MFLR7Z3EXM&callback=initMap"
+  ></script>
   <script src="Components/functions/script.js"></script>
   <script src="Components/loader/loader.js"></script>
   <script src="Components/darkmode/dark.js"></script>

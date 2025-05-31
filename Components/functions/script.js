@@ -321,7 +321,29 @@ function calculateDiscount(price, discount) {
 }
 
 // backbutton
-
 function goBack() {
   window.history.back();
 }
+
+function initMap(let = 26.639796, lng = 85.575444) {
+  const kiev = { lat: let, lng: lng };
+
+  if (typeof google !== "undefined" && google.maps) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: kiev,
+    });
+
+    const marker = new google.maps.Marker({
+      position: kiev,
+      map: map,
+      title: "Center Kyiv",
+    });
+
+    marker.addListener("click", function () {
+      alert("The marker is pressed!");
+    });
+  }
+}
+
+initMap();
