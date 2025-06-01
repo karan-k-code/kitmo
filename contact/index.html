@@ -48,7 +48,21 @@
         <p id="responseMessage" style="margin-top: 10px; color: green"></p>
       </div>
     </section>
+
+    <!-- map -->
+    <section class="location">
+      <h2 class="title high location__title">Our location</h2>
+      <div id="map"></div>
+    </section>
+
+    <input type="text" id="address" placeholder="Enter address" />
+    <button onclick="geocodeAddress()">Find Location</button>
   </body>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmlhC0ZPmRPo54nVFcOgbl9MFLR7Z3EXM&callback=initMap"
+  ></script>
   <script src="../Components/functions/script.js"></script>
   <script src="script.js"></script>
 </html>

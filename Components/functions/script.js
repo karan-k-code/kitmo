@@ -337,10 +337,10 @@ function initMap(let = 25.764184, lng = 87.467168) {
     const marker = new google.maps.Marker({
       position: kiev,
       map: map,
-      title: "Center Kyiv",
+      title: "Center mylocation",
     });
 
-    marker.addListener("click", function () {
+    const address = marker.addListener("click", function () {
       alert("The marker is pressed!");
     });
   }
